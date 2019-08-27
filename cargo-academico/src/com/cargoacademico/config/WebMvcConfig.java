@@ -27,7 +27,7 @@ public class WebMvcConfig {
 	DriverManagerDataSource getDataSource() {
 		DriverManagerDataSource ds = new DriverManagerDataSource();
 		ds.setDriverClassName("com.mysql.jdbc.Driver");
-		ds.setUrl("jdbc:mysql://localhost:3306/cargaacademica?useSSL=false");
+		ds.setUrl("jdbc:mysql://localhost:3306/cargo_academica?useSSL=false");
 		ds.setUsername("root");
 		ds.setPassword("root");
 
