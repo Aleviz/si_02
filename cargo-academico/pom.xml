@@ -6,6 +6,7 @@
 	<artifactId>cargo-academico</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
@@ -40,6 +41,8 @@
 >>>>>>> FeatureVV
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Developer
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
