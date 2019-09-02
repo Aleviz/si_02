@@ -1,0 +1,253 @@
+drop database cargo_academico;
+create database cargo_academico;
+use cargo_academico;
+
+create table universidad(
+id_universidad int not null primary key auto_increment,
+nombre varchar(25),
+logo longblob
+);
+
+create table campus(
+id_campus int not null primary key auto_increment,
+campus varchar(35),
+universidad int not null,
+telefono int not null,
+ubicacion varchar(100),
+foreign key (universidad) references universidad(id_universidad)
+on update cascade on delete cascade
+);
+
+create table roles(
+id_rol int not null primary key auto_increment,
+nombre varchar(25)
+);
+
+create table usuarios(
+id_usuario int not null primary key auto_increment,
+username varchar(25),
+pass varchar(25),
+rol int not null,
+foreign key (rol) references roles(id_rol)
+on update cascade on delete cascade
+);
+
+create table alumno(
+id_alumno int not null primary key auto_increment,
+primer_nombre varchar(25) not null,
+segundo_nombre varchar(25) ,
+primer_apellido varchar(25) not null,
+segundo_apellido varchar(25),
+fecha_nacimiento date not null,
+nit varchar(15) not null,
+dui varchar(10),
+carnet varchar(10) not null,
+foto longblob
+);
+
+create table facultad(
+id_facultad int not null primary key auto_increment,
+facultad varchar(30),
+telefono varchar(10),
+ubicacion longtext,
+campus int not null,
+foreign key (campus) references campus(id_campus)
+on update cascade on delete cascade
+);
+
+create table escuela(
+id_escuela int not null primary key auto_increment,
+nombre_escuela varchar(45),
+id_facultad int not null,
+foreign key (id_facultad) references facultad(id_facultad)
+on update cascade on delete cascade 
+);
+
+create table departamento(
+id_departamento int not null auto_increment primary key,
+nombre varchar(45),
+id_escuela int not null,
+foreign key (id_escuela) references escuela(id_escuela)
+on update cascade on delete cascade
+);
+
+create table ciclo(
+id_ciclo int not null primary key auto_increment,
+ciclo varchar(10),
+duracion varchar(10)
+);
+
+
+create table carreras_ciclo(
+id_carrera_ciclo int not null primary key auto_increment,
+carrera int not null,
+ciclo int not null,
+foreign key (carrera) references escuela(id_escuela)
+on update cascade on delete cascade,
+foreign key (ciclo) references ciclo(id_ciclo)
+on update cascade on delete cascade 
+);
+
+create table tipo_docente(
+id_tipo_docente int not null primary key auto_increment,
+tipo_docente varchar(15)
+);
+
+create table materias(
+id_materia int not null primary key auto_increment,
+materia varchar(25),
+codigo varchar(8) unique,
+departamento int not null,
+ciclo varchar(25) not null,
+unidad_valorativa int not null,
+prerequisito int,
+foreign key (prerequisito) references materias(id_materia)
+on update cascade on delete cascade,
+foreign key (departamento) references departamento(id_departamento)
+on update cascade on delete cascade
+);
+
+create table materia_carrera_ciclo(
+id_materia_carrera_ciclo int not null primary key auto_increment,
+carrera_ciclo int not null,
+materia int not null,
+foreign key (carrera_ciclo) references carreras_ciclo(id_carrera_ciclo)
+on update cascade on delete cascade,
+foreign key (materia) references materias(id_materia)
+on update cascade on delete cascade 
+);
+
+create table inscripcion(
+id_inscripcion int not null primary key auto_increment,
+fecha date not null,
+materia_carrera_ciclo int not null,
+alumno int not null,
+inicio date not null,
+final date not null,
+foreign key (materia_carrera_ciclo) references materia_carrera_ciclo(id_materia_carrera_ciclo)
+on update cascade on delete cascade,
+foreign key (alumno) references alumno(id_alumno)
+on update cascade on delete cascade
+);
+
+create table materia_horario(
+id_materia_horario int not null auto_increment primary key,
+materia int not null,
+horario varchar(30),
+unique `materia_horario` (`materia`, `horario`),
+foreign key (materia) references materias(id_materia)
+on update cascade on delete cascade
+);
+
+create table empleado(
+id_empleado int not null primary key auto_increment,
+primer_nombre varchar(25) not null,
+segundo_nombre varchar(25),
+primer_apellido varchar(25) not null,
+segundo_apellido varchar(25),
+fecha_nacimiento date not null,
+nit varchar(15) not null,
+dui varchar(10) not null,
+carnet varchar(10) not null,
+tipo_docente int,
+usuario int not null,
+foto longblob,
+foreign key (tipo_docente) references tipo_docente(id_tipo_docente)
+on update cascade on delete cascade,
+foreign key(usuario) references usuarios(id_usuario)
+on update cascade on delete cascade
+);
+
+
+
+create table empleado_materia(
+id_emp_mate int not null primary key auto_increment,
+empleado int not null,
+id_materia int not null unique,
+foreign key(id_materia) references materia_horario(id_materia_horario)
+on update cascade on delete cascade,
+foreign key (empleado) references empleado(id_empleado)
+on update cascade on delete cascade
+);
+
+create table edificio(
+id_edificio int not null primary key auto_increment,
+nombre_edificio varchar(45) not null,
+facultad int not null,
+foreign key (facultad) references facultad(id_facultad)
+on update cascade on delete cascade
+);
+
+create table aula(
+id_aula int not null primary key auto_increment,
+codigo varchar(13),
+edificio int not null,
+foreign key(edificio) references edificio(id_edificio)
+on update cascade on delete cascade
+);
+
+create table aula_empleado(
+id_aula_empleado int not null auto_increment primary key,
+id_aula int not null,
+id_empleado_materia int not null unique,
+cupo int not null,
+foreign key(id_aula) references aula(id_aula)
+on update cascade on delete cascade,
+foreign key(id_empleado_materia) references empleado_materia(id_emp_mate)
+on update cascade on delete cascade
+);
+
+create table alumno_materia(
+id_alumno_materia int not null auto_increment primary key,
+id_horario int not null,
+id_alumno int not null,
+estado enum('en curso','reprobado', 'aprovado'),
+foreign key(id_horario) references aula_empleado(id_aula_empleado)
+on update cascade on delete cascade,
+foreign key(id_alumno) references inscripcion(id_inscripcion)
+on update cascade on delete cascade
+);
+
+create table temario(
+id_temario int not null auto_increment primary key,
+nombre_temario varchar(45) not null,
+materia int not null,
+foreign key (materia) references materias(id_materia)
+on update cascade on delete cascade
+);
+
+create table unidad(
+id_unidad int not null primary key auto_increment,
+nombre_unidad varchar(45) not null,
+temario int not null,
+objetivo varchar(150) not null,
+duracion int not null,
+foreign key(temario) references temario(id_temario)
+on update cascade on delete cascade
+);
+
+create table tema(
+id_tema int not null auto_increment primary key,
+tema varchar(45) not null,
+unidad int not null,
+foreign key(unidad) references unidad(id_unidad)
+on update cascade on delete cascade
+);
+
+create table tipo_actividad(
+id_tipo_actividad int not null auto_increment primary key,
+actividad varchar(45) not null
+);
+
+create table actividades(
+id_actividad int not null auto_increment primary key,
+actividad varchar(45) not null,
+descripcion varchar(150) not null,
+unidad int not null,
+ponderacion int not null,
+tipo_actividad int not null,
+foreign key (tipo_actividad) references tipo_actividad(id_tipo_actividad)
+on update cascade on delete cascade,
+foreign key (unidad) references unidad(id_unidad)
+on update cascade on delete cascade
+);
