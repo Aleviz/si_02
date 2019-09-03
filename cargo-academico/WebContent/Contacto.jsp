@@ -5,140 +5,149 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="<%=request.getContextPath()%>/res/design/leaflet.css" />
-        <script src="<c:url value='res/design/leaflet.js'></c:url>"></script>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
-        <script src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"
-        ></script>
-        <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/res/design/leaflet.css" />
+<script src="<c:url value='res/design/leaflet.js'></c:url>"></script>
+<link rel="stylesheet"
+	href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
+<script
+	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
+<!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-        <!-- Title -->
-        <title>Academy - Education Course Template</title>
+<!-- Title -->
+<title>Academy - Education Course Template</title>
 
-        <!-- Favicon -->
-        <link rel="icon" href="<%=request.getContextPath()%>/res/design/img/core-img/favicon.ico">
+<!-- Favicon -->
+<link rel="icon"
+	href="<%=request.getContextPath()%>/res/design/img/core-img/favicon.ico">
 
-        <!-- Core Stylesheet -->
-        <link rel="stylesheet" href="<%=request.getContextPath()%>/res/design/style.css">
+<!-- Core Stylesheet -->
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/res/design/style.css">
 
-    </head>
+</head>
 
-    <body>
-        <!-- ##### Preloader ##### -->
-        <div id="preloader">
-            <i class="circle-preloader"></i>
-        </div>
+<body>
+	<!-- ##### Preloader ##### -->
+	<div id="preloader">
+		<i class="circle-preloader"></i>
+	</div>
 
-        <!-- ##### Header Area Start ##### -->
-        <header class="header-area">
+	<!-- ##### Header Area Start ##### -->
+	<header class="header-area"> <!-- Top Header Area -->
+	<div class="top-header">
+		<div class="container h-100">
+			<div class="row h-100">
+				<div class="col-12 h-100">
+					<div
+						class="header-content h-100 d-flex align-items-center justify-content-between">
+						<div class="academy-logo">
+							<a href="index.html"><img
+								src="<c:url value='/res/design/img/core-img/image.png'></c:url>"
+								width="150px"></a>
+						</div>
+						<div class="login-content">
+							<a href="#">Register / Login</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-            <!-- Top Header Area -->
-            <div class="top-header">
-                <div class="container h-100">
-                    <div class="row h-100">
-                        <div class="col-12 h-100">
-                            <div class="header-content h-100 d-flex align-items-center justify-content-between">
-                                <div class="academy-logo">
-                                    <a href="index.html"><img src="<c:url value='/res/design/img/core-img/image.png'></c:url>" width="150px"></a>
-                                </div>
-                                <div class="login-content">
-                                    <a href="#">Register / Login</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+	<!-- Navbar Area -->
+	<div class="academy-main-menu">
+		<div class="classy-nav-container breakpoint-off">
+			<div class="container">
+				<!-- Menu -->
+				<nav class="classy-navbar justify-content-between" id="academyNav">
 
-            <!-- Navbar Area -->
-            <div class="academy-main-menu">
-                <div class="classy-nav-container breakpoint-off">
-                    <div class="container">
-                        <!-- Menu -->
-                        <nav class="classy-navbar justify-content-between" id="academyNav">
+				<!-- Navbar Toggler -->
+				<div class="classy-navbar-toggler">
+					<span class="navbarToggler"><span></span><span></span><span></span></span>
+				</div>
 
-                            <!-- Navbar Toggler -->
-                            <div class="classy-navbar-toggler">
-                                <span class="navbarToggler"><span></span><span></span><span></span></span>
-                            </div>
+				<!-- Menu -->
+				<div class="classy-menu">
 
-                            <!-- Menu -->
-                            <div class="classy-menu">
+					<!-- close btn -->
+					<div class="classycloseIcon">
+						<div class="cross-wrap">
+							<span class="top"></span><span class="bottom"></span>
+						</div>
+					</div>
 
-                                <!-- close btn -->
-                                <div class="classycloseIcon">
-                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                                </div>
+					<!-- Nav Start -->
+					<div class="classynav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#">Pages</a>
+								<ul class="dropdown">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="about-us.html">About Us</a></li>
+									<li><a href="course.html">Course</a></li>
+									<li><a href="blog.html">Blog</a></li>
+									<li><a href="contact.html">Contact</a></li>
+									<li><a href="elements.html">Elements</a></li>
+								</ul></li>
+							<li><a href="#">Mega Menu</a>
+								<div class="megamenu">
+									<ul class="single-mega cn-col-4">
+										<li><a href="#">Home</a></li>
+										<li><a href="#">Services &amp; Features</a></li>
+										<li><a href="#">Accordions and tabs</a></li>
+										<li><a href="#">Menu ideas</a></li>
+										<li><a href="#">Students Gallery</a></li>
+									</ul>
+									<ul class="single-mega cn-col-4">
+										<li><a href="#">Home</a></li>
+										<li><a href="#">Services &amp; Features</a></li>
+										<li><a href="#">Accordions and tabs</a></li>
+										<li><a href="#">Menu ideas</a></li>
+										<li><a href="#">Students Gallery</a></li>
+									</ul>
+									<ul class="single-mega cn-col-4">
+										<li><a href="#">Home</a></li>
+										<li><a href="#">Services &amp; Features</a></li>
+										<li><a href="#">Accordions and tabs</a></li>
+										<li><a href="#">Menu ideas</a></li>
+										<li><a href="#">Students Gallery</a></li>
+									</ul>
+									<div class="single-mega cn-col-4">
+										<img
+											src="<%=request.getContextPath()%>/res/design/img/bg-img/bg-1.jpg"
+											alt="">
+									</div>
+								</div></li>
+							<li><a href="about-us.html">About Us</a></li>
+							<li><a href="course.html">Course</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+					<!-- Nav End -->
+				</div>
 
-                                <!-- Nav Start -->
-                                <div class="classynav">
-                                    <ul>
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="#">Pages</a>
-                                            <ul class="dropdown">
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="about-us.html">About Us</a></li>
-                                                <li><a href="course.html">Course</a></li>
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Mega Menu</a>
-                                            <div class="megamenu">
-                                                <ul class="single-mega cn-col-4">
-                                                    <li><a href="#">Home</a></li>
-                                                    <li><a href="#">Services &amp; Features</a></li>
-                                                    <li><a href="#">Accordions and tabs</a></li>
-                                                    <li><a href="#">Menu ideas</a></li>
-                                                    <li><a href="#">Students Gallery</a></li>
-                                                </ul>
-                                                <ul class="single-mega cn-col-4">
-                                                    <li><a href="#">Home</a></li>
-                                                    <li><a href="#">Services &amp; Features</a></li>
-                                                    <li><a href="#">Accordions and tabs</a></li>
-                                                    <li><a href="#">Menu ideas</a></li>
-                                                    <li><a href="#">Students Gallery</a></li>
-                                                </ul>
-                                                <ul class="single-mega cn-col-4">
-                                                    <li><a href="#">Home</a></li>
-                                                    <li><a href="#">Services &amp; Features</a></li>
-                                                    <li><a href="#">Accordions and tabs</a></li>
-                                                    <li><a href="#">Menu ideas</a></li>
-                                                    <li><a href="#">Students Gallery</a></li>
-                                                </ul>
-                                                <div class="single-mega cn-col-4">
-                                                    <img src="<%=request.getContextPath()%>/res/design/img/bg-img/bg-1.jpg" alt="">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li><a href="about-us.html">About Us</a></li>
-                                        <li><a href="course.html">Course</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </div>
-                                <!-- Nav End -->
-                            </div>
+				<!-- Calling Info -->
+				<div class="calling-info">
+					<div class="call-center">
+						<a href="tel:+654563325568889"><i class="icon-telephone-2"></i>
+							<span>(+65) 456 332 5568 889</span></a>
+					</div>
+				</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	</header>
+	<!-- ##### Header Area End ##### -->
 
-                            <!-- Calling Info -->
-                            <div class="calling-info">
-                                <div class="call-center">
-                                    <a href="tel:+654563325568889"><i class="icon-telephone-2"></i> <span>(+65) 456 332 5568 889</span></a>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- ##### Header Area End ##### -->
-
-        <!-- ##### Breadcumb Area Start ##### 
+	<!-- ##### Breadcumb Area Start ##### 
         <div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
             <div class="bradcumbContent">
                 <h2>Contact</h2>
@@ -146,176 +155,283 @@
         </div>
         <!-- ##### Breadcumb Area End ##### -->
 
-        <!-- ##### Google Maps ##### -->
-        <div class="map-area wow fadeInUp" data-wow-delay="300ms">
-            <div id="mapa">
-        <script>
-            var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                    osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-                    osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
-            var map = L.map('mapa').setView([13.7178, -89.2046], 16).addLayer(osm);
-            L.marker([13.7178, -89.2047])
-                    .addTo(map)
-                    .bindPopup('UES')
-                    .openPopup();
-        </script>
-            </div>
-            <div  id="formulario" >
-                <div class="contact-information wow fadeInUp" data-wow-delay="400ms">
-                    <div class="section-heading text-left">
-                        <span>The Best</span>
-                        <h3>Contact Us</h3>
-                        <p class="mt-30">Lacinia, lacinia la cus non, fermen tum nisi. Donec et sollicitudin. Morbi vel arcu gravida, iaculis lacus vel, posuere ipsum. Sed faucibus mauris vitae urna consectetur, sit amet maximus nisl sagittis. Ut in iaculis enim, et pulvinar mauris.</p>
-                    </div>
+	<!-- ##### Google Maps ##### -->
+	<div class="map-area wow fadeInUp" data-wow-delay="300ms">
+		<div id="mapa">
+			<script>
+			
+					
+			
+			//CAMPUS DE LA UNIVERSIDAD
+				var z = 13.7178;
+				var x = 89.2046;
+				var y = 16;
+				
+				//esto es para registrar mas marcadores;
+				var lat;
+				var lon;
+				
+				var facultad = 'Auditorio numero 4';
+				var campus = 'UES';
+				
+				// ESTO SON PARA LOS MARCADORES
+				var market;
+				var popup;
 
-                    <!-- Contact Social Info -->
-                    <div class="contact-social-info d-flex mb-30">
-                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                    </div>
+				//esto es para el copyright
+				var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors', osm = L
+						.tileLayer(osmUrl, {
+							maxZoom : 18,
+							attribution : osmAttrib
+						});
+				
+				
+// 				para mostrar el mapa
+				var map = L.map('mapa').setView([ z, -x ], y).addLayer(osm);
+				
+				
+				
+				//UNICAMENTE PARA REGISTRO DE UNA NUEVA DIRECCION
+				map.on('click', function(e){
+					//aqui obtiene la direccion
+					lat = e.latlng.lat;
+					lon = e.latlng.lng;
+					
+					// y aqui es para marcar el mapa
+					market = L.marker([ lat, lon ]).addTo(map);
+					
+					// para agregarle texto y un popup
+					popup = market.bindPopup(facultad);
+					popup.openPopup();		
+				});
+				
+			
+				// ponemos los marcadores traidos de la base de datos
+				
+				
+				market = L.market([lat, lon]).addTo(map);
 
-                    <!-- Single Contact Info -->
-                    <div class="single-contact-info d-flex">
-                        <div class="contact-icon mr-15">
-                            <i class="icon-placeholder"></i>
-                        </div>
-                        <p>4127/ 5B-C Mislane Road,<br> Gibraltar, UK</p>
-                    </div>
+			</script>
+			
+			<script>
+			$("#ocultar").css("display","block");
+			</script>
+		</div>
+		<div id="formulario">
+			<div class="contact-information wow fadeInUp" data-wow-delay="400ms">
+				<div class="section-heading text-left">
+					<span>The Best</span>
+					<h3>Contact Us</h3>
+					<p class="mt-30">Lacinia, lacinia la cus non, fermen tum nisi.
+						Donec et sollicitudin. Morbi vel arcu gravida, iaculis lacus vel,
+						posuere ipsum. Sed faucibus mauris vitae urna consectetur, sit
+						amet maximus nisl sagittis. Ut in iaculis enim, et pulvinar
+						mauris.</p>
+					
+					
+					<div id=ocultar>
+					<c:forEach var="mate" items="${lista}" >
+					</c:forEach>
+					
+					<p>laksjd</p>
+					</div>
+					
+					
+				</div>
 
-                    <!-- Single Contact Info -->
-                    <div class="single-contact-info d-flex">
-                        <div class="contact-icon mr-15">
-                            <i class="icon-telephone-1"></i>
-                        </div>
-                        <p>Main: 203-808-8613 <br> Office: 203-808-8648</p>
-                    </div>
+				<!-- Contact Social Info -->
+				<div class="contact-social-info d-flex mb-30">
+					<a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+					<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a
+						href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> <a
+						href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a> <a
+						href="#"><i class="fa fa-behance" aria-hidden="true"></i></a> <a
+						href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+				</div>
 
-                    <!-- Single Contact Info -->
-                    <div class="single-contact-info d-flex">
-                        <div class="contact-icon mr-15">
-                            <i class="icon-contract"></i>
-                        </div>
-                        <p>office@yourbusiness.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+				<!-- Single Contact Info -->
+				<div class="single-contact-info d-flex">
+					<div class="contact-icon mr-15">
+						<i class="icon-placeholder"></i>
+					</div>
+					<p>
+						4127/ 5B-C Mislane Road,<br> Gibraltar, UK
+					</p>
+				</div>
 
-        <!-- ##### Contact Area End ##### -->
+				<!-- Single Contact Info -->
+				<div class="single-contact-info d-flex">
+					<div class="contact-icon mr-15">
+						<i class="icon-telephone-1"></i>
+					</div>
+					<p>
+						Main: 203-808-8613 <br> Office: 203-808-8648
+					</p>
+				</div>
 
-        <!-- ##### Footer Area Start ##### -->
-        <footer class="footer-area">
-            <div class="main-footer-area section-padding-100-0">
-                <div class="container">
-                    <div class="row">
-                        <!-- Footer Widget Area -->
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="footer-widget mb-100">
-                                <div class="widget-title">
-                                    <a href="#"><img src="<%=request.getContextPath()%>/res/design/img/core-img/logo_1.png" width="170"></a>
-                                </div>
-                                <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget.</p>
-                                <div class="footer-social-info">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                                    <a href="#"><i class="fa fa-behance"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Footer Widget Area -->
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="footer-widget mb-100">
-                                <div class="widget-title">
-                                    <h6>Usefull Links</h6>
-                                </div>
-                                <nav>
-                                    <ul class="useful-links">
-                                        <li><a href="#">Home</a></li>
-                                        <li><a href="#">Services &amp; Features</a></li>
-                                        <li><a href="#">Accordions and tabs</a></li>
-                                        <li><a href="#">Menu ideas</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- Footer Widget Area -->
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="footer-widget mb-100">
-                                <div class="widget-title">
-                                    <h6>Gallery</h6>
-                                </div>
-                                <div class="gallery-list d-flex justify-content-between flex-wrap">
-                                    <a href="<%=request.getContextPath()%>/res/design/img/gallery1.jpg" class="gallery-img" title="Gallery Image 1"><img src="<c:url value='/res/design/img/bg-img/gallery1.jpg'></c:url>" alt=""></a>
-                                    <a href="<%=request.getContextPath()%>/res/design/img/gallery2.jpg" class="gallery-img" title="Gallery Image 2"><img src="<c:url value='/res/design/img/bg-img/gallery2.jpg'></c:url>" alt=""></a>
-                                    <a href="<%=request.getContextPath()%>/res/design/img/gallery3.jpg" class="gallery-img" title="Gallery Image 3"><img src="<c:url value='/res/design/img/bg-img/gallery3.jpg'></c:url>" alt=""></a>
-                                    <a href="<%=request.getContextPath()%>/res/design/img/gallery4.jpg" class="gallery-img" title="Gallery Image 4"><img src="<c:url value='/res/design/img/bg-img/gallery4.jpg'></c:url>" alt=""></a>
-                                    <a href="<%=request.getContextPath()%>/res/design/img/gallery5.jpg" class="gallery-img" title="Gallery Image 5"><img src="<c:url value='/res/design/img/bg-img/gallery5.jpg'></c:url>" alt=""></a>
-                                    <a href="<%=request.getContextPath()%>/res/design/img/gallery6.jpg" class="gallery-img" title="Gallery Image 6"><img src="<c:url value='/res/design/img/bg-img/gallery6.jpg'></c:url>" alt="Dem"></a>
-                                </div>
-                            </div>
-                            <p><%=request.getContextPath()%>/img/gallery6.jpg </p>
-                        </div>
-                        <!-- Footer Widget Area -->
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="footer-widget mb-100">
-                                <div class="widget-title">
-                                    <h6>Contact</h6>
-                                </div>
-                                <div class="single-contact d-flex mb-30">
-                                    <i class="icon-placeholder"></i>
-                                    <p>4127/ 5B-C Mislane Road, Gibraltar, UK</p>
-                                </div>
-                                <div class="single-contact d-flex mb-30">
-                                    <i class="icon-telephone-1"></i>
-                                    <p>Main: 203-808-8613 <br>Office: 203-808-8648</p>
-                                </div>
-                                <div class="single-contact d-flex">
-                                    <i class="icon-contract"></i>
-                                    <p>office@yourbusiness.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom-footer-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- ##### Footer Area Start ##### -->
+				<!-- Single Contact Info -->
+				<div class="single-contact-info d-flex">
+					<div class="contact-icon mr-15">
+						<i class="icon-contract"></i>
+					</div>
+					<p>office@yourbusiness.com</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
-        <!-- ##### All Javascript Script ##### -->
-        <!-- jQuery-2.2.4 js -->
-        <script src="<c:url value='/res/design/js/jquery/jquery-2.2.4.min.js'></c:url>"></script>
-        
-        <!-- Popper js -->
-        <script src="<c:url value='/res/design/js/bootstrap/popper.min.js'></c:url>"></script>
-        
-        <!-- Bootstrap js -->
-        <script src="<c:url value='/res/design/js/bootstrap/bootstrap.min.js'></c:url>"> </script>
-        
-        <!-- All Plugins js -->
-        <script src="<c:url value='/res/design/js/plugins/plugins.js'></c:url>"></script>
-        
-        <!-- Active js -->
-        <script src="<c:url value='/res/design/js/active.js'></c:url>"></script>
-        
-        <!-- Google Maps -->
-        <script src="<c:url value='/res/design/https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s'></c:url>"></script>
-        <script src="<c:url value='/res/design/js/google-map/map-active.js'></c:url>"></script>
-    </body>
+	<!-- ##### Contact Area End ##### -->
+
+	<!-- ##### Footer Area Start ##### -->
+	<footer class="footer-area">
+	<div class="main-footer-area section-padding-100-0">
+		<div class="container">
+			<div class="row">
+				<!-- Footer Widget Area -->
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="footer-widget mb-100">
+						<div class="widget-title">
+							<a href="#"><img
+								src="<%=request.getContextPath()%>/res/design/img/core-img/logo_1.png"
+								width="170"></a>
+						</div>
+						<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum
+							nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et
+							arcu pulvinar cursus a eget.</p>
+						<div class="footer-social-info">
+							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+								class="fa fa-twitter"></i></a> <a href="#"><i
+								class="fa fa-dribbble"></i></a> <a href="#"><i
+								class="fa fa-behance"></i></a> <a href="#"><i
+								class="fa fa-instagram"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- Footer Widget Area -->
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="footer-widget mb-100">
+						<div class="widget-title">
+							<h6>Usefull Links</h6>
+						</div>
+						<nav>
+						<ul class="useful-links">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Services &amp; Features</a></li>
+							<li><a href="#">Accordions and tabs</a></li>
+							<li><a href="#">Menu ideas</a></li>
+						</ul>
+						</nav>
+					</div>
+				</div>
+				<!-- Footer Widget Area -->
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="footer-widget mb-100">
+						<div class="widget-title">
+							<h6>Gallery</h6>
+						</div>
+						<div class="gallery-list d-flex justify-content-between flex-wrap">
+							<a
+								href="<%=request.getContextPath()%>/res/design/img/gallery1.jpg"
+								class="gallery-img" title="Gallery Image 1"><img
+								src="<c:url value='/res/design/img/bg-img/gallery1.jpg'></c:url>"
+								alt=""></a> <a
+								href="<%=request.getContextPath()%>/res/design/img/gallery2.jpg"
+								class="gallery-img" title="Gallery Image 2"><img
+								src="<c:url value='/res/design/img/bg-img/gallery2.jpg'></c:url>"
+								alt=""></a> <a
+								href="<%=request.getContextPath()%>/res/design/img/gallery3.jpg"
+								class="gallery-img" title="Gallery Image 3"><img
+								src="<c:url value='/res/design/img/bg-img/gallery3.jpg'></c:url>"
+								alt=""></a> <a
+								href="<%=request.getContextPath()%>/res/design/img/gallery4.jpg"
+								class="gallery-img" title="Gallery Image 4"><img
+								src="<c:url value='/res/design/img/bg-img/gallery4.jpg'></c:url>"
+								alt=""></a> <a
+								href="<%=request.getContextPath()%>/res/design/img/gallery5.jpg"
+								class="gallery-img" title="Gallery Image 5"><img
+								src="<c:url value='/res/design/img/bg-img/gallery5.jpg'></c:url>"
+								alt=""></a> <a
+								href="<%=request.getContextPath()%>/res/design/img/gallery6.jpg"
+								class="gallery-img" title="Gallery Image 6"><img
+								src="<c:url value='/res/design/img/bg-img/gallery6.jpg'></c:url>"
+								alt="Dem"></a>
+						</div>
+					</div>
+					<p><%=request.getContextPath()%>/img/gallery6.jpg
+					</p>
+				</div>
+				<!-- Footer Widget Area -->
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="footer-widget mb-100">
+						<div class="widget-title">
+							<h6>Contact</h6>
+						</div>
+						<div class="single-contact d-flex mb-30">
+							<i class="icon-placeholder"></i>
+							<p>4127/ 5B-C Mislane Road, Gibraltar, UK</p>
+						</div>
+						<div class="single-contact d-flex mb-30">
+							<i class="icon-telephone-1"></i>
+							<p>
+								Main: 203-808-8613 <br>Office: 203-808-8648
+							</p>
+						</div>
+						<div class="single-contact d-flex">
+							<i class="icon-contract"></i>
+							<p>office@yourbusiness.com</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bottom-footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<p>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy;
+						<script>
+							document.write(new Date().getFullYear());
+						</script>
+						All rights reserved | This template is made with <i
+							class="fa fa-heart-o" aria-hidden="true"></i> by <a
+							href="https://colorlib.com" target="_blank">Colorlib</a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	</footer>
+	<!-- ##### Footer Area Start ##### -->
+
+	<!-- ##### All Javascript Script ##### -->
+	<!-- jQuery-2.2.4 js -->
+	<script
+		src="<c:url value='/res/design/js/jquery/jquery-2.2.4.min.js'></c:url>"></script>
+
+	<!-- Popper js -->
+	<script
+		src="<c:url value='/res/design/js/bootstrap/popper.min.js'></c:url>"></script>
+
+	<!-- Bootstrap js -->
+	<script
+		src="<c:url value='/res/design/js/bootstrap/bootstrap.min.js'></c:url>">
+		
+	</script>
+
+	<!-- All Plugins js -->
+	<script src="<c:url value='/res/design/js/plugins/plugins.js'></c:url>"></script>
+
+	<!-- Active js -->
+	<script src="<c:url value='/res/design/js/active.js'></c:url>"></script>
+
+	<!-- Google Maps -->
+	<script
+		src="<c:url value='/res/design/https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s'></c:url>"></script>
+	<script
+		src="<c:url value='/res/design/js/google-map/map-active.js'></c:url>"></script>
+</body>
 </html>
