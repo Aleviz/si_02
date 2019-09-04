@@ -86,14 +86,14 @@
 					<!-- Nav Start -->
 					<div class="classynav">
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<li><a href="Home.jsp">Home</a></li>
 							<li><a href="#">Pages</a>
 								<ul class="dropdown">
-									<li><a href="index.html">Home</a></li>
+									<li><a href="Home.jsp">Home</a></li>
 									<li><a href="about-us.html">About Us</a></li>
 									<li><a href="course.html">Course</a></li>
 									<li><a href="blog.html">Blog</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li><a href="Contacto.jsp">Contact</a></li>
 									<li><a href="elements.html">Elements</a></li>
 								</ul></li>
 							<li><a href="#">Mega Menu</a>
@@ -127,7 +127,7 @@
 								</div></li>
 							<li><a href="about-us.html">About Us</a></li>
 							<li><a href="course.html">Course</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="Contacto.jsp">Contact</a></li>
 						</ul>
 					</div>
 					<!-- Nav End -->
@@ -147,122 +147,152 @@
 	</header>
 	<!-- ##### Header Area End ##### -->
 
-	<!-- ##### Breadcumb Area Start ##### 
-        <div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
-            <div class="bradcumbContent">
-                <h2>Contact</h2>
-            </div>
-        </div>
-        <!-- ##### Breadcumb Area End ##### -->
-
-	<!-- ##### Google Maps ##### -->
-	<div class="map-area wow fadeInUp" data-wow-delay="300ms">
-		<div id="mapa">
-			<script>
-				//CAMPUS DE LA UNIVERSIDAD
-				var z = 13.7178;
-				var x = 89.2046;
-				var y = 16;
-
-				//esto es para registrar mas marcadores;
-				var lat;
-				var lon;
-
-				var facultad = 'Auditorio numero 4';
-				var campus = 'UES';
-
-				// ESTO SON PARA LOS MARCADORES
-				var market;
-				var popup;
-
-				//esto es para el copyright
-				var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors', osm = L
-						.tileLayer(osmUrl, {
-							maxZoom : 18,
-							attribution : osmAttrib
-						});
-
-				// 				para mostrar el mapa
-				var map = L.map('mapa').setView([ z, -x ], y).addLayer(osm);
-
-				//UNICAMENTE PARA REGISTRO DE UNA NUEVA DIRECCION
-				map.on('click', function(e) {
-					//aqui obtiene la direccion
-					lat = e.latlng.lat;
-					lon = e.latlng.lng;
-
-					// y aqui es para marcar el mapa
-					market = L.marker([ lat, lon ]).addTo(map);
-
-					// para agregarle texto y un popup
-					popup = market.bindPopup(facultad);
-					popup.openPopup();
-				});
-
-				// ponemos los marcadores traidos de la base de datos
-
-				market = L.market([ lat, lon ]).addTo(map);
-			</script>
-
-			<script>
-				$("#ocultar").css("display", "block");
-			</script>
+	<!-- ##### Breadcumb Area Start ##### -->
+	<div class="breadcumb-area bg-img"
+		style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/breadcumb.jpg);">
+		<div class="bradcumbContent">
+			<h2>About Us</h2>
 		</div>
-		<div id="formulario">
-			<div class="contact-information wow fadeInUp" data-wow-delay="400ms">
-				<div class="section-heading text-left">
-					<span>Unit</span>
-					<h3>Universidad Nacional De Innovacion Tecnológica</h3>
-					<p class="izq">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg" class="flip">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"  class="flip2">
-					</p>
-					<p class="der">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg">
-					</p>
-					<p class="izq">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg">
-					</p>
-					<p class="der">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg">
-					</p>
-					<p class="izq">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-5.jpg">
-					</p>
-					<p class="der"></p>
-				</div>
+	</div>
+	<!-- ##### Breadcumb Area End ##### -->
 
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-placeholder"></i>
-					</div>
-					<p>
-					<p>Ubicacion: Final 25 Avenida Norte, San Salvador</p>
-
-
+	<!-- ##### About Us Area Start ##### -->
+	<section class="about-us-area mt-50 section-padding-100">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="section-heading text-center mx-auto wow fadeInUp"
+					data-wow-delay="300ms">
+					<span>The Best</span>
+					<h3>We are the Academy</h3>
 				</div>
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-telephone-1"></i>
-					</div>
-					<p>
-						Telefono: 2511 2000 <br> Fax: 203-808-8648
-					</p>
-				</div>
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-contract"></i>
-					</div>
-					<p>Correo: universidadTeconolica@unit.sv</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+				<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
+					Donec et sollicitudin est, in euismod. Morbi vel arcu gravida,
+					iaculis lacus vel, posuere ipsum. Sed faucibus mauris vitae urna
+					consectetur, sit amet maximus nisl sagittis. Ut in iaculis enim, et
+					pulvinar mauris. Etiam tristique magna eget velit consectetur, a
+					tincidunt velit dictum. Cras vulputate metus id felis ornare
+					hendrerit. Maecenas sodales suscipit ipsum.</p>
+			</div>
+			<div class="col-12 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+				<p>Vitae turpis lacinia, lacinia lacus non, fermentum nisi.
+					Donec et sollicitudin est, in euismod. Morbi vel arcu gravida,
+					iaculis lacus vel, posuere ipsum. Sed faucibus mauris vitae urna
+					consectetur, sit amet maximus nisl sagittis. Ut in iaculis enim, et
+					pulvinar mauris. Etiam tristique magna eget velit consectetur, a
+					tincidunt velit dictum. Cras vulputate metus id felis ornare
+					hendrerit. Maecenas sodales suscipit ipsum.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="about-slides owl-carousel mt-100 wow fadeInUp"
+					data-wow-delay="600ms">
+					<img
+						src="<%=request.getContextPath()%>/res/design/img/bg-img/bg-3.jpg"
+						alt=""> <img
+						src="<%=request.getContextPath()%>/res/design/img/bg-img/bg-2.jpg"
+						alt=""> <img
+						src="<%=request.getContextPath()%>/res/design/img/bg-img/bg-1.jpg"
+						alt="">
 				</div>
 			</div>
 		</div>
 	</div>
+	</section>
+	<!-- ##### About Us Area End ##### -->
 
-	<!-- ##### Contact Area End ##### -->
+	<!-- ##### Team Area Start ##### -->
+	<section class="teachers-area section-padding-0-100">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="section-heading text-center mx-auto wow fadeInUp"
+					data-wow-delay="300ms">
+					<span>The Best</span>
+					<h3>Meet the Teachers</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- Single Teachers -->
+			<div class="col-12 col-sm-6 col-lg-3">
+				<div class="single-teachers-area text-center mb-100 wow fadeInUp"
+					data-wow-delay="400ms">
+					<!-- Thumbnail -->
+					<div class="teachers-thumbnail">
+						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/tea1.jpg" alt="">
+					</div>
+					<!-- Meta Info -->
+					<div class="teachers-info mt-30">
+						<h5>Maria D. Smith</h5>
+						<span>Marketing Proffesor</span>
+					</div>
+				</div>
+			</div>
+			<!-- Single Teachers -->
+			<div class="col-12 col-sm-6 col-lg-3">
+				<div class="single-teachers-area text-center mb-100 wow fadeInUp"
+					data-wow-delay="500ms">
+					<!-- Thumbnail -->
+					<div class="teachers-thumbnail">
+						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/tea2.jpg" alt="">
+					</div>
+					<!-- Meta Info -->
+					<div class="teachers-info mt-30">
+						<h5>Simon Duval</h5>
+						<span>Digital Proffesor</span>
+					</div>
+				</div>
+			</div>
+			<!-- Single Teachers -->
+			<div class="col-12 col-sm-6 col-lg-3">
+				<div class="single-teachers-area text-center mb-100 wow fadeInUp"
+					data-wow-delay="600ms">
+					<!-- Thumbnail -->
+					<div class="teachers-thumbnail">
+						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/tea3.jpg" alt="">
+					</div>
+					<!-- Meta Info -->
+					<div class="teachers-info mt-30">
+						<h5>James Hogan</h5>
+						<span>HTML Proffesor</span>
+					</div>
+				</div>
+			</div>
+			<!-- Single Teachers -->
+			<div class="col-12 col-sm-6 col-lg-3">
+				<div class="single-teachers-area text-center mb-100 wow fadeInUp"
+					data-wow-delay="700ms">
+					<!-- Thumbnail -->
+					<div class="teachers-thumbnail">
+						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/tea4.jpg" alt="">
+					</div>
+					<!-- Meta Info -->
+					<div class="teachers-info mt-30">
+						<h5>Claudia Williams</h5>
+						<span>Marketing Proffesor</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				<div class="view-all text-center wow fadeInUp"
+					data-wow-delay="800ms">
+					<a href="#" class="btn academy-btn">All Teachers</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+	<!-- ##### Features Area Start ##### -->
 
 	<!-- ##### Footer Area Start ##### -->
 	<footer class="footer-area">

@@ -58,7 +58,8 @@ img {
 
 /* Spacing */
 .mt-15 {
-    margin-top: 15px !important; }
+    margin-top: 15px !important; 
+    }
 
 .mt-30 {
     margin-top: 30px !important; }
@@ -1096,6 +1097,62 @@ img {
     bottom: 650px;
     width: 30%;
     height: 650px;
+    overflow: auto;
+}
+.map-area #formulario span{
+	text-align: center;
+	background-color: #A4A4A4;
+	margin-bottom: 0px;
+	color: white;
+}
+.map-area #formulario h3{
+	padding-top : 0px;
+	margin-top:0px;
+	text-align: center;
+	font-size: 30px;
+	background-color: #A4A4A4;
+	margin-bottom: 40px;
+}
+.izq{
+	float: left;
+	margin-left: 6px;
+	height: 192px;
+	
+    position: relative;
+    transition: all 1s ease;
+    transform: perspective(600px);
+    transform-origin: 100% 50%;
+    transform-style: preserve-3d;
+	
+}
+
+ .izq:hover{
+    transform: perspective(600px) rotateY(-180deg) translateX(100%);
+}
+
+.izq .flip,
+.izq .flip2{	
+    position: absolute;
+    backface-visibility: hidden;
+	
+}
+.izq .flip2{
+	transform: rotateY(-180deg);
+	height: 192px;
+	width: 192px;
+}
+.der{
+	float: right;
+	margin-right: 6px;
+	height: 192px;
+}
+.single-contact-info{
+	float: left;
+	margin-left: 10px;
+}
+.map-area #formulario .section-heading p{
+	padding-bottom: 100px;
+	width: 192px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .map-area #mapa {
