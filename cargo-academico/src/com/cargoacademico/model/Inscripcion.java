@@ -24,6 +24,10 @@ import javax.persistence.TemporalType;
 @Table(name = "inscripcion", catalog = "cargo_academico")
 public class Inscripcion implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idInscripcion;
 	private Alumno alumno;
 	private MateriaCarreraCiclo materiaCarreraCiclo;

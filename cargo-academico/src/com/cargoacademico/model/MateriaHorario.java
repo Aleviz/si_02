@@ -23,6 +23,10 @@ import javax.persistence.UniqueConstraint;
 		"materia", "horario" }))
 public class MateriaHorario implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idMateriaHorario;
 	private Materias materias;
 	private String horario;
