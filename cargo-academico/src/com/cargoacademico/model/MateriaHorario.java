@@ -1,11 +1,13 @@
 package com.cargoacademico.model;
-// Generated 08-30-2019 02:25:21 PM by Hibernate Tools 5.2.10.Final
+// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,37 +23,33 @@ import javax.persistence.UniqueConstraint;
 		"materia", "horario" }))
 public class MateriaHorario implements java.io.Serializable {
 
-	private int idMateriaHorario;
+	private Integer idMateriaHorario;
 	private Materias materias;
 	private String horario;
-	private String estado;
 	private Set<EmpleadoMateria> empleadoMaterias = new HashSet<EmpleadoMateria>(0);
 
 	public MateriaHorario() {
 	}
 
-	public MateriaHorario(int idMateriaHorario, Materias materias) {
-		this.idMateriaHorario = idMateriaHorario;
+	public MateriaHorario(Materias materias) {
 		this.materias = materias;
 	}
 
-	public MateriaHorario(int idMateriaHorario, Materias materias, String horario, String estado,
-			Set<EmpleadoMateria> empleadoMaterias) {
-		this.idMateriaHorario = idMateriaHorario;
+	public MateriaHorario(Materias materias, String horario, Set<EmpleadoMateria> empleadoMaterias) {
 		this.materias = materias;
 		this.horario = horario;
-		this.estado = estado;
 		this.empleadoMaterias = empleadoMaterias;
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_materia_horario", unique = true, nullable = false)
-	public int getIdMateriaHorario() {
+	public Integer getIdMateriaHorario() {
 		return this.idMateriaHorario;
 	}
 
-	public void setIdMateriaHorario(int idMateriaHorario) {
+	public void setIdMateriaHorario(Integer idMateriaHorario) {
 		this.idMateriaHorario = idMateriaHorario;
 	}
 
@@ -72,15 +70,6 @@ public class MateriaHorario implements java.io.Serializable {
 
 	public void setHorario(String horario) {
 		this.horario = horario;
-	}
-
-	@Column(name = "estado", length = 11)
-	public String getEstado() {
-		return this.estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "materiaHorario")

@@ -1,11 +1,13 @@
 package com.cargoacademico.model;
-// Generated 08-30-2019 02:25:21 PM by Hibernate Tools 5.2.10.Final
+// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -17,33 +19,43 @@ import javax.persistence.Table;
 @Table(name = "tipo_actividad", catalog = "cargo_academico")
 public class TipoActividad implements java.io.Serializable {
 
-	private int idTipoActividad;
+	private Integer idTipoActividad;
+	private String descripcion;
 	private String actividad;
 	private Set<Actividades> actividadeses = new HashSet<Actividades>(0);
 
 	public TipoActividad() {
 	}
 
-	public TipoActividad(int idTipoActividad, String actividad) {
-		this.idTipoActividad = idTipoActividad;
+	public TipoActividad(String actividad) {
 		this.actividad = actividad;
 	}
 
-	public TipoActividad(int idTipoActividad, String actividad, Set<Actividades> actividadeses) {
-		this.idTipoActividad = idTipoActividad;
+	public TipoActividad(String descripcion, String actividad, Set<Actividades> actividadeses) {
+		this.descripcion = descripcion;
 		this.actividad = actividad;
 		this.actividadeses = actividadeses;
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_tipo_actividad", unique = true, nullable = false)
-	public int getIdTipoActividad() {
+	public Integer getIdTipoActividad() {
 		return this.idTipoActividad;
 	}
 
-	public void setIdTipoActividad(int idTipoActividad) {
+	public void setIdTipoActividad(Integer idTipoActividad) {
 		this.idTipoActividad = idTipoActividad;
+	}
+
+	@Column(name = "descripcion", length = 65535)
+	public String getDescripcion() {
+		return this.descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	@Column(name = "actividad", nullable = false, length = 45)

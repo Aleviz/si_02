@@ -1,11 +1,13 @@
 package com.cargoacademico.model;
-// Generated 08-30-2019 02:25:21 PM by Hibernate Tools 5.2.10.Final
+// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,44 +21,45 @@ import javax.persistence.Table;
 @Table(name = "unidad", catalog = "cargo_academico")
 public class Unidad implements java.io.Serializable {
 
-	private int idUnidad;
+	private Integer idUnidad;
 	private Temario temario;
 	private String nombreUnidad;
 	private String objetivo;
 	private int duracion;
+	private Integer ponderacion;
 	private Set<Actividades> actividadeses = new HashSet<Actividades>(0);
 	private Set<Tema> temas = new HashSet<Tema>(0);
 
 	public Unidad() {
 	}
 
-	public Unidad(int idUnidad, Temario temario, String nombreUnidad, String objetivo, int duracion) {
-		this.idUnidad = idUnidad;
+	public Unidad(Temario temario, String nombreUnidad, String objetivo, int duracion) {
 		this.temario = temario;
 		this.nombreUnidad = nombreUnidad;
 		this.objetivo = objetivo;
 		this.duracion = duracion;
 	}
 
-	public Unidad(int idUnidad, Temario temario, String nombreUnidad, String objetivo, int duracion,
+	public Unidad(Temario temario, String nombreUnidad, String objetivo, int duracion, Integer ponderacion,
 			Set<Actividades> actividadeses, Set<Tema> temas) {
-		this.idUnidad = idUnidad;
 		this.temario = temario;
 		this.nombreUnidad = nombreUnidad;
 		this.objetivo = objetivo;
 		this.duracion = duracion;
+		this.ponderacion = ponderacion;
 		this.actividadeses = actividadeses;
 		this.temas = temas;
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_unidad", unique = true, nullable = false)
-	public int getIdUnidad() {
+	public Integer getIdUnidad() {
 		return this.idUnidad;
 	}
 
-	public void setIdUnidad(int idUnidad) {
+	public void setIdUnidad(Integer idUnidad) {
 		this.idUnidad = idUnidad;
 	}
 
@@ -95,6 +98,15 @@ public class Unidad implements java.io.Serializable {
 
 	public void setDuracion(int duracion) {
 		this.duracion = duracion;
+	}
+
+	@Column(name = "ponderacion")
+	public Integer getPonderacion() {
+		return this.ponderacion;
+	}
+
+	public void setPonderacion(Integer ponderacion) {
+		this.ponderacion = ponderacion;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "unidad")
