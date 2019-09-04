@@ -1,11 +1,13 @@
 package com.cargoacademico.model;
-// Generated 08-30-2019 02:25:21 PM by Hibernate Tools 5.2.10.Final
+// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,7 +21,7 @@ import javax.persistence.Table;
 @Table(name = "carreras_ciclo", catalog = "cargo_academico")
 public class CarrerasCiclo implements java.io.Serializable {
 
-	private int idCarreraCiclo;
+	private Integer idCarreraCiclo;
 	private Ciclo ciclo;
 	private Escuela escuela;
 	private Set<MateriaCarreraCiclo> materiaCarreraCiclos = new HashSet<MateriaCarreraCiclo>(0);
@@ -27,28 +29,26 @@ public class CarrerasCiclo implements java.io.Serializable {
 	public CarrerasCiclo() {
 	}
 
-	public CarrerasCiclo(int idCarreraCiclo, Ciclo ciclo, Escuela escuela) {
-		this.idCarreraCiclo = idCarreraCiclo;
+	public CarrerasCiclo(Ciclo ciclo, Escuela escuela) {
 		this.ciclo = ciclo;
 		this.escuela = escuela;
 	}
 
-	public CarrerasCiclo(int idCarreraCiclo, Ciclo ciclo, Escuela escuela,
-			Set<MateriaCarreraCiclo> materiaCarreraCiclos) {
-		this.idCarreraCiclo = idCarreraCiclo;
+	public CarrerasCiclo(Ciclo ciclo, Escuela escuela, Set<MateriaCarreraCiclo> materiaCarreraCiclos) {
 		this.ciclo = ciclo;
 		this.escuela = escuela;
 		this.materiaCarreraCiclos = materiaCarreraCiclos;
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_carrera_ciclo", unique = true, nullable = false)
-	public int getIdCarreraCiclo() {
+	public Integer getIdCarreraCiclo() {
 		return this.idCarreraCiclo;
 	}
 
-	public void setIdCarreraCiclo(int idCarreraCiclo) {
+	public void setIdCarreraCiclo(Integer idCarreraCiclo) {
 		this.idCarreraCiclo = idCarreraCiclo;
 	}
 

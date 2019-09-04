@@ -1,14 +1,14 @@
 package com.cargoacademico.model;
-// Generated 08-30-2019 02:25:21 PM by Hibernate Tools 5.2.10.Final
+// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -19,49 +19,37 @@ import javax.persistence.Table;
 @Table(name = "temario", catalog = "cargo_academico")
 public class Temario implements java.io.Serializable {
 
-	private int idTemario;
-	private Materias materias;
+	private Integer idTemario;
 	private String nombreTemario;
 	private Set<Unidad> unidads = new HashSet<Unidad>(0);
+	private Set<Materias> materiases = new HashSet<Materias>(0);
 
 	public Temario() {
 	}
 
-	public Temario(int idTemario, Materias materias, String nombreTemario) {
-		this.idTemario = idTemario;
-		this.materias = materias;
+	public Temario(String nombreTemario) {
 		this.nombreTemario = nombreTemario;
 	}
 
-	public Temario(int idTemario, Materias materias, String nombreTemario, Set<Unidad> unidads) {
-		this.idTemario = idTemario;
-		this.materias = materias;
+	public Temario(String nombreTemario, Set<Unidad> unidads, Set<Materias> materiases) {
 		this.nombreTemario = nombreTemario;
 		this.unidads = unidads;
+		this.materiases = materiases;
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_temario", unique = true, nullable = false)
-	public int getIdTemario() {
+	public Integer getIdTemario() {
 		return this.idTemario;
 	}
 
-	public void setIdTemario(int idTemario) {
+	public void setIdTemario(Integer idTemario) {
 		this.idTemario = idTemario;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "materia", nullable = false)
-	public Materias getMaterias() {
-		return this.materias;
-	}
-
-	public void setMaterias(Materias materias) {
-		this.materias = materias;
-	}
-
-	@Column(name = "nombre_temario", nullable = false, length = 45)
+	@Column(name = "nombre_temario", nullable = false, length = 175)
 	public String getNombreTemario() {
 		return this.nombreTemario;
 	}
@@ -77,6 +65,15 @@ public class Temario implements java.io.Serializable {
 
 	public void setUnidads(Set<Unidad> unidads) {
 		this.unidads = unidads;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "temario")
+	public Set<Materias> getMateriases() {
+		return this.materiases;
+	}
+
+	public void setMateriases(Set<Materias> materiases) {
+		this.materiases = materiases;
 	}
 
 }
