@@ -353,7 +353,7 @@
 						<div class="form-group">
 							<label for="ciclo"><span
 								class="glyphicon glyphicon-eye-open"></span> Longitud</label> <input
-								type="text" class="form-control" id="ciclo" path="ciclo"
+								type="text" class="form-control" id="ciclo" 
 								placeholder="Longitud" />
 						</div>
 						</sf:form>
@@ -398,7 +398,8 @@
 						<div class="form-group">
 							<label for="ciclo"><span
 								class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
-								type="text" class="form-control" id="ciclo" path="ciclo"
+								type="text" class="form-control" id="ciclo"
+
 								placeholder="ciclo" />
 						</div>
 
@@ -452,7 +453,7 @@
 						<div class="form-group">
 							<label for="ciclo"><span
 								class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
-								type="text" class="form-control" id="ciclo" path="ciclo"
+								type="text" class="form-control" id="ciclo" 
 								placeholder="ciclo" />
 						</div>
 
