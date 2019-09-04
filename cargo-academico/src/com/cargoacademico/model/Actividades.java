@@ -1,9 +1,11 @@
 package com.cargoacademico.model;
-// Generated 08-30-2019 02:25:21 PM by Hibernate Tools 5.2.10.Final
+// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -16,19 +18,19 @@ import javax.persistence.Table;
 @Table(name = "actividades", catalog = "cargo_academico")
 public class Actividades implements java.io.Serializable {
 
-	private int idActividad;
+	private Integer idActividad;
 	private TipoActividad tipoActividad;
 	private Unidad unidad;
 	private String actividad;
 	private String descripcion;
 	private int ponderacion;
+	private String recursos;
 
 	public Actividades() {
 	}
 
-	public Actividades(int idActividad, TipoActividad tipoActividad, Unidad unidad, String actividad,
-			String descripcion, int ponderacion) {
-		this.idActividad = idActividad;
+	public Actividades(TipoActividad tipoActividad, Unidad unidad, String actividad, String descripcion,
+			int ponderacion) {
 		this.tipoActividad = tipoActividad;
 		this.unidad = unidad;
 		this.actividad = actividad;
@@ -36,14 +38,25 @@ public class Actividades implements java.io.Serializable {
 		this.ponderacion = ponderacion;
 	}
 
+	public Actividades(TipoActividad tipoActividad, Unidad unidad, String actividad, String descripcion,
+			int ponderacion, String recursos) {
+		this.tipoActividad = tipoActividad;
+		this.unidad = unidad;
+		this.actividad = actividad;
+		this.descripcion = descripcion;
+		this.ponderacion = ponderacion;
+		this.recursos = recursos;
+	}
+
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_actividad", unique = true, nullable = false)
-	public int getIdActividad() {
+	public Integer getIdActividad() {
 		return this.idActividad;
 	}
 
-	public void setIdActividad(int idActividad) {
+	public void setIdActividad(Integer idActividad) {
 		this.idActividad = idActividad;
 	}
 
@@ -92,6 +105,15 @@ public class Actividades implements java.io.Serializable {
 
 	public void setPonderacion(int ponderacion) {
 		this.ponderacion = ponderacion;
+	}
+
+	@Column(name = "recursos", length = 65535)
+	public String getRecursos() {
+		return this.recursos;
+	}
+
+	public void setRecursos(String recursos) {
+		this.recursos = recursos;
 	}
 
 }
