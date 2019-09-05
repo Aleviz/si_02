@@ -31,10 +31,7 @@ public class GeografiaImpl implements GeografiaDao {
 	
 	
 	// IMPL COORDENADAS
-	@Override
-	public void saveCoordenadas(Coordenadas coordenadas) {
-		getSession().save(coordenadas);		
-	}
+
 
 	
 	@Override
@@ -51,10 +48,6 @@ public class GeografiaImpl implements GeografiaDao {
 	}
 	
 
-	@Override
-	public void deleteCoordenadas(Coordenadas coordenadas) {
-		getSession().delete(coordenadas);
-	}
 	
 	
 	

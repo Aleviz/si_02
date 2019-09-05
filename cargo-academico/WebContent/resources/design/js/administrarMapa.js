@@ -1,14 +1,11 @@
+		var longitudBD = [];
+		var latitudBD=[];
+		var html=
 
-$(document).ready(function(){
-	$.getScript("mapa.js");
-	$('#editar').click(function(){
-		map.on('click',function(e){
-			
-			
-		})
-	})
-})
+			<c:forEach var="coordenadas" items="${coordenadasList}" varStatus="myStatus">
+				longitudBD[${myStatus.index}] = '${coordenadas.longitud}';
+				latitudBD[${myStatus.index}] = '${coordenadas.latitud}';
+				</c:forEach>
 
 
-
-
+			console.log("hola desde contacto.jsp"+longitudBD);

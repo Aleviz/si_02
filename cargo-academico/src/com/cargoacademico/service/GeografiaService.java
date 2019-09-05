@@ -19,9 +19,7 @@ public class GeografiaService {
 	
 	
 	// COORDENADAS
-	public void saveCoordenadas(Coordenadas coordenadas) {
-		geografiaDao.saveCoordenadas(coordenadas);
-	}
+
 
 	public List<Coordenadas> allCoordenadas() {
 		return geografiaDao.allCoordenadas();
@@ -31,10 +29,7 @@ public class GeografiaService {
 		return geografiaDao.findByIdC(id);
 	}
 
-	public void delete(int id) {
-		Coordenadas coordenadas = geografiaDao.findByIdC(id);
-		geografiaDao.deleteCoordenadas(coordenadas);
-	}
+
 
 	
 	
