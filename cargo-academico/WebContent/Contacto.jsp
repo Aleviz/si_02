@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spr" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -18,10 +18,15 @@
 	href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
 <script
 	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
+
+<script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <!-- Title -->
-<title>Universidad Innovacion Tecnologica</title>
+<title>Academy - Education Course Template</title>
 
 <!-- Favicon -->
 <link rel="icon"
@@ -158,55 +163,7 @@
 	<!-- ##### Google Maps ##### -->
 	<div class="map-area wow fadeInUp" data-wow-delay="300ms">
 		<div id="mapa">
-			<script>
-				//CAMPUS DE LA UNIVERSIDAD
-				var z = 13.7178;
-				var x = 89.2046;
-				var y = 16;
-
-				//esto es para registrar mas marcadores;
-				var lat;
-				var lon;
-
-				var facultad = 'Auditorio numero 4';
-				var campus = 'UES';
-
-				// ESTO SON PARA LOS MARCADORES
-				var market;
-				var popup;
-
-				//esto es para el copyright
-				var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors', osm = L
-						.tileLayer(osmUrl, {
-							maxZoom : 18,
-							attribution : osmAttrib
-						});
-
-				// 				para mostrar el mapa
-				var map = L.map('mapa').setView([ z, -x ], y).addLayer(osm);
-
-				//UNICAMENTE PARA REGISTRO DE UNA NUEVA DIRECCION
-				map.on('click', function(e) {
-					//aqui obtiene la direccion
-					lat = e.latlng.lat;
-					lon = e.latlng.lng;
-
-					// y aqui es para marcar el mapa
-					market = L.marker([ lat, lon ]).addTo(map);
-
-					// para agregarle texto y un popup
-					popup = market.bindPopup(facultad);
-					popup.openPopup();
-				});
-
-				// ponemos los marcadores traidos de la base de datos
-
-				market = L.market([ lat, lon ]).addTo(map);
-			</script>
-
-			<script>
-				$("#ocultar").css("display", "block");
-			</script>
+			<script src="<c:url value='/res/design/js/mapa.js'></c:url>"></script>
 		</div>
 		<div id="formulario">
 			<div class="contact-information wow fadeInUp" data-wow-delay="400ms">
@@ -214,20 +171,28 @@
 					<span>Unit</span>
 					<h3>Universidad Nacional De Innovacion Tecnológica</h3>
 					<p class="izq">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg" class="flip">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"  class="flip2">
+						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg" class="flip"> 
+							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" class="flip2">
 					</p>
 					<p class="der">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg" class="flip">
+							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" class="flip2">
 					</p>
 					<p class="izq">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg" class="flip">
+							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" class="flip2">
 					</p>
 					<p class="der">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg" class="flip">
+							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" class="flip2">
 					</p>
 					<p class="izq">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-5.jpg">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-5.jpg" class="flip">
+							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" class="flip2">
 					</p>
 					<p class="der"></p>
 				</div>
@@ -257,12 +222,275 @@
 						<i class="icon-contract"></i>
 					</div>
 					<p>Correo: universidadTeconolica@unit.sv</p>
-				</div>
+				</div>				
 			</div>
+			<button id="editar" class="editar" onclick="editar">EDITAR</button>
+		<button id="finalizar">Finalizar</button>
+
+
+		<!-- 			ESTO ES PARA ACCIONAR EL MODAL -->
+		<!-- 		  <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button> -->
+
+
+
+		<script>
+			$(document).ready(function() {
+			$.getScript("res/design/js/mapa.js");
+			$('#finalizar').hide();
+			$('#editar').click(function() {
+			var nombre = ["El mapa se modificara, ¿continuar?",
+						"estas seguro de agregar un marcador aca, ¿continuar?",
+						"Los datos se guardaran, ¿continuar?" ]
+			console.log('Expresion: ');
+			var opcion = confirm(nombre[0]);
+			$(this).hide();
+			$('#finalizar').show();
+
+			console.log(opcion+ "holaaaaaa");
+								
+			if (opcion == true) {
+
+				alert("aceptado");
+				map.on(	'click',function(e) {
+				var lat = e.latlng.lat;
+				var lon = e.latlng.lng;
+
+				var afirmar = confirm(nombre[1]);
+
+			if (afirmar == true) {
+				$('#myModal').modal("show");
+				$('#formCampus').hide();
+				$('#formFacultad').hide();							
+
+				
+				$('#campus').click(function(){
+					$('#formCampus').show();
+					$('#formFacultad').hide();
+					
+					$('#guardarC').click(function(){
+						market = L.marker([	lat,	lon ]).addTo(map);
+						
+					})
+				})
+				$('#facultad').click(function(){
+					$('#formFacultad').show();
+					$('#formCampus').hide();	
+					
+					$('#guardarF').click(function(){
+						market = L.marker([	lat,	lon ]).addTo(map);
+					})
+				})
+
+				$('#finalizar').click(function() {
+				var confirmar1 = confirm(nombre[2]);
+					if (confirmar1 == true) {
+																				
+						latitud.push(e.latlng.lat);
+						longitud.push(e.latlng.lng);
+																					
+						$(this).hide();
+						$('#editar').show();
+																							
+						console.log();							
+						} else {
+																				
+							console.log("cambios no guardados");
+
+						}
+					
+				})
+				
+			} else {
+																		
+				console.log("denegado");
+			
+			}
+			
+				})
+
+			} else {
+			
+				alert("cancelado");
+				
+			}
+
+
+			})
+			
+			})
+		</script>
 		</div>
 	</div>
 
 	<!-- ##### Contact Area End ##### -->
+
+
+	<!-- ESTO ES PARA QUE APAREZCA EL MODAL -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header" style="padding: 35px 50px;">
+
+					<h4>
+						<span class="glyphicon glyphicon-lock"></span> Login
+					</h4>
+				</div>
+				<div class="modal-body" style="padding: 40px 50px;">
+
+					<!-- Material unchecked -->
+					<div class="btn-group">
+						<button type="button" class="btn btn-primary" id="campus">Campus</button>
+						<br></br>
+						<button type="button" class="btn btn-primary"
+							style="margin-left: 3px" id="facultad">Facultad</button>
+					</div>
+
+					<div>
+						<br></br>
+						<sf:form
+							action="${pageContext.request.contextPath}/showMaterias/save"
+							method="post" commandName="mate" role="form">
+							<div class="form-group">
+								<label for="unidadValorativa"><span
+									class="glyphicon glyphicon-eye-open"></span> Latitud</label> <input
+									type="text" class="form-control" id="unidadValorativa"
+									path="unidadValorativa" placeholder="Latitud" />
+							</div>
+
+							<div class="form-group">
+								<label for="ciclo"><span
+									class="glyphicon glyphicon-eye-open"></span> Longitud</label> <input
+									type="text" class="form-control" id="ciclo"
+									placeholder="Longitud" />
+							</div>
+						</sf:form>
+					</div>
+
+					<div id="formCampus">
+						<sf:form
+							action="${pageContext.request.contextPath}/showMaterias/save"
+							method="post" commandName="mate" role="form">
+
+							<div class="form-group">
+								<label for="idMateria"><span
+									class="glyphicon glyphicon-user"></span> ID</label>
+								<sf:input type="text" class="form-control" id="idMateria"
+									placeholder="ID " path="idMateria" />
+							</div>
+
+							<div class="form-group">
+								<label for="materia"><span
+									class="glyphicon glyphicon-eye-open"></span> Nombre del Campus</label>
+								<input type="text" class="form-control" id="materia"
+									path="materia" placeholder="Nombre" />
+							</div>
+
+							<div class="form-group">
+								<label for="codigo"><span
+									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
+								<input type="text" class="form-control" id="codigo"
+									path="codigo" placeholder="Telefono" />
+							</div>
+
+
+							<div class="form-group">
+								<label for="departamento.idDepartamento"><span
+									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> <input
+									type="text" class="form-control"
+									id="departamento.idDepartamento"
+									path="departamento.idDepartamento" placeholder="Ubicacion" />
+							</div>
+
+
+							<div class="form-group">
+								<label for="ciclo"><span
+									class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
+									type="text" class="form-control" id="ciclo" placeholder="ciclo" />
+							</div>
+
+
+							<button type="submit" class="btn btn-success btn-block">
+								<span class="glyphicon glyphicon-off" id="guardarC"></span>
+								Guardar Cambios
+							</button>
+						</sf:form>
+
+
+					</div>
+
+
+
+					<div id="formFacultad">
+						<sf:form
+							action="${pageContext.request.contextPath}/showMaterias/save"
+							method="post" commandName="mate" role="form">
+
+							<div class="form-group">
+								<label for="idMateria"><span
+									class="glyphicon glyphicon-user"></span> ID</label>
+								<sf:input type="text" class="form-control" id="idMateria"
+									placeholder="ID " path="idMateria" />
+							</div>
+
+							<div class="form-group">
+								<label for="materia"><span
+									class="glyphicon glyphicon-eye-open"></span> Nombre de la
+									Facultad</label> <input type="text" class="form-control" id="materia"
+									path="materia" placeholder="Nombre" />
+							</div>
+
+							<div class="form-group">
+								<label for="codigo"><span
+									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
+								<input type="text" class="form-control" id="codigo"
+									path="codigo" placeholder="Telefono" />
+							</div>
+
+
+							<div class="form-group">
+								<label for="departamento.idDepartamento"><span
+									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> <input
+									type="text" class="form-control"
+									id="departamento.idDepartamento"
+									path="departamento.idDepartamento" placeholder="Ubicacion" />
+							</div>
+
+
+							<div class="form-group">
+								<label for="ciclo"><span
+									class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
+									type="text" class="form-control" id="ciclo" placeholder="ciclo" />
+							</div>
+
+
+							<button type="submit" class="btn btn-success btn-block">
+								<span class="glyphicon glyphicon-off" id="guardarF"></span>
+								Guardar Cambios
+							</button>
+						</sf:form>
+
+
+					</div>
+
+					<!-- 					aqui -->
+				</div>
+
+
+
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-danger btn-default pull-left"
+						data-dismiss="modal" id="cancell">
+						<span class="glyphicon glyphicon-remove"></span> Cancel
+					</button>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
 
 	<!-- ##### Footer Area Start ##### -->
 	<footer class="footer-area">
@@ -339,6 +567,8 @@
 								alt="Dem"></a>
 						</div>
 					</div>
+					<p><%=request.getContextPath()%>/img/gallery6.jpg
+					</p>
 				</div>
 				<!-- Footer Widget Area -->
 				<div class="col-12 col-sm-6 col-lg-3">

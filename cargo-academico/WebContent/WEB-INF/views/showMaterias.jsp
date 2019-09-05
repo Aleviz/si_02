@@ -164,11 +164,72 @@
 	<div class="map-area wow fadeInUp" data-wow-delay="300ms">
 		<div id="mapa">
 			<script src="<c:url value='/res/design/js/mapa.js'></c:url>"></script>
-
 		</div>
+		<div id="formulario">
+			<div class="contact-information wow fadeInUp" data-wow-delay="400ms">
+				<div class="section-heading text-left">
+					<span>Unit</span>
+					<h3>Universidad Nacional De Innovacion Tecnológica</h3>
+					<p class="izq">
+						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg" class="flip"> 
+							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" class="flip2">
+					</p>
+					<p class="der">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg" class="flip">
+							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" class="flip2">
+					</p>
+					<p class="izq">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg" class="flip">
+							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" class="flip2">
+					</p>
+					<p class="der">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg" class="flip">
+							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" class="flip2">
+					</p>
+					<p class="izq">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-5.jpg" class="flip">
+							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" class="flip2">
+					</p>
+					<p class="der"></p>
+				</div>
 
-		<button id="editar" class="editar" onclick="editar">EDITAR</button>
+				<!-- Single Contact Info -->
+				<div class="single-contact-info d-flex">
+					<div class="contact-icon mr-15">
+						<i class="icon-placeholder"></i>
+					</div>
+					<p>Ubicacion: Final 25 Avenida Norte, San Salvador</p>
+
+
+				</div>
+				<!-- Single Contact Info -->
+				<div class="single-contact-info d-flex">
+					<div class="contact-icon mr-15">
+						<i class="icon-telephone-1"></i>
+					</div>
+					<p>
+						Telefono: 2511 2000 <br> Fax: 203-808-8648
+					</p>
+				</div>
+				<!-- Single Contact Info -->
+				<div class="single-contact-info d-flex">
+					<div class="contact-icon mr-15">
+						<i class="icon-contract"></i>
+					</div>
+					<p>Correo: universidadTeconolica@unit.sv</p>
+				</div>
+
+					<div class="botonMapa">
+					<button id="editar" class="editar" onclick="editar">EDITAR</button>
 		<button id="finalizar">Finalizar</button>
+					</div>
+			
+			</div>
+			
 
 
 		<!-- 			ESTO ES PARA ACCIONAR EL MODAL -->
@@ -262,56 +323,6 @@
 			
 			})
 		</script>
-
-		<div id="formulario">
-			<div class="contact-information wow fadeInUp" data-wow-delay="400ms">
-				<div class="section-heading text-left">
-					<span>The Best</span>
-					<h3>Contact Us</h3>
-					<p class="mt-30">Lacinia, lacinia la cus non, fermen tum nisi.
-						Donec et sollicitudin. Morbi vel arcu gravida, iaculis lacus vel,
-						posuere ipsum. Sed faucibus mauris vitae urna consectetur, sit
-						amet maximus nisl sagittis. Ut in iaculis enim, et pulvinar
-				</div>
-
-				<!-- Contact Social Info -->
-				<div class="contact-social-info d-flex mb-30">
-					<a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-					<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a
-						href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> <a
-						href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a> <a
-						href="#"><i class="fa fa-behance" aria-hidden="true"></i></a> <a
-						href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-				</div>
-
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-placeholder"></i>
-					</div>
-					<p>
-						4127/ 5B-C Mislane Road,<br> Gibraltar, UK
-					</p>
-				</div>
-
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-telephone-1"></i>
-					</div>
-					<p>
-						Main: 203-808-8613 <br> Office: 203-808-8648
-					</p>
-				</div>
-
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-contract"></i>
-					</div>
-					<p>office@yourbusiness.com</p>
-				</div>
-			</div>
 		</div>
 	</div>
 
@@ -325,152 +336,153 @@
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header" style="padding: 35px 50px;">
-				
+
 					<h4>
 						<span class="glyphicon glyphicon-lock"></span> Login
 					</h4>
 				</div>
 				<div class="modal-body" style="padding: 40px 50px;">
-				
-				<!-- Material unchecked -->
-<div class="btn-group">
-  <button type="button" class="btn btn-primary" id="campus">Campus</button>
-  <br></br>
-  <button type="button" class="btn btn-primary" style="margin-left:3px" id="facultad">Facultad</button>
-</div>
-				
-				<div>
-				<br></br>
-				<sf:form
-						action="${pageContext.request.contextPath}/showMaterias/save"
-						method="post" commandName="mate" role="form">
-						<div class="form-group">
-							<label for="unidadValorativa"><span class="glyphicon glyphicon-eye-open"></span> Latitud</label>
-							 <input	type="text" class="form-control" id="unidadValorativa" path="unidadValorativa"
-								placeholder="Latitud" />
-						</div>
 
-						<div class="form-group">
-							<label for="ciclo"><span
-								class="glyphicon glyphicon-eye-open"></span> Longitud</label> <input
-								type="text" class="form-control" id="ciclo" 
-								placeholder="Longitud" />
-						</div>
+					<!-- Material unchecked -->
+					<div class="btn-group">
+						<button type="button" class="btn btn-primary" id="campus">Campus</button>
+						<br></br>
+						<button type="button" class="btn btn-primary"
+							style="margin-left: 3px" id="facultad">Facultad</button>
+					</div>
+
+					<div>
+						<br></br>
+						<sf:form
+							action="${pageContext.request.contextPath}/showMaterias/save"
+							method="post" commandName="mate" role="form">
+							<div class="form-group">
+								<label for="unidadValorativa"><span
+									class="glyphicon glyphicon-eye-open"></span> Latitud</label> <input
+									type="text" class="form-control" id="unidadValorativa"
+									path="unidadValorativa" placeholder="Latitud" />
+							</div>
+
+							<div class="form-group">
+								<label for="ciclo"><span
+									class="glyphicon glyphicon-eye-open"></span> Longitud</label> <input
+									type="text" class="form-control" id="ciclo"
+									placeholder="Longitud" />
+							</div>
 						</sf:form>
-				</div>
-				
-				<div id="formCampus">
-					<sf:form
-						action="${pageContext.request.contextPath}/showMaterias/save"
-						method="post" commandName="mate" role="form">
-
-						<div class="form-group">
-							<label for="idMateria"><span
-								class="glyphicon glyphicon-user"></span> ID</label>
-							<sf:input type="text" class="form-control" id="idMateria"
-								placeholder="ID " path="idMateria" />
-						</div>
-
-						<div class="form-group">
-							<label for="materia"><span
-								class="glyphicon glyphicon-eye-open"></span> Nombre del Campus</label> <input
-								type="text" class="form-control" id="materia" path="materia"
-								placeholder="Nombre" />
-						</div>
-
-						<div class="form-group">
-							<label for="codigo"><span
-								class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label> <input
-								type="text" class="form-control" id="codigo" path="codigo"
-								placeholder="Telefono" />
-						</div>
-
-
-						<div class="form-group">
-							<label for="departamento.idDepartamento"><span
-								class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> <input
-								type="text" class="form-control"
-								id="departamento.idDepartamento"
-								path="departamento.idDepartamento" placeholder="Ubicacion" />
-						</div>
-
-
-						<div class="form-group">
-							<label for="ciclo"><span
-								class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
-								type="text" class="form-control" id="ciclo"
-
-								placeholder="ciclo" />
-						</div>
-
-
-						<button type="submit" class="btn btn-success btn-block">
-							<span class="glyphicon glyphicon-off" id="guardarC"></span> Guardar Cambios
-						</button>
-					</sf:form>
-					
-					
 					</div>
-					
-					
-					
+
+					<div id="formCampus">
+						<sf:form
+							action="${pageContext.request.contextPath}/showMaterias/save"
+							method="post" commandName="mate" role="form">
+
+							<div class="form-group">
+								<label for="idMateria"><span
+									class="glyphicon glyphicon-user"></span> ID</label>
+								<sf:input type="text" class="form-control" id="idMateria"
+									placeholder="ID " path="idMateria" />
+							</div>
+
+							<div class="form-group">
+								<label for="materia"><span
+									class="glyphicon glyphicon-eye-open"></span> Nombre del Campus</label>
+								<input type="text" class="form-control" id="materia"
+									path="materia" placeholder="Nombre" />
+							</div>
+
+							<div class="form-group">
+								<label for="codigo"><span
+									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
+								<input type="text" class="form-control" id="codigo"
+									path="codigo" placeholder="Telefono" />
+							</div>
+
+
+							<div class="form-group">
+								<label for="departamento.idDepartamento"><span
+									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> <input
+									type="text" class="form-control"
+									id="departamento.idDepartamento"
+									path="departamento.idDepartamento" placeholder="Ubicacion" />
+							</div>
+
+
+							<div class="form-group">
+								<label for="ciclo"><span
+									class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
+									type="text" class="form-control" id="ciclo" placeholder="ciclo" />
+							</div>
+
+
+							<button type="submit" class="btn btn-success btn-block">
+								<span class="glyphicon glyphicon-off" id="guardarC"></span>
+								Guardar Cambios
+							</button>
+						</sf:form>
+
+
+					</div>
+
+
+
 					<div id="formFacultad">
-					<sf:form
-						action="${pageContext.request.contextPath}/showMaterias/save"
-						method="post" commandName="mate" role="form">
+						<sf:form
+							action="${pageContext.request.contextPath}/showMaterias/save"
+							method="post" commandName="mate" role="form">
 
-						<div class="form-group">
-							<label for="idMateria"><span
-								class="glyphicon glyphicon-user"></span> ID</label>
-							<sf:input type="text" class="form-control" id="idMateria"
-								placeholder="ID " path="idMateria" />
-						</div>
+							<div class="form-group">
+								<label for="idMateria"><span
+									class="glyphicon glyphicon-user"></span> ID</label>
+								<sf:input type="text" class="form-control" id="idMateria"
+									placeholder="ID " path="idMateria" />
+							</div>
 
-						<div class="form-group">
-							<label for="materia"><span
-								class="glyphicon glyphicon-eye-open"></span> Nombre de la Facultad</label> <input
-								type="text" class="form-control" id="materia" path="materia"
-								placeholder="Nombre" />
-						</div>
+							<div class="form-group">
+								<label for="materia"><span
+									class="glyphicon glyphicon-eye-open"></span> Nombre de la
+									Facultad</label> <input type="text" class="form-control" id="materia"
+									path="materia" placeholder="Nombre" />
+							</div>
 
-						<div class="form-group">
-							<label for="codigo"><span
-								class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label> <input
-								type="text" class="form-control" id="codigo" path="codigo"
-								placeholder="Telefono" />
-						</div>
-
-
-						<div class="form-group">
-							<label for="departamento.idDepartamento"><span
-								class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> <input
-								type="text" class="form-control"
-								id="departamento.idDepartamento"
-								path="departamento.idDepartamento" placeholder="Ubicacion" />
-						</div>
+							<div class="form-group">
+								<label for="codigo"><span
+									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
+								<input type="text" class="form-control" id="codigo"
+									path="codigo" placeholder="Telefono" />
+							</div>
 
 
-						<div class="form-group">
-							<label for="ciclo"><span
-								class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
-								type="text" class="form-control" id="ciclo" 
-								placeholder="ciclo" />
-						</div>
+							<div class="form-group">
+								<label for="departamento.idDepartamento"><span
+									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> <input
+									type="text" class="form-control"
+									id="departamento.idDepartamento"
+									path="departamento.idDepartamento" placeholder="Ubicacion" />
+							</div>
 
 
-						<button type="submit" class="btn btn-success btn-block">
-							<span class="glyphicon glyphicon-off" id="guardarF"></span> Guardar Cambios
-						</button>
-					</sf:form>
-					
-					
+							<div class="form-group">
+								<label for="ciclo"><span
+									class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
+									type="text" class="form-control" id="ciclo" placeholder="ciclo" />
+							</div>
+
+
+							<button type="submit" class="btn btn-success btn-block">
+								<span class="glyphicon glyphicon-off" id="guardarF"></span>
+								Guardar Cambios
+							</button>
+						</sf:form>
+
+
 					</div>
-					
-<!-- 					aqui -->
+
+					<!-- 					aqui -->
 				</div>
-				
-				
-				
+
+
+
 				<div class="modal-footer">
 					<button type="submit" class="btn btn-danger btn-default pull-left"
 						data-dismiss="modal" id="cancell">
