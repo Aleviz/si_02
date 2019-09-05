@@ -1,11 +1,13 @@
 package com.cargoacademico.model;
-// Generated 08-30-2019 02:25:21 PM by Hibernate Tools 5.2.10.Final
+// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,7 +21,8 @@ import javax.persistence.Table;
 @Table(name = "campus", catalog = "cargo_academico")
 public class Campus implements java.io.Serializable {
 
-	private int idCampus;
+	private Integer idCampus;
+	private Coordenadas coordenadas;
 	private Universidad universidad;
 	private String campus;
 	private int telefono;
@@ -29,15 +32,14 @@ public class Campus implements java.io.Serializable {
 	public Campus() {
 	}
 
-	public Campus(int idCampus, Universidad universidad, int telefono) {
-		this.idCampus = idCampus;
+	public Campus(Universidad universidad, int telefono) {
 		this.universidad = universidad;
 		this.telefono = telefono;
 	}
 
-	public Campus(int idCampus, Universidad universidad, String campus, int telefono, String ubicacion,
+	public Campus(Coordenadas coordenadas, Universidad universidad, String campus, int telefono, String ubicacion,
 			Set<Facultad> facultads) {
-		this.idCampus = idCampus;
+		this.coordenadas = coordenadas;
 		this.universidad = universidad;
 		this.campus = campus;
 		this.telefono = telefono;
@@ -46,14 +48,25 @@ public class Campus implements java.io.Serializable {
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_campus", unique = true, nullable = false)
-	public int getIdCampus() {
+	public Integer getIdCampus() {
 		return this.idCampus;
 	}
 
-	public void setIdCampus(int idCampus) {
+	public void setIdCampus(Integer idCampus) {
 		this.idCampus = idCampus;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "coordenadas")
+	public Coordenadas getCoordenadas() {
+		return this.coordenadas;
+	}
+
+	public void setCoordenadas(Coordenadas coordenadas) {
+		this.coordenadas = coordenadas;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
