@@ -5,8 +5,12 @@ var x = 89.2046;
 var y = 16;
 
 
+var longitudBD = [];
+var latitudBD=[];
 
 
+
+ 
 
 // COORDENADAS DE LOS MARCADORES A MOSTRAR
 var latitud = [ 13.720833473444646, 13.71773270964559, 13.719244011404781,
@@ -18,6 +22,8 @@ var longitud = [ -89.20078738470642, -89.20112006142561, -89.20469240889831,
 var facultad = [ "Facultad de Ingenieria y Arquitectura",
 		"Facultad de Quimica y Farmacia", "Facultad de Ciencias Naturales",
 		"Facultad de Economia", "Facultad de Jurisprudencia" ]
+
+
 
 
 //PARA INSERTAR LAS COORDENADAS DEL MAPA EN EL MAPA
@@ -37,21 +43,6 @@ for (var i = 0; i < 5; i++) {
 }
 
 
-
-	
-	$('#editar').click(function(){
-		
-		map.on('click',function(e){
-			return confirm("Se añadara un nuevo marcador, ¿Continuar?");
-			
-			market = L.marker([ e.latlng.lat, e.latlng.lng]).addTo(map);
-
-		
-		})
-		latitud.push(e.latlng.lat);
-		longitud.push(e.latlng.lng);
-		
-	})
 
 
 

@@ -542,21 +542,77 @@
 	</div>
 	<!-- ##### Partner Area End ##### -->
 
-	<!-- ##### CTA Area Start ##### -->
-	<div class="call-to-action-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div
-						class="cta-content d-flex align-items-center justify-content-between flex-wrap">
-						<h3>Do you want to enrole at our Academy? Get in touch!</h3>
-						<a href="#" class="btn academy-btn">See More</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- ##### CTA Area End ##### -->
+	<thead>
+							<tr>
+								<td>Opciones</td>
+								<td>Dato 1</td>
+								<td>Dato 2</td>
+								<td>Dato 3</td>
+								<td>Dato 4</td>
+								<td>Dato 5</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Opcion 1</td>
+								<td><input type="number" class="form-control requerido"></td>
+								<td><input type="text" class="form-control requerido"></td>
+								<td><input type="number" class="form-control requerido"></td>
+								<td><input type="number" class="form-control requerido"></td>
+								<td><input type="number" class="form-control requerido" ></td>
+							</tr>
+							<tr>
+								<td>Opcion 2</td>
+								<td><input type="number" class="form-control requerido"></td>
+								<td><input type="text" class="form-control requerido"></td>
+								<td><input type="number" class="form-control requerido"></td>
+								<td><input type="number" class="form-control requerido"></td>
+								<td><input type="number" class="form-control requerido"></td>
+							</tr>
+							<tr>
+								<td>Opcio 3</td>
+								<td><input type="number" class="form-control requerido"></td>
+								<td><input type="text" class="form-control requerido" ></td>
+								<td><input type="number" class="form-control requerido" ></td>
+								<td><input type="number" class="form-control requerido"></td>
+								<td><input type="number" class="form-control requerido"></td>
+							</tr>
+							<tr>
+								<td>Opcion 4</td>
+								<td><input type="number" class="form-control requerido" ></td>
+								<td><input type="text" class="form-control requerido" ></td>
+								<td><input type="number" class="form-control requerido"></td>
+								<td><input type="number" class="form-control requerido"></td>
+								<td><input type="number" class="form-control requerido"></td>
+							</tr>
+						</tbody>
+					</table>
+        <button id="btn-nuevo" type="button" class="btn btn-primary" style="margin-bottom:10px">
+                 <i class="glyphicon glyphicon-plus"></i>
+		
+		
+		<script>
+		$("#btn-nuevo").click(function(){
+            var parametros=[];
+            var parame=[];
+            $("table tbody tr").each(function(i,e){
+            
+                var tr = [];
+                $(this).find("td").each(function(index, element){
+                    if(index != 0) // ignoramos el primer indice que dice Option #
+                    {
+                    var td = {};
+                    td["dato"+index] = $(this).find("input").val();
+                    tr.push(td);
+                    }
+                });
+                parametros.push(tr);    
+            });
+            
+            console.log(parametros);
+        });
+		
+		</script>
 
 	<!-- ##### Footer Area Start ##### -->
 	<footer class="footer-area">
