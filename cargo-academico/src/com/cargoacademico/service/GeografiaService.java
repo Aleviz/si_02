@@ -20,6 +20,9 @@ public class GeografiaService {
 	
 	// COORDENADAS
 
+	public void saveCoordenadas(Coordenadas coordenadas) {
+		geografiaDao.saveCoordenadas(coordenadas);
+	}
 
 	public List<Coordenadas> allCoordenadas() {
 		return geografiaDao.allCoordenadas();
@@ -47,8 +50,8 @@ public class GeografiaService {
 	}
 
 	public void saveOrUpdateFacultad(Facultad facultad) {
-		int x = facultad.getIdFacultad();
-		if (x == 0) {
+		System.out.println("XXXXX   "+ facultad.getIdFacultad());
+		if ( facultad.getIdFacultad() == null) {
 			geografiaDao.saveFacultad(facultad);
 		} else {
 			geografiaDao.updateFacultad(facultad);
