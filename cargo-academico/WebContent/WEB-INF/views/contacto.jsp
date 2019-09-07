@@ -160,227 +160,47 @@
         <!-- ##### Breadcumb Area End ##### -->
 
 	<!-- ##### Google Maps ##### -->
-
+	
 	<div class="map-area wow fadeInUp" data-wow-delay="300ms">
 		<div id="mapa">
-
-
-
-
-			<script type="text/javascript"
-				src="<c:url value='/res/design/js/mapa.js'></c:url>"></script>
-
-		</div>
-		<div style="display: none;">
-
-			<script type="text/javascript">
-				$(document).ready(function() {
-
-					var list = '${coordenadasList}';
-					console.log(list);
-					$.each(list, function(index, value) {
-						alert(index + ": " + value);
-						console.log(index + ": " + value)
-					});
-
-				});
-			</script>
-
-			<c:forEach var="coordenadas" items="${coordenadasList}"
-				varStatus="myStatus">
-				<td id="longitud">${coordenadas.longitud}</td>
-				<td class="xd">${coordenadas.latitud}</td>
-			</c:forEach>
-
+		
+		
+		
+		
 
 
 		</div>
+		<div style= "display:none">
+		
+		<p id ="latitud">${jsonLatitud}</p>
+		<p id="longitud">${jsonLongitud}</p>		
+		<p id="facultad">${jsonNombre}</p>	
+				
+		</div>
+		
+		
 
-
-
-		<script type="text/javascript">
-			var mvar;
-			$("#longitud").each(function() {
-				console.log($(this).html());
-				mvar += $(this).html();
-			});
-			console.log("asdasdd" + mvar);
-		</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		
+		
+		
+		
+		
+			
 
 		<button id="editar" class="editar" onclick="editar">EDITAR</button>
 		<button id="finalizar">Finalizar</button>
-
+	<div id="qp2">
+						<input  id="2qp" value=""/>
+					</div>
+					
 
 		<!-- 			ESTO ES PARA ACCIONAR EL MODAL -->
 		<!-- 		  <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button> -->
 
 
-		<script type="text/javascript">
-			$(document)
-					.ready(
-							function() {
-								$.getScript("res/design/js/mapa.js");
-								$('#finalizar').hide();
-								$('#editar')
-										.click(
-												function() {
-													var nombre = [
-															"El mapa se modificara, ¿continuar?",
-															"estas seguro de agregar un marcador aca, ¿continuar?",
-															"Los datos se guardaran, ¿continuar?" ]
-													console.log('Expresion: ');
-													var opcion = confirm(nombre[0]);
-													$(this).hide();
-													$('#finalizar').show();
 
-													console.log(opcion
-															+ "holaaaaaa");
-
-													if (opcion == true) {
-
-														alert("aceptado");
-														map
-																.on(
-																		'click',
-																		function(
-																				e) {
-																			var lat = e.latlng.lat;
-																			var lon = e.latlng.lng;
-
-																			var afirmar = confirm(nombre[1]);
-
-																			if (afirmar == true) {
-																				$(
-																						'#myModal')
-																						.modal(
-																								"show");
-																				$(
-																						'#formCampus')
-																						.hide();
-																				$(
-																						'#formFacultad')
-																						.hide();
-
-																				$(
-																						'#campus')
-																						.click(
-																								function() {
-																									$(
-																											'#formCampus')
-																											.show();
-																									$(
-																											'#formFacultad')
-																											.hide();
-
-																									$(
-																											'#guardarC')
-																											.click(
-																													function() {
-																														market = L
-																																.marker(
-																																		[
-																																				lat,
-																																				lon ])
-																																.addTo(
-																																		map);
-
-																													})
-																								})
-																				$(
-																						'#facultad')
-																						.click(
-																								function() {
-																									$(
-																											'#formFacultad')
-																											.show();
-																									$(
-																											'#formCampus')
-																											.hide();
-
-																									$(
-																											'#guardarF')
-																											.click(
-																													function() {
-																														market = L
-																																.marker(
-																																		[
-																																				lat,
-																																				lon ])
-																																.addTo(
-																																		map);
-																													})
-																								})
-
-																				$(
-																						'#finalizar')
-																						.click(
-																								function() {
-																									var confirmar1 = confirm(nombre[2]);
-																									if (confirmar1 == true) {
-
-																										latitud
-																												.push(e.latlng.lat);
-																										longitud
-																												.push(e.latlng.lng);
-
-																										$(
-																												this)
-																												.hide();
-																										$(
-																												'#editar')
-																												.show();
-
-																										console
-																												.log();
-																									} else {
-
-																										console
-																												.log("cambios no guardados");
-
-																									}
-
-																								})
-
-																			} else {
-
-																				console
-																						.log("denegado");
-
-																			}
-
-																		})
-
-													} else {
-
-														alert("cancelado");
-
-													}
-
-												})
-
-							})
-		</script>
+		
+		
 
 		<div id="formulario">
 			<div class="contact-information wow fadeInUp" data-wow-delay="400ms">
@@ -443,162 +263,132 @@
 
 			<!-- Modal content-->
 			<div class="modal-content">
-				<div class="modal-header" style="padding: 35px 50px;">
-
+				<div class="modal-header" style="padding: 15px 20px;">
+				<center>
 					<h4>
-						<span class="glyphicon glyphicon-lock"></span> Login
-					</h4>
+						<span class="glyphicon glyphicon-lock"></span> REGISTRO 
+					</h4></center>
 				</div>
 				<div class="modal-body" style="padding: 40px 50px;">
+				
+	<center>			<!-- Material unchecked -->
+<div class="btn-group">
+  <button type="button" class="btn btn-primary" id="campus">Campus</button>
+  <br></br>
+  <button type="button" class="btn btn-primary" style="margin-left:3px" class="x" id="facultade">Facultad</button>
+</div>
+	</center>			
+				<div>
+				<br></br>
 
-					<!-- Material unchecked -->
-					<div class="btn-group">
-						<button type="button" class="btn btn-primary" id="campus">Campus</button>
-						<br></br>
-						<button type="button" class="btn btn-primary"
-							style="margin-left: 3px" id="facultad">Facultad</button>
-					</div>
-
-					<div>
-						<br></br>
-
-					</div>
-
-					<div id="formCampus">
-						<sf:form
-							action="${pageContext.request.contextPath}/contacto/campus/save"
-							method="post" commandName="campus" role="form">
-
-							<div class="form-group">
-								<label for="idCampus"><span
-									class="glyphicon glyphicon-user"></span> ID</label>
-								<sf:input type="text" class="form-control" id="idCampus"
-									placeholder="ID " path="idCampus" />
-							</div>
-
-							<div class="form-group">
-								<label for="campus"><span
-									class="glyphicon glyphicon-eye-open"></span> Nombre del Campus</label>
-								<sf:input type="text" class="form-control" id="campus"
-									path="campus" placeholder="Nombre" />
-							</div>
-
-							<div class="form-group">
-								<label for="telefono"><span
-									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
-								<sf:input type="text" class="form-control" id="telefono"
-									path="telefono" placeholder="Telefono" />
-							</div>
-
-
-
-
-							<div class="form-group">
-								<label for="ubicacion"><span
-									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label>
-								<sf:input type="text" class="form-control" id="ubicacion"
-									path="ubicacion" placeholder="Ubicacion" />
-							</div>
-
-							<div class="form-group">
-								<label for="coordenadas"><span
-									class="glyphicon glyphicon-eye-open"></span> Latitud</label>
-								<sf:input type="text" class="form-control" id="coordenadas"
-									path="coordenadas.latitud" placeholder="Latitud" />
-							</div>
-
-							<div class="form-group">
-								<label for="coordenadas"><span
-									class="glyphicon glyphicon-eye-open"></span> Longitud</label>
-								<sf:input type="text" class="form-control" id="coordenadas"
-									path="coordenadas.longitud" placeholder="Longitud" />
-							</div>
-
-
-
-							<button type="submit" class="btn btn-success btn-block">
-								<span class="glyphicon glyphicon-off" id="guardarC"></span>
-								Guardar Cambios
-							</button>
-						</sf:form>
-
-
-					</div>
-
-
-
-					<div id="formFacultad">
-						<sf:form
-							action="${pageContext.request.contextPath}/contacto/facultad/save"
-							method="post" commandName="facultad" role="form">
-
-							<div class="form-group">
-								<label for="idFacultad"><span
-									class="glyphicon glyphicon-user"></span> ID</label>
-								<sf:input type="text" class="form-control" id="idFacultad"
-									placeholder="ID " path="idFacultad" />
-							</div>
-
-							<div class="form-group">
-								<label for="facultad"><span
-									class="glyphicon glyphicon-eye-open"></span> Nombre de la
-									Facultad</label>
-								<sf:input type="text" class="form-control" id="facultad"
-									path="facultad" placeholder="Nombre" />
-							</div>
-
-							<div class="form-group">
-								<label for="telefono"><span
-									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
-								<sf:input type="text" class="form-control" id="telefono"
-									path="telefono" placeholder="Telefono" />
-							</div>
-
-
-							<div class="form-group">
-								<label for="ubicacion"><span
-									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label>
-								<sf:input type="text" class="form-control" id="ubicacion"
-									path="ubicacion" placeholder="Ubicacion" />
-							</div>
-
-
-							<div class="form-group">
-								<label for="campus"><span
-									class="glyphicon glyphicon-eye-open"></span> Campus</label>
-								<sf:input type="text" class="form-control" id="campus"
-									path="campus.idCampus" placeholder="campus" />
-							</div>
-
-							<div class="form-group">
-								<label for="coordenadas"><span
-									class="glyphicon glyphicon-eye-open"></span> Latitud</label>
-								<sf:input type="text" class="form-control" id="coordenadas"
-									path="coordenadas.latitud" placeholder="Latitud" />
-							</div>
-
-							<div class="form-group">
-								<label for="coordenadas"><span
-									class="glyphicon glyphicon-eye-open"></span> Longitud</label>
-								<sf:input type="text" class="form-control" id="coordenadas"
-									path="coordenadas.longitud" placeholder="Longitud" />
-							</div>
-
-
-							<button type="submit" class="btn btn-success btn-block">
-								<span class="glyphicon glyphicon-off" id="guardarF"></span>
-								Guardar Cambios
-							</button>
-						</sf:form>
-
-
-					</div>
-
-					<!-- 					aqui -->
 				</div>
+				
+				<div id="formCampus">
+					<sf:form action="${pageContext.request.contextPath}/contacto/campus/save" method="post" commandName="campus" role="form">
+					
+						<div class="form-group">
+							<label for="idCampus">
+							<span class="glyphicon glyphicon-user"></span> ID</label>
+							<sf:input type="text" class="form-control" id="idCampus" placeholder="ID " path="idCampus" />
+						</div>
+
+						<div class="form-group">
+							<label for="campuscampus"><span
+								class="glyphicon glyphicon-eye-open"></span> Nombre del Campus</label> 
+								<sf:input type="text" class="form-control" id="campuscampus" path="campus" placeholder="Nombre" />
+						</div>
+
+						<div class="form-group">
+							<label for="telefono"><span
+								class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
+							 <sf:input type="text" class="form-control" id="telefono" path="telefono" 	placeholder="Telefono" />
+						</div>
+
+						<div class="form-group">
+							<label for="ubicacion" ><span
+								class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> 
+								<sf:input type="text" class="form-control" id="ubicacion" path="ubicacion" placeholder="Ubicacion" />
+						</div>
+						
+						<div class="form-group">
+							<label for="latitudCampus"><span class="glyphicon glyphicon-eye-open"></span> Latitud</label>
+							 <sf:input	type="text" class="form-control" id="latitudCampus" path="coordenadas.latitud" placeholder="Latitud" />
+						</div>
+
+						<div class="form-group">
+							<label for="longitudCampus"><span
+								class="glyphicon glyphicon-eye-open"></span> Longitud</label> 
+								<sf:input type="text" class="form-control" id="longitudCampus" path="coordenadas.longitud" placeholder="Longitud" />
+						</div>
 
 
 
+						<button type="submit" class="btn btn-success btn-block">
+							<span class="glyphicon glyphicon-off" id="guardarC"></span> Guardar Cambios
+						</button>
+					</sf:form>		
+					</div>
+				
+					
+					<div id="formFacultad">
+					<sf:form action="${pageContext.request.contextPath}/contacto/facultad/save" method="post" commandName="facultad" role="form">
+	
+						<div class="form-group">
+							<label for="idFacultad"><span
+								class="glyphicon glyphicon-user"></span> ID</label>
+							<sf:input type="text" class="form-control" id="idFacultad" placeholder="ID " path="idFacultad" />
+						</div>
+
+						<div class="form-group">
+							<label for="facultadfacultad"><span
+								class="glyphicon glyphicon-eye-open"></span> Nombre de la Facultad</label> 
+								<sf:input type="text" class="form-control" id="facultadfacultad" path="facultad" placeholder="Nombre" />
+						</div>
+
+						<div class="form-group">
+							<label for="telefono"><span
+								class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label> 
+								<sf:input type="text" class="form-control" id="telefono" path="telefono" placeholder="Telefono" />
+						</div>
+
+
+						<div class="form-group">
+							<label for="ubicacion"><span
+								class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> 
+								<sf:input type="text" class="form-control" id="ubicacion"	path="ubicacion" placeholder="Ubicacion" />
+						</div>
+
+
+						<div class="form-group">
+							<label for="campusfacultad"><span
+								class="glyphicon glyphicon-eye-open"></span> Campus</label> 
+								<sf:input type="text" class="form-control" id="campusfacultad" path="campus.idCampus" placeholder="campus" />
+						</div>
+						<div class="form-group">
+							<label for="latitudFacultad"><span class="glyphicon glyphicon-eye-open"></span> Latitud</label>
+							 <sf:input	type="text" class="form-control" id="latitudFacultad" path="coordenadas.latitud"
+								placeholder="Latitud" />
+						</div>
+
+						<div class="form-group">
+							<label for="longitudFacultad"><span
+								class="glyphicon glyphicon-eye-open"></span> Longitud</label> <sf:input
+								type="text" class="form-control" id="longitudFacultad" path="coordenadas.longitud"
+								placeholder="Longitud" />
+						</div>
+
+
+						<button type="submit" class="btn btn-success btn-block">
+							<span class="glyphicon glyphicon-off" id="guardarF"></span> Guardar Cambios
+						</button>
+						</sf:form>	
+					</div>
+					
+<!-- 					aqui -->
+				</div>
+				
+				
+				
 				<div class="modal-footer">
 					<button type="submit" class="btn btn-danger btn-default pull-left"
 						data-dismiss="modal" id="cancell">
@@ -752,13 +542,10 @@
 	<!-- All Plugins js -->
 	<script src="<c:url value='/res/design/js/plugins/plugins.js'></c:url>"></script>
 
+
 	<!-- Active js -->
 	<script src="<c:url value='/res/design/js/active.js'></c:url>"></script>
-
-	<!-- Google Maps -->
-	<script
-		src="<c:url value='/res/design/https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s'></c:url>"></script>
-	<script
-		src="<c:url value='/res/design/js/google-map/map-active.js'></c:url>"></script>
+	<script type="text/javascript" src="<c:url value='/res/design/js/mapa.js'></c:url>"></script>
+		
 </body>
 </html>
