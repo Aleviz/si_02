@@ -9,6 +9,7 @@ public interface GeografiaDao {
 
 	
 	//DAO COORDENADAS
+	public void saveCoordenadas(Coordenadas coordenadas);
 	public List<Coordenadas> allCoordenadas();
 	public Coordenadas findByIdC(int id);
 
