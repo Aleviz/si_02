@@ -18,5 +18,6 @@
 	<a href='<c:url value="/showMaterias"/>'>Materias</a>
 	<a href='<c:url value="/NewFile"/>'>x</a>
 	<a href='<c:url value="/contacto"/>'>GEOGRAFICO</a>
+	<a href='<c:url value="/Home"/>'>HOME</a>
 </body>
 </html>

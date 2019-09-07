@@ -33,6 +33,7 @@ public class GeografiaController {
 		
 		List<Campus> campusList = geografiaService.allCampus();
 		Campus campus = new Campus();
+		Campus cam = geografiaService.findByIdCp(2);
 		
 		List<Coordenadas> coordenadasList = geografiaService.allCoordenadas();
 		
@@ -42,10 +43,35 @@ public class GeografiaController {
 		
 		model.addAttribute("campusList", campusList);
 		model.addAttribute("campus", campus);
-		
+		model.addAttribute("campusdir", cam);
 		return "contacto";
 	}
 	
+	
+	@RequestMapping("/Home")
+	public String showContactoHome(Model model,
+			@ModelAttribute("mensaje") String mensaje) {
+
+		ObjectMapper mapper = new ObjectMapper();
+		
+		List<Facultad> facultadList = geografiaService.allFacultad();
+		Facultad facultad = new Facultad();
+		
+		List<Campus> campusList = geografiaService.allCampus();
+		Campus campus = new Campus();
+		Campus cam = geografiaService.findByIdCp(2);
+		
+		List<Coordenadas> coordenadasList = geografiaService.allCoordenadas();
+		
+		model.addAttribute("coordenadasList", coordenadasList);
+		model.addAttribute("facultadList", facultadList);
+		model.addAttribute("facultad", facultad);
+		
+		model.addAttribute("campusList", campusList);
+		model.addAttribute("campus", campus);
+		model.addAttribute("campusdir", cam);
+		return "Home";
+	}
 	
 	
 	//****************************************FACULTAD***********************************

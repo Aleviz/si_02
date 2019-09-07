@@ -625,9 +625,9 @@
 								src="<%=request.getContextPath()%>/res/design/img/core-img/logo_1.png"
 								width="170"></a>
 						</div>
-						<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum
-							nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et
-							arcu pulvinar cursus a eget.</p>
+						<p>La Universidad nacional de Innovacion Tecnologica es la institución de
+							educación superior más grande y antigua de la República de El
+							Salvador.</p>
 						<div class="footer-social-info">
 							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
 								class="fa fa-twitter"></i></a> <a href="#"><i
@@ -687,8 +687,6 @@
 								alt="Dem"></a>
 						</div>
 					</div>
-					<p><%=request.getContextPath()%>/img/gallery6.jpg
-					</p>
 				</div>
 				<!-- Footer Widget Area -->
 				<div class="col-12 col-sm-6 col-lg-3">
@@ -698,17 +696,17 @@
 						</div>
 						<div class="single-contact d-flex mb-30">
 							<i class="icon-placeholder"></i>
-							<p>4127/ 5B-C Mislane Road, Gibraltar, UK</p>
+							<p> ${campusdir.ubicacion} </p>
 						</div>
 						<div class="single-contact d-flex mb-30">
 							<i class="icon-telephone-1"></i>
 							<p>
-								Main: 203-808-8613 <br>Office: 203-808-8648
+								Teléfono: ${campusdir.telefono} <br> Oficina: 203-808-8648
 							</p>
 						</div>
 						<div class="single-contact d-flex">
 							<i class="icon-contract"></i>
-							<p>office@yourbusiness.com</p>
+							<p>universidadTecnologica@unit.sv</p>
 						</div>
 					</div>
 				</div>
@@ -725,9 +723,8 @@
 						<script>
 							document.write(new Date().getFullYear());
 						</script>
-						All rights reserved | This template is made with <i
-							class="fa fa-heart-o" aria-hidden="true"></i> by <a
-							href="https://colorlib.com" target="_blank">Colorlib</a>
+						Derechos reservados | Colaboración con <a
+							href="https://www.usam.edu.sv" target="_blank">USAM</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
 				</div>
