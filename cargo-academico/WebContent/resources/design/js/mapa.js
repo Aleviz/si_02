@@ -77,17 +77,7 @@ var mensaje = ["El mapa se modificara, ¿continuar?",
 	"Los datos se guardaran, ¿continuar?" ];
 
 // PARA MODIFICAR EL MAPA
-$('#finalizar').click(function() {
-	var confirmar1 = confirm(mensaje[2]);
-		if (confirmar1 == true) {
-			confirmacion = false;
-																		
-			$(this).hide();
-			$('#editar').show();
-																				
-			console.log();	}						
-		
-	});
+
 $(document).ready(function() {
 	$.getScript("res/design/js/mapa.js");
 	
@@ -115,12 +105,12 @@ $(document).ready(function() {
 			console.log("afirmo la edicion")
 			
 			map.on(	'click',function(e) {
-				idm = e.target._leaflet_id;
-			 lat = e.latlng.lat;
+			idm = e.target._leaflet_id;
+			lat = e.latlng.lat;
 			lon = e.latlng.lng;
 	
 			 afirmar = confirm(mensaje[1]);
-				break;
+
 
 			if (afirmar == true) {
 				console.log(afirmar + " se afirmo que ahi quiere el marcador")
@@ -128,7 +118,6 @@ $(document).ready(function() {
 				$('#myModal').modal("show");
 				$('#formCampus').hide();
 				$('#formFacultad').hide();	
-				confirmacion = false;
 
 				$('#campus').click(function(){
 					$('#formCampus').show();
@@ -136,77 +125,53 @@ $(document).ready(function() {
 					$('#latitudCampus').val(lat);
 					$('#longitudCampus').val(lon);
 					
-					confirmacion = false;
-					
 					$('#guardarC').click(function(){
 						market = L.marker([	lat,	lon ]).addTo(map);
-						confirmacion = false;
 
-					})
-					confirmacion = false;
+					});
 				});
-				confirmacion = false;
-				$('#facultade').click(function(){
-					confirmacion = false;
 
+				$('#facultade').click(function(){
 					$('#formFacultad').show();
 					$('#formCampus').hide();	
 					$('#latitudFacultad').val(lat);
 					$('#longitudFacultad').val(lon);	
-					confirmacion = false;
 			
 					$('#guardarF').click(function(){
 						market = L.marker([	lat,	lon ]).addTo(map);	
-						confirmacion = false;
-					})
-					confirmacion = false;
+						});
 				});
-				confirmacion = false;
 			} else {
-				confirmacion = false;
 				console.log("denegado");
+				}
+			});
 			
-			}confirmacion = false;
-			
-			});confirmacion = false;
 
 		$('#finalizar').click(function() {
-			confirmacion = false;
 		var confirmar1 = confirm(mensaje[2]);
 			if (confirmar1 == true) {
-				confirmacion = false;
 																			
 				$(this).hide();
-				$('#editar').show();
-				confirmacion = false;											
-				console.log();			
-				confirmacion = false;
-				
-				
-				} else {confirmacion = false;
-																		
+				$('#editar').show();										
+				console.log();							
+				} else {
+					
 					console.log("cambios no guardados");
 
-				}confirmacion = false;
-				
+				}
 			
 		});
 
-	
-		confirmacion = false;
-		console.log(confirmacion);
-
-	} else if(confirmacion == false){confirmacion = false;
+	} else if(confirmacion == false){
 		$('#editar').show();
 		$('#finalizar').hide();
-		console.log("no acepto la edicion");confirmacion = false;
+		console.log("no acepto la edicion");
 		
 	}
 
-		confirmacion = false;
-	})
+	});
 	
-	})
+	});
 			
 			
 // AL HACER CLICK ESTE RECONOCE DE DONDE ES
