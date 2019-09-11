@@ -1,6 +1,8 @@
 package com.cargoacademico.controller;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,7 +34,7 @@ public class EscuelaController {
 		int x = escuela.getIdEscuela();
 		System.out.println(x);
 		
-		ecuDao.save(escuela);
+		ecuDao.saveEscuela(escuela);
 		ra.addFlashAttribute("mensaje","Se ha guardado los canbios");
 		
 				return "redirect:/showEscuela";
