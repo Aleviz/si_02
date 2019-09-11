@@ -48,7 +48,7 @@
 					<div
 						class="header-content h-100 d-flex align-items-center justify-content-between">
 						<div class="academy-logo">
-							<a href="index.html"><img
+							<a href="<c:url value="/Home"/>"><img
 								src="<c:url value='/res/design/img/core-img/image.png'></c:url>"
 								width="150px"></a>
 						</div>
@@ -86,7 +86,7 @@
 					<!-- Nav Start -->
 					<div class="classynav">
 						<ul>
-							<li><a href="Home.jsp">Home</a></li>
+							<li><a href="<c:url value="/Home"/>">Home</a></li>
 							<li><a href="#">Pages</a>
 								<ul class="dropdown">
 									<li><a href="Home.jsp">Home</a></li>
@@ -601,9 +601,9 @@
 								src="<%=request.getContextPath()%>/res/design/img/core-img/logo_1.png"
 								width="170"></a>
 						</div>
-						<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum
-							nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et
-							arcu pulvinar cursus a eget.</p>
+						<p>La Universidad nacional de Innovacion Tecnologica es la institución de
+							educación superior más grande y antigua de la República de El
+							Salvador.</p>
 						<div class="footer-social-info">
 							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
 								class="fa fa-twitter"></i></a> <a href="#"><i
@@ -672,12 +672,12 @@
 						</div>
 						<div class="single-contact d-flex mb-30">
 							<i class="icon-placeholder"></i>
-							<p> ${campusdir.telefono} </p>
+							<p> ${campusdir.ubicacion} </p>
 						</div>
 						<div class="single-contact d-flex mb-30">
 							<i class="icon-telephone-1"></i>
 							<p>
-								Main: 203-808-8613 <br>Office: 203-808-8648
+								Main: ${campusdir.telefono} <br>Office: 203-808-8648
 							</p>
 						</div>
 						<div class="single-contact d-flex">
@@ -699,9 +699,8 @@
 						<script>
 							document.write(new Date().getFullYear());
 						</script>
-						All rights reserved | This template is made with <i
-							class="fa fa-heart-o" aria-hidden="true"></i> by <a
-							href="https://colorlib.com" target="_blank">Colorlib</a>
+						Derechos reservados | Colaboración con <a
+							href="https://www.usam.edu.sv" target="_blank">USAM</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
 				</div>

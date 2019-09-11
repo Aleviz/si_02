@@ -61,60 +61,60 @@ for (var i = 0; i < lat.length; i++) {
 
 // PARA MODIFICAR EL MAPA
 
-$(document).ready(function() { //----------------------x1
-	$.getScript("res/design/js/mapa.js");
-	$('#finalizar').hide();
-	
-	var mensaje = ["El mapa se modificara, ¿continuar?",
-		"estas seguro de agregar un marcador aca, ¿continuar?",
-		"Los datos se guardaran, ¿continuar?" ]
-	
-	var confirmacion;
-	var lat;
-	var lon;
-	//ACTIVACION DEL BOTON EDITAR
-	$('#editar').click(function(){ // ----------------------x2
-		
-		confirmacion = confirm(mensaje[0]);
-		$(this).hide();
-		$('#finalizar').show();
-		 
-		//UN ALERT PARA VER SI EN REALIDAD QUIERE EDITAR O NO QUIERE  ------  x3
-		alert(confirmacion);
-		if(confirmacion == true){ // ----------------------------x4
-			map.on('click',function(e){ //-------------------------x5
-			lat = e.latlng.lat;
-			lon = e.latlng.lng;
-			
-			confirmacion = confirm(mensaje[1]);
-			
-			if(confirmacion == true){ // ---------------------------x6
-				$('#myModal').modal("show");
-				$('#formCampus').hide();
-				$('#formFacultad').hide();
-				
-				$('#campus').click(function(){ //--------------------------x7
-					$('#formCampus').show();
-					$('#formFacultad').hide();
-					$('#latitudCampus').val(lat);
-					$('#longitudCampus').val(lon);
-					
-					confirmacion = confirm(mensaje[2]);
-					
-					if(confirmacion)
-				}) //---------------------------x7
-				
-			} // ----------------------------x6
-				
-				}) // ------------------------------------------------x5
-			} //---------------------------------------------------x4
-			
-		})// -------------------- x3
-		
-		
-	}) // ----------------------x2
-	
-	
+//$(document).ready(function() { //----------------------x1
+//	$.getScript("res/design/js/mapa.js");
+//	$('#finalizar').hide();
+//	
+//	var mensaje = ["El mapa se modificara, ¿continuar?",
+//		"estas seguro de agregar un marcador aca, ¿continuar?",
+//		"Los datos se guardaran, ¿continuar?" ]
+//	
+//	var confirmacion;
+//	var lat;
+//	var lon;
+//	//ACTIVACION DEL BOTON EDITAR
+//	$('#editar').click(function(){ // ----------------------x2
+//		
+//		confirmacion = confirm(mensaje[0]);
+//		$(this).hide();
+//		$('#finalizar').show();
+//		 
+//		//UN ALERT PARA VER SI EN REALIDAD QUIERE EDITAR O NO QUIERE  ------  x3
+//		alert(confirmacion);
+//		if(confirmacion == true){ // ----------------------------x4
+//			map.on('click',function(e){ //-------------------------x5
+//			lat = e.latlng.lat;
+//			lon = e.latlng.lng;
+//			
+//			confirmacion = confirm(mensaje[1]);
+//			
+//			if(confirmacion == true){ // ---------------------------x6
+//				$('#myModal').modal("show");
+//				$('#formCampus').hide();
+//				$('#formFacultad').hide();
+//				
+//				$('#campus').click(function(){ //--------------------------x7
+//					$('#formCampus').show();
+//					$('#formFacultad').hide();
+//					$('#latitudCampus').val(lat);
+//					$('#longitudCampus').val(lon);
+//					
+//					confirmacion = confirm(mensaje[2]);
+//					
+//					if(confirmacion)
+//				}) //---------------------------x7
+//				
+//			} // ----------------------------x6
+//				
+//				}) // ------------------------------------------------x5
+//			} //---------------------------------------------------x4
+//			
+//		})// -------------------- x3
+//		
+//		
+//	}) // ----------------------x2
+//	
+//	
 	
 
 

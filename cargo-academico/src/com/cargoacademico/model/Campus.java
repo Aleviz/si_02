@@ -29,19 +29,19 @@ public class Campus implements java.io.Serializable {
 	private Coordenadas coordenadas;
 	private Universidad universidad;
 	private String campus;
-	private int telefono;
+	private String telefono;
 	private String ubicacion;
 	private Set<Facultad> facultads = new HashSet<Facultad>(0);
 
 	public Campus() {
 	}
 
-	public Campus(Universidad universidad, int telefono) {
+	public Campus(Universidad universidad, String telefono) {
 		this.universidad = universidad;
 		this.telefono = telefono;
 	}
 
-	public Campus(Coordenadas coordenadas, Universidad universidad, String campus, int telefono, String ubicacion,
+	public Campus(Coordenadas coordenadas, Universidad universidad, String campus, String telefono, String ubicacion,
 			Set<Facultad> facultads) {
 		this.coordenadas = coordenadas;
 		this.universidad = universidad;
@@ -93,11 +93,11 @@ public class Campus implements java.io.Serializable {
 	}
 
 	@Column(name = "telefono", nullable = false)
-	public int getTelefono() {
+	public String getTelefono() {
 		return this.telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
