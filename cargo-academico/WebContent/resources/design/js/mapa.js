@@ -115,12 +115,12 @@ $(document).ready(function() {
 			console.log("afirmo la edicion")
 			
 			map.on(	'click',function(e) {
-				idm = e.target._leaflet_id;
-			 lat = e.latlng.lat;
+			idm = e.target._leaflet_id;
+			lat = e.latlng.lat;
 			lon = e.latlng.lng;
 	
 			 afirmar = confirm(mensaje[1]);
-				break;
+
 
 			if (afirmar == true) {
 				console.log(afirmar + " se afirmo que ahi quiere el marcador")
@@ -128,7 +128,6 @@ $(document).ready(function() {
 				$('#myModal').modal("show");
 				$('#formCampus').hide();
 				$('#formFacultad').hide();	
-				confirmacion = false;
 
 				$('#campus').click(function(){
 					$('#formCampus').show();
@@ -136,39 +135,29 @@ $(document).ready(function() {
 					$('#latitudCampus').val(lat);
 					$('#longitudCampus').val(lon);
 					
-					confirmacion = false;
-					
 					$('#guardarC').click(function(){
 						market = L.marker([	lat,	lon ]).addTo(map);
 						confirmacion = false;
 
-					})
-					confirmacion = false;
+					});
 				});
-				confirmacion = false;
-				$('#facultade').click(function(){
-					confirmacion = false;
 
+				$('#facultade').click(function(){
 					$('#formFacultad').show();
 					$('#formCampus').hide();	
 					$('#latitudFacultad').val(lat);
 					$('#longitudFacultad').val(lon);	
-					confirmacion = false;
 			
 					$('#guardarF').click(function(){
 						market = L.marker([	lat,	lon ]).addTo(map);	
-						confirmacion = false;
-					})
-					confirmacion = false;
+						});
 				});
-				confirmacion = false;
 			} else {
 				confirmacion = false;
 				console.log("denegado");
+				}
+			});
 			
-			}confirmacion = false;
-			
-			});confirmacion = false;
 
 		$('#finalizar').click(function() {
 			confirmacion = false;
