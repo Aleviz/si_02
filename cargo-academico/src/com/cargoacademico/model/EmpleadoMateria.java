@@ -22,6 +22,10 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "empleado_materia", catalog = "cargo_academico", uniqueConstraints = @UniqueConstraint(columnNames = "id_materia"))
 public class EmpleadoMateria implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idEmpMate;
 	private Empleado empleado;
 	private MateriaHorario materiaHorario;

@@ -32,7 +32,10 @@ public class GeografiaImpl implements GeografiaDao {
 	
 	// IMPL COORDENADAS
 
-
+	@Override
+	public void saveCoordenadas(Coordenadas coordenada) {
+		getSession().save(coordenada);
+	}
 	
 	@Override
 	public List<Coordenadas> allCoordenadas() {	
