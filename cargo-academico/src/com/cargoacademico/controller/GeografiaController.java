@@ -107,7 +107,7 @@ public class GeografiaController {
 	public String guardarActualizarF(@ModelAttribute("facultad") Facultad facultad, Model model,
 			RedirectAttributes ra) {
 
-		Coordenadas coordenadas = new Coordenadas();
+		
 		
 		
 facultad.getCoordenadas().setAltitud("16");
