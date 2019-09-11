@@ -23,27 +23,28 @@ public class EscuelaImpl implements EscuelaDao {
 	public Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}
+	
+	//IMPL ESCUELAS
 
 	@Override
-	public void save(Escuela escue) {
+	public void saveEscuela(Escuela escue) {
 		getSession().save(escue);
 	}
+	
 	@Override
-	public Escuela findById(int id) {
-	
+	public Escuela findById(int id) {	
 	Criteria crit = getSession().createCriteria(Escuela.class);
-	crit.add(Restrictions.eq("idEscuela",id));
-	
+	crit.add(Restrictions.eq("idEscuela",id));	
 	return(Escuela) crit.uniqueResult();
 	}
 	
 	@Override
-	public void delete (Escuela escue) {
+	public void deleteEscuela(Escuela escue) {
 		getSession().delete(escue);
 	}
 	
 	@Override
-	public void update (Escuela escue) {
+	public void updateEscuela(Escuela escue) {
 		getSession().update(escue);
 	}
 	

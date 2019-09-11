@@ -7,11 +7,11 @@ public interface EscuelaDao {
 
 	public List<Escuela> encontrarTodo();
 	
-	public void save(Escuela escu);
+	public void saveEscuela(Escuela escu);
 	public Escuela findById(int id);
 	
-	public void update(Escuela escu);
-	public void delete(Escuela escu);
+	public void updateEscuela(Escuela escu);
+	public void deleteEscuela(Escuela escu);
 
 	
 	
