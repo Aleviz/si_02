@@ -34,7 +34,7 @@ public class GeografiaController {
 
 		List<Campus> campusList = geografiaService.allCampus();
 		Campus campus = new Campus();
-
+		Campus cam = geografiaService.findByIdCp(2);
 		List<Coordenadas> coordenadasList = new ArrayList<Coordenadas>();
 		coordenadasList = geografiaService.allCoordenadas();
 
@@ -95,10 +95,87 @@ public class GeografiaController {
 		model.addAttribute("facultad", facultad);
 		model.addAttribute("campusList", campusList);
 		model.addAttribute("campus", campus);
-
+		model.addAttribute("campusdir", cam);
+		System.out.println("-----------------------------------------"+cam.getTelefono());
 		return "contacto";
 	}
 
+	@RequestMapping("/Home")
+	public String showhome(Model model, @ModelAttribute("mensaje") String mensaje) {
+
+		ObjectMapper mapper = new ObjectMapper();
+
+		List<Facultad> facultadList = geografiaService.allFacultad();
+		Facultad facultad = new Facultad();
+
+		List<Campus> campusList = geografiaService.allCampus();
+		Campus campus = new Campus();
+		Campus cam = geografiaService.findByIdCp(2);
+		List<Coordenadas> coordenadasList = new ArrayList<Coordenadas>();
+		coordenadasList = geografiaService.allCoordenadas();
+
+		List<String> listLatitud = new ArrayList<String>();
+		List<String> listLongitud = new ArrayList<String>();
+		List<String> nombreFacultad = new ArrayList<String>();
+
+		String nombre = "";
+		for (int i = 0; i < facultadList.size(); i++) {
+
+			Coordenadas cor = facultadList.get(i).getCoordenadas();
+			listLatitud.add(cor.getLatitud());
+
+			Coordenadas cord = facultadList.get(i).getCoordenadas();
+			listLongitud.add(cord.getLongitud());
+
+			nombre = facultadList.get(i).getFacultad();
+			nombreFacultad.add(nombre);
+
+			System.out.println("-------------------------------------------");
+			System.out.println("latitud = " + cor.getLatitud());
+			System.out.println("longitud = " + cord.getLongitud());
+			System.out.println("nombre =  " + nombre);
+			System.out.println("-------------------------------------------");
+
+		}
+
+		String jsonLatitud = "";
+		try {
+			jsonLatitud = mapper.writeValueAsString(listLatitud);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		String jsonLongitud = "";
+		try {
+			jsonLongitud = mapper.writeValueAsString(listLongitud);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		String jsonNombre = "";
+		try {
+			jsonNombre = mapper.writeValueAsString(nombreFacultad);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		model.addAttribute("jsonLatitud", jsonLatitud);
+		model.addAttribute("jsonLongitud", jsonLongitud);
+		model.addAttribute("jsonNombre", jsonNombre);
+
+		System.out.println("LATITUD = " + jsonLatitud);
+		System.out.println("LONGITUD =" + jsonLongitud);
+		System.out.println("NOMBRE = " + jsonNombre);
+
+		model.addAttribute("coordenadasList", coordenadasList);
+		model.addAttribute("facultadList", facultadList);
+		model.addAttribute("facultad", facultad);
+		model.addAttribute("campusList", campusList);
+		model.addAttribute("campus", campus);
+		model.addAttribute("campusdir", cam);
+		System.out.println("-----------------------------------------"+cam.getTelefono());
+		return "Home";
+	}
+	
 	// ****************************************FACULTAD***********************************
 
 	// GUARDAR FACULTAD
@@ -107,7 +184,7 @@ public class GeografiaController {
 	public String guardarActualizarF(@ModelAttribute("facultad") Facultad facultad, Model model,
 			RedirectAttributes ra) {
 
-		Coordenadas coordenadas = new Coordenadas();
+		
 		
 		
 facultad.getCoordenadas().setAltitud("16");
