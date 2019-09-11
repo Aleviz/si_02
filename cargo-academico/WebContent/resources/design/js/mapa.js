@@ -80,8 +80,6 @@ var mensaje = ["El mapa se modificara, ¿continuar?",
 
 $(document).ready(function() {
 	$.getScript("res/design/js/mapa.js");
-	
-
 
 	var afirmar;
 	var lat;

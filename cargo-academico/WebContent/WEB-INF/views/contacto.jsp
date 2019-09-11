@@ -162,14 +162,7 @@
 	<!-- ##### Google Maps ##### -->
 	
 	<div class="map-area wow fadeInUp" data-wow-delay="300ms">
-		<div id="mapa">
-		
-		
-		
-		
-
-
-		</div>
+		<div id="mapa"></div>
 		<div style= "display:none">
 		
 		<p id ="latitud">${jsonLatitud}</p>
