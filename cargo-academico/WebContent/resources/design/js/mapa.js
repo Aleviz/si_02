@@ -77,17 +77,7 @@ var mensaje = ["El mapa se modificara, ¿continuar?",
 	"Los datos se guardaran, ¿continuar?" ];
 
 // PARA MODIFICAR EL MAPA
-$('#finalizar').click(function() {
-	var confirmar1 = confirm(mensaje[2]);
-		if (confirmar1 == true) {
-			confirmacion = false;
-																		
-			$(this).hide();
-			$('#editar').show();
-																				
-			console.log();	}						
-		
-	});
+
 $(document).ready(function() {
 	$.getScript("res/design/js/mapa.js");
 	
@@ -137,7 +127,6 @@ $(document).ready(function() {
 					
 					$('#guardarC').click(function(){
 						market = L.marker([	lat,	lon ]).addTo(map);
-						confirmacion = false;
 
 					});
 				});
@@ -153,49 +142,36 @@ $(document).ready(function() {
 						});
 				});
 			} else {
-				confirmacion = false;
 				console.log("denegado");
 				}
 			});
 			
 
 		$('#finalizar').click(function() {
-			confirmacion = false;
 		var confirmar1 = confirm(mensaje[2]);
 			if (confirmar1 == true) {
-				confirmacion = false;
 																			
 				$(this).hide();
-				$('#editar').show();
-				confirmacion = false;											
-				console.log();			
-				confirmacion = false;
-				
-				
-				} else {confirmacion = false;
-																		
+				$('#editar').show();										
+				console.log();							
+				} else {
+					
 					console.log("cambios no guardados");
 
-				}confirmacion = false;
-				
+				}
 			
 		});
 
-	
-		confirmacion = false;
-		console.log(confirmacion);
-
-	} else if(confirmacion == false){confirmacion = false;
+	} else if(confirmacion == false){
 		$('#editar').show();
 		$('#finalizar').hide();
-		console.log("no acepto la edicion");confirmacion = false;
+		console.log("no acepto la edicion");
 		
 	}
 
-		confirmacion = false;
-	})
+	});
 	
-	})
+	});
 			
 			
 // AL HACER CLICK ESTE RECONOCE DE DONDE ES
