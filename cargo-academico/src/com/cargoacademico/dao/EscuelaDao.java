@@ -12,6 +12,5 @@ public interface EscuelaDao {
 	
 	public void update(Escuela escu);
 	public void delete(Escuela escu);
-	
-	
+
 }
