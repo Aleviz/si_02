@@ -1,11 +1,13 @@
 package com.cargoacademico.model;
-// Generated 08-30-2019 02:25:21 PM by Hibernate Tools 5.2.10.Final
+// Generated 09-11-2019 08:19:20 AM by Hibernate Tools 5.1.10.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -20,56 +22,54 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "materias", catalog = "cargo_academico", uniqueConstraints = @UniqueConstraint(columnNames = "codigo"))
 public class Materias implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private int idMateria;
+	private Integer idMateria;
 	private Departamento departamento;
-	private Materias materias;
+	private Materias materiasByCorequisito;
+	private Materias materiasByPrerequisito;
+	private Temario temario;
 	private String materia;
 	private String codigo;
-	private String ciclo;
 	private int unidadValorativa;
 	private Set<MateriaHorario> materiaHorarios = new HashSet<MateriaHorario>(0);
-	private Set<Materias> materiases = new HashSet<Materias>(0);
-	private Set<Temario> temarios = new HashSet<Temario>(0);
+	private Set<Materias> materiasesForCorequisito = new HashSet<Materias>(0);
+	private Set<Materias> materiasesForPrerequisito = new HashSet<Materias>(0);
 	private Set<MateriaCarreraCiclo> materiaCarreraCiclos = new HashSet<MateriaCarreraCiclo>(0);
 
 	public Materias() {
 	}
 
-	public Materias(int idMateria, Departamento departamento, String ciclo, int unidadValorativa) {
-		this.idMateria = idMateria;
+	public Materias(Departamento departamento, Temario temario, int unidadValorativa) {
 		this.departamento = departamento;
-		this.ciclo = ciclo;
+		this.temario = temario;
 		this.unidadValorativa = unidadValorativa;
 	}
 
-	public Materias(int idMateria, Departamento departamento, Materias materias, String materia, String codigo,
-			String ciclo, int unidadValorativa, Set<MateriaHorario> materiaHorarios, Set<Materias> materiases,
-			Set<Temario> temarios, Set<MateriaCarreraCiclo> materiaCarreraCiclos) {
-		this.idMateria = idMateria;
+	public Materias(Departamento departamento, Materias materiasByCorequisito, Materias materiasByPrerequisito,
+			Temario temario, String materia, String codigo, int unidadValorativa, Set<MateriaHorario> materiaHorarios,
+			Set<Materias> materiasesForCorequisito, Set<Materias> materiasesForPrerequisito,
+			Set<MateriaCarreraCiclo> materiaCarreraCiclos) {
 		this.departamento = departamento;
-		this.materias = materias;
+		this.materiasByCorequisito = materiasByCorequisito;
+		this.materiasByPrerequisito = materiasByPrerequisito;
+		this.temario = temario;
 		this.materia = materia;
 		this.codigo = codigo;
-		this.ciclo = ciclo;
 		this.unidadValorativa = unidadValorativa;
 		this.materiaHorarios = materiaHorarios;
-		this.materiases = materiases;
-		this.temarios = temarios;
+		this.materiasesForCorequisito = materiasesForCorequisito;
+		this.materiasesForPrerequisito = materiasesForPrerequisito;
 		this.materiaCarreraCiclos = materiaCarreraCiclos;
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_materia", unique = true, nullable = false)
-	public int getIdMateria() {
+	public Integer getIdMateria() {
 		return this.idMateria;
 	}
 
-	public void setIdMateria(int idMateria) {
+	public void setIdMateria(Integer idMateria) {
 		this.idMateria = idMateria;
 	}
 
@@ -84,16 +84,36 @@ public class Materias implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "corequisito")
+	public Materias getMateriasByCorequisito() {
+		return this.materiasByCorequisito;
+	}
+
+	public void setMateriasByCorequisito(Materias materiasByCorequisito) {
+		this.materiasByCorequisito = materiasByCorequisito;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "prerequisito")
-	public Materias getMaterias() {
-		return this.materias;
+	public Materias getMateriasByPrerequisito() {
+		return this.materiasByPrerequisito;
 	}
 
-	public void setMaterias(Materias materias) {
-		this.materias = materias;
+	public void setMateriasByPrerequisito(Materias materiasByPrerequisito) {
+		this.materiasByPrerequisito = materiasByPrerequisito;
 	}
 
-	@Column(name = "materia", length = 25)
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "temario", nullable = false)
+	public Temario getTemario() {
+		return this.temario;
+	}
+
+	public void setTemario(Temario temario) {
+		this.temario = temario;
+	}
+
+	@Column(name = "materia", length = 175)
 	public String getMateria() {
 		return this.materia;
 	}
@@ -109,15 +129,6 @@ public class Materias implements java.io.Serializable {
 
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
-	}
-
-	@Column(name = "ciclo", nullable = false, length = 25)
-	public String getCiclo() {
-		return this.ciclo;
-	}
-
-	public void setCiclo(String ciclo) {
-		this.ciclo = ciclo;
 	}
 
 	@Column(name = "unidad_valorativa", nullable = false)
@@ -138,22 +149,22 @@ public class Materias implements java.io.Serializable {
 		this.materiaHorarios = materiaHorarios;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "materias")
-	public Set<Materias> getMateriases() {
-		return this.materiases;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "materiasByCorequisito")
+	public Set<Materias> getMateriasesForCorequisito() {
+		return this.materiasesForCorequisito;
 	}
 
-	public void setMateriases(Set<Materias> materiases) {
-		this.materiases = materiases;
+	public void setMateriasesForCorequisito(Set<Materias> materiasesForCorequisito) {
+		this.materiasesForCorequisito = materiasesForCorequisito;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "materias")
-	public Set<Temario> getTemarios() {
-		return this.temarios;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "materiasByPrerequisito")
+	public Set<Materias> getMateriasesForPrerequisito() {
+		return this.materiasesForPrerequisito;
 	}
 
-	public void setTemarios(Set<Temario> temarios) {
-		this.temarios = temarios;
+	public void setMateriasesForPrerequisito(Set<Materias> materiasesForPrerequisito) {
+		this.materiasesForPrerequisito = materiasesForPrerequisito;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "materias")

@@ -1,11 +1,13 @@
 package com.cargoacademico.model;
-// Generated 08-30-2019 02:25:21 PM by Hibernate Tools 5.2.10.Final
+// Generated 09-11-2019 08:19:20 AM by Hibernate Tools 5.1.10.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,8 +21,10 @@ import javax.persistence.Table;
 @Table(name = "facultad", catalog = "cargo_academico")
 public class Facultad implements java.io.Serializable {
 
-	private int idFacultad;
+	private Integer idFacultad;
 	private Campus campus;
+	private Coordenadas coordenadas;
+	private Empleado empleado;
 	private String facultad;
 	private String telefono;
 	private String ubicacion;
@@ -30,15 +34,17 @@ public class Facultad implements java.io.Serializable {
 	public Facultad() {
 	}
 
-	public Facultad(int idFacultad, Campus campus) {
-		this.idFacultad = idFacultad;
+	public Facultad(Campus campus, Coordenadas coordenadas, Empleado empleado) {
 		this.campus = campus;
+		this.coordenadas = coordenadas;
+		this.empleado = empleado;
 	}
 
-	public Facultad(int idFacultad, Campus campus, String facultad, String telefono, String ubicacion,
-			Set<Edificio> edificios, Set<Escuela> escuelas) {
-		this.idFacultad = idFacultad;
+	public Facultad(Campus campus, Coordenadas coordenadas, Empleado empleado, String facultad, String telefono,
+			String ubicacion, Set<Edificio> edificios, Set<Escuela> escuelas) {
 		this.campus = campus;
+		this.coordenadas = coordenadas;
+		this.empleado = empleado;
 		this.facultad = facultad;
 		this.telefono = telefono;
 		this.ubicacion = ubicacion;
@@ -47,13 +53,14 @@ public class Facultad implements java.io.Serializable {
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_facultad", unique = true, nullable = false)
-	public int getIdFacultad() {
+	public Integer getIdFacultad() {
 		return this.idFacultad;
 	}
 
-	public void setIdFacultad(int idFacultad) {
+	public void setIdFacultad(Integer idFacultad) {
 		this.idFacultad = idFacultad;
 	}
 
@@ -67,7 +74,27 @@ public class Facultad implements java.io.Serializable {
 		this.campus = campus;
 	}
 
-	@Column(name = "facultad", length = 30)
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_coordenada", nullable = false)
+	public Coordenadas getCoordenadas() {
+		return this.coordenadas;
+	}
+
+	public void setCoordenadas(Coordenadas coordenadas) {
+		this.coordenadas = coordenadas;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "decano", nullable = false)
+	public Empleado getEmpleado() {
+		return this.empleado;
+	}
+
+	public void setEmpleado(Empleado empleado) {
+		this.empleado = empleado;
+	}
+
+	@Column(name = "facultad")
 	public String getFacultad() {
 		return this.facultad;
 	}
@@ -85,7 +112,7 @@ public class Facultad implements java.io.Serializable {
 		this.telefono = telefono;
 	}
 
-	@Column(name = "ubicacion", length = 60)
+	@Column(name = "ubicacion")
 	public String getUbicacion() {
 		return this.ubicacion;
 	}

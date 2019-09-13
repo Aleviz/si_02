@@ -1,11 +1,13 @@
 package com.cargoacademico.model;
-// Generated 08-30-2019 02:25:21 PM by Hibernate Tools 5.2.10.Final
+// Generated 09-11-2019 08:19:20 AM by Hibernate Tools 5.1.10.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -17,31 +19,27 @@ import javax.persistence.Table;
 @Table(name = "roles", catalog = "cargo_academico")
 public class Roles implements java.io.Serializable {
 
-	private int idRol;
+	private Integer idRol;
 	private String nombre;
 	private Set<Usuarios> usuarioses = new HashSet<Usuarios>(0);
 
 	public Roles() {
 	}
 
-	public Roles(int idRol) {
-		this.idRol = idRol;
-	}
-
-	public Roles(int idRol, String nombre, Set<Usuarios> usuarioses) {
-		this.idRol = idRol;
+	public Roles(String nombre, Set<Usuarios> usuarioses) {
 		this.nombre = nombre;
 		this.usuarioses = usuarioses;
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_rol", unique = true, nullable = false)
-	public int getIdRol() {
+	public Integer getIdRol() {
 		return this.idRol;
 	}
 
-	public void setIdRol(int idRol) {
+	public void setIdRol(Integer idRol) {
 		this.idRol = idRol;
 	}
 

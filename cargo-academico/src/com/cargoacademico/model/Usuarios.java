@@ -1,11 +1,13 @@
 package com.cargoacademico.model;
-// Generated 08-30-2019 02:25:21 PM by Hibernate Tools 5.2.10.Final
+// Generated 09-11-2019 08:19:20 AM by Hibernate Tools 5.1.10.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,7 +21,7 @@ import javax.persistence.Table;
 @Table(name = "usuarios", catalog = "cargo_academico")
 public class Usuarios implements java.io.Serializable {
 
-	private int idUsuario;
+	private Integer idUsuario;
 	private Roles roles;
 	private String username;
 	private String pass;
@@ -28,13 +30,11 @@ public class Usuarios implements java.io.Serializable {
 	public Usuarios() {
 	}
 
-	public Usuarios(int idUsuario, Roles roles) {
-		this.idUsuario = idUsuario;
+	public Usuarios(Roles roles) {
 		this.roles = roles;
 	}
 
-	public Usuarios(int idUsuario, Roles roles, String username, String pass, Set<Empleado> empleados) {
-		this.idUsuario = idUsuario;
+	public Usuarios(Roles roles, String username, String pass, Set<Empleado> empleados) {
 		this.roles = roles;
 		this.username = username;
 		this.pass = pass;
@@ -42,13 +42,14 @@ public class Usuarios implements java.io.Serializable {
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_usuario", unique = true, nullable = false)
-	public int getIdUsuario() {
+	public Integer getIdUsuario() {
 		return this.idUsuario;
 	}
 
-	public void setIdUsuario(int idUsuario) {
+	public void setIdUsuario(Integer idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 
@@ -71,7 +72,7 @@ public class Usuarios implements java.io.Serializable {
 		this.username = username;
 	}
 
-	@Column(name = "pass", length = 25)
+	@Column(name = "pass", length = 50)
 	public String getPass() {
 		return this.pass;
 	}

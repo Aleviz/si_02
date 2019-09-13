@@ -1,9 +1,11 @@
 package com.cargoacademico.model;
-// Generated 08-30-2019 02:25:21 PM by Hibernate Tools 5.2.10.Final
+// Generated 09-11-2019 08:19:20 AM by Hibernate Tools 5.1.10.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -16,27 +18,34 @@ import javax.persistence.Table;
 @Table(name = "tema", catalog = "cargo_academico")
 public class Tema implements java.io.Serializable {
 
-	private int idTema;
+	private Integer idTema;
 	private Unidad unidad;
 	private String tema;
+	private String tiempoTema;
 
 	public Tema() {
 	}
 
-	public Tema(int idTema, Unidad unidad, String tema) {
-		this.idTema = idTema;
+	public Tema(Unidad unidad, String tema) {
 		this.unidad = unidad;
 		this.tema = tema;
 	}
 
+	public Tema(Unidad unidad, String tema, String tiempoTema) {
+		this.unidad = unidad;
+		this.tema = tema;
+		this.tiempoTema = tiempoTema;
+	}
+
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_tema", unique = true, nullable = false)
-	public int getIdTema() {
+	public Integer getIdTema() {
 		return this.idTema;
 	}
 
-	public void setIdTema(int idTema) {
+	public void setIdTema(Integer idTema) {
 		this.idTema = idTema;
 	}
 
@@ -57,6 +66,15 @@ public class Tema implements java.io.Serializable {
 
 	public void setTema(String tema) {
 		this.tema = tema;
+	}
+
+	@Column(name = "tiempo_tema", length = 25)
+	public String getTiempoTema() {
+		return this.tiempoTema;
+	}
+
+	public void setTiempoTema(String tiempoTema) {
+		this.tiempoTema = tiempoTema;
 	}
 
 }

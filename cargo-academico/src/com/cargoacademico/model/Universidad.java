@@ -1,11 +1,13 @@
 package com.cargoacademico.model;
-// Generated 08-30-2019 02:25:21 PM by Hibernate Tools 5.2.10.Final
+// Generated 09-11-2019 08:19:20 AM by Hibernate Tools 5.1.10.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -17,7 +19,7 @@ import javax.persistence.Table;
 @Table(name = "universidad", catalog = "cargo_academico")
 public class Universidad implements java.io.Serializable {
 
-	private int idUniversidad;
+	private Integer idUniversidad;
 	private String nombre;
 	private byte[] logo;
 	private Set<Campus> campuses = new HashSet<Campus>(0);
@@ -25,25 +27,21 @@ public class Universidad implements java.io.Serializable {
 	public Universidad() {
 	}
 
-	public Universidad(int idUniversidad) {
-		this.idUniversidad = idUniversidad;
-	}
-
-	public Universidad(int idUniversidad, String nombre, byte[] logo, Set<Campus> campuses) {
-		this.idUniversidad = idUniversidad;
+	public Universidad(String nombre, byte[] logo, Set<Campus> campuses) {
 		this.nombre = nombre;
 		this.logo = logo;
 		this.campuses = campuses;
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_universidad", unique = true, nullable = false)
-	public int getIdUniversidad() {
+	public Integer getIdUniversidad() {
 		return this.idUniversidad;
 	}
 
-	public void setIdUniversidad(int idUniversidad) {
+	public void setIdUniversidad(Integer idUniversidad) {
 		this.idUniversidad = idUniversidad;
 	}
 
