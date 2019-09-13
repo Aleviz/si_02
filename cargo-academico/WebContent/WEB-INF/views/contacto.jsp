@@ -21,7 +21,6 @@
 
 <script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script>
 
-
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <!-- Title -->
@@ -185,34 +184,36 @@
 
 		
 		
-
+	
 		<div id="formulario">
-			<div class="contact-information wow fadeInUp" data-wow-delay="400ms">
-				<div class="section-heading text-left">
+		
+			<div class="contact-information wow fadeInUp" data-wow-delay="400ms">    <!--   donde estara todo  -->
+			<div>
+				<div class="section-heading text-left" id="showFacultad">   <!-- solo es para MOSTRAR todas las facultades -->
 					<span>Unit</span>
 					<h3>Universidad Nacional De Innovacion Tecnológica</h3>
-					<p class="izq">
-						<img
+					<p class="izq" id="fingenieria">
+						<img 
 							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
 							class="flip"> <img
 							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
 							class="flip2">
 					</p>
-					<p class="der">
-						<img
+					<p class="der" id="fquimica">
+						<img 
 							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg"
 							class="flip"> <img
 							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
 							class="flip2">
 					</p>
-					<p class="izq">
-						<img
+					<p class="izq" id="fjurisprudencia">
+						<img 
 							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg"
 							class="flip"> <img
 							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
 							class="flip2">
 					</p>
-					<p class="der">
+					<p class="der"  id="fcnmate">
 						<img
 							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg"
 							class="flip"> <img
@@ -228,6 +229,133 @@
 					</p>
 					<p class="der"></p>
 				</div>
+				
+				<div class="section-heading text-left" id="showIngenieria">   <!-- solo es para MOSTRAR todas las facultades -->
+				<button class="atras">Atras</button>
+					<span>Unit</span>
+					<h3>Facultad de Ingenieria y Arquitectura</h3>
+					<p class="izq">
+						<img id="sistemas"
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="der">
+						<img id="arqui"
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="izq">
+						<img id="electrica"
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="der">
+						<img id="mecanica"
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="izq">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-5.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="der"></p>
+				</div>
+				
+				<div class="section-heading text-left" id="showQuimica">   <!-- solo es para MOSTRAR todas las facultades -->
+						<button class="atras">Atras</button>
+					<span>Unit</span>
+					<h3>Facultad de Quimica y Farmacia</h3>
+					<p class="izq">
+						<img id="q1"
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="der">
+						<img id="q2"
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="izq">
+						<img id="q3"
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="der">
+						<img id="q4"
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="izq">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-5.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="der"></p>
+				</div>
+				
+				<div class="section-heading text-left" id="showJurisprudencia">   <!-- solo es para MOSTRAR todas las facultades -->
+					<span>Unit</span>
+					<h3>Facultad de Jurisprudencia</h3>
+					<p class="izq">
+						<img id="j1"
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="der">
+						<img id="j2"
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="izq">
+						<img id="j3"
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="der">
+						<img id="j4"
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="izq">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-5.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="der"></p>
+				</div>
+				
+				
 
 				<!-- Single Contact Info -->
 				<div class="single-contact-info d-flex">
@@ -255,17 +383,23 @@
 					<p>Correo: universidadTeconolica@unit.sv</p>
 				</div>
 
-				<div class="botonMapa">
-							<button id="editar" class="editar" onclick="editar">EDITAR</button>
-		<button id="finalizar">Finalizar</button>
-	<div id="qp2">
+
+					<div class="botonMapa">
+					<button id="editar" class="editar" onclick="editar">EDITAR</button>
+					<button id="finalizar">Finalizar</button>
+					<div id="qp2">
 						<input  id="2qp" value=""/>
 					</div>
 				</div>
-
 			</div>
+			</div>
+			
 		</div>
-	</div>
+				
+				
+		</div>
+		
+	
 
 	<!-- ##### Contact Area End ##### -->
 

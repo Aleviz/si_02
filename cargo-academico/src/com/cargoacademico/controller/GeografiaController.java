@@ -40,6 +40,7 @@ public class GeografiaController {
 
 		List<String> listLatitud = new ArrayList<String>();
 		List<String> listLongitud = new ArrayList<String>();
+		
 		List<String> nombreFacultad = new ArrayList<String>();
 
 		String nombre = "";
@@ -235,7 +236,7 @@ facultad.getCoordenadas().setAltitud("16");
 
 		return "redirect:/contacto";
 	}
-
+78
 	// OBTENER ID PARA HACER UPDATE HA CAMPUS
 
 	@RequestMapping("/contacto/campus/{idCampus}/update")

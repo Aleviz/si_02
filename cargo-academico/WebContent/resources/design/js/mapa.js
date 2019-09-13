@@ -87,6 +87,47 @@ $(document).ready(function() {
 	var lat;
 	var lon;
 	$('#finalizar').hide();
+	$('#showFacultad').show(function(){
+		$('#showIngenieria').hide();
+		$('#showQuimica').hide();
+		$('#showJurisprudencia').hide();
+	});
+	
+
+	$('#fingenieria').click(function(){
+		$('#showIngenieria').show();
+		
+		$('#showQuimica').hide();
+		$('#showJurisprudencia').hide();
+		$('#showFacultad').hide();
+	});
+
+
+	$('#fquimica').click(function(){
+		$('#showQuimica').show();
+		
+		$('#showIngenieria').hide();
+		$('#showJurisprudencia').hide();
+		$('#showFacultad').hide();
+	});
+	
+	$('.atras').click(function(){
+		$('#showFacultad').show();
+		$('#showIngenieria').hide();
+		$('#showQuimica').hide();
+		$('#showJurisprudencia').hide();
+	});
+	
+
+	$('#fjurisprudencia').click(function(){
+		$('#showJurisprudencia').show();		
+		
+		$('#showQuimica').hide();
+		$('#showJurisprudencia').hide();
+		$('#showFacultad').hide();
+
+	});
+
 	console.log(confirmacion);
 
 
