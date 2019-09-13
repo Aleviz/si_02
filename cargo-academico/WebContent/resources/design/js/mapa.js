@@ -62,11 +62,7 @@ var marker ={};
 	console.log("********************");
 
 	console.log(x[i]);
-	map.on('popupopen',function(e) {
-		console.log("hola " + e.popup._content);
-		$('#2qp').val(e.popup._content);
-		$('#myModal').modal("show");
-	})
+
 	
 }
 
@@ -87,6 +83,47 @@ $(document).ready(function() {
 	var lat;
 	var lon;
 	$('#finalizar').hide();
+	$('#showFacultad').show(function(){
+		$('#showIngenieria').hide();
+		$('#showQuimica').hide();
+		$('#showJurisprudencia').hide();
+	});
+	
+
+	$('#fingenieria').click(function(){
+		$('#showIngenieria').show();
+		
+		$('#showQuimica').hide();
+		$('#showJurisprudencia').hide();
+		$('#showFacultad').hide();
+	});
+
+
+	$('#fquimica').click(function(){
+		$('#showQuimica').show();
+		
+		$('#showIngenieria').hide();
+		$('#showJurisprudencia').hide();
+		$('#showFacultad').hide();
+	});
+	
+	$('.atras').click(function(){
+		$('#showFacultad').show();
+		$('#showIngenieria').hide();
+		$('#showQuimica').hide();
+		$('#showJurisprudencia').hide();
+	});
+	
+
+	$('#fjurisprudencia').click(function(){
+		$('#showJurisprudencia').show();		
+		
+		$('#showQuimica').hide();
+		$('#showJurisprudencia').hide();
+		$('#showFacultad').hide();
+
+	});
+
 	console.log(confirmacion);
 
 
@@ -177,9 +214,16 @@ $(document).ready(function() {
 // AL HACER CLICK ESTE RECONOCE DE DONDE ES
 
 	map.on('popupopen',function(e) {
+		
 		console.log("hola " + e.popup._content);
-		$('#2qp').val(e.popup._content);
-		$('#myModal').modal("show");
-		$('#facultadfacultad').val(e.popup._content);
+		var facultadName = e.popup._content;
+		$('#2qp').val(facultadName);
+		
+		$('#22qp').text(facultadName);
+		$('#22qp').val(facultadName);
+		
+		$('#22qp').attr('href',"buscarF/"+facultadName+"/encontrar");
+		
+//		$('#myModal').modal("show");
+//		$('#facultadfacultad').val(facultadName);
 	})
-

@@ -14,7 +14,9 @@ import org.springframework.ui.Model;
 import com.cargoacademico.model.Campus;
 import com.cargoacademico.model.Coordenadas;
 import com.cargoacademico.model.Empleado;
+import com.cargoacademico.model.Escuela;
 import com.cargoacademico.model.Facultad;
+import com.cargoacademico.service.EscuelaService;
 import com.cargoacademico.service.GeografiaService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -24,14 +26,16 @@ public class GeografiaController {
 	@Autowired
 	private GeografiaService geografiaService;
 
+	@Autowired
+	private EscuelaService esService;
+
 	@RequestMapping("/contacto")
-	public String showContacto(Model model, @ModelAttribute("mensaje") String mensaje) {
+	public String showContacto(Model model, @ModelAttribute("idFF") String nombreCarrera) {
 
 		ObjectMapper mapper = new ObjectMapper();
 
 		List<Facultad> facultadList = geografiaService.allFacultad();
 		Facultad facultad = new Facultad();
-
 		List<Campus> campusList = geografiaService.allCampus();
 		Campus campus = new Campus();
 		Campus cam = geografiaService.findByIdCp(2);
@@ -42,6 +46,64 @@ public class GeografiaController {
 		List<String> listLongitud = new ArrayList<String>();
 		List<String> nombreFacultad = new ArrayList<String>();
 
+		
+		
+		
+		
+		
+		
+		
+		
+		String n = "";
+		Integer idFF = 0;
+		List<Facultad> facultades;
+		for (int i = 0; i < facultadList.size(); i++) {
+
+			System.out.println("        ---------------------------------         ");
+			System.out.println(facultadList.get(i).getFacultad());
+			System.out.println("nombreCarrera =*=*=*=*" + nombreCarrera);
+			System.out.println("        ---------------------------------         ");
+
+			n = facultadList.get(i).getFacultad();
+
+			if (n.equalsIgnoreCase(nombreCarrera)) {
+				System.out.println("SI ENTRO AL IF");
+
+				facultades = geografiaService.findByNameF(nombreCarrera);
+				System.out.println("        ---------------------------------         ");
+				System.out.println("nombre de la carrera == " + nombreCarrera);
+				System.out.println("nombre de la facultad" + facultades.get(0).getFacultad());
+				System.out.println("id de la facultad" + facultades.get(0).getIdFacultad());
+
+				idFF = facultades.get(0).getIdFacultad();
+
+				System.out.println("        ---------------------------------         ");
+			} else {
+				System.out.println("NO ENTRO AL IF(ELSE)");
+
+			}
+
+		}
+		System.out.println("xddddddddd " + idFF);
+		List<Escuela> escuelas = esService.consultarFacultad(idFF);
+
+		for (int i = 0; i < escuelas.size(); i++) {
+			System.out.println("**************************************");
+			System.out.println("NOMBRE DE LA CARRERA === " + escuelas.get(i).getNombreEscuela());
+			System.out.println("**************************************");
+		}
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		String nombre = "";
 		for (int i = 0; i < facultadList.size(); i++) {
 
@@ -96,9 +158,13 @@ public class GeografiaController {
 		model.addAttribute("campusList", campusList);
 		model.addAttribute("campus", campus);
 		model.addAttribute("campusdir", cam);
-		System.out.println("-----------------------------------------"+cam.getTelefono());
+		model.addAttribute("es", escuelas);
+//		System.out.println("------------------asdasd-----------------------"+escuelaList.size());
+		System.out.println("-----------------------------------------" + cam.getTelefono());
 		return "contacto";
 	}
+
+	// ********************************************************************************************
 
 	@RequestMapping("/Home")
 	public String showhome(Model model, @ModelAttribute("mensaje") String mensaje) {
@@ -172,10 +238,10 @@ public class GeografiaController {
 		model.addAttribute("campusList", campusList);
 		model.addAttribute("campus", campus);
 		model.addAttribute("campusdir", cam);
-		System.out.println("-----------------------------------------"+cam.getTelefono());
+		System.out.println("-----------------------------------------" + cam.getTelefono());
 		return "Home";
 	}
-	
+
 	// ****************************************FACULTAD***********************************
 
 	// GUARDAR FACULTAD
@@ -184,10 +250,9 @@ public class GeografiaController {
 	public String guardarActualizarF(@ModelAttribute("facultad") Facultad facultad, Model model,
 			RedirectAttributes ra) {
 
-		
-		
-		
-facultad.getCoordenadas().setAltitud("16");
+		Coordenadas coordenadas = new Coordenadas();
+
+		facultad.getCoordenadas().setAltitud("16");
 
 		Empleado empleado = new Empleado();
 		empleado.setIdEmpleado(1);
@@ -198,9 +263,8 @@ facultad.getCoordenadas().setAltitud("16");
 				+ facultad.getTelefono() + " ubicacion:: " + facultad.getUbicacion() + " campus::"
 				+ facultad.getCampus().getIdCampus() + "  coordenada::" + facultad.getCoordenadas().getIdCoordenada()
 				+ " latitud ::: " + facultad.getCoordenadas().getLatitud() + " longitud ::: "
-				+ facultad.getCoordenadas().getLongitud()
-				+ "  altitud  "+facultad.getCoordenadas().getAltitud()
-				+ "   empleado  :: "+facultad.getEmpleado().getIdEmpleado());
+				+ facultad.getCoordenadas().getLongitud() + "  altitud  " + facultad.getCoordenadas().getAltitud()
+				+ "   empleado  :: " + facultad.getEmpleado().getIdEmpleado());
 		geografiaService.saveOrUpdateFacultad(facultad);
 
 		ra.addFlashAttribute("mensaje", "Se han guardado los cambios");
@@ -249,4 +313,13 @@ facultad.getCoordenadas().setAltitud("16");
 		return "contacto";
 	}
 
+	@RequestMapping("/buscarF/{facultadName}/encontrar")
+	public String buscarFacultad(@PathVariable("facultadName") String facultadName, RedirectAttributes ra) {
+
+		String nombre = facultadName;
+
+		ra.addAttribute("idFF", nombre);
+
+		return "redirect:/contacto";
+	}
 }

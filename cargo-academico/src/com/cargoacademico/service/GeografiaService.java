@@ -45,6 +45,11 @@ public class GeografiaService {
 		return geografiaDao.allFacultad();
 	}
 
+	public List<Facultad> findByNameF(String name) {
+		System.out.println("hola  "+name);
+		return geografiaDao.findByNameF(name);
+	}
+	
 	public Facultad findByIdF(int id) {
 		return geografiaDao.findByIdF(id);
 	}

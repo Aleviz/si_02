@@ -38,6 +38,7 @@ public class EscuelaImpl implements EscuelaDao {
 	return(Escuela) crit.uniqueResult();
 	}
 	
+	
 	@Override
 	public void deleteEscuela(Escuela escue) {
 		getSession().delete(escue);
@@ -51,6 +52,18 @@ public class EscuelaImpl implements EscuelaDao {
 	@Override
 	public List<Escuela> encontrarTodo(){
 		Query query = getSession().createQuery("from Escuela");	
+		System.out.println(query.list().size());
+		return query.list();
+		
+	}
+
+	@Override
+	public List<Escuela> encontrarXFacultad(int id) {
+		Query query = getSession().createQuery("from Escuela where id_facultad="+id);	
+		System.out.println(query.list().size());
 		return query.list();
 	}
+
+
+
 }
