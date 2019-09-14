@@ -77,6 +77,7 @@ body {font-family: "Lato", Bahnschrift Light;}
   border-left: none;
   height: 200px;
   display: none;
+  color: Blue;
 }
 
 /* Clear floats after the tab */
@@ -307,27 +308,33 @@ body {font-family: "Lato", Bahnschrift Light;}
 
 <div id="Ingenieria Industrial" class="tabcontent">
   <h3>Descargar</h3>
-  <a href="res/pdf/maya_curricular1.pdf" download="Maya de IngIn"> <p>Maya Curricular de Ingenieria industrial</p> </a>
+  <h2> <u> <a href="res/pdf/maya_curricular1.pdf" download="Maya de IngIn"> <p>Maya Curricular de Ingenieria industrial</p> </a> </u> </h2>
+  <h3>Editar Reporte</h3>
+  
 </div>
 
 <div id="Ingenieria Electrica" class="tabcontent">
   <h3>Descargar</h3>
-   <a href="res/pdf/maya_curricular2.pdf" download="Maya de IngIn"> <p>Maya Curricular de Ingenieria Electrica</p> </a>
+    <h2> <u> <a href="res/pdf/maya_curricular2.pdf" download="Maya de IngIn"> <p>Maya Curricular de Ingenieria Electrica</p> </a> </u> </h2>
+   <h3>Editar Reporte</h3>
 </div>
 
 <div id="Ingeniera en Sistemas Informaticos" class="tabcontent">
   <h3>Descargar</h3>
-   <a href="res/pdf/maya_curricular3.pdf" download="Maya de IngIn"> <p>Maya Curricular de Ingenieria Sistemas Informaticos</p> </a>
+   <h2> <u> <a href="res/pdf/maya_curricular3.pdf" download="Maya de IngIn"> <p>Maya Curricular de Ingenieria Sistemas Informaticos</p> </a> </u> </h2>
+   <h3>Editar Reporte</h3>
 </div>
 
 <div id="Ingenieria Mecanica" class="tabcontent">
   <h3>Descargar</h3>
-  <a href="res/pdf/maya_curricular4.pdf" download="Maya de IngIn"> <p>Maya Curricular de Ingenieria Mecanica</p> </a>
+  <h2> <u> <a href="res/pdf/maya_curricular4.pdf" download="Maya de IngIn"> <p>Maya Curricular de Ingenieria Mecanica</p> </a> </u> </h2>
+  <h3>Editar Reporte</h3>
 </div>
 
 <div id="Arquitectura" class="tabcontent">
   <h3>Descargar</h3>
-   <a href="res/pdf/maya_curricular5.pdf" download="Maya de IngIn"> <p>Maya Curricular de Arquitectura</p> </a>
+   <h2> <u> <a href="res/pdf/maya_curricular5.pdf" download="Maya de IngIn"> <p>Maya Curricular de Arquitectura</p> </a> </u> </h2>
+   <h3>Editar Reporte</h3>
 </div>
 
 <div class="clearfix"></div>

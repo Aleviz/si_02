@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="empleados_report" printOrder="Horizontal" pageWidth="595" pageHeight="400" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5ec40967-5e14-4f59-8a16-3a73604dc638">
-	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[Y2FyZ29fYWNhZGVtaWNvLnVuaXZlcnNpZGFkICw4MTIsMzMyLDMzMzViZWZmLWExZTgtNGYwZi1h
+NzQ0LWFkZTI5YjAyNmQxMjtjYXJnb19hY2FkZW1pY28udGlwb19kb2NlbnRlICw0OTAsMjQ1LGYy
+ODYwZDVjLTFkNzktNGU4ZS1iZGEwLWRhMTFkNTRjZjJkNjtjYXJnb19hY2FkZW1pY28uZW1wbGVh
+ZG8gLDMzMCwxNSw0MGE5Yzc0Yy02NDk4LTRiNDYtOTYyZS0zM2U2NTIwOTRiZDQ7Y2FyZ29fYWNh
+ZGVtaWNvLmVkaWZpY2lvICwxNSwyMzIsM2RiMmU0YjUtZjZlMS00NmViLWEwZjItZjNlOTBhZmQ0
+MDk1O2NhcmdvX2FjYWRlbWljby5mYWN1bHRhZCAsMTY3LDE3OSw5OTgwYzg0YS0yNDM0LTRiODgt
+OGY1NC00ZmE1MTBlYTBlNTM7Y2FyZ29fYWNhZGVtaWNvLmNhbXB1cyAsNjU5LDI5Miw0NmNiYmE4
+Zi03YjM5LTQ2NzUtODExNy1mNTFlZjYwZGM4YjY7]]>
+	</property>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="293"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="700"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
@@ -36,8 +45,7 @@ FROM cargo_academico.edificio
 	 cargo_academico.campus.universidad = cargo_academico.universidad.id_universidad 
 	INNER JOIN cargo_academico.tipo_docente ON 
 	 cargo_academico.empleado.tipo_docente = cargo_academico.tipo_docente.id_tipo_docente 
-WHERE 
-	 cargo_academico.campus.id_campus = 1]]>
+]]>
 	</queryString>
 	<field name="id_empleado" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.label" value="id_empleado"/>
@@ -95,10 +103,6 @@ WHERE
 		<property name="com.jaspersoft.studio.field.label" value="id_edificio"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="edificio"/>
 	</field>
-	<field name="id_facultad" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.label" value="id_facultad"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="facultad"/>
-	</field>
 	<field name="COLUMN_16" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="universidad"/>
@@ -106,6 +110,10 @@ WHERE
 	<field name="campus" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="campus"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="campus"/>
+	</field>
+	<field name="id_facultad" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_facultad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="facultad"/>
 	</field>
 	<field name="facultad" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="facultad"/>
@@ -118,47 +126,43 @@ WHERE
 	<background>
 		<band splitType="Stretch"/>
 	</background>
-	<title>
-		<band height="80" splitType="Stretch">
+	<pageHeader>
+		<band height="122" splitType="Stretch">
+			<staticText>
+				<reportElement x="130" y="90" width="290" height="30" uuid="8799af17-6bc4-4f6a-9c45-48ccf2fca19f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<text><![CDATA[Curriculum de Carrera Docente]]></text>
+			</staticText>
 			<textField>
-				<reportElement x="440" y="0" width="120" height="40" uuid="11e8e0a9-8cdb-486e-8178-ce2356c4feeb"/>
+				<reportElement x="430" y="10" width="120" height="40" uuid="c1fc9b29-26cb-4428-b487-d6ffab0c2518"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="19" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="10" y="9" width="250" height="22" uuid="231ae904-d4bb-446f-bc71-edd2a00a2fdf"/>
+				<reportElement x="0" y="61" width="310" height="20" uuid="843edb4d-ad3e-470b-9d13-8bc85725d0b7"/>
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
 					<font fontName="Arial" size="14" isBold="true" isItalic="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{campus}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{facultad}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="10" y="31" width="250" height="20" uuid="8a05b501-36f1-4978-a300-b37abcb00f22"/>
+				<reportElement x="0" y="41" width="250" height="20" uuid="99f6359a-646c-4878-9f13-26c2b5ac8e12"/>
 				<textElement textAlignment="Justified">
 					<font size="14" isBold="true" isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombre_edificio}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="10" y="51" width="310" height="20" uuid="2b7d2cd4-ae58-47c5-8445-70b19c4d6345"/>
+				<reportElement x="0" y="19" width="250" height="22" uuid="f45cd3d3-ed36-47e3-a9f3-9563ff10ae0e"/>
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
 					<font fontName="Arial" size="14" isBold="true" isItalic="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{facultad}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{campus}]]></textFieldExpression>
 			</textField>
-		</band>
-	</title>
-	<pageHeader>
-		<band height="30" splitType="Stretch">
-			<staticText>
-				<reportElement x="132" y="0" width="290" height="30" uuid="8799af17-6bc4-4f6a-9c45-48ccf2fca19f"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="16"/>
-				</textElement>
-				<text><![CDATA[Curriculum de Carrera Docente]]></text>
-			</staticText>
 		</band>
 	</pageHeader>
 	<detail>
