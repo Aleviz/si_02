@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>UNIT - Universidad Innovacion Tecnologica</title>
-<link rel="stylesheet" href="/res/design/style.css" type="text/css"/>
+<link rel="stylesheet" href="/res/design/style.css" type="text/css" />
 </head>
 <body>
 	<!-- ##### Preloader ##### -->
@@ -24,7 +24,8 @@
 						<div
 							class="header-content h-100 d-flex align-items-center justify-content-between">
 							<div class="academy-logo">
-								<a href="index.html"><img src="WebContent/resources/design/img/core-img/image.png"
+								<a href="index.html"><img
+									src="WebContent/resources/design/img/core-img/image.png"
 									width="150px"></a>
 							</div>
 							<div class="login-content">

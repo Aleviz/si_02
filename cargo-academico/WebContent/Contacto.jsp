@@ -212,7 +212,7 @@
 				market = L.market([lat, lon]).addTo(map);
 
 			</script>
-			
+
 			<script>
 			$("#ocultar").css("display","block");
 			</script>
@@ -227,16 +227,16 @@
 						posuere ipsum. Sed faucibus mauris vitae urna consectetur, sit
 						amet maximus nisl sagittis. Ut in iaculis enim, et pulvinar
 						mauris.</p>
-					
-					
+
+
 					<div id=ocultar>
-					<c:forEach var="mate" items="${lista}" >
-					</c:forEach>
-					
-					<p>laksjd</p>
+						<c:forEach var="mate" items="${lista}">
+						</c:forEach>
+
+						<p>laksjd</p>
 					</div>
-					
-					
+
+
 				</div>
 
 				<!-- Contact Social Info -->

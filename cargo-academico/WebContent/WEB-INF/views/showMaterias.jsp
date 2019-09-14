@@ -325,152 +325,153 @@
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header" style="padding: 35px 50px;">
-				
+
 					<h4>
 						<span class="glyphicon glyphicon-lock"></span> Login
 					</h4>
 				</div>
 				<div class="modal-body" style="padding: 40px 50px;">
-				
-				<!-- Material unchecked -->
-<div class="btn-group">
-  <button type="button" class="btn btn-primary" id="campus">Campus</button>
-  <br></br>
-  <button type="button" class="btn btn-primary" style="margin-left:3px" id="facultad">Facultad</button>
-</div>
-				
-				<div>
-				<br></br>
-				<sf:form
-						action="${pageContext.request.contextPath}/showMaterias/save"
-						method="post" commandName="mate" role="form">
-						<div class="form-group">
-							<label for="unidadValorativa"><span class="glyphicon glyphicon-eye-open"></span> Latitud</label>
-							 <input	type="text" class="form-control" id="unidadValorativa" path="unidadValorativa"
-								placeholder="Latitud" />
-						</div>
 
-						<div class="form-group">
-							<label for="ciclo"><span
-								class="glyphicon glyphicon-eye-open"></span> Longitud</label> <input
-								type="text" class="form-control" id="ciclo" 
-								placeholder="Longitud" />
-						</div>
+					<!-- Material unchecked -->
+					<div class="btn-group">
+						<button type="button" class="btn btn-primary" id="campus">Campus</button>
+						<br></br>
+						<button type="button" class="btn btn-primary"
+							style="margin-left: 3px" id="facultad">Facultad</button>
+					</div>
+
+					<div>
+						<br></br>
+						<sf:form
+							action="${pageContext.request.contextPath}/showMaterias/save"
+							method="post" commandName="mate" role="form">
+							<div class="form-group">
+								<label for="unidadValorativa"><span
+									class="glyphicon glyphicon-eye-open"></span> Latitud</label> <input
+									type="text" class="form-control" id="unidadValorativa"
+									path="unidadValorativa" placeholder="Latitud" />
+							</div>
+
+							<div class="form-group">
+								<label for="ciclo"><span
+									class="glyphicon glyphicon-eye-open"></span> Longitud</label> <input
+									type="text" class="form-control" id="ciclo"
+									placeholder="Longitud" />
+							</div>
 						</sf:form>
-				</div>
-				
-				<div id="formCampus">
-					<sf:form
-						action="${pageContext.request.contextPath}/showMaterias/save"
-						method="post" commandName="mate" role="form">
-
-						<div class="form-group">
-							<label for="idMateria"><span
-								class="glyphicon glyphicon-user"></span> ID</label>
-							<sf:input type="text" class="form-control" id="idMateria"
-								placeholder="ID " path="idMateria" />
-						</div>
-
-						<div class="form-group">
-							<label for="materia"><span
-								class="glyphicon glyphicon-eye-open"></span> Nombre del Campus</label> <input
-								type="text" class="form-control" id="materia" path="materia"
-								placeholder="Nombre" />
-						</div>
-
-						<div class="form-group">
-							<label for="codigo"><span
-								class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label> <input
-								type="text" class="form-control" id="codigo" path="codigo"
-								placeholder="Telefono" />
-						</div>
-
-
-						<div class="form-group">
-							<label for="departamento.idDepartamento"><span
-								class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> <input
-								type="text" class="form-control"
-								id="departamento.idDepartamento"
-								path="departamento.idDepartamento" placeholder="Ubicacion" />
-						</div>
-
-
-						<div class="form-group">
-							<label for="ciclo"><span
-								class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
-								type="text" class="form-control" id="ciclo"
-
-								placeholder="ciclo" />
-						</div>
-
-
-						<button type="submit" class="btn btn-success btn-block">
-							<span class="glyphicon glyphicon-off" id="guardarC"></span> Guardar Cambios
-						</button>
-					</sf:form>
-					
-					
 					</div>
-					
-					
-					
+
+					<div id="formCampus">
+						<sf:form
+							action="${pageContext.request.contextPath}/showMaterias/save"
+							method="post" commandName="mate" role="form">
+
+							<div class="form-group">
+								<label for="idMateria"><span
+									class="glyphicon glyphicon-user"></span> ID</label>
+								<sf:input type="text" class="form-control" id="idMateria"
+									placeholder="ID " path="idMateria" />
+							</div>
+
+							<div class="form-group">
+								<label for="materia"><span
+									class="glyphicon glyphicon-eye-open"></span> Nombre del Campus</label>
+								<input type="text" class="form-control" id="materia"
+									path="materia" placeholder="Nombre" />
+							</div>
+
+							<div class="form-group">
+								<label for="codigo"><span
+									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
+								<input type="text" class="form-control" id="codigo"
+									path="codigo" placeholder="Telefono" />
+							</div>
+
+
+							<div class="form-group">
+								<label for="departamento.idDepartamento"><span
+									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> <input
+									type="text" class="form-control"
+									id="departamento.idDepartamento"
+									path="departamento.idDepartamento" placeholder="Ubicacion" />
+							</div>
+
+
+							<div class="form-group">
+								<label for="ciclo"><span
+									class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
+									type="text" class="form-control" id="ciclo" placeholder="ciclo" />
+							</div>
+
+
+							<button type="submit" class="btn btn-success btn-block">
+								<span class="glyphicon glyphicon-off" id="guardarC"></span>
+								Guardar Cambios
+							</button>
+						</sf:form>
+
+
+					</div>
+
+
+
 					<div id="formFacultad">
-					<sf:form
-						action="${pageContext.request.contextPath}/showMaterias/save"
-						method="post" commandName="mate" role="form">
+						<sf:form
+							action="${pageContext.request.contextPath}/showMaterias/save"
+							method="post" commandName="mate" role="form">
 
-						<div class="form-group">
-							<label for="idMateria"><span
-								class="glyphicon glyphicon-user"></span> ID</label>
-							<sf:input type="text" class="form-control" id="idMateria"
-								placeholder="ID " path="idMateria" />
-						</div>
+							<div class="form-group">
+								<label for="idMateria"><span
+									class="glyphicon glyphicon-user"></span> ID</label>
+								<sf:input type="text" class="form-control" id="idMateria"
+									placeholder="ID " path="idMateria" />
+							</div>
 
-						<div class="form-group">
-							<label for="materia"><span
-								class="glyphicon glyphicon-eye-open"></span> Nombre de la Facultad</label> <input
-								type="text" class="form-control" id="materia" path="materia"
-								placeholder="Nombre" />
-						</div>
+							<div class="form-group">
+								<label for="materia"><span
+									class="glyphicon glyphicon-eye-open"></span> Nombre de la
+									Facultad</label> <input type="text" class="form-control" id="materia"
+									path="materia" placeholder="Nombre" />
+							</div>
 
-						<div class="form-group">
-							<label for="codigo"><span
-								class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label> <input
-								type="text" class="form-control" id="codigo" path="codigo"
-								placeholder="Telefono" />
-						</div>
-
-
-						<div class="form-group">
-							<label for="departamento.idDepartamento"><span
-								class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> <input
-								type="text" class="form-control"
-								id="departamento.idDepartamento"
-								path="departamento.idDepartamento" placeholder="Ubicacion" />
-						</div>
+							<div class="form-group">
+								<label for="codigo"><span
+									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
+								<input type="text" class="form-control" id="codigo"
+									path="codigo" placeholder="Telefono" />
+							</div>
 
 
-						<div class="form-group">
-							<label for="ciclo"><span
-								class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
-								type="text" class="form-control" id="ciclo" 
-								placeholder="ciclo" />
-						</div>
+							<div class="form-group">
+								<label for="departamento.idDepartamento"><span
+									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> <input
+									type="text" class="form-control"
+									id="departamento.idDepartamento"
+									path="departamento.idDepartamento" placeholder="Ubicacion" />
+							</div>
 
 
-						<button type="submit" class="btn btn-success btn-block">
-							<span class="glyphicon glyphicon-off" id="guardarF"></span> Guardar Cambios
-						</button>
-					</sf:form>
-					
-					
+							<div class="form-group">
+								<label for="ciclo"><span
+									class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
+									type="text" class="form-control" id="ciclo" placeholder="ciclo" />
+							</div>
+
+
+							<button type="submit" class="btn btn-success btn-block">
+								<span class="glyphicon glyphicon-off" id="guardarF"></span>
+								Guardar Cambios
+							</button>
+						</sf:form>
+
+
 					</div>
-					
-<!-- 					aqui -->
+
+					<!-- 					aqui -->
 				</div>
-				
-				
-				
+
+
+
 				<div class="modal-footer">
 					<button type="submit" class="btn btn-danger btn-default pull-left"
 						data-dismiss="modal" id="cancell">
