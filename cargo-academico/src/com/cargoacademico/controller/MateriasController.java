@@ -35,19 +35,14 @@ public class MateriasController {
 		
 		return "showMaterias";
 	}
+	
+	
 
-	
-	
-	
-	
-	
-	
-	
 	
 	@RequestMapping(value = "/showMaterias/save", method = RequestMethod.POST)
 	public String registrar(@ModelAttribute("mate") Materias materia ,
 			Model model, RedirectAttributes ra) {
-		int x = materia.getMaterias().getIdMateria();
+		int x = materia.getMateriasByPrerequisito().getIdMateria();
 		System.out.println(x);
 	
 		gd.saveOrUpdate(materia);
@@ -55,22 +50,6 @@ public class MateriasController {
 		
 		return "redirect:/showMaterias";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 
 	@RequestMapping("/showMaterias/{idMateria}/update")
@@ -84,20 +63,6 @@ public class MateriasController {
 		return "showMaterias";
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 

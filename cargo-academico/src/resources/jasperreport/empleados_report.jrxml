@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="empleados_report" printOrder="Horizontal" pageWidth="595" pageHeight="400" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5ec40967-5e14-4f59-8a16-3a73604dc638">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[Y2FyZ29fYWNhZGVtaWNvLnVuaXZlcnNpZGFkICw4MTIsMzMyLDMzMzViZWZmLWExZTgtNGYwZi1h
+NzQ0LWFkZTI5YjAyNmQxMjtjYXJnb19hY2FkZW1pY28udGlwb19kb2NlbnRlICw0OTAsMjQ1LGYy
+ODYwZDVjLTFkNzktNGU4ZS1iZGEwLWRhMTFkNTRjZjJkNjtjYXJnb19hY2FkZW1pY28uZW1wbGVh
+ZG8gLDMzMCwxNSw0MGE5Yzc0Yy02NDk4LTRiNDYtOTYyZS0zM2U2NTIwOTRiZDQ7Y2FyZ29fYWNh
+ZGVtaWNvLmVkaWZpY2lvICwxNSwyMzIsM2RiMmU0YjUtZjZlMS00NmViLWEwZjItZjNlOTBhZmQ0
+MDk1O2NhcmdvX2FjYWRlbWljby5mYWN1bHRhZCAsMTY3LDE3OSw5OTgwYzg0YS0yNDM0LTRiODgt
+OGY1NC00ZmE1MTBlYTBlNTM7Y2FyZ29fYWNhZGVtaWNvLmNhbXB1cyAsNjU5LDI5Miw0NmNiYmE4
+Zi03YjM5LTQ2NzUtODExNy1mNTFlZjYwZGM4YjY7]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="293"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="700"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT cargo_academico.empleado.id_empleado,
+	cargo_academico.empleado.primer_nombre,
+	cargo_academico.empleado.segundo_nombre,
+	cargo_academico.empleado.primer_apellido,
+	cargo_academico.empleado.segundo_apellido,
+	cargo_academico.empleado.nit,
+	cargo_academico.empleado.carnet,
+	cargo_academico.empleado.foto,
+	cargo_academico.campus.id_campus,
+	cargo_academico.universidad.id_universidad,
+	cargo_academico.universidad.nombre,
+	cargo_academico.universidad.logo,
+	cargo_academico.edificio.nombre_edificio,
+	cargo_academico.edificio.id_edificio,
+	cargo_academico.facultad.id_facultad,
+	cargo_academico.universidad.nombre,
+	cargo_academico.campus.campus,
+	cargo_academico.facultad.facultad,
+	cargo_academico.tipo_docente.tipo_docente
+FROM cargo_academico.edificio
+	INNER JOIN cargo_academico.facultad ON 
+	 cargo_academico.edificio.facultad = cargo_academico.facultad.id_facultad 
+	INNER JOIN cargo_academico.empleado ON 
+	 cargo_academico.facultad.decano = cargo_academico.empleado.id_empleado 
+	INNER JOIN cargo_academico.campus ON 
+	 cargo_academico.facultad.campus = cargo_academico.campus.id_campus 
+	INNER JOIN cargo_academico.universidad ON 
+	 cargo_academico.campus.universidad = cargo_academico.universidad.id_universidad 
+	INNER JOIN cargo_academico.tipo_docente ON 
+	 cargo_academico.empleado.tipo_docente = cargo_academico.tipo_docente.id_tipo_docente 
+]]>
+	</queryString>
+	<field name="id_empleado" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_empleado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="primer_nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="primer_nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="segundo_nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="segundo_nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="primer_apellido" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="primer_apellido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="segundo_apellido" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="segundo_apellido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="nit" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="carnet" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="carnet"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="foto" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="foto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="id_campus" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_campus"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="campus"/>
+	</field>
+	<field name="id_universidad" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_universidad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="universidad"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="universidad"/>
+	</field>
+	<field name="logo" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="logo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="universidad"/>
+	</field>
+	<field name="nombre_edificio" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombre_edificio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="edificio"/>
+	</field>
+	<field name="id_edificio" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_edificio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="edificio"/>
+	</field>
+	<field name="COLUMN_16" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="universidad"/>
+	</field>
+	<field name="campus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="campus"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="campus"/>
+	</field>
+	<field name="id_facultad" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_facultad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="facultad"/>
+	</field>
+	<field name="facultad" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="facultad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="facultad"/>
+	</field>
+	<field name="tipo_docente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tipo_docente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tipo_docente"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="122" splitType="Stretch">
+			<staticText>
+				<reportElement x="130" y="90" width="290" height="30" uuid="8799af17-6bc4-4f6a-9c45-48ccf2fca19f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<text><![CDATA[Curriculum de Carrera Docente]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="10" width="120" height="40" uuid="c1fc9b29-26cb-4428-b487-d6ffab0c2518"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="19" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="61" width="310" height="20" uuid="843edb4d-ad3e-470b-9d13-8bc85725d0b7"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{facultad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="41" width="250" height="20" uuid="99f6359a-646c-4878-9f13-26c2b5ac8e12"/>
+				<textElement textAlignment="Justified">
+					<font size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre_edificio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="19" width="250" height="22" uuid="f45cd3d3-ed36-47e3-a9f3-9563ff10ae0e"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{campus}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="164" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="80" width="150" height="20" uuid="7bce1c1a-a883-453a-be15-0cffdc8e7d25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Carnet: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="150" height="34" uuid="88d5b3be-1011-499b-b028-cb429d218845"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del profesor:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="170" y="37" width="70" height="20" uuid="a3c7e713-24a2-4738-a6b3-8c10d7ba21f3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{primer_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="37" width="60" height="20" uuid="087587b1-5dcd-49d9-ac82-aff6efc70afb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{segundo_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="37" width="60" height="20" uuid="825c56a8-63be-4b65-aad7-1502f3f0e3c0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{primer_apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="37" width="62" height="20" uuid="a50ab289-9f58-4c04-92b2-bcc0ec06f904"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{segundo_apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="80" width="70" height="20" uuid="ec11d5ec-bf20-4657-a1c8-5e516b2a43ef"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{carnet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="130" width="160" height="30" uuid="52def268-1efc-41e6-a332-583f3dd86269"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipo_docente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="134" width="150" height="30" uuid="c8418717-1f03-422a-a7b7-d9b147b47123"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Docente :]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

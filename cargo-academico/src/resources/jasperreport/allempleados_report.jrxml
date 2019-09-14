@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="allempleados_report" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="e115bc59-fd0f-446b-a585-04725e27d7f0">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="cargo_academico"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString>
+		<![CDATA[SELECT empleado.primer_nombre AS primerNombre,
+	empleado.segundo_nombre AS segundoNombre,
+	empleado.primer_apellido AS primerApellido,
+	empleado.segundo_apellido AS segundoApellido,
+	empleado.fecha_nacimiento AS fechaNacimiento,
+	empleado.nit AS nit,
+	empleado.dui AS dui,
+	empleado.carnet AS carnet,
+	empleado.foto AS foto
+FROM empleado empleado]]>
+	</queryString>
+	<field name="primerNombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="primerNombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="segundoNombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="segundoNombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="primerApellido" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="primerApellido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="segundoApellido" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="segundoApellido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="fechaNacimiento" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="fechaNacimiento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="nit" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="dui" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dui"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="carnet" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="carnet"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<field name="foto" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="foto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	</field>
+	<background>
+		<band height="575" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="-39" width="80" height="514" backcolor="#000000" uuid="15a8ce9a-88f8-4109-86c3-2d1466393615"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="475" width="80" height="100" backcolor="#666666" uuid="6eb7cb61-0dd7-47a8-8475-5fa6c3a348dc"/>
+				<textField>
+					<reportElement style="Column header" x="0" y="0" width="80" height="73" forecolor="#000000" uuid="db8457c8-99e9-434f-b439-2d400dff2bcd"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="58" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="0" y="77" width="80" height="20" forecolor="#000000" uuid="e20c8a65-aded-41dc-a107-108a9159af99"/>
+					<box leftPadding="4" rightPadding="4"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement mode="Transparent" x="0" y="73" width="80" height="1" backcolor="#FFFFFF" uuid="db6d7ead-4383-4f8c-81cf-1e3064eb6924"/>
+				</line>
+			</frame>
+			<staticText>
+				<reportElement mode="Opaque" x="-20" y="110" width="80" height="310" forecolor="#FFFFFF" backcolor="#000000" uuid="9cfc4fb0-c328-45d8-bba8-2a462a829be8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font fontName="Elephant" size="33"/>
+				</textElement>
+				<text><![CDATA[U	N	I	T]]></text>
+			</staticText>
+		</band>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="96" y="0" width="706" height="67" uuid="1dcadd54-7d50-4470-85ed-189e4d910b25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="37" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de los empleados y docentes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="232" y="67" width="568" height="37" uuid="862cb50c-5a5e-4906-a495-226e25115fb6"/>
+				<textElement textAlignment="Right">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Reporte de los trabajadores de la universidad]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="97" y="5" width="705" height="35" backcolor="#666666" uuid="35d90a9b-bb7e-4ec4-bfa2-68be1967d6b2"/>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="5" width="93" height="25" forecolor="#FFFFFF" backcolor="#666666" uuid="0ad1b888-a321-433a-a458-2801c8be2e1c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1° Nombre]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="97" y="5" width="93" height="25" forecolor="#FFFFFF" backcolor="#666666" uuid="bd97bbec-7654-4e05-90d1-49acaab494ba"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2°Nombre]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="197" y="5" width="93" height="25" forecolor="#FFFFFF" backcolor="#666666" uuid="37e49820-f03c-4ec4-8f73-a5cde1c26909"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1° Apellido]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="293" y="5" width="93" height="25" forecolor="#FFFFFF" backcolor="#666666" uuid="c994cd47-2c31-41f5-96d7-ece424a2b5be"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2° Apellido]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="393" y="5" width="93" height="25" forecolor="#FFFFFF" backcolor="#666666" uuid="71826bc8-49d0-4684-bdd3-565c8cceb6a2"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fecha Nacimiento]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="510" y="5" width="93" height="25" forecolor="#FFFFFF" backcolor="#666666" uuid="40d32fdc-8122-4adb-9c5c-e2fc31fe77e8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Carnet]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="610" y="5" width="93" height="25" forecolor="#FFFFFF" backcolor="#666666" uuid="ada9472e-1b49-41b4-b59c-a369d223d452"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Docente]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="241" splitType="Stretch">
+			<frame>
+				<reportElement x="60" y="0" width="732" height="231" uuid="89a3da05-fdde-4ffe-965f-cc476f72e3ab"/>
+				<textField>
+					<reportElement x="20" y="17" width="100" height="30" uuid="7a3f5297-6b81-4964-b9e1-a577f4fe9c90"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{primerNombre}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="120" y="16" width="100" height="30" uuid="9c96bfb4-c320-47a5-9010-f8195408024a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{segundoNombre}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="220" y="16" width="100" height="30" uuid="d4d4e6b1-4ea2-4a04-8fdb-55c02407518c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{primerNombre}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="320" y="17" width="100" height="30" uuid="58ee1da7-2d0f-401c-87a7-55239461694e"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{segundoApellido}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="420" y="16" width="110" height="30" uuid="cc768599-3af0-42c7-ab09-ca6248733a20"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{fechaNacimiento}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="530" y="17" width="100" height="30" uuid="4f69e079-e70e-46e2-a8a9-8be99c0bed0a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{carnet}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="95" y="6" width="705" height="1" uuid="e5f21b91-7f24-498e-97a1-0e93db9225a4"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="671" y="0" width="131" height="20" forecolor="#000000" uuid="95484ca0-40b4-4752-95d8-1afbc33c820b"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="96" y="0" width="267" height="20" uuid="0ec52099-dcd7-42f4-8baa-f3874f05208a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[UNIT Report]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
