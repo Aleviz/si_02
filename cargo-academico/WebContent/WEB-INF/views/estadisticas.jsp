@@ -6,14 +6,22 @@
 <html>
 
 <head>
+<script type="text/javascript">
+var xx =	document.getElementById("xddd");
+
+		console.log(xx);
+
+</script>
 <meta charset="UTF-8">
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/res/design/leaflet.css" />
-<script src="<c:url value='res/design/leaflet.js'></c:url>"></script>
+<link rel="stylesheet" href="res/design/leaflet/leaflet.css" />
+<link rel="stylesheet" href="res/bootstrap/css/bootstrap.css"
+	type="text/css" />
+<!-- Esto es para los ICONOS -->
+<script src="res/design/leaflet/leaflet.js"></script>
 <link rel="stylesheet"
 	href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
 <script
@@ -43,7 +51,8 @@
 	<div id="preloader">
 		<i class="circle-preloader"></i>
 	</div>
-
+	<p id="xddd">${listMaterias}</p>
+	<button id="p">Prueba</button>
 	<!-- ##### Header Area Start ##### -->
 	<header class="header-area"> <!-- Top Header Area -->
 	<div class="top-header">
@@ -54,8 +63,8 @@
 						class="header-content h-100 d-flex align-items-center justify-content-between">
 						<div class="academy-logo">
 							<a href="index.html"><img
-								src="<c:url value='/res/design/img/core-img/image.png'></c:url>"
-								width="150px"></a>
+								src="<%=request.getContextPath()%>/res/design/img/core-img/logo.png"
+								alt=""></a>
 						</div>
 						<div class="login-content">
 							<a href="#">Register / Login</a>
@@ -126,7 +135,7 @@
 									</ul>
 									<div class="single-mega cn-col-4">
 										<img
-											src="<%=request.getContextPath()%>/res/design/img/bg-img/bg-1.jpg"
+											src="${pageContext.request.contextPath}/res/design/img/bg-img/bg-1.jpg"
 											alt="">
 									</div>
 								</div></li>
@@ -152,338 +161,546 @@
 	</header>
 	<!-- ##### Header Area End ##### -->
 
-	<!-- ##### Breadcumb Area Start ##### 
-        <div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
-            <div class="bradcumbContent">
-                <h2>Contact</h2>
-            </div>
-        </div>
-        <!-- ##### Breadcumb Area End ##### -->
+	<!-- ##### Hero Area Start ##### -->
+	<section class="hero-area">
+	<div class="hero-slides owl-carousel">
 
-	<!-- ##### Google Maps ##### -->
-	<div class="map-area wow fadeInUp" data-wow-delay="300ms">
-		<div id="mapa">
-			<script src="<c:url value='/res/design/js/mapa.js'></c:url>"></script>
-
+		<!-- Single Hero Slide -->
+		<div class="single-hero-slide bg-img"
+			style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/bg-1.jpg);">
+			<div class="container h-100">
+				<div class="row h-100 align-items-center">
+					<div class="col-12">
+						<div class="hero-slides-content">
+							<h4 data-animation="fadeInUp" data-delay="100ms">All the
+								courses you need</h4>
+							<h2 data-animation="fadeInUp" data-delay="400ms">
+								Wellcome to our <br>Online University
+							</h2>
+							<a href="#" class="btn academy-btn" data-animation="fadeInUp"
+								data-delay="700ms">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
-		<button id="editar" class="editar" onclick="editar">EDITAR</button>
-		<button id="finalizar">Finalizar</button>
-
-
-		<!-- 			ESTO ES PARA ACCIONAR EL MODAL -->
-		<!-- 		  <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button> -->
-
-
-
-		<script>
-			$(document).ready(function() {
-			$.getScript("res/design/js/mapa.js");
-			$('#finalizar').hide();
-			$('#editar').click(function() {
-			var nombre = ["El mapa se modificara, ¿continuar?",
-						"estas seguro de agregar un marcador aca, ¿continuar?",
-						"Los datos se guardaran, ¿continuar?" ]
-			console.log('Expresion: ');
-			var opcion = confirm(nombre[0]);
-			$(this).hide();
-			$('#finalizar').show();
-
-			console.log(opcion+ "holaaaaaa");
-								
-			if (opcion == true) {
-
-				alert("aceptado");
-				map.on(	'click',function(e) {
-				var lat = e.latlng.lat;
-				var lon = e.latlng.lng;
-
-				var afirmar = confirm(nombre[1]);
-
-			if (afirmar == true) {
-				$('#myModal').modal("show");
-				$('#formCampus').hide();
-				$('#formFacultad').hide();							
-
-				
-				$('#campus').click(function(){
-					$('#formCampus').show();
-					$('#formFacultad').hide();
-					
-					$('#guardarC').click(function(){
-						market = L.marker([	lat,	lon ]).addTo(map);
-						
-					})
-				})
-				$('#facultad').click(function(){
-					$('#formFacultad').show();
-					$('#formCampus').hide();	
-					
-					$('#guardarF').click(function(){
-						market = L.marker([	lat,	lon ]).addTo(map);
-					})
-				})
-
-				$('#finalizar').click(function() {
-				var confirmar1 = confirm(nombre[2]);
-					if (confirmar1 == true) {
-																				
-						latitud.push(e.latlng.lat);
-						longitud.push(e.latlng.lng);
-																					
-						$(this).hide();
-						$('#editar').show();
-																							
-						console.log();							
-						} else {
-																				
-							console.log("cambios no guardados");
-
-						}
-					
-				})
-				
-			} else {
-																		
-				console.log("denegado");
-			
-			}
-			
-				})
-
-			} else {
-			
-				alert("cancelado");
-				
-			}
-
-
-			})
-			
-			})
-		</script>
-
-		<div id="formulario">
-			<div class="contact-information wow fadeInUp" data-wow-delay="400ms">
-				<div class="section-heading text-left">
-					<span>The Best</span>
-					<h3>Contact Us</h3>
-					<p class="mt-30">Lacinia, lacinia la cus non, fermen tum nisi.
-						Donec et sollicitudin. Morbi vel arcu gravida, iaculis lacus vel,
-						posuere ipsum. Sed faucibus mauris vitae urna consectetur, sit
-						amet maximus nisl sagittis. Ut in iaculis enim, et pulvinar
-				</div>
-
-				<!-- Contact Social Info -->
-				<div class="contact-social-info d-flex mb-30">
-					<a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-					<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a
-						href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> <a
-						href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a> <a
-						href="#"><i class="fa fa-behance" aria-hidden="true"></i></a> <a
-						href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-				</div>
-
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-placeholder"></i>
+		<!-- Single Hero Slide -->
+		<div class="single-hero-slide bg-img"
+			style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/bg-2.jpg);">
+			<div class="container h-100">
+				<div class="row h-100 align-items-center">
+					<div class="col-12">
+						<div class="hero-slides-content">
+							<h4 data-animation="fadeInUp" data-delay="100ms">All the
+								courses you need</h4>
+							<h2 data-animation="fadeInUp" data-delay="400ms">
+								Wellcome to our <br>Online University
+							</h2>
+							<a href="#" class="btn academy-btn" data-animation="fadeInUp"
+								data-delay="700ms">Read More</a>
+						</div>
 					</div>
-					<p>
-						4127/ 5B-C Mislane Road,<br> Gibraltar, UK
-					</p>
-				</div>
-
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-telephone-1"></i>
-					</div>
-					<p>
-						Main: 203-808-8613 <br> Office: 203-808-8648
-					</p>
-				</div>
-
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-contract"></i>
-					</div>
-					<p>office@yourbusiness.com</p>
 				</div>
 			</div>
 		</div>
 	</div>
+	</section>
+	<!-- ##### Hero Area End ##### -->
 
-	<!-- ##### Contact Area End ##### -->
-
-
-	<!-- ESTO ES PARA QUE APAREZCA EL MODAL -->
-	<div class="modal fade" id="myModal" role="dialog">
-		<div class="modal-dialog">
-
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header" style="padding: 35px 50px;">
-
-					<h4>
-						<span class="glyphicon glyphicon-lock"></span> Login
-					</h4>
+	<!-- ##### Top Feature Area Start ##### -->
+	<div class="row">
+		<div class="col-2">
+			<div class="nav flex-column nav-pills red-active " id="v-pills-tab"
+				role="tablist" aria-orientation="vertical">
+				<a class="nav-link active show"
+					style="background-color: transparent;" id="v-pills-home-tab"
+					data-toggle="pill" href="#v-pills-home" role="tab"
+					aria-controls="v-pills-home" style="background-color: transparent;"
+					aria-selected="true">Temario en Pruebas</a> <a class="nav-link"
+					id="materias" data-toggle="pill" href="#v-pills-profile" role="tab"
+					aria-controls="v-pills-profile" aria-selected="false"
+					style="background-color: transparent;">Materias</a> <a
+					class="nav-link" id="v-pills-messages-tab" data-toggle="pill"
+					href="#v-pills-messages" role="tab"
+					aria-controls="v-pills-messages" aria-selected="false"
+					style="background-color: transparent;">Messages</a> <a
+					class="nav-link" id="v-pills-settings-tab" data-toggle="pill"
+					href="#v-pills-settings" role="tab"
+					aria-controls="v-pills-settings" aria-selected="false"
+					style="background-color: transparent;">Settings</a>
+			</div>
+		</div>
+		<div class="col-10">
+			<div class="tab-content" id="v-pills-tabContent"
+				style="margin-top: 25px;">
+				<div class="tab-pane fade active show" id="v-pills-home"
+					role="tabpanel" aria-labelledby="v-pills-home-tab">
+					<p>
+					<div class="card text-white bg-primary mb-3"
+						style="max-width: 18rem;">
+						<div class="card-header">Header</div>
+						<div class="card-body">
+							<h5 class="card-title">Primary card title</h5>
+							<p class="card-text">Some quick example text to build on the
+								card title and make up the bulk of the card's content.</p>
+						</div>
+					</div>
 				</div>
-				<div class="modal-body" style="padding: 40px 50px;">
-
-					<!-- Material unchecked -->
-					<div class="btn-group">
-						<button type="button" class="btn btn-primary" id="campus">Campus</button>
-						<br></br>
-						<button type="button" class="btn btn-primary"
-							style="margin-left: 3px" id="facultad">Facultad</button>
+				<div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+					aria-labelledby="v-pills-profile-tab">
+					<p>
+					<div class="container">
+						<div class="row">
+							<c:forEach var="tema" items="${listMaterias}">
+								<div class="card" style="width: 21rem;">
+									<div class="card-body">
+										<h5 style="text-align: center;" class="card-title">${tema.materia}</h5>
+										<h6 style="text-align: center;"
+											class="card-subtitle mb-2 text-muted">Codigo:
+											${tema.codigo}</h6>
+										<h6 style="text-align: center;"
+											class="card-subtitle mb-2 text-muted">Valoración:
+											${tema.unidadValorativa}</h6>
+										<did class="row">
+										<div class="col-6">
+											<h6 style="text-align: center;"
+												class="card-subtitle mb-2 text-muted">Pre-requisito:
+												${preRequisito[tema.idMateria]}</h6>
+										</div>
+										<div class="col-6">
+											<h6 style="text-align: center;"
+												class="card-subtitle mb-2 text-muted">Co-requisito:
+												${coRequisito[tema.idMateria]}</h6>
+										</div>
+										</did>
+										<p class="card-text">Some quick example text to build on
+											the card title and make up the bulk of the card's content.</p>
+										<a href="#" class="card-link">Card link</a> <a href="#"
+											class="card-link">Another link</a>
+									</div>
+								</div>
+							</c:forEach>
+						</div>
 					</div>
-
-					<div>
-						<br></br>
-						<sf:form
-							action="${pageContext.request.contextPath}/showMaterias/save"
-							method="post" commandName="mate" role="form">
-							<div class="form-group">
-								<label for="unidadValorativa"><span
-									class="glyphicon glyphicon-eye-open"></span> Latitud</label> <input
-									type="text" class="form-control" id="unidadValorativa"
-									path="unidadValorativa" placeholder="Latitud" />
-							</div>
-
-							<div class="form-group">
-								<label for="ciclo"><span
-									class="glyphicon glyphicon-eye-open"></span> Longitud</label> <input
-									type="text" class="form-control" id="ciclo"
-									placeholder="Longitud" />
-							</div>
-						</sf:form>
+					<p>${listMaterias}</p>
+					</p>
+					<div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+						aria-labelledby="v-pills-messages-tab">
+						<p>Fugiat id quis dolor culpa eiusmod anim velit excepteur
+							proident dolor aute qui magna. Ad proident laboris ullamco esse
+							anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud
+							magna nulla. Velit et et proident Lorem do ea tempor officia
+							dolor. Reprehenderit Lorem aliquip labore est magna commodo est
+							ea veniam consectetur.</p>
 					</div>
-
-					<div id="formCampus">
-						<sf:form
-							action="${pageContext.request.contextPath}/showMaterias/save"
-							method="post" commandName="mate" role="form">
-
-							<div class="form-group">
-								<label for="idMateria"><span
-									class="glyphicon glyphicon-user"></span> ID</label>
-								<sf:input type="text" class="form-control" id="idMateria"
-									placeholder="ID " path="idMateria" />
-							</div>
-
-							<div class="form-group">
-								<label for="materia"><span
-									class="glyphicon glyphicon-eye-open"></span> Nombre del Campus</label>
-								<input type="text" class="form-control" id="materia"
-									path="materia" placeholder="Nombre" />
-							</div>
-
-							<div class="form-group">
-								<label for="codigo"><span
-									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
-								<input type="text" class="form-control" id="codigo"
-									path="codigo" placeholder="Telefono" />
-							</div>
-
-
-							<div class="form-group">
-								<label for="departamento.idDepartamento"><span
-									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> <input
-									type="text" class="form-control"
-									id="departamento.idDepartamento"
-									path="departamento.idDepartamento" placeholder="Ubicacion" />
-							</div>
-
-
-							<div class="form-group">
-								<label for="ciclo"><span
-									class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
-									type="text" class="form-control" id="ciclo" placeholder="ciclo" />
-							</div>
-
-
-							<button type="submit" class="btn btn-success btn-block">
-								<span class="glyphicon glyphicon-off" id="guardarC"></span>
-								Guardar Cambios
-							</button>
-						</sf:form>
-
-
+					<div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+						aria-labelledby="v-pills-settings-tab">
+						<p>Maria Salomea Skłodowska-Curie,A​B​ más conocida como Marie
+							CurieC​B​ (Varsovia, 7 de noviembre de 1867-Passy, 4 de julio de
+							1934), fue una científica polaca nacionalizada francesa. Pionera
+							en el campo de la radiactividad, fue la primera persona en
+							recibir dos premios Nobel en distintas especialidades —Física y
+							Química—D​ y la primera mujer en ocupar el puesto de profesora en
+							la Universidad de París. En 1995 fue sepultada con honores en el
+							Panteón de París por méritos propios.E​ Nació en Varsovia, en lo
+							que entonces era el Zarato de Polonia (territorio administrado
+							por el Imperio ruso). Estudió clandestinamente en la «universidad
+							flotante» de Varsovia y comenzó su formación científica en dicha
+							ciudad. En 1891, a los 24 años, siguió a su hermana mayor
+							Bronisława Dłuska a París, donde culminó sus estudios y llevó a
+							cabo sus trabajos científicos más sobresalientes. Compartió el
+							premio Nobel de Física de 1903 con su marido Pierre Curie y el
+							físico Henri Becquerel. Años después, ganó en solitario el premio
+							Nobel de Química de 1911. Aunque recibió la ciudadanía francesa y
+							apoyó a su nueva patria, nunca perdió su identidad polaca: enseñó
+							a sus hijas su lengua materna y las llevaba a sus visitas a
+							Polonia.6​ Nombró el primer elemento químico que descubrió, el
+							polonio, como su país de origen.F​ Sus logros incluyen los
+							primeros estudios sobre el fenómeno de la radiactividad (término
+							que ella misma acuñó),8​9​10​ técnicas para el aislamiento de
+							isótopos radiactivos y el descubrimiento de dos elementos —el
+							polonio y el radio—. Bajo su dirección, se llevaron a cabo los
+							primeros estudios en el tratamiento de neoplasias con isótopos
+							radiactivos. Fundó el Instituto Curie en París y en Varsovia, que
+							se mantienen entre los principales centros de investigación
+							médica en la actualidad. Durante la Primera Guerra Mundial creó
+							los primeros centros radiológicos para uso militar. Murió en 1934
+							a los 66 años, en el sanatorio Sancellemoz en Passy, por una
+							anemia aplásica causada por la exposición a la radiación de tubos
+							de ensayo con radio que guardaba en los bolsillos en el
+							trabajo11​ y en la construcción de las unidades móviles de rayos
+							X de la Primera Guerra Mundial.</p>
 					</div>
-
-
-
-					<div id="formFacultad">
-						<sf:form
-							action="${pageContext.request.contextPath}/showMaterias/save"
-							method="post" commandName="mate" role="form">
-
-							<div class="form-group">
-								<label for="idMateria"><span
-									class="glyphicon glyphicon-user"></span> ID</label>
-								<sf:input type="text" class="form-control" id="idMateria"
-									placeholder="ID " path="idMateria" />
-							</div>
-
-							<div class="form-group">
-								<label for="materia"><span
-									class="glyphicon glyphicon-eye-open"></span> Nombre de la
-									Facultad</label> <input type="text" class="form-control" id="materia"
-									path="materia" placeholder="Nombre" />
-							</div>
-
-							<div class="form-group">
-								<label for="codigo"><span
-									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
-								<input type="text" class="form-control" id="codigo"
-									path="codigo" placeholder="Telefono" />
-							</div>
-
-
-							<div class="form-group">
-								<label for="departamento.idDepartamento"><span
-									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> <input
-									type="text" class="form-control"
-									id="departamento.idDepartamento"
-									path="departamento.idDepartamento" placeholder="Ubicacion" />
-							</div>
-
-
-							<div class="form-group">
-								<label for="ciclo"><span
-									class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
-									type="text" class="form-control" id="ciclo" placeholder="ciclo" />
-							</div>
-
-
-							<button type="submit" class="btn btn-success btn-block">
-								<span class="glyphicon glyphicon-off" id="guardarF"></span>
-								Guardar Cambios
-							</button>
-						</sf:form>
-
-
-					</div>
-
-					<!-- 					aqui -->
-				</div>
-
-
-
-				<div class="modal-footer">
-					<button type="submit" class="btn btn-danger btn-default pull-left"
-						data-dismiss="modal" id="cancell">
-						<span class="glyphicon glyphicon-remove"></span> Cancel
-					</button>
-
 				</div>
 			</div>
-
 		</div>
 	</div>
+	<!-- ##### Course Area Start ##### -->
+	<div class="academy-courses-area section-padding-100-0">
+		<div class="container">
+			<div class="row">
+				<!-- Single Course Area -->
+				<div class="col-12 col-sm-6 col-lg-4">
+					<div
+						class="single-course-area d-flex align-items-center mb-100 wow fadeInUp"
+						data-wow-delay="300ms">
+						<div class="course-icon">
+							<i class="icon-id-card"></i>
+						</div>
+						<div class="course-content">
+							<h4>Business School</h4>
+							<p>Cras vitae turpis lacinia, lacinia la cus non, fermentum
+								nisi.</p>
+						</div>
+					</div>
+				</div>
+				<!-- Single Course Area -->
+				<div class="col-12 col-sm-6 col-lg-4">
+					<div
+						class="single-course-area d-flex align-items-center mb-100 wow fadeInUp"
+						data-wow-delay="400ms">
+						<div class="course-icon">
+							<i class="icon-worldwide"></i>
+						</div>
+						<div class="course-content">
+							<h4>Marketing</h4>
+							<p>Lacinia, lacinia la cus non, fermen tum nisi.</p>
+						</div>
+					</div>
+				</div>
+				<!-- Single Course Area -->
+				<div class="col-12 col-sm-6 col-lg-4">
+					<div
+						class="single-course-area d-flex align-items-center mb-100 wow fadeInUp"
+						data-wow-delay="500ms">
+						<div class="course-icon">
+							<i class="icon-map"></i>
+						</div>
+						<div class="course-content">
+							<h4>Photography</h4>
+							<p>Cras vitae turpis lacinia, lacinia la cus non, fermentum
+								nisi.</p>
+						</div>
+					</div>
+				</div>
+				<!-- Single Course Area -->
+				<div class="col-12 col-sm-6 col-lg-4">
+					<div
+						class="single-course-area d-flex align-items-center mb-100 wow fadeInUp"
+						data-wow-delay="600ms">
+						<div class="course-icon">
+							<i class="icon-like"></i>
+						</div>
+						<div class="course-content">
+							<h4>Social Media</h4>
+							<p>Cras vitae turpis lacinia, lacinia la cus non, fermentum
+								nisi.</p>
+						</div>
+					</div>
+				</div>
+				<!-- Single Course Area -->
+				<div class="col-12 col-sm-6 col-lg-4">
+					<div
+						class="single-course-area d-flex align-items-center mb-100 wow fadeInUp"
+						data-wow-delay="700ms">
+						<div class="course-icon">
+							<i class="icon-responsive"></i>
+						</div>
+						<div class="course-content">
+							<h4>Development</h4>
+							<p>Lacinia, lacinia la cus non, fermen tum nisi.</p>
+						</div>
+					</div>
+				</div>
+				<!-- Single Course Area -->
+				<div class="col-12 col-sm-6 col-lg-4">
+					<div
+						class="single-course-area d-flex align-items-center mb-100 wow fadeInUp"
+						data-wow-delay="800ms">
+						<div class="course-icon">
+							<i class="icon-message"></i>
+						</div>
+						<div class="course-content">
+							<h4>Design</h4>
+							<p>Cras vitae turpis lacinia, lacinia la cus non, fermentum
+								nisi.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ##### Course Area End ##### -->
 
+	<!-- ##### Testimonials Area Start ##### -->
+	<div class="testimonials-area section-padding-100 bg-img bg-overlay"
+		style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/bg-2.jpg);">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="section-heading text-center mx-auto white wow fadeInUp"
+						data-wow-delay="300ms">
+						<span>our testimonials</span>
+						<h3>See what our satisfied customers are saying about us</h3>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Single Testimonials Area -->
+				<div class="col-12 col-md-6">
+					<div class="single-testimonial-area mb-100 d-flex wow fadeInUp"
+						data-wow-delay="400ms">
+						<div class="testimonial-thumb">
+							<img
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/t1.jpg"
+								alt="">
+						</div>
+						<div class="testimonial-content">
+							<h5>Great teachers</h5>
+							<p>Etiam nec odio vestibulum est mattis effic iturut magna.
+								Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum
+								est mattis effic iturut magna. Pellentesque sit am et tellus
+								blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est
+								mat tis effic iturut magna.</p>
+							<h6>
+								<span>Maria Smith,</span> Student
+							</h6>
+						</div>
+					</div>
+				</div>
+				<!-- Single Testimonials Area -->
+				<div class="col-12 col-md-6">
+					<div class="single-testimonial-area mb-100 d-flex wow fadeInUp"
+						data-wow-delay="500ms">
+						<div class="testimonial-thumb">
+							<img
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/t2.jpg"
+								alt="">
+						</div>
+						<div class="testimonial-content">
+							<h5>Easy and user friendly courses</h5>
+							<p>Retiam nec odio vestibulum est mattis effic iturut magna.
+								Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum
+								est mattis effic iturut magna. Pellentesque sit am et tellus
+								blandit. Etiam nec odio vestibul.</p>
+							<h6>
+								<span>Shawn Gaines,</span> Student
+							</h6>
+						</div>
+					</div>
+				</div>
+				<!-- Single Testimonials Area -->
+				<div class="col-12 col-md-6">
+					<div class="single-testimonial-area mb-100 d-flex wow fadeInUp"
+						data-wow-delay="600ms">
+						<div class="testimonial-thumb">
+							<img
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/t3.jpg"
+								alt="">
+						</div>
+						<div class="testimonial-content">
+							<h5>I just love the courses here</h5>
+							<p>Nec odio vestibulum est mattis effic iturut magna.
+								Pellentesque sit am et tellus blandit. Etiam nec odio vestibul.
+								Etiam nec odio vestibulum est mat tis effic iturut magna.
+								Pellentesque sit amet tellus blandit. Etiam nec odio ves tibul.</p>
+							<h6>
+								<span>Ross Cooper,</span> Student
+							</h6>
+						</div>
+					</div>
+				</div>
+				<!-- Single Testimonials Area -->
+				<div class="col-12 col-md-6">
+					<div class="single-testimonial-area mb-100 d-flex wow fadeInUp"
+						data-wow-delay="700ms">
+						<div class="testimonial-thumb">
+							<img
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/t4.jpg"
+								alt="">
+						</div>
+						<div class="testimonial-content">
+							<h5>One good academy</h5>
+							<p>Vestibulum est mattis effic iturut magna. Pellentesque sit
+								am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio
+								vestibu lum est mat tis effic iturut magna. Pellentesque sit
+								amet tellus blandit. Etiam nec odio ves tibul. Etiam nec odio
+								vestibulum est mat tis effic iturut magnaNec odio vestibulum est
+								mattis effic iturut magna.</p>
+							<h6>
+								<span>James Williams,</span> Student
+							</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="load-more-btn text-center wow fadeInUp"
+						data-wow-delay="800ms">
+						<a href="#" class="btn academy-btn">See More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ##### Testimonials Area End ##### -->
+
+	<!-- ##### Top Popular Courses Area Start ##### -->
+	<div class="top-popular-courses-area section-padding-100-70">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="section-heading text-center mx-auto wow fadeInUp"
+						data-wow-delay="300ms">
+						<span>The Best</span>
+						<h3>Top Popular Courses</h3>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+
+				<!-- Single Top Popular Course -->
+				<div class="col-12 col-lg-6">
+					<div
+						class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp"
+						data-wow-delay="400ms">
+						<div class="popular-course-content">
+							<h5>Business for begginers</h5>
+							<span>By Simon Smith | March 18, 2018</span>
+							<div class="course-ratings">
+								<i class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star-o" aria-hidden="true"></i>
+							</div>
+							<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum
+								nisi. Donec et sollicitudin est, in euismod.</p>
+							<a href="#" class="btn academy-btn btn-sm">See More</a>
+						</div>
+						<div class="popular-course-thumb bg-img"
+							style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg);"></div>
+					</div>
+				</div>
+
+				<!-- Single Top Popular Course -->
+				<div class="col-12 col-lg-6">
+					<div
+						class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp"
+						data-wow-delay="500ms">
+						<div class="popular-course-content">
+							<h5>Advanced HTML5</h5>
+							<span>By Simon Smith | March 18, 2018</span>
+							<div class="course-ratings">
+								<i class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star-o" aria-hidden="true"></i>
+							</div>
+							<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum
+								nisi. Donec et sollicitudin est, in euismod.</p>
+							<a href="#" class="btn academy-btn btn-sm">See More</a>
+						</div>
+						<div class="popular-course-thumb bg-img"
+							style="background-image: url(res/design/img/bg-img/pc-2.jpg);"></div>
+					</div>
+				</div>
+
+				<!-- Single Top Popular Course -->
+				<div class="col-12 col-lg-6">
+					<div
+						class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp"
+						data-wow-delay="600ms">
+						<div class="popular-course-content">
+							<h5>Marketing 101</h5>
+							<span>By Simon Smith | March 18, 2018</span>
+							<div class="course-ratings">
+								<i class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star-o" aria-hidden="true"></i>
+							</div>
+							<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum
+								nisi. Donec et sollicitudin est, in euismod.</p>
+							<a href="#" class="btn academy-btn btn-sm">See More</a>
+						</div>
+						<div class="popular-course-thumb bg-img"
+							style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg);"></div>
+					</div>
+				</div>
+
+				<!-- Single Top Popular Course -->
+				<div class="col-12 col-lg-6">
+					<div
+						class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp"
+						data-wow-delay="700ms">
+						<div class="popular-course-content">
+							<h5>Business for begginers</h5>
+							<span>By Simon Smith | March 18, 2018</span>
+							<div class="course-ratings">
+								<i class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star" aria-hidden="true"></i> <i
+									class="fa fa-star-o" aria-hidden="true"></i>
+							</div>
+							<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum
+								nisi. Donec et sollicitudin est, in euismod.</p>
+							<a href="#" class="btn academy-btn btn-sm">See More</a>
+						</div>
+						<div class="popular-course-thumb bg-img"
+							style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg);"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ##### Top Popular Courses Area End ##### -->
+
+	<!-- ##### Partner Area Start ##### -->
+	<div class="partner-area section-padding-0-100">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div
+						class="partners-logo d-flex align-items-center justify-content-between flex-wrap">
+						<a href="#"><img
+							src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-1.png"
+							alt=""></a> <a href="#"><img
+							src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-2.png"
+							alt=""></a> <a href="#"><img
+							src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-3.png"
+							alt=""></a> <a href="#"><img
+							src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-4.png"
+							alt=""></a> <a href="#"><img
+							src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-5.png"
+							alt=""></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ##### Partner Area End ##### -->
+
+	<!-- ##### CTA Area Start ##### -->
+	<div class="call-to-action-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div
+						class="cta-content d-flex align-items-center justify-content-between flex-wrap">
+						<h3>Do you want to enrole at our Academy? Get in touch!</h3>
+						<a href="#" class="btn academy-btn">See More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ##### CTA Area End ##### -->
 
 	<!-- ##### Footer Area Start ##### -->
 	<footer class="footer-area">
@@ -495,8 +712,8 @@
 					<div class="footer-widget mb-100">
 						<div class="widget-title">
 							<a href="#"><img
-								src="<%=request.getContextPath()%>/res/design/img/core-img/logo_1.png"
-								width="170"></a>
+								src="<%=request.getContextPath()%>/res/design/img/core-img/logo2.png"
+								alt=""></a>
 						</div>
 						<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum
 							nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et
@@ -534,30 +751,29 @@
 						</div>
 						<div class="gallery-list d-flex justify-content-between flex-wrap">
 							<a
-								href="<%=request.getContextPath()%>/res/design/img/gallery1.jpg"
+								href="<%=request.getContextPath()%>/res/design/img/bg-img/gallery1.jpg"
 								class="gallery-img" title="Gallery Image 1"><img
-								src="<c:url value='/res/design/img/bg-img/gallery1.jpg'></c:url>"
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/gallery1.jpg"
 								alt=""></a> <a
-								href="<%=request.getContextPath()%>/res/design/img/gallery2.jpg"
+								href="<%=request.getContextPath()%>/res/design/bg-img/gallery2.jpg"
 								class="gallery-img" title="Gallery Image 2"><img
-								src="<c:url value='/res/design/img/bg-img/gallery2.jpg'></c:url>"
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/gallery2.jpg"
 								alt=""></a> <a
-								href="<%=request.getContextPath()%>/res/design/img/gallery3.jpg"
+								href="<%=request.getContextPath()%>/res/design/img/bg-img/gallery3.jpg"
 								class="gallery-img" title="Gallery Image 3"><img
-								src="<c:url value='/res/design/img/bg-img/gallery3.jpg'></c:url>"
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/gallery3.jpg"
 								alt=""></a> <a
-								href="<%=request.getContextPath()%>/res/design/img/gallery4.jpg"
+								href="<%=request.getContextPath()%>/res/design/img/bg-img/gallery4.jpg"
 								class="gallery-img" title="Gallery Image 4"><img
-								src="<c:url value='/res/design/img/bg-img/gallery4.jpg'></c:url>"
-								alt=""></a> <a
-								href="<%=request.getContextPath()%>/res/design/img/gallery5.jpg"
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/gallery4.jpg"
+								alt=""></a> <a href="/res/img/bg-img/gallery5.jpg"
 								class="gallery-img" title="Gallery Image 5"><img
-								src="<c:url value='/res/design/img/bg-img/gallery5.jpg'></c:url>"
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/gallery5.jpg"
 								alt=""></a> <a
-								href="<%=request.getContextPath()%>/res/design/img/gallery6.jpg"
+								href="<%=request.getContextPath()%>/res/design/img/bg-img/gallery6.jpg"
 								class="gallery-img" title="Gallery Image 6"><img
-								src="<c:url value='/res/design/img/bg-img/gallery6.jpg'></c:url>"
-								alt="Dem"></a>
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/gallery6.jpg"
+								alt=""></a>
 						</div>
 					</div>
 					<p><%=request.getContextPath()%>/img/gallery6.jpg

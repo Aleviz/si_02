@@ -182,3 +182,11 @@
 .icon-sms:before {
 	content: "\e927";
 }
+
+.icon-imbalido:before {
+	content: "\f2fe";
+}
+
+.icon-books:before {
+	content: "\f518";
+}

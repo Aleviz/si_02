@@ -716,7 +716,6 @@ keyframes spin { 100% {
 .top-features-area {
 	position: relative;
 	z-index: 50;
-	margin-bottom: -60px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1771,3 +1770,74 @@ keyframes spin { 100% {
 }
 
 /*# sourceMappingURL=style.css.map */
+.amaya {
+	left: 40px;
+	z-index: 50;
+	width: 90%;
+	background: #61ba6d;
+	background: -webkit-linear-gradient(to right, #850000, #D75151);
+	background: linear-gradient(to right, #850000, #D75151);
+	padding: 40px 15px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.icon-assistance:before {
+	content: "\e903";
+	font-size: 200%;
+	color: white;
+	margin-left: -55px;
+}
+
+.icon-telephone-3:before {
+	content: "\e913";
+	font-size: 200%;
+	color: white;
+	margin-left: -65px;
+}
+
+.icon-fas-fa-phone:before {
+	content: "\e913";
+	font-size: 200%;
+	color: white;
+	margin-left: -65px;
+}
+
+.icon-books:before {
+	content: "\f518";
+	font-size: 200%;
+	color: white;
+	margin-left: -65px;
+}
+
+.icon-imbalido {
+	content: "\f2fe";
+	color: black;
+}
+
+.myButton {
+	background-color: linear-gradient(to right, #850000, #D75151);
+	border: 1px;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 9px 23px;
+	text-decoration: none;
+	text-shadow: 0px -1px 0px #7a2a1d;
+}
+
+.myButton:hover {
+	background-color: #b34332;
+}
+
+.myButton:active {
+	position: relative;
+	top: 1px;
+}
+
+.myButton:hover {
+	color: white;
+}

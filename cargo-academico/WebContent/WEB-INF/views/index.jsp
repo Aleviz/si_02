@@ -16,6 +16,7 @@
 	<br />
 
 	<a href='<c:url value="/showMaterias"/>'>Materias</a>
+	<a href='<c:url value="/estadisticas"/>'>Estadisticas</a>
 	<a href='<c:url value="/NewFile"/>'>x</a>
 </body>
 </html>
