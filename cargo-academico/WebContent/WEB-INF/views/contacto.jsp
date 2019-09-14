@@ -20,7 +20,7 @@
 	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
 
 <script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script>
-
+   
 
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -34,6 +34,14 @@
 <!-- Core Stylesheet -->
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/res/design/style.css">
+
+
+
+
+
+
+
+
 
 </head>
 
@@ -181,11 +189,13 @@
 
 		<div id="formulario">
 
-<!-- 			<div class="contact-information wow fadeInUp" data-wow-delay="400ms"> -->
-<!-- 				<div class="section-heading text-left"> -->
-<!-- 					<span>Unit</span> -->
-<!-- 					<h3>Facultad de Ingenieria</h3> -->
-<%-- 					<c:forEach var="e" items="${es}"> --%>
+			<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showCarreras">
+				<div class="section-heading text-left">
+					<span>Unit</span>
+					<button class="atras">ATRAS</button>
+					<h3>Facultad de Ingenieria</h3>
+					<c:forEach var="e" items="${es}">
+						<p>carrera: ${e.nombreEscuela}</p>
 <!-- 					<p class="izq"> -->
 <!-- 						<img -->
 <%-- 							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg" --%>
@@ -193,81 +203,73 @@
 <%-- 							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" --%>
 <!-- 							class="flip2"> -->
 <!-- 					</p> -->
-<%-- 					</c:forEach> --%>
+					</c:forEach>
 					
 					
-<!-- 				</div> -->
+				</div>
 
-<!-- 				Single Contact Info -->
-<!-- 				<div class="single-contact-info d-flex"> -->
-<!-- 					<div class="contact-icon mr-15"> -->
-<!-- 						<i class="icon-placeholder"></i> -->
-<!-- 					</div> -->
-<%-- 					<p>Ubicacion: ${campusdir.ubicacion}</p> --%>
+				Single Contact Info
+				<div class="single-contact-info d-flex">
+					<div class="contact-icon mr-15">
+						<i class="icon-placeholder"></i>
+					</div>
+					<p>Ubicacion: ${campusdir.ubicacion}</p>
 
 
-<!-- 				</div> -->
-<!-- 				Single Contact Info -->
-<!-- 				<div class="single-contact-info d-flex"> -->
-<!-- 					<div class="contact-icon mr-15"> -->
-<!-- 						<i class="icon-telephone-1"></i> -->
-<!-- 					</div> -->
-<!-- 					<p> -->
-<%-- 						Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648 --%>
-<!-- 					</p> -->
-<!-- 				</div> -->
-<!-- 				Single Contact Info -->
-<!-- 				<div class="single-contact-info d-flex"> -->
-<!-- 					<div class="contact-icon mr-15"> -->
-<!-- 						<i class="icon-contract"></i> -->
-<!-- 					</div> -->
-<!-- 					<p>Correo: universidadTeconolica@unit.sv</p> -->
+				</div>
+				Single Contact Info
+				<div class="single-contact-info d-flex">
+					<div class="contact-icon mr-15">
+						<i class="icon-telephone-1"></i>
+					</div>
+					<p>
+						Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648
+					</p>
+				</div>
+				Single Contact Info
+				<div class="single-contact-info d-flex">
+					<div class="contact-icon mr-15">
+						<i class="icon-contract"></i>
+					</div>
+					<p>Correo: universidadTeconolica@unit.sv</p>
 
-<!-- 				</div> -->
-<%-- 				<c:forEach var="e" items="${es}"> --%>
-<!-- 					<div class="single-contact-info d-flex"> -->
+				</div>
+				<c:forEach var="e" items="${es}">
+					<div class="single-contact-info d-flex">
 
-<!-- 						<div class="contact-icon mr-15"> -->
-<!-- 							<i class="icon-contract"></i> -->
-<!-- 						</div> -->
+						<div class="contact-icon mr-15">
+							<i class="icon-contract"></i>
+						</div>
 
-<!-- 						<br> -->
-<%-- 						<p>carrera: ${e.nombreEscuela}</p> --%>
+						<br>
+						<p>carrera: ${e.nombreEscuela}</p>
 
-<!-- 					</div> -->
-<%-- 				</c:forEach> --%>
+					</div>
+				</c:forEach>
 
-<!-- 				<div class="botonMapa"> -->
-<!-- 					<button id="editar" class="editar" onclick="editar">EDITAR</button> -->
-<!-- 					<button id="finalizar">Finalizar</button> -->
-<!-- 					<div id="qp2"> -->
-<!-- 						<label> <a id="2qp" -->
-<%-- 							href="buscarF/<c:out value='${facultadName}'/>/encontrar"></a>Buscar --%>
-<!-- 						</label> <label> <a id="22qp" -->
-<%-- 							href="buscarF/'${facultadName}'/encontrar"></a>busqueda --%>
-<!-- 						</label> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
 
-<!-- 			</div> -->
+			</div>
 			
 	
 <!-- 	//////////////////////////////////////////////////////////////////////////////////////////// -->
-	
-	
+	<button id="clash">Splash</button>
 	
 			
-			<div class="contact-information wow fadeInUp" data-wow-delay="400ms">
+			<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showFacultad">
 				<div class="section-heading text-left">
 					<span>Unit</span>
 					<h3>Universidad Nacional de Innovacion Tecnologica</h3>
+
 					<c:forEach var="e" items="${facultadList}">
-					<p class="izq">
-						<img
+					<p class="obtenerF">${e.facultad}</p>
+					<p class="izq"  >
+					<a  class="btCarreras"  href="buscarF/<c:out value='${e.facultad}'/>/encontrar">
+						<img class="carreras"
 							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
 							class="flip"> <img
 							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
 							class="flip2">
+							</a>
 					</p>
 					</c:forEach>
 					
@@ -304,13 +306,7 @@
 				<div class="botonMapa">
 					<button id="editar" class="editar" onclick="editar">EDITAR</button>
 					<button id="finalizar">Finalizar</button>
-					<div id="qp2">
-						<label> <a id="2qp"
-							href="buscarF/<c:out value='${facultadName}'/>/encontrar"></a>Buscar
-						</label> <label> <a id="22qp"
-							href="buscarF/'${facultadName}'/encontrar"></a>busqueda
-						</label>
-					</div>
+
 				</div>
 
 			</div>
