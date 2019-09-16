@@ -2,9 +2,10 @@ package com.cargoacademico.reports;
 
 
 public class EspEmpleado {
+	private int cidcampus;
 	private String unombre;
 	private String ccampus;
-	private String enombre_edificio;
+	private String ednombre_edificio;
 	private String ffacultad;
 	private String eprimer_nombre;
 	private String esegundo_nombre;
@@ -12,21 +13,21 @@ public class EspEmpleado {
 	private String esegundo_apellido;
 	private String ecarnet;
 	private String tdtipo_docente;
-	private String efoto;
-	private String ulogo;
 	
-
+	
+	
 	public EspEmpleado() {
 		super();
 	}
-
-	public EspEmpleado(String unombre, String ccampus, String enombre_edificio, String ffacultad, String eprimer_nombre,
-			String esegundo_nombre, String eprimer_apellido, String esegundo_apellido, String ecarnet,
-			String tdtipo_docente, String efoto, String ulogo) {
+	
+	public EspEmpleado(int cidcampus, String unombre, String ccampus, String ednombre_edificio, String ffacultad,
+			String eprimer_nombre, String esegundo_nombre, String eprimer_apellido, String esegundo_apellido,
+			String ecarnet, String tdtipo_docente) {
 		super();
+		this.cidcampus = cidcampus;
 		this.unombre = unombre;
 		this.ccampus = ccampus;
-		this.enombre_edificio = enombre_edificio;
+		this.ednombre_edificio = ednombre_edificio;
 		this.ffacultad = ffacultad;
 		this.eprimer_nombre = eprimer_nombre;
 		this.esegundo_nombre = esegundo_nombre;
@@ -34,11 +35,14 @@ public class EspEmpleado {
 		this.esegundo_apellido = esegundo_apellido;
 		this.ecarnet = ecarnet;
 		this.tdtipo_docente = tdtipo_docente;
-		this.efoto = efoto;
-		this.ulogo = ulogo;
 	}
 	
-	
+	public int getCidcampus() {
+		return cidcampus;
+	}
+	public void setCidcampus(int cidcampus) {
+		this.cidcampus = cidcampus;
+	}
 	public String getUnombre() {
 		return unombre;
 	}
@@ -51,11 +55,11 @@ public class EspEmpleado {
 	public void setCcampus(String ccampus) {
 		this.ccampus = ccampus;
 	}
-	public String getEnombre_edificio() {
-		return enombre_edificio;
+	public String getEdnombre_edificio() {
+		return ednombre_edificio;
 	}
-	public void setEnombre_edificio(String enombre_edificio) {
-		this.enombre_edificio = enombre_edificio;
+	public void setEdnombre_edificio(String ednombre_edificio) {
+		this.ednombre_edificio = ednombre_edificio;
 	}
 	public String getFfacultad() {
 		return ffacultad;
@@ -99,18 +103,7 @@ public class EspEmpleado {
 	public void setTdtipo_docente(String tdtipo_docente) {
 		this.tdtipo_docente = tdtipo_docente;
 	}
-	public String getEfoto() {
-		return efoto;
-	}
-	public void setEfoto(String efoto) {
-		this.efoto = efoto;
-	}
-	public String getUlogo() {
-		return ulogo;
-	}
-	public void setUlogo(String ulogo) {
-		this.ulogo = ulogo;
-	}
+	
 	
 	
 	
