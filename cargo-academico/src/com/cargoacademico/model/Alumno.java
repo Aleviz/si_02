@@ -1,5 +1,5 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-13-2019 04:06:38 PM by Hibernate Tools 5.1.10.Final
 
 import java.util.Date;
 import java.util.HashSet;
