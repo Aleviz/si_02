@@ -20,18 +20,18 @@ public class MateriasController {
 
 	@Autowired
 	private GenericService gd;
-	
+
 	@RequestMapping("/showMaterias")
-	public String showMaterias(Model model, 
-			@ModelAttribute("mensaje") String mensaje) {
-		
+	public String showMaterias(Model model, @ModelAttribute("mensaje") String mensaje) {
+
 		List<Materias> matList = gd.findAll();
 		Materias materia = new Materias();
-		
 		model.addAttribute("mate", materia);
 		model.addAttribute("mensaje", mensaje);
 		model.addAttribute("lista", matList);
-		
+
+		List<Materias> m = new ArrayList<Materias>();
+
 		return "showMaterias";
 	}
 
@@ -40,19 +40,19 @@ public class MateriasController {
 			Model model, RedirectAttributes ra) {
 		int x = materia.getMateriasByPrerequisito().getIdMateria();
 		System.out.println(x);
-	
+
 		gd.saveOrUpdate(materia);
 		ra.addFlashAttribute("mensaje", "Se han guardado los cambios");
-		
+
 		return "redirect:/showMaterias";
 	}
 	
 	@RequestMapping("/showMaterias/{idMateria}/update")
-	public String findMateriaUpdate (  Model model, @PathVariable("idMateria") int id) {
-		
+	public String findMateriaUpdate(Model model, @PathVariable("idMateria") int id) {
+
 		Materias materia = gd.findById(id);
 		List<Materias> matList = gd.findAll();
-		model.addAttribute("mensaje","Materia Lista para Actualizar");
+		model.addAttribute("mensaje", "Materia Lista para Actualizar");
 		model.addAttribute("lista", matList);
 		model.addAttribute("mate", materia);
 		return "showMaterias";
