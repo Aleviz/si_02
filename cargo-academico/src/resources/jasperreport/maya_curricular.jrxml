@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="maya_curricular" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="95cebb85-4933-4ed3-adac-975ce290793a">
-	<property name="com.jaspersoft.studio.data.sql.tables">
-		<![CDATA[Y2FyZ29fYWNhZGVtaWNvLmVzY3VlbGEgLDE1LDE1LDg0Y2RkNzE2LTU2N2ItNGU1My05NmFkLWRj
-YzFmM2M5N2JmMztjYXJnb19hY2FkZW1pY28uZmFjdWx0YWQgLDE3Niw1MyxmODNiODU0NS0yY2Fj
-LTQ4OGQtOTcxMS0yMzRmY2E5MDQyMGI7]]>
-	</property>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="205"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="788"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="cargo_academico"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
@@ -19,55 +15,60 @@ LTQ4OGQtOTcxMS0yMzRmY2E5MDQyMGI7]]>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT cargo_academico.escuela.id_escuela,
-	cargo_academico.escuela.nombre_escuela,
-	cargo_academico.escuela.telefono,
-	cargo_academico.escuela.descripcion,
-	cargo_academico.escuela.campo_de_accion,
-	cargo_academico.escuela.mision,
-	cargo_academico.escuela.vision,
-	cargo_academico.escuela.objetivo,
-	cargo_academico.facultad.facultad
-FROM cargo_academico.escuela
-	INNER JOIN cargo_academico.facultad ON 
-	 cargo_academico.escuela.id_facultad = cargo_academico.facultad.id_facultad 
+		<![CDATA[SELECT escuela.id_escuela AS esidescuela,
+	escuela.nombre_escuela AS esnombreescuela,
+	escuela.descripcion AS esdescripcion,
+	escuela.campo_de_accion AS escampodeaccion,
+	escuela.mision AS esmision,
+	escuela.vision AS escvision,
+	escuela.objetivo AS esobjetivo,
+	escuela.telefono AS estelefono,
+	facultad.facultad AS ffacultad,
+	facultad.ubicacion AS fubicacion
+FROM facultad facultad
+	INNER JOIN escuela escuela ON 
+	 facultad.id_facultad = escuela.id_facultad 
 WHERE 
-	 cargo_academico.escuela.id_escuela = 1]]>
+	 escuela.id_escuela = 1]]>
 	</queryString>
-	<field name="id_escuela" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.label" value="id_escuela"/>
+	<field name="esidescuela" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="esidescuela"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escuela"/>
 	</field>
-	<field name="nombre_escuela" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="nombre_escuela"/>
+	<field name="esnombreescuela" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="esnombreescuela"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escuela"/>
 	</field>
-	<field name="telefono" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="telefono"/>
+	<field name="esdescripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="esdescripcion"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escuela"/>
 	</field>
-	<field name="descripcion" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="descripcion"/>
+	<field name="escampodeaccion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="escampodeaccion"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escuela"/>
 	</field>
-	<field name="campo_de_accion" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="campo_de_accion"/>
+	<field name="esmision" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="esmision"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escuela"/>
 	</field>
-	<field name="mision" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="mision"/>
+	<field name="escvision" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="escvision"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escuela"/>
 	</field>
-	<field name="vision" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="vision"/>
+	<field name="esobjetivo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="esobjetivo"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escuela"/>
 	</field>
-	<field name="objetivo" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="objetivo"/>
+	<field name="estelefono" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="estelefono"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escuela"/>
 	</field>
-	<field name="facultad" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="facultad"/>
+	<field name="ffacultad" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ffacultad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="facultad"/>
+	</field>
+	<field name="fubicacion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fubicacion"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="facultad"/>
 	</field>
 	<background>
@@ -87,7 +88,7 @@ WHERE
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Arial" size="16"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{nombre_escuela}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{esnombreescuela}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="400" y="40" width="400" height="30" uuid="84701d81-90ae-4aec-8ba9-4697928957c9"/>
@@ -95,7 +96,7 @@ WHERE
 					<font fontName="Arial" size="16"/>
 					<paragraph lineSpacing="1_1_2"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{facultad}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ffacultad}]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
@@ -120,7 +121,7 @@ WHERE
 					<font fontName="Arial" size="17"/>
 					<paragraph lineSpacing="Proportional"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{vision}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{escvision}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="5" y="45" width="430" height="150" forecolor="#FFFFFF" backcolor="#7DBB37" uuid="874b0443-df62-4651-86ed-6bb82e82acb6"/>
@@ -131,7 +132,7 @@ WHERE
 					<font fontName="Arial" size="17"/>
 					<paragraph lineSpacing="Proportional"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{esdescripcion}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="450" y="245" width="346" height="150" forecolor="#FFFFFF" backcolor="#7DBB37" uuid="3e975665-ae98-4c13-91bb-3c79ea00108c"/>
@@ -142,7 +143,7 @@ WHERE
 					<font fontName="Arial" size="17"/>
 					<paragraph lineSpacing="Proportional"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{objetivo}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{esobjetivo}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="5" y="245" width="430" height="150" forecolor="#FFFFFF" backcolor="#7DBB37" uuid="3eb85660-3c5c-4f64-b97c-fe7a030c3eea"/>
@@ -153,7 +154,7 @@ WHERE
 					<font fontName="Arial" size="17"/>
 					<paragraph lineSpacing="Proportional"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{mision}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{esmision}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement mode="Opaque" x="450" y="10" width="346" height="30" forecolor="#0859D1" backcolor="#D1CDCD" uuid="29704191-2d8d-48d3-bab2-2eb683af69b6"/>
@@ -189,24 +190,44 @@ WHERE
 				<reportElement mode="Opaque" x="3" y="402" width="793" height="50" forecolor="#000000" backcolor="#467C3E" uuid="31085721-b6ec-4b1e-bb06-45ecd3bd80fb"/>
 			</rectangle>
 			<textField>
-				<reportElement mode="Opaque" x="490" y="412" width="190" height="30" forecolor="#FFFFFF" backcolor="#467C3E" uuid="db4d68c0-abe5-4b39-90ec-5c9bc6d89058"/>
+				<reportElement mode="Opaque" x="660" y="412" width="136" height="30" forecolor="#FFFFFF" backcolor="#467C3E" uuid="db4d68c0-abe5-4b39-90ec-5c9bc6d89058"/>
 				<box>
 					<pen lineColor="#467C3E"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Bottom">
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
 					<font fontName="Algerian" size="18"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{estelefono}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Opaque" x="680" y="412" width="100" height="30" forecolor="#FFFFFF" backcolor="#467C3E" uuid="4801e257-d000-4240-a830-e1d7b0ebe29a"/>
+				<reportElement mode="Opaque" x="540" y="412" width="100" height="30" forecolor="#FFFFFF" backcolor="#467C3E" uuid="4801e257-d000-4240-a830-e1d7b0ebe29a"/>
 				<box>
 					<pen lineColor="#467C3E"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Bottom">
 					<font fontName="Algerian" size="18"/>
 				</textElement>
-				<text><![CDATA[:Telefono]]></text>
+				<text><![CDATA[Telefono:]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="110" y="412" width="330" height="30" forecolor="#FFFFFF" backcolor="#467C3E" uuid="aa570813-f9aa-4f65-9fd6-d8b87eb0d96b"/>
+				<box>
+					<pen lineColor="#467C3E"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="Algerian" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fubicacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="3" y="412" width="100" height="30" forecolor="#FFFFFF" backcolor="#467C3E" uuid="2d60ab5c-ebff-4edf-aa89-6cd234ef932e"/>
+				<box>
+					<pen lineColor="#467C3E"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Algerian" size="18"/>
+				</textElement>
+				<text><![CDATA[Edificio:]]></text>
 			</staticText>
 		</band>
 	</detail>
