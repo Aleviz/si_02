@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView;
 import org.springframework.web.servlet.view.jasperreports.JasperReportsViewResolver;
 
+
 import com.cargoacademico.service.EmpleadoService;
 
 
@@ -19,12 +20,14 @@ import com.cargoacademico.service.EmpleadoService;
 public class ReporteController {
 	
 	@RequestMapping("/documentos")
-    public ModelAndView verInicio() {
+    public ModelAndView verDocumento() {
         return new ModelAndView("documentos");
     }
 	
 	@Autowired
 	private EmpleadoService empleadoService;
+	
+
 	
 	 @Bean
 	    public JasperReportsViewResolver getJasperReportsViewResolver() {
