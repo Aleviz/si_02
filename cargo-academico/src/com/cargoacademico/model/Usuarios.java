@@ -21,6 +21,10 @@ import javax.persistence.Table;
 @Table(name = "usuarios", catalog = "cargo_academico")
 public class Usuarios implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idUsuario;
 	private Roles roles;
 	private String username;

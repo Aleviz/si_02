@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_Landscape" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cd461f62-af15-4513-8581-a9ee9ea14060">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[Y2FyZ29fYWNhZGVtaWNvLm1hdGVyaWFzIEFTICwzNSwzMjIsNjdhM2YwODYtMmY4Ni00NThhLWIw
+ZDYtYTZlNDBhMzZlNjc1O2NhcmdvX2FjYWRlbWljby5jYXJyZXJhc19jaWNsbyBBUyAsMTkxLDQy
+NSxlY2IwYmY4Yy1iZmNjLTQwOGMtYTcyZS1hMWExNTc3YWRiZTE7Y2FyZ29fYWNhZGVtaWNvLm1h
+dGVyaWFfY2FycmVyYV9jaWNsbyBBUyAsMzQ4LDMwMSw5N2QxYzIyZi04NjBjLTQ5ZTUtYTUxYy04
+YzZjZDQ4OTM1YTU7Y2FyZ29fYWNhZGVtaWNvLmVzY3VlbGEgQVMgLDM4MiwxMDcsM2Q2ZDJlYjYt
+MjU2Yy00NTc5LWI2OTYtM2VlMWE4OGIzNjM1O2NhcmdvX2FjYWRlbWljby51bml2ZXJzaWRhZCBB
+UyAsMTgyLDIxMyxhOGQ2NTk5YS03ZWUzLTQ3OTktOWZlNC0xYjMyOWU4MjJhNWU7Y2FyZ29fYWNh
+ZGVtaWNvLmZhY3VsdGFkIEFTICwzNSw0OSwxNmZhYmU4OS0yYjcxLTRlOTktODc4Yi0xY2EyOTdm
+MzAwMWM7Y2FyZ29fYWNhZGVtaWNvLmNpY2xvIEFTICw0MzUsNDQ4LGIwNmZiMzM3LTNhMTktNDJl
+Zi1iOGI2LTk5YzE5NzhiNDBjMDs=]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT cargo_academico.facultad.facultad,
+	cargo_academico.facultad.ubicacion,
+	cargo_academico.facultad.telefono,
+	cargo_academico.escuela.nombre_escuela,
+	cargo_academico.universidad.nombre,
+	cargo_academico.universidad.logo,
+	cargo_academico.materias.materia,
+	cargo_academico.materias.codigo,
+	cargo_academico.materias.departamento,
+	cargo_academico.materias.ciclo,
+	cargo_academico.materias.unidad_valorativa,
+	cargo_academico.carreras_ciclo.carrera,
+	cargo_academico.carreras_ciclo.ciclo,
+	cargo_academico.ciclo.ciclo,
+	cargo_academico.ciclo.duracion,
+	cargo_academico.materia_carrera_ciclo.materia,
+	cargo_academico.materia_carrera_ciclo.carrera_ciclo
+FROM cargo_academico.universidad,
+	cargo_academico.materia_carrera_ciclo
+	INNER JOIN cargo_academico.materias ON 
+	 cargo_academico.materia_carrera_ciclo.materia = cargo_academico.materias.id_materia 
+	INNER JOIN cargo_academico.carreras_ciclo ON 
+	 cargo_academico.materia_carrera_ciclo.carrera_ciclo = cargo_academico.carreras_ciclo.id_carrera_ciclo 
+	INNER JOIN cargo_academico.escuela ON 
+	 cargo_academico.carreras_ciclo.carrera = cargo_academico.escuela.id_escuela 
+	INNER JOIN cargo_academico.facultad ON 
+	 cargo_academico.escuela.id_facultad = cargo_academico.facultad.id_facultad 
+	INNER JOIN cargo_academico.ciclo ON 
+	 cargo_academico.carreras_ciclo.ciclo = cargo_academico.ciclo.id_ciclo]]>
+	</queryString>
+	<field name="facultad" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="facultad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="facultad"/>
+	</field>
+	<field name="ubicacion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ubicacion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="facultad"/>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="telefono"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="facultad"/>
+	</field>
+	<field name="nombre_escuela" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombre_escuela"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="escuela"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="universidad"/>
+	</field>
+	<field name="logo" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="logo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="universidad"/>
+	</field>
+	<field name="materia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="materia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="materias"/>
+	</field>
+	<field name="codigo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="codigo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="materias"/>
+	</field>
+	<field name="departamento" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="departamento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="materias"/>
+	</field>
+	<field name="ciclo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ciclo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="materias"/>
+	</field>
+	<field name="unidad_valorativa" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="unidad_valorativa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="materias"/>
+	</field>
+	<field name="carrera" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="carrera"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="carreras_ciclo"/>
+	</field>
+	<field name="COLUMN_13" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ciclo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="carreras_ciclo"/>
+	</field>
+	<field name="COLUMN_14" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ciclo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ciclo"/>
+	</field>
+	<field name="duracion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="duracion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ciclo"/>
+	</field>
+	<field name="COLUMN_16" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="materia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="materia_carrera_ciclo"/>
+	</field>
+	<field name="carrera_ciclo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="carrera_ciclo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="materia_carrera_ciclo"/>
+	</field>
+	<group name="facultad">
+		<groupExpression><![CDATA[$F{facultad}]]></groupExpression>
+	</group>
+	<group name="ubicacion">
+		<groupExpression><![CDATA[$F{ubicacion}]]></groupExpression>
+	</group>
+	<group name="telefono">
+		<groupExpression><![CDATA[$F{telefono}]]></groupExpression>
+	</group>
+	<group name="nombre_escuela">
+		<groupExpression><![CDATA[$F{nombre_escuela}]]></groupExpression>
+	</group>
+	<group name="nombre">
+		<groupExpression><![CDATA[$F{nombre}]]></groupExpression>
+	</group>
+	<group name="logo">
+		<groupExpression><![CDATA[$F{logo}]]></groupExpression>
+	</group>
+	<group name="materia">
+		<groupExpression><![CDATA[$F{materia}]]></groupExpression>
+	</group>
+	<group name="codigo">
+		<groupExpression><![CDATA[$F{codigo}]]></groupExpression>
+	</group>
+	<group name="departamento">
+		<groupExpression><![CDATA[$F{departamento}]]></groupExpression>
+	</group>
+	<group name="ciclo">
+		<groupExpression><![CDATA[$F{ciclo}]]></groupExpression>
+	</group>
+	<group name="unidad_valorativa">
+		<groupExpression><![CDATA[$F{unidad_valorativa}]]></groupExpression>
+	</group>
+	<group name="carrera">
+		<groupExpression><![CDATA[$F{carrera}]]></groupExpression>
+	</group>
+	<group name="COLUMN_13">
+		<groupExpression><![CDATA[$F{COLUMN_13}]]></groupExpression>
+	</group>
+	<group name="COLUMN_14">
+		<groupExpression><![CDATA[$F{COLUMN_14}]]></groupExpression>
+	</group>
+	<group name="duracion">
+		<groupExpression><![CDATA[$F{duracion}]]></groupExpression>
+	</group>
+	<group name="COLUMN_16">
+		<groupExpression><![CDATA[$F{COLUMN_16}]]></groupExpression>
+	</group>
+	<group name="carrera_ciclo">
+		<groupExpression><![CDATA[$F{carrera_ciclo}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

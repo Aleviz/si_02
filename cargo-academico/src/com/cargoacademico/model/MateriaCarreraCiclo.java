@@ -21,6 +21,10 @@ import javax.persistence.Table;
 @Table(name = "materia_carrera_ciclo", catalog = "cargo_academico")
 public class MateriaCarreraCiclo implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idMateriaCarreraCiclo;
 	private CarrerasCiclo carrerasCiclo;
 	private Materias materias;

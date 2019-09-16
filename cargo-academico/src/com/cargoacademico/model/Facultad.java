@@ -3,6 +3,8 @@ package com.cargoacademico.model;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,6 +23,10 @@ import javax.persistence.Table;
 @Table(name = "facultad", catalog = "cargo_academico")
 public class Facultad implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idFacultad;
 	private Campus campus;
 	private Coordenadas coordenadas;
@@ -74,7 +80,7 @@ public class Facultad implements java.io.Serializable {
 		this.campus = campus;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_coordenada", nullable = false)
 	public Coordenadas getCoordenadas() {
 		return this.coordenadas;
