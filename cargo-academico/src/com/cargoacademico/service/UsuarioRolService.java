@@ -22,7 +22,7 @@ public class UsuarioRolService {
 		urogdao.save(usu);
 	}
 
-	public List<Usuarios> findByIdUsuario() {
+	public List<Usuarios> findAll() {
 		return urogdao.encontrarUsuarios();
 	}
 
