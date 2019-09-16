@@ -713,7 +713,6 @@
 		src="<c:url value='/res/design/js/bootstrap/bootstrap.min.js'></c:url>">
 		
 	</script>
-
 	<!-- All Plugins js -->
 	<script src="<c:url value='/res/design/js/plugins/plugins.js'></c:url>"></script>
 
