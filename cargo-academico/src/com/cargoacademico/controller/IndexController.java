@@ -3,9 +3,7 @@ package com.cargoacademico.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.bind.support.SessionStatus;
 
 /*el dispatcher se encargar de recibir todas las peticiones http en spring, un handler mapping detecta
  * la peticion la envia al dispatcher y este buscara un controlador spring con la anotacion @Controller
