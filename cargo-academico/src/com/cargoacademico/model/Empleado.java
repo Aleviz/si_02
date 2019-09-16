@@ -27,6 +27,10 @@ import javax.persistence.UniqueConstraint;
 		@UniqueConstraint(columnNames = "usuario") })
 public class Empleado implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idEmpleado;
 	private TipoDocente tipoDocente;
 	private Usuarios usuarios;

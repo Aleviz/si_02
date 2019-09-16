@@ -5,14 +5,13 @@ import java.util.List;
 import com.cargoacademico.model.Edificio;
 
 public interface EdificioDao {
-	public List<Edificio> encontrarTodo();
+
+	public List<Edificio> encontrarEdificio();
 	
-	public void save(Edificio edi);
+	public void saveEdificio(Edificio edi);
+	public Edificio findByIdEdificio(int id);
 	
-	public Edificio findById(int idEdificio);
-	
-	public void update(Edificio edi);
-	
-	public void delete(Edificio edi);
+	public void updateEdificio(Edificio edi);
+	public void deleteEdificio (Edificio edi);
 	
 }
