@@ -15,29 +15,29 @@ public class EdificioServices {
 	private EdificioDao edif;
 	
 	public void save(Edificio edi) {
-		edif.save(edi);
+		edif.saveEdificio(edi);
 	}
 	
 	public List<Edificio> findAll(){
-		return edif.encontrarTodo();
+		return edif.encontrarEdificio();
 	}
 	
 	public Edificio findById(int idEdificio){
-		return edif.findById(idEdificio);
+		return edif.findByIdEdificio(idEdificio);
 	}
 	
 	public void saveOrUpdate(Edificio edi) {
 		int x = edi.getIdEdificio();
 		System.out.println(edi.getIdEdificio());
 		if(x == 0) {
-			edif.save(edi);
+			edif.saveEdificio(edi);
 		}else {
-			edif.update(edi);
+			edif.updateEdificio(edi);
 		}
 	}
 	
 	public void delete(int idEdificio) {
-		Edificio edi = edif.findById(idEdificio);
-		edif.delete(edi);
+		Edificio edi = edif.findByIdEdificio(idEdificio);
+		edif.deleteEdificio(edi);
 	}
 }

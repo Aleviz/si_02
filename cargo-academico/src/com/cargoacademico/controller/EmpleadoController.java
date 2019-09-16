@@ -51,7 +51,7 @@ public class EmpleadoController {
 	@RequestMapping("/showEmpleados/{idEmpleado}")
 	public String findEmpleado(
 				Model model, @PathVariable("idEmpleado") int idEmpleado) {
-		Empleado empleado = ed.findEById(idEmpleado);
+		Empleado empleado = ed.findByIdEmpleado(idEmpleado);
 		List<Empleado> empList = ed.findAll();
 		model.addAttribute("mesnaje","Empleado listo para Actualizar");
 		model.addAttribute("lista", empList);
@@ -64,14 +64,14 @@ public class EmpleadoController {
 	public String registrar(@ModelAttribute("emp") Empleado empleado, Model model, RedirectAttributes ra) {
 		int x = empleado.getIdEmpleado();
 		System.out.println(x);
-		ed.saveOrUpdate(empleado);
+		ed.saveOrUpdateEmpleado(empleado);
 		ra.addFlashAttribute("mensaje", "se han guardado los cambios");
 		return "redirect:/showEmpleados";
 	}
 	
 	@RequestMapping("/showEmpleados/{idEmpleado}/update")
 	public String findEmpleadoUpdate (  Model model, @PathVariable("idEmpleado") int idEmpleado) {
-		Empleado empleado = ed.findEById(idEmpleado);
+		Empleado empleado = ed.findByIdEmpleado(idEmpleado);
 		List<Empleado> empList = ed.findAll();
 		model.addAttribute("mensaje", "materia lista para actualizar");
 		model.addAttribute("lista", empList);
