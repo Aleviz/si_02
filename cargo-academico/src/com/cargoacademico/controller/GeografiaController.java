@@ -187,7 +187,7 @@ public class GeografiaController {
 		
 		
 		
-facultad.getCoordenadas().setAltitud("16");
+facultad.getIdCoordenada().setAltitud("16");
 
 		Empleado empleado = new Empleado();
 		empleado.setIdEmpleado(1);
