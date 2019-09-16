@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="maya_curricular" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="95cebb85-4933-4ed3-adac-975ce290793a">
-	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[Y2FyZ29fYWNhZGVtaWNvLmVzY3VlbGEgLDE1LDE1LDg0Y2RkNzE2LTU2N2ItNGU1My05NmFkLWRj
+YzFmM2M5N2JmMztjYXJnb19hY2FkZW1pY28uZmFjdWx0YWQgLDE3Niw1MyxmODNiODU0NS0yY2Fj
+LTQ4OGQtOTcxMS0yMzRmY2E5MDQyMGI7]]>
+	</property>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="205"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="788"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>

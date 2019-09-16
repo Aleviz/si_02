@@ -2,18 +2,20 @@
 <!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="empleados_report" printOrder="Horizontal" pageWidth="595" pageHeight="400" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5ec40967-5e14-4f59-8a16-3a73604dc638">
 	<property name="com.jaspersoft.studio.data.sql.tables">
-		<![CDATA[Y2FyZ29fYWNhZGVtaWNvLnVuaXZlcnNpZGFkICw4MTIsMzMyLDMzMzViZWZmLWExZTgtNGYwZi1h
-NzQ0LWFkZTI5YjAyNmQxMjtjYXJnb19hY2FkZW1pY28udGlwb19kb2NlbnRlICw0OTAsMjQ1LGYy
-ODYwZDVjLTFkNzktNGU4ZS1iZGEwLWRhMTFkNTRjZjJkNjtjYXJnb19hY2FkZW1pY28uZW1wbGVh
-ZG8gLDMzMCwxNSw0MGE5Yzc0Yy02NDk4LTRiNDYtOTYyZS0zM2U2NTIwOTRiZDQ7Y2FyZ29fYWNh
-ZGVtaWNvLmVkaWZpY2lvICwxNSwyMzIsM2RiMmU0YjUtZjZlMS00NmViLWEwZjItZjNlOTBhZmQ0
-MDk1O2NhcmdvX2FjYWRlbWljby5mYWN1bHRhZCAsMTY3LDE3OSw5OTgwYzg0YS0yNDM0LTRiODgt
-OGY1NC00ZmE1MTBlYTBlNTM7Y2FyZ29fYWNhZGVtaWNvLmNhbXB1cyAsNjU5LDI5Miw0NmNiYmE4
-Zi03YjM5LTQ2NzUtODExNy1mNTFlZjYwZGM4YjY7]]>
+		<![CDATA[Y2FyZ29fYWNhZGVtaWNvLnRpcG9fZG9jZW50ZSAsNDkwLDI0NSw0ZTNiNzRjMi1lOGM1LTRkNTAt
+OWExZi0yNGViYjkxNzE0NTg7Y2FyZ29fYWNhZGVtaWNvLmVtcGxlYWRvICwzMzAsMTUsMGUyOGQ1
+MTgtZjRhNy00ZDQ2LWE3YjktNjI0OWQzODA3OGZlO2NhcmdvX2FjYWRlbWljby5jYW1wdXMgLDY1
+OSwyOTIsYzUwYjM3MTEtYjk3Mi00MmFiLThjNmMtYWZkMjExYWU5MWRmO2NhcmdvX2FjYWRlbWlj
+by51bml2ZXJzaWRhZCAsODEyLDMzMixjMmQxNjJmOS0wOTM5LTRlODgtOTdiMi1jZGFlNjJmY2Nk
+ZDc7Y2FyZ29fYWNhZGVtaWNvLmVkaWZpY2lvICwxNSwyMzIsMjg0MGMzN2ItYTcxNy00MzRhLTk2
+ZTYtZmYwYzc5NDgwMTA3O2NhcmdvX2FjYWRlbWljby5mYWN1bHRhZCAsMTY3LDE3OSwzZmI1NWMw
+NS01ZGE5LTRlNDAtYjVkYS1lZDQ5NjRhZmUzZmM7]]>
 	</property>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="293"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="700"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="709"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="279"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT cargo_academico.empleado.id_empleado,
 	cargo_academico.empleado.primer_nombre,
@@ -44,8 +46,7 @@ FROM cargo_academico.edificio
 	INNER JOIN cargo_academico.universidad ON 
 	 cargo_academico.campus.universidad = cargo_academico.universidad.id_universidad 
 	INNER JOIN cargo_academico.tipo_docente ON 
-	 cargo_academico.empleado.tipo_docente = cargo_academico.tipo_docente.id_tipo_docente 
-]]>
+	 cargo_academico.empleado.tipo_docente = cargo_academico.tipo_docente.id_tipo_docente]]>
 	</queryString>
 	<field name="id_empleado" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.label" value="id_empleado"/>
