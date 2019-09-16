@@ -20,9 +20,13 @@
 	<br />
 
 	<a href='<c:url value="/showMaterias"/>'>Materias</a>
+	<a href='<c:url value="/estadisticas"/>'>Estadisticas</a>
 	<a href='<c:url value="/NewFile"/>'>x</a>
 	<a href='<c:url value="/contacto"/>'>GEOGRAFICO</a>
 	<a href='<c:url value="/Home"/>'>HOME</a>
 	<a href='<c:url value="/documentos"/>'> Documentos </a>
+	<a href='<c:url value="/canvasjschart"/>'>estadistico</a>
+	<a href='<c:url value="/canvasjschart2"/>'>estadistico2</a>
+	<a href='<c:url value="/canvasjschart3"/>'>estadistico3</a>
 </body>
 </html>
