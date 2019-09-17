@@ -4,7 +4,7 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="293"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="700"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="cargo_academico"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Cargo-academico"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="709"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="279"/>
 	<queryString language="SQL">
@@ -37,7 +37,7 @@ FROM facultad facultad
 	INNER JOIN tipo_docente tipo_docente ON 
 	 empleado.tipo_docente = tipo_docente.id_tipo_docente 
 WHERE 
-	 campus.id_campus = 1]]>
+	 campus.id_campus = 3]]>
 	</queryString>
 	<field name="edidedificio" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.label" value="edidedificio"/>
@@ -111,7 +111,7 @@ WHERE
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
-		<band height="122" splitType="Stretch">
+		<band height="120" splitType="Stretch">
 			<staticText>
 				<reportElement x="132" y="81" width="290" height="30" uuid="8799af17-6bc4-4f6a-9c45-48ccf2fca19f"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
@@ -193,7 +193,7 @@ WHERE
 				<textFieldExpression><![CDATA[$F{eprimernombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="117" y="30" width="60" height="20" uuid="825c56a8-63be-4b65-aad7-1502f3f0e3c0"/>
+				<reportElement x="120" y="29" width="60" height="20" uuid="825c56a8-63be-4b65-aad7-1502f3f0e3c0"/>
 				<box>
 					<pen lineWidth="1.25" lineStyle="Solid"/>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -235,7 +235,7 @@ WHERE
 				<textFieldExpression><![CDATA[$F{tdtipodocente}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Opaque" x="395" y="1" width="159" height="19" forecolor="#FFFFFF" backcolor="#1E53A8" uuid="c8418717-1f03-422a-a7b7-d9b147b47123"/>
+				<reportElement mode="Opaque" x="395" y="0" width="159" height="20" forecolor="#FFFFFF" backcolor="#1E53A8" uuid="c8418717-1f03-422a-a7b7-d9b147b47123"/>
 				<box>
 					<pen lineWidth="2.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
@@ -245,7 +245,7 @@ WHERE
 				<text><![CDATA[Tipo de Docente]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="170" y="30" width="74" height="20" uuid="15c00b3f-127a-4569-a342-ecb2f19c66e6"/>
+				<reportElement x="180" y="30" width="74" height="20" uuid="15c00b3f-127a-4569-a342-ecb2f19c66e6"/>
 				<box>
 					<pen lineWidth="1.25" lineStyle="Solid"/>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>

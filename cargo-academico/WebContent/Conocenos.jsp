@@ -226,7 +226,9 @@
 					data-wow-delay="400ms">
 					<!-- Thumbnail -->
 					<div class="teachers-thumbnail">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/tea1.jpg" alt="">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/tea1.jpg"
+							alt="">
 					</div>
 					<!-- Meta Info -->
 					<div class="teachers-info mt-30">
@@ -241,7 +243,9 @@
 					data-wow-delay="500ms">
 					<!-- Thumbnail -->
 					<div class="teachers-thumbnail">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/tea2.jpg" alt="">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/tea2.jpg"
+							alt="">
 					</div>
 					<!-- Meta Info -->
 					<div class="teachers-info mt-30">
@@ -256,7 +260,9 @@
 					data-wow-delay="600ms">
 					<!-- Thumbnail -->
 					<div class="teachers-thumbnail">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/tea3.jpg" alt="">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/tea3.jpg"
+							alt="">
 					</div>
 					<!-- Meta Info -->
 					<div class="teachers-info mt-30">
@@ -271,7 +277,9 @@
 					data-wow-delay="700ms">
 					<!-- Thumbnail -->
 					<div class="teachers-thumbnail">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/tea4.jpg" alt="">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/tea4.jpg"
+							alt="">
 					</div>
 					<!-- Meta Info -->
 					<div class="teachers-info mt-30">

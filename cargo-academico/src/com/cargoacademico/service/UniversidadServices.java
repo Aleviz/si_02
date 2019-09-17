@@ -15,7 +15,7 @@ public class UniversidadServices {
 	private UniversidadDao ud;
 	
 	public void save(Universidad uni) {
-		ud.save(uni);
+		ud.saveUniversidad(uni);
 	}
 	
 	public List<Universidad> findAll(){
@@ -23,7 +23,7 @@ public class UniversidadServices {
 	}
 	
 	public Universidad findById(int idUniversidad){
-		return ud.findById(idUniversidad);
+		return ud.findByIdUniversidad(idUniversidad);
 		
 	}
 	
@@ -31,15 +31,14 @@ public class UniversidadServices {
 		int x = uni.getIdUniversidad();
 		System.out.println(uni.getIdUniversidad());
 		if(x == 0) {
-			ud.save(uni);
+			ud.saveUniversidad(uni);
 		}else {
-			ud.update(uni);
+			ud.updateUniversidad(uni);
 		}
 	}
 	
-	public void delete (int idUniversidad) {
-		Universidad uni = ud.findById(idUniversidad);
-		ud.delete(uni);
+	public void delete (int id) {
+		ud.deleteUniversidad(id);
 	}
 	
 }
