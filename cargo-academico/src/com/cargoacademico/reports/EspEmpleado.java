@@ -104,7 +104,4 @@ public class EspEmpleado {
 		this.tdtipo_docente = tdtipo_docente;
 	}
 	
-	
-	
-	
 }

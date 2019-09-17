@@ -45,10 +45,10 @@ public class GeografiaController {
 		String nombre = "";
 		for (int i = 0; i < facultadList.size(); i++) {
 
-			Coordenadas cor = facultadList.get(i).getCoordenadas();
+			Coordenadas cor = facultadList.get(i).getIdCoordenada();
 			listLatitud.add(cor.getLatitud());
 
-			Coordenadas cord = facultadList.get(i).getCoordenadas();
+			Coordenadas cord = facultadList.get(i).getIdCoordenada();
 			listLongitud.add(cord.getLongitud());
 
 			nombre = facultadList.get(i).getFacultad();
@@ -121,10 +121,10 @@ public class GeografiaController {
 		String nombre = "";
 		for (int i = 0; i < facultadList.size(); i++) {
 
-			Coordenadas cor = facultadList.get(i).getCoordenadas();
+			Coordenadas cor = facultadList.get(i).getIdCoordenada();
 			listLatitud.add(cor.getLatitud());
 
-			Coordenadas cord = facultadList.get(i).getCoordenadas();
+			Coordenadas cord = facultadList.get(i).getIdCoordenada();
 			listLongitud.add(cord.getLongitud());
 
 			nombre = facultadList.get(i).getFacultad();
@@ -191,16 +191,16 @@ facultad.getIdCoordenada().setAltitud("16");
 
 		Empleado empleado = new Empleado();
 		empleado.setIdEmpleado(1);
-		facultad.setEmpleado(empleado);
+		facultad.setDecano(empleado);
 
 		System.out.println("-----------*-*-*-*-*-*-*-*--*-*-*-*--*-**-*-");
 		System.out.println("nombre de la facultad : " + facultad.getFacultad() + "  " + "telefono:: "
 				+ facultad.getTelefono() + " ubicacion:: " + facultad.getUbicacion() + " campus::"
-				+ facultad.getCampus().getIdCampus() + "  coordenada::" + facultad.getCoordenadas().getIdCoordenada()
-				+ " latitud ::: " + facultad.getCoordenadas().getLatitud() + " longitud ::: "
-				+ facultad.getCoordenadas().getLongitud()
-				+ "  altitud  "+facultad.getCoordenadas().getAltitud()
-				+ "   empleado  :: "+facultad.getEmpleado().getIdEmpleado());
+				+ facultad.getCampus().getIdCampus() + "  coordenada::" + facultad.getIdCoordenada().getIdCoordenada()
+				+ " latitud ::: " + facultad.getIdCoordenada().getLatitud() + " longitud ::: "
+				+ facultad.getIdCoordenada().getLongitud()
+				+ "  altitud  "+facultad.getIdCoordenada().getAltitud()
+				+ "   empleado  :: "+facultad.getDecano().getIdEmpleado());
 		geografiaService.saveOrUpdateFacultad(facultad);
 
 		ra.addFlashAttribute("mensaje", "Se han guardado los cambios");
