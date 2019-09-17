@@ -20,7 +20,7 @@
 	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
 
 <script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script>
-   
+
 
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -184,7 +184,8 @@
 
 
 
-
+		
+	
 
 
 		<div id="formulario">
@@ -224,6 +225,7 @@
 					</div>
 					<p>
 						Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648
+
 					</p>
 				</div>
 				Single Contact Info
@@ -275,6 +277,8 @@
 					
 					
 				</div>
+				
+				
 
 				<!-- Single Contact Info -->
 				<div class="single-contact-info d-flex">
@@ -303,18 +307,23 @@
 
 				</div>
 
+
+
 				<div class="botonMapa">
 					<button id="editar" class="editar" onclick="editar">EDITAR</button>
 					<button id="finalizar">Finalizar</button>
 
+>
 				</div>
+			</div>
 
 			</div>
-			
-			
+
 			
 		</div>
-	</div>
+				
+		
+	
 
 	<!-- ##### Contact Area End ##### -->
 
