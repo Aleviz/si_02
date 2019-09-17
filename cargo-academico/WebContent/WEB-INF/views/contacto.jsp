@@ -186,6 +186,7 @@
 
 		
 	
+<<<<<<< HEAD
 		<div id="formulario">
 		
 			<div class="contact-information wow fadeInUp" data-wow-delay="400ms">    <!--   donde estara todo  -->
@@ -347,6 +348,8 @@
 							class="flip2">
 =======
 
+=======
+>>>>>>> Geografico
 
 
 		<div id="formulario">
@@ -386,6 +389,10 @@
 					</div>
 					<p>
 						Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648
+<<<<<<< HEAD
+>>>>>>> Geografico
+=======
+
 >>>>>>> Geografico
 					</p>
 				</div>
@@ -469,6 +476,7 @@
 				</div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 					<div class="botonMapa">
 					<button id="editar" class="editar" onclick="editar">EDITAR</button>
@@ -477,10 +485,15 @@
 						<input  id="2qp" value=""/>
 					</div>
 =======
+=======
+
+
+>>>>>>> Geografico
 				<div class="botonMapa">
 					<button id="editar" class="editar" onclick="editar">EDITAR</button>
 					<button id="finalizar">Finalizar</button>
 
+<<<<<<< HEAD
 >>>>>>> Geografico
 				</div>
 			</div>
@@ -495,6 +508,17 @@
 				
 				
 		</div>
+=======
+>
+				</div>
+			</div>
+
+			</div>
+
+			
+		</div>
+				
+>>>>>>> Geografico
 		
 	
 
