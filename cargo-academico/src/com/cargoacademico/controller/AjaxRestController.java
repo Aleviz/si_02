@@ -16,7 +16,15 @@ public class AjaxRestController {
 	
 	
 	@RequestMapping(value="demo2/{fullName}" , method = RequestMethod.GET, produces = {
-			MimeTypeUtils
-	})
+			MimeTypeUtils.TEXT_PLAIN_VALUE	})
+	public ResponseEntity<String> demo2(@PathVariable("fullName") String fullName){
+		try {
+			ResponseEntity<String> responseEntity = new ResponseEntity<String>("HI "+fullName, HttpStatus.OK);
+			return responseEntity;
+		} catch (Exception e) {
+			return new ResponseEntity<String> (HttpStatus.BAD_REQUEST);
+			// TODO: handle exception
+		}
+	}
 
 }

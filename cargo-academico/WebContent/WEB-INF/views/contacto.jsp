@@ -20,10 +20,7 @@
 	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
 
 <script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script>
-<<<<<<< HEAD
-=======
-   
->>>>>>> Geografico
+
 
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -187,8 +184,6 @@
 
 
 
-<<<<<<< HEAD
-		
 		
 	
 		<div id="formulario">

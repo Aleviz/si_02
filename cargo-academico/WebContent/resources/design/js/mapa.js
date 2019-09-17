@@ -85,8 +85,22 @@ $(document).ready(function() {
 	var lon;
 	
 	
+	
+	//----------------------------------------------------
+	$('#buttonDemo2').click(function() {
+		var fullName = $('#fullName').val();
+		$.ajax({
+			type : 'GET',
+			url : '/api/ajaxrest/demo2/' + fullName,
+			success : function(result) {
+				$('#result2').text(result);
+			}
+		});
+	});
+	
+	//----------------------------------------------------	
+	
 	$('#finalizar').hide();
-
 	$('#showFacultad').show(function(){
 		$('#showIngenieria').hide();
 		$('#showQuimica').hide();
