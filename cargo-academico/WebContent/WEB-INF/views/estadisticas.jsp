@@ -6,11 +6,123 @@
 <html>
 
 <head>
-<script type="text/javascript">
-var xx =	document.getElementById("xddd");
+<script>
+	window.onload = function() {
 
-		console.log(xx);
+		var chart = new CanvasJS.Chart("chartContainer", {
+			animationEnabled : true,
+			theme : "light2", // "light1", "light2", "dark1", "dark2"
+			title : {
+				text : "GDP Growth Rate - 2016"
+			},
+			axisY : {
+				title : "Growth Rate (in %)",
+				suffix : "%",
+				includeZero : false
+			},
+			axisX : {
+				title : "Materias"
+			},
+			data : [ {
+				type : "column",
+				yValueFormatString : "#,##0.0#\"%\"",
+				dataPoints : [ {
+					label : "India",
+					y : 7.1
+				}, {
+					label : "China",
+					y : 6.70
+				}, {
+					label : "Indonesia",
+					y : 5.00
+				}, {
+					label : "Australia",
+					y : 2.50
+				}, {
+					label : "Mexico",
+					y : 2.30
+				}, {
+					label : "UK",
+					y : 1.80
+				}, {
+					label : "United States",
+					y : 1.60
+				}, {
+					label : "Japan",
+					y : 1.60
+				}, {
+					label : "El Salvador",
+					y : 1.60
+				}, {
+					label : "El Salvador",
+					y : 1.60
+				}, {
+					label : "El Salvador",
+					y : 1.60
+				}, {
+					label : "El Salvador",
+					y : 1.60
+				}, {
+					label : "El Salvador",
+					y : 1.60
+				}, {
+					label : "El Salvador",
+					y : 1.60
+				}, {
+					label : "El Salvador",
+					y : 1.60
+				}, {
+					label : "El Salvador",
+					y : 1.60
+				}, {
+					label : "El Salvador",
+					y : 1.60
+				}, {
+					label : "El Salvador",
+					y : 1.60
+				}, {
+					label : "El Salvador",
+					y : 1.60
+				}, {
+					label : "El Salvador",
+					y : 1.60
+				}, {
+					label : "El Salvador",
+					y : 1.60
+				} ]
+			} ]
+		});
+		var chart2 = new CanvasJS.Chart("chartContainer2", {
+			theme : "light1", // "light2", "dark1", "dark2"
+			animationEnabled : true, // change to true		
+			title : {
+				text : "Basic Column Chart"
+			},
+			data : [ {
+				// Change type to "bar", "area", "spline", "pie",etc.
+				type : "column",
+				dataPoints : [ {
+					label : "apple",
+					y : 10
+				}, {
+					label : "orange",
+					y : 15
+				}, {
+					label : "banana",
+					y : 25
+				}, {
+					label : "mango",
+					y : 30
+				}, {
+					label : "grape",
+					y : 28
+				} ]
+			} ]
+		});
+		chart.render();
+		chart2.render();
 
+	}
 </script>
 <meta charset="UTF-8">
 <meta name="description" content="">
@@ -22,6 +134,7 @@ var xx =	document.getElementById("xddd");
 	type="text/css" />
 <!-- Esto es para los ICONOS -->
 <script src="res/design/leaflet/leaflet.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <link rel="stylesheet"
 	href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
 <script
@@ -51,8 +164,6 @@ var xx =	document.getElementById("xddd");
 	<div id="preloader">
 		<i class="circle-preloader"></i>
 	</div>
-	<p id="xddd">${listMaterias}</p>
-	<button id="p">Prueba</button>
 	<!-- ##### Header Area Start ##### -->
 	<header class="header-area"> <!-- Top Header Area -->
 	<div class="top-header">
@@ -184,7 +295,6 @@ var xx =	document.getElementById("xddd");
 				</div>
 			</div>
 		</div>
-
 		<!-- Single Hero Slide -->
 		<div class="single-hero-slide bg-img"
 			style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/bg-2.jpg);">
@@ -207,49 +317,28 @@ var xx =	document.getElementById("xddd");
 	</div>
 	</section>
 	<!-- ##### Hero Area End ##### -->
-
-	<!-- ##### Top Feature Area Start ##### -->
 	<div class="row">
 		<div class="col-2">
-			<div class="nav flex-column nav-pills red-active " id="v-pills-tab"
+			<div class="nav flex-column nav-pills red-active" id="v-pills-tab"
 				role="tablist" aria-orientation="vertical">
-				<a class="nav-link active show"
-					style="background-color: transparent;" id="v-pills-home-tab"
-					data-toggle="pill" href="#v-pills-home" role="tab"
-					aria-controls="v-pills-home" style="background-color: transparent;"
-					aria-selected="true">Temario en Pruebas</a> <a class="nav-link"
-					id="materias" data-toggle="pill" href="#v-pills-profile" role="tab"
-					aria-controls="v-pills-profile" aria-selected="false"
-					style="background-color: transparent;">Materias</a> <a
-					class="nav-link" id="v-pills-messages-tab" data-toggle="pill"
+				<a class="nav-link active" style="background-color: transparent;" id="v-pills-home-tab" data-toggle="pill"
+					href="#v-pills-home" role="tab" aria-controls="v-pills-home"
+					aria-selected="true">Materias</a> <a class="nav-link"
+					id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+					role="tab" aria-controls="v-pills-profile" aria-selected="false" style="background-color: transparent;">Prueba de cards</a>
+				<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill"
 					href="#v-pills-messages" role="tab"
-					aria-controls="v-pills-messages" aria-selected="false"
-					style="background-color: transparent;">Messages</a> <a
-					class="nav-link" id="v-pills-settings-tab" data-toggle="pill"
+					aria-controls="v-pills-messages" aria-selected="false" style="background-color: transparent;">Grafica 1</a>
+				<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill"
 					href="#v-pills-settings" role="tab"
-					aria-controls="v-pills-settings" aria-selected="false"
-					style="background-color: transparent;">Settings</a>
+					aria-controls="v-pills-settings" aria-selected="false" style="background-color: transparent;">Grafica 2</a>
 			</div>
 		</div>
 		<div class="col-10">
 			<div class="tab-content" id="v-pills-tabContent"
-				style="margin-top: 25px;">
-				<div class="tab-pane fade active show" id="v-pills-home"
+				style="margin-top: 20px;">
+				<div class="tab-pane fade show active" id="v-pills-home"
 					role="tabpanel" aria-labelledby="v-pills-home-tab">
-					<p>
-					<div class="card text-white bg-primary mb-3"
-						style="max-width: 18rem;">
-						<div class="card-header">Header</div>
-						<div class="card-body">
-							<h5 class="card-title">Primary card title</h5>
-							<p class="card-text">Some quick example text to build on the
-								card title and make up the bulk of the card's content.</p>
-						</div>
-					</div>
-				</div>
-				<div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
-					aria-labelledby="v-pills-profile-tab">
-					<p>
 					<div class="container">
 						<div class="row">
 							<c:forEach var="tema" items="${listMaterias}">
@@ -283,59 +372,102 @@ var xx =	document.getElementById("xddd");
 							</c:forEach>
 						</div>
 					</div>
-					<p>${listMaterias}</p>
-					</p>
-					<div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
-						aria-labelledby="v-pills-messages-tab">
-						<p>Fugiat id quis dolor culpa eiusmod anim velit excepteur
-							proident dolor aute qui magna. Ad proident laboris ullamco esse
-							anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud
-							magna nulla. Velit et et proident Lorem do ea tempor officia
-							dolor. Reprehenderit Lorem aliquip labore est magna commodo est
-							ea veniam consectetur.</p>
+				</div>
+				<div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+					aria-labelledby="v-pills-profile-tab">
+					Prueba2
+					<div class="container">
+						<div class="row">
+							<div class="card text-white bg-primary mb-3"
+								style="max-width: 18rem;">
+								<div class="card-header">Header</div>
+								<div class="card-body">
+									<h5 class="card-title">Primary card title</h5>
+									<p class="card-text">Some quick example text to build on
+										the card title and make up the bulk of the card's content.</p>
+								</div>
+							</div>
+							<div class="card text-white bg-secondary mb-3"
+								style="max-width: 18rem;">
+								<div class="card-header">Header</div>
+								<div class="card-body">
+									<h5 class="card-title">Secondary card title</h5>
+									<p class="card-text">Some quick example text to build on
+										the card title and make up the bulk of the card's content.</p>
+								</div>
+							</div>
+							<div class="card text-white bg-success mb-3"
+								style="max-width: 18rem;">
+								<div class="card-header">Header</div>
+								<div class="card-body">
+									<h5 class="card-title">Success card title</h5>
+									<p class="card-text">Some quick example text to build on
+										the card title and make up the bulk of the card's content.</p>
+								</div>
+							</div>
+							<div class="card text-white bg-danger mb-3"
+								style="max-width: 18rem;">
+								<div class="card-header">Header</div>
+								<div class="card-body">
+									<h5 class="card-title">Danger card title</h5>
+									<p class="card-text">Some quick example text to build on
+										the card title and make up the bulk of the card's content.</p>
+								</div>
+							</div>
+							<div class="card text-white bg-warning mb-3"
+								style="max-width: 18rem;">
+								<div class="card-header">Header</div>
+								<div class="card-body">
+									<h5 class="card-title">Warning card title</h5>
+									<p class="card-text">Some quick example text to build on
+										the card title and make up the bulk of the card's content.</p>
+								</div>
+							</div>
+							<div class="card text-white bg-info mb-3"
+								style="max-width: 18rem;">
+								<div class="card-header">Header</div>
+								<div class="card-body">
+									<h5 class="card-title">Info card title</h5>
+									<p class="card-text">Some quick example text to build on
+										the card title and make up the bulk of the card's content.</p>
+								</div>
+							</div>
+							<div class="card bg-light mb-3" style="max-width: 18rem;">
+								<div class="card-header">Header</div>
+								<div class="card-body">
+									<h5 class="card-title">Light card title</h5>
+									<p class="card-text">Some quick example text to build on
+										the card title and make up the bulk of the card's content.</p>
+								</div>
+							</div>
+							<div class="card text-white bg-dark mb-3"
+								style="max-width: 18rem;">
+								<div class="card-header">Header</div>
+								<div class="card-body">
+									<h5 class="card-title">Dark card title</h5>
+									<p class="card-text">Some quick example text to build on
+										the card title and make up the bulk of the card's content.</p>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
-						aria-labelledby="v-pills-settings-tab">
-						<p>Maria Salomea Skłodowska-Curie,A​B​ más conocida como Marie
-							CurieC​B​ (Varsovia, 7 de noviembre de 1867-Passy, 4 de julio de
-							1934), fue una científica polaca nacionalizada francesa. Pionera
-							en el campo de la radiactividad, fue la primera persona en
-							recibir dos premios Nobel en distintas especialidades —Física y
-							Química—D​ y la primera mujer en ocupar el puesto de profesora en
-							la Universidad de París. En 1995 fue sepultada con honores en el
-							Panteón de París por méritos propios.E​ Nació en Varsovia, en lo
-							que entonces era el Zarato de Polonia (territorio administrado
-							por el Imperio ruso). Estudió clandestinamente en la «universidad
-							flotante» de Varsovia y comenzó su formación científica en dicha
-							ciudad. En 1891, a los 24 años, siguió a su hermana mayor
-							Bronisława Dłuska a París, donde culminó sus estudios y llevó a
-							cabo sus trabajos científicos más sobresalientes. Compartió el
-							premio Nobel de Física de 1903 con su marido Pierre Curie y el
-							físico Henri Becquerel. Años después, ganó en solitario el premio
-							Nobel de Química de 1911. Aunque recibió la ciudadanía francesa y
-							apoyó a su nueva patria, nunca perdió su identidad polaca: enseñó
-							a sus hijas su lengua materna y las llevaba a sus visitas a
-							Polonia.6​ Nombró el primer elemento químico que descubrió, el
-							polonio, como su país de origen.F​ Sus logros incluyen los
-							primeros estudios sobre el fenómeno de la radiactividad (término
-							que ella misma acuñó),8​9​10​ técnicas para el aislamiento de
-							isótopos radiactivos y el descubrimiento de dos elementos —el
-							polonio y el radio—. Bajo su dirección, se llevaron a cabo los
-							primeros estudios en el tratamiento de neoplasias con isótopos
-							radiactivos. Fundó el Instituto Curie en París y en Varsovia, que
-							se mantienen entre los principales centros de investigación
-							médica en la actualidad. Durante la Primera Guerra Mundial creó
-							los primeros centros radiológicos para uso militar. Murió en 1934
-							a los 66 años, en el sanatorio Sancellemoz en Passy, por una
-							anemia aplásica causada por la exposición a la radiación de tubos
-							de ensayo con radio que guardaba en los bolsillos en el
-							trabajo11​ y en la construcción de las unidades móviles de rayos
-							X de la Primera Guerra Mundial.</p>
-					</div>
+				</div>
+				<div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+					aria-labelledby="v-pills-messages-tab">
+					<p>Prueba3 xd</p>
+					</br>
+					<div id="chartContainer2" style="height: 600px; width: 1100px;"></div>
+				</div>
+				<div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+					aria-labelledby="v-pills-settings-tab">
+					Prueba 4
+					<div id="chartContainer" style="height: 370px; width: 100%;"></div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- ##### Top Feature Area Start ##### -->
+
 	<!-- ##### Course Area Start ##### -->
 	<div class="academy-courses-area section-padding-100-0">
 		<div class="container">

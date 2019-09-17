@@ -1,59 +1,46 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<script type="text/javascript">
-window.onload = function() {
- 
-var dps = [[]];
+<script>
+window.onload = function () {
+
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
-	theme: "light2", // "light1", "dark1", "dark2"
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
 	title: {
-		text: "Highest Mountain Peaks"
+		text: "GDP Growth Rate - 2016"
 	},
-	subtitles: [{
-		text: "Based on Elevation"
-	}],
 	axisY: {
-		title: "Elevation (in metres)",
-		suffix: " m",
+		title: "Growth Rate (in %)",
+		suffix: "%",
 		includeZero: false
 	},
 	axisX: {
-		title: "Mountains"
+		title: "Countries"
 	},
 	data: [{
 		type: "column",
-		yValueFormatString: "#,##0 m",
-		dataPoints: dps[0]
+		yValueFormatString: "#,##0.0#\"%\"",
+		dataPoints: [
+			{ label: "India", y: 7.1 },	
+			{ label: "China", y: 6.70 },	
+			{ label: "Indonesia", y: 5.00 },
+			{ label: "Australia", y: 2.50 },	
+			{ label: "Mexico", y: 2.30 },
+			{ label: "UK", y: 1.80 },
+			{ label: "United States", y: 1.60 },
+			{ label: "Japan", y: 1.60 }
+			
+		]
 	}]
 });
- 
-var yValue;
-var label;
- 
-<c:forEach items="${dataPointsList}" var="dataPoints" varStatus="loop">	
-	<c:forEach items="${dataPoints}" var="dataPoint">
-		yValue = parseFloat("${dataPoint.y}");
-		label = "${dataPoint.label}";
-		dps[parseInt("${loop.index}")].push({
-			label : label,
-			y : yValue,
-		});		
-	</c:forEach>	
-</c:forEach> 
- 
 chart.render();
- 
+
 }
 </script>
 </head>
 <body>
-	<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
-</html>  
+</html>

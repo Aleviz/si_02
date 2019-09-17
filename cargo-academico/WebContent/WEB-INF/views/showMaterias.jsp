@@ -35,7 +35,43 @@
 <!-- Core Stylesheet -->
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/res/design/style.css">
+<script>
+window.onload = function () {
 
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title: {
+		text: "GDP Growth Rate - 2016"
+	},
+	axisY: {
+		title: "Growth Rate (in %)",
+		suffix: "%",
+		includeZero: false
+	},
+	axisX: {
+		title: "Countries"
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "#,##0.0#\"%\"",
+		dataPoints: [
+			{ label: "India", y: 7.1 },	
+			{ label: "China", y: 6.70 },	
+			{ label: "Indonesia", y: 5.00 },
+			{ label: "Australia", y: 2.50 },	
+			{ label: "Mexico", y: 2.30 },
+			{ label: "UK", y: 1.80 },
+			{ label: "United States", y: 1.60 },
+			{ label: "Japan", y: 1.60 }
+			
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
 </head>
 
 <body>
@@ -187,90 +223,149 @@
 
 
 		<script>
-			$(document).ready(function() {
-			$.getScript("res/design/js/mapa.js");
-			$('#finalizar').hide();
-			$('#editar').click(function() {
-			var nombre = ["El mapa se modificara, ¿continuar?",
-						"estas seguro de agregar un marcador aca, ¿continuar?",
-						"Los datos se guardaran, ¿continuar?" ]
-			console.log('Expresion: ');
-			var opcion = confirm(nombre[0]);
-			$(this).hide();
-			$('#finalizar').show();
+			$(document)
+					.ready(
+							function() {
+								$.getScript("res/design/js/mapa.js");
+								$('#finalizar').hide();
+								$('#editar')
+										.click(
+												function() {
+													var nombre = [
+															"El mapa se modificara, ¿continuar?",
+															"estas seguro de agregar un marcador aca, ¿continuar?",
+															"Los datos se guardaran, ¿continuar?" ]
+													console.log('Expresion: ');
+													var opcion = confirm(nombre[0]);
+													$(this).hide();
+													$('#finalizar').show();
 
-			console.log(opcion+ "holaaaaaa");
-								
-			if (opcion == true) {
+													console.log(opcion
+															+ "holaaaaaa");
 
-				alert("aceptado");
-				map.on(	'click',function(e) {
-				var lat = e.latlng.lat;
-				var lon = e.latlng.lng;
+													if (opcion == true) {
 
-				var afirmar = confirm(nombre[1]);
+														alert("aceptado");
+														map
+																.on(
+																		'click',
+																		function(
+																				e) {
+																			var lat = e.latlng.lat;
+																			var lon = e.latlng.lng;
 
-			if (afirmar == true) {
-				$('#myModal').modal("show");
-				$('#formCampus').hide();
-				$('#formFacultad').hide();							
+																			var afirmar = confirm(nombre[1]);
 
-				
-				$('#campus').click(function(){
-					$('#formCampus').show();
-					$('#formFacultad').hide();
-					
-					$('#guardarC').click(function(){
-						market = L.marker([	lat,	lon ]).addTo(map);
-						
-					})
-				})
-				$('#facultad').click(function(){
-					$('#formFacultad').show();
-					$('#formCampus').hide();	
-					
-					$('#guardarF').click(function(){
-						market = L.marker([	lat,	lon ]).addTo(map);
-					})
-				})
+																			if (afirmar == true) {
+																				$(
+																						'#myModal')
+																						.modal(
+																								"show");
+																				$(
+																						'#formCampus')
+																						.hide();
+																				$(
+																						'#formFacultad')
+																						.hide();
 
-				$('#finalizar').click(function() {
-				var confirmar1 = confirm(nombre[2]);
-					if (confirmar1 == true) {
-																				
-						latitud.push(e.latlng.lat);
-						longitud.push(e.latlng.lng);
-																					
-						$(this).hide();
-						$('#editar').show();
-																							
-						console.log();							
-						} else {
-																				
-							console.log("cambios no guardados");
+																				$(
+																						'#campus')
+																						.click(
+																								function() {
+																									$(
+																											'#formCampus')
+																											.show();
+																									$(
+																											'#formFacultad')
+																											.hide();
 
-						}
-					
-				})
-				
-			} else {
-																		
-				console.log("denegado");
-			
-			}
-			
-				})
+																									$(
+																											'#guardarC')
+																											.click(
+																													function() {
+																														market = L
+																																.marker(
+																																		[
+																																				lat,
+																																				lon ])
+																																.addTo(
+																																		map);
 
-			} else {
-			
-				alert("cancelado");
-				
-			}
+																													})
+																								})
+																				$(
+																						'#facultad')
+																						.click(
+																								function() {
+																									$(
+																											'#formFacultad')
+																											.show();
+																									$(
+																											'#formCampus')
+																											.hide();
 
+																									$(
+																											'#guardarF')
+																											.click(
+																													function() {
+																														market = L
+																																.marker(
+																																		[
+																																				lat,
+																																				lon ])
+																																.addTo(
+																																		map);
+																													})
+																								})
 
-			})
-			
-			})
+																				$(
+																						'#finalizar')
+																						.click(
+																								function() {
+																									var confirmar1 = confirm(nombre[2]);
+																									if (confirmar1 == true) {
+
+																										latitud
+																												.push(e.latlng.lat);
+																										longitud
+																												.push(e.latlng.lng);
+
+																										$(
+																												this)
+																												.hide();
+																										$(
+																												'#editar')
+																												.show();
+
+																										console
+																												.log();
+																									} else {
+
+																										console
+																												.log("cambios no guardados");
+
+																									}
+
+																								})
+
+																			} else {
+
+																				console
+																						.log("denegado");
+
+																			}
+
+																		})
+
+													} else {
+
+														alert("cancelado");
+
+													}
+
+												})
+
+							})
 		</script>
 
 		<div id="formulario">
