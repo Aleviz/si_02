@@ -299,7 +299,7 @@ public class GeografiaController {
 
 		return "redirect:/contacto";
 	}
-78
+
 	// OBTENER ID PARA HACER UPDATE HA CAMPUS
 
 	@RequestMapping("/contacto/campus/{idCampus}/update")
@@ -322,6 +322,8 @@ public class GeografiaController {
 
 		return "redirect:/contacto";
 	}
+	
+	
 	@RequestMapping("/buscarF/{facultadName}/encontrar")
 	public String buscarFacultadDiv(@PathVariable("facultadName") String facultadName, RedirectAttributes ra) {
 

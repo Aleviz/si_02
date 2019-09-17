@@ -86,7 +86,7 @@ $(document).ready(function() {
 	
 	
 	$('#finalizar').hide();
-<<<<<<< HEAD
+
 	$('#showFacultad').show(function(){
 		$('#showIngenieria').hide();
 		$('#showQuimica').hide();
@@ -130,11 +130,11 @@ $(document).ready(function() {
 
 	console.log(confirmacion);
 
-=======
+
 	$('.obtenerF').hide();
 	$('#showCarreras').hide();
 	$('.atras').hide();
->>>>>>> Geografico
+
 
 	
 	//--------------------------------------------------------------------------
