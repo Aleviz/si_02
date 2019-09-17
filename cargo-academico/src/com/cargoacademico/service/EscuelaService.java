@@ -25,6 +25,11 @@ public class EscuelaService {
 	public Escuela findById(int id){
 		return escuelaDao.findById(id);
 	}
+	
+	public List<Escuela> consultarFacultad(int id){
+		return escuelaDao.encontrarXFacultad(id);
+	}
+	
 	public void saveOrUpdateEscuela(Escuela escu) {
 		if(escu.getIdEscuela() == null) {
 			escuelaDao.saveEscuela(escu);

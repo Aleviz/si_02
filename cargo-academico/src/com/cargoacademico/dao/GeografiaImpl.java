@@ -73,6 +73,13 @@ public class GeografiaImpl implements GeografiaDao {
 		return (Facultad)crit.uniqueResult();
 	}
 	
+	@Override
+	public  List<Facultad>  findByNameF(String name) {
+		Query query = getSession().createQuery("from Facultad where facultad ='"+name+"'");
+		System.out.println("hola  "+name+" xxxxxx "+query.list().size());
+		return query.list();
+	}
+	
 
 	@Override
 	public void updateFacultad(Facultad facultad) {
@@ -105,5 +112,8 @@ public class GeografiaImpl implements GeografiaDao {
 	public void updateCampus(Campus campus) {
 		getSession().update(campus);
 	}
+
+
+
 
 }

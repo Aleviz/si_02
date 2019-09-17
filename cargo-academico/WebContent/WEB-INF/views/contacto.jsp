@@ -20,6 +20,10 @@
 	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
 
 <script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script>
+<<<<<<< HEAD
+=======
+   
+>>>>>>> Geografico
 
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -33,6 +37,14 @@
 <!-- Core Stylesheet -->
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/res/design/style.css">
+
+
+
+
+
+
+
+
 
 </head>
 
@@ -159,29 +171,23 @@
         <!-- ##### Breadcumb Area End ##### -->
 
 	<!-- ##### Google Maps ##### -->
-	
-	<div class="map-area wow fadeInUp" data-wow-delay="300ms">
-		<div id="mapa">
-		
-		
-		
-		
 
+	<div class="map-area wow fadeInUp" data-wow-delay="300ms">
+		<div id="mapa"></div>
+		<div style="display: none">
+
+			<p id="latitud">${jsonLatitud}</p>
+			<p id="longitud">${jsonLongitud}</p>
+			<p id="facultad">${jsonNombre}</p>
 
 		</div>
-		<div style= "display:none">
-		
-		<p id ="latitud">${jsonLatitud}</p>
-		<p id="longitud">${jsonLongitud}</p>		
-		<p id="facultad">${jsonNombre}</p>	
-				
-		</div>					
 
 		<!-- 			ESTO ES PARA ACCIONAR EL MODAL -->
 		<!-- 		  <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button> -->
 
 
 
+<<<<<<< HEAD
 		
 		
 	
@@ -344,15 +350,98 @@
 							class="flip"> <img
 							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
 							class="flip2">
+=======
+
+
+
+		<div id="formulario">
+
+			<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showCarreras">
+				<div class="section-heading text-left">
+					<span>Unit</span>
+					<button class="atras">ATRAS</button>
+					<h3>Facultad de Ingenieria</h3>
+					<c:forEach var="e" items="${es}">
+						<p>carrera: ${e.nombreEscuela}</p>
+<!-- 					<p class="izq"> -->
+<!-- 						<img -->
+<%-- 							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg" --%>
+<!-- 							class="flip"> <img -->
+<%-- 							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" --%>
+<!-- 							class="flip2"> -->
+<!-- 					</p> -->
+					</c:forEach>
+					
+					
+				</div>
+
+				Single Contact Info
+				<div class="single-contact-info d-flex">
+					<div class="contact-icon mr-15">
+						<i class="icon-placeholder"></i>
+					</div>
+					<p>Ubicacion: ${campusdir.ubicacion}</p>
+
+
+				</div>
+				Single Contact Info
+				<div class="single-contact-info d-flex">
+					<div class="contact-icon mr-15">
+						<i class="icon-telephone-1"></i>
+					</div>
+					<p>
+						Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648
+>>>>>>> Geografico
 					</p>
-					<p class="izq">
-						<img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-5.jpg"
+				</div>
+				Single Contact Info
+				<div class="single-contact-info d-flex">
+					<div class="contact-icon mr-15">
+						<i class="icon-contract"></i>
+					</div>
+					<p>Correo: universidadTeconolica@unit.sv</p>
+
+				</div>
+				<c:forEach var="e" items="${es}">
+					<div class="single-contact-info d-flex">
+
+						<div class="contact-icon mr-15">
+							<i class="icon-contract"></i>
+						</div>
+
+						<br>
+						<p>carrera: ${e.nombreEscuela}</p>
+
+					</div>
+				</c:forEach>
+
+
+			</div>
+			
+	
+<!-- 	//////////////////////////////////////////////////////////////////////////////////////////// -->
+	<button id="clash">Splash</button>
+	
+			
+			<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showFacultad">
+				<div class="section-heading text-left">
+					<span>Unit</span>
+					<h3>Universidad Nacional de Innovacion Tecnologica</h3>
+
+					<c:forEach var="e" items="${facultadList}">
+					<p class="obtenerF">${e.facultad}</p>
+					<p class="izq"  >
+					<a  class="btCarreras"  href="buscarF/<c:out value='${e.facultad}'/>/encontrar">
+						<img class="carreras"
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
 							class="flip"> <img
 							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
 							class="flip2">
+							</a>
 					</p>
-					<p class="der"></p>
+					</c:forEach>
+					
+					
 				</div>
 				
 				
@@ -381,8 +470,10 @@
 						<i class="icon-contract"></i>
 					</div>
 					<p>Correo: universidadTeconolica@unit.sv</p>
+
 				</div>
 
+<<<<<<< HEAD
 
 					<div class="botonMapa">
 					<button id="editar" class="editar" onclick="editar">EDITAR</button>
@@ -390,9 +481,20 @@
 					<div id="qp2">
 						<input  id="2qp" value=""/>
 					</div>
+=======
+				<div class="botonMapa">
+					<button id="editar" class="editar" onclick="editar">EDITAR</button>
+					<button id="finalizar">Finalizar</button>
+
+>>>>>>> Geografico
 				</div>
 			</div>
+<<<<<<< HEAD
 			</div>
+=======
+			
+			
+>>>>>>> Geografico
 			
 		</div>
 				
@@ -411,131 +513,155 @@
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header" style="padding: 15px 20px;">
-				<center>
-					<h4>
-						<span class="glyphicon glyphicon-lock"></span> REGISTRO 
-					</h4></center>
+					<center>
+						<h4>
+							<span class="glyphicon glyphicon-lock"></span> REGISTRO
+						</h4>
+					</center>
 				</div>
 				<div class="modal-body" style="padding: 40px 50px;">
-				
-	<center>			<!-- Material unchecked -->
-<div class="btn-group">
-  <button type="button" class="btn btn-primary" id="campus">Campus</button>
-  <br></br>
-  <button type="button" class="btn btn-primary" style="margin-left:3px" class="x" id="facultade">Facultad</button>
-</div>
-	</center>			
-				<div>
-				<br></br>
 
-				</div>
-				
-				<div id="formCampus">
-					<sf:form action="${pageContext.request.contextPath}/contacto/campus/save" method="post" commandName="campus" role="form">
-					
-						<div class="form-group">
-							<label for="idCampus">
-							<span class="glyphicon glyphicon-user"></span> ID</label>
-							<sf:input type="text" class="form-control" id="idCampus" placeholder="ID " path="idCampus" />
+					<center>
+						<!-- Material unchecked -->
+						<div class="btn-group">
+							<button type="button" class="btn btn-primary" id="campus">Campus</button>
+							<br></br>
+							<button type="button" class="btn btn-primary"
+								style="margin-left: 3px" class="x" id="facultade">Facultad</button>
 						</div>
+					</center>
+					<div>
+						<br></br>
 
-						<div class="form-group">
-							<label for="campuscampus"><span
-								class="glyphicon glyphicon-eye-open"></span> Nombre del Campus</label> 
-								<sf:input type="text" class="form-control" id="campuscampus" path="campus" placeholder="Nombre" />
-						</div>
-
-						<div class="form-group">
-							<label for="telefono"><span
-								class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
-							 <sf:input type="text" class="form-control" id="telefono" path="telefono" 	placeholder="Telefono" />
-						</div>
-
-						<div class="form-group">
-							<label for="ubicacion" ><span
-								class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> 
-								<sf:input type="text" class="form-control" id="ubicacion" path="ubicacion" placeholder="Ubicacion" />
-						</div>
-						
-						<div class="form-group">
-							<label for="latitudCampus"><span class="glyphicon glyphicon-eye-open"></span> Latitud</label>
-							 <sf:input	type="text" class="form-control" id="latitudCampus" path="coordenadas.latitud" placeholder="Latitud" />
-						</div>
-
-						<div class="form-group">
-							<label for="longitudCampus"><span
-								class="glyphicon glyphicon-eye-open"></span> Longitud</label> 
-								<sf:input type="text" class="form-control" id="longitudCampus" path="coordenadas.longitud" placeholder="Longitud" />
-						</div>
-
-
-
-						<button type="submit" class="btn btn-success btn-block">
-							<span class="glyphicon glyphicon-off" id="guardarC"></span> Guardar Cambios
-						</button>
-					</sf:form>		
 					</div>
-				
-					
+
+					<div id="formCampus">
+						<sf:form
+							action="${pageContext.request.contextPath}/contacto/campus/save"
+							method="post" commandName="campus" role="form">
+
+							<div class="form-group">
+								<label for="idCampus"> <span
+									class="glyphicon glyphicon-user"></span> ID
+								</label>
+								<sf:input type="text" class="form-control" id="idCampus"
+									placeholder="ID " path="idCampus" />
+							</div>
+
+							<div class="form-group">
+								<label for="campuscampus"><span
+									class="glyphicon glyphicon-eye-open"></span> Nombre del Campus</label>
+								<sf:input type="text" class="form-control" id="campuscampus"
+									path="campus" placeholder="Nombre" />
+							</div>
+
+							<div class="form-group">
+								<label for="telefono"><span
+									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
+								<sf:input type="text" class="form-control" id="telefono"
+									path="telefono" placeholder="Telefono" />
+							</div>
+
+							<div class="form-group">
+								<label for="ubicacion"><span
+									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label>
+								<sf:input type="text" class="form-control" id="ubicacion"
+									path="ubicacion" placeholder="Ubicacion" />
+							</div>
+
+							<div class="form-group">
+								<label for="latitudCampus"><span
+									class="glyphicon glyphicon-eye-open"></span> Latitud</label>
+								<sf:input type="text" class="form-control" id="latitudCampus"
+									path="coordenadas.latitud" placeholder="Latitud" />
+							</div>
+
+							<div class="form-group">
+								<label for="longitudCampus"><span
+									class="glyphicon glyphicon-eye-open"></span> Longitud</label>
+								<sf:input type="text" class="form-control" id="longitudCampus"
+									path="coordenadas.longitud" placeholder="Longitud" />
+							</div>
+
+
+
+							<button type="submit" class="btn btn-success btn-block">
+								<span class="glyphicon glyphicon-off" id="guardarC"></span>
+								Guardar Cambios
+							</button>
+						</sf:form>
+					</div>
+
+
 					<div id="formFacultad">
-					<sf:form action="${pageContext.request.contextPath}/contacto/facultad/save" method="post" commandName="facultad" role="form">
-	
-						<div class="form-group">
-							<label for="idFacultad"><span
-								class="glyphicon glyphicon-user"></span> ID</label>
-							<sf:input type="text" class="form-control" id="idFacultad" placeholder="ID " path="idFacultad" />
-						</div>
+						<sf:form
+							action="${pageContext.request.contextPath}/contacto/facultad/save"
+							method="post" commandName="facultad" role="form">
 
-						<div class="form-group">
-							<label for="facultadfacultad"><span
-								class="glyphicon glyphicon-eye-open"></span> Nombre de la Facultad</label> 
-								<sf:input type="text" class="form-control" id="facultadfacultad" path="facultad" placeholder="Nombre" />
-						</div>
+							<div class="form-group">
+								<label for="idFacultad"><span
+									class="glyphicon glyphicon-user"></span> ID</label>
+								<sf:input type="text" class="form-control" id="idFacultad"
+									placeholder="ID " path="idFacultad" />
+							</div>
 
-						<div class="form-group">
-							<label for="telefono"><span
-								class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label> 
-								<sf:input type="text" class="form-control" id="telefono" path="telefono" placeholder="Telefono" />
-						</div>
+							<div class="form-group">
+								<label for="facultadfacultad"><span
+									class="glyphicon glyphicon-eye-open"></span> Nombre de la
+									Facultad</label>
+								<sf:input type="text" class="form-control" id="facultadfacultad"
+									path="facultad" placeholder="Nombre" />
+							</div>
 
-
-						<div class="form-group">
-							<label for="ubicacion"><span
-								class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> 
-								<sf:input type="text" class="form-control" id="ubicacion"	path="ubicacion" placeholder="Ubicacion" />
-						</div>
-
-
-						<div class="form-group">
-							<label for="campusfacultad"><span
-								class="glyphicon glyphicon-eye-open"></span> Campus</label> 
-								<sf:input type="text" class="form-control" id="campusfacultad" path="campus.idCampus" placeholder="campus" />
-						</div>
-						<div class="form-group">
-							<label for="latitudFacultad"><span class="glyphicon glyphicon-eye-open"></span> Latitud</label>
-							 <sf:input	type="text" class="form-control" id="latitudFacultad" path="coordenadas.latitud"
-								placeholder="Latitud" />
-						</div>
-
-						<div class="form-group">
-							<label for="longitudFacultad"><span
-								class="glyphicon glyphicon-eye-open"></span> Longitud</label> <sf:input
-								type="text" class="form-control" id="longitudFacultad" path="coordenadas.longitud"
-								placeholder="Longitud" />
-						</div>
+							<div class="form-group">
+								<label for="telefono"><span
+									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
+								<sf:input type="text" class="form-control" id="telefono"
+									path="telefono" placeholder="Telefono" />
+							</div>
 
 
-						<button type="submit" class="btn btn-success btn-block">
-							<span class="glyphicon glyphicon-off" id="guardarF"></span> Guardar Cambios
-						</button>
-						</sf:form>	
+							<div class="form-group">
+								<label for="ubicacion"><span
+									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label>
+								<sf:input type="text" class="form-control" id="ubicacion"
+									path="ubicacion" placeholder="Ubicacion" />
+							</div>
+
+
+							<div class="form-group">
+								<label for="campusfacultad"><span
+									class="glyphicon glyphicon-eye-open"></span> Campus</label>
+								<sf:input type="text" class="form-control" id="campusfacultad"
+									path="campus.idCampus" placeholder="campus" />
+							</div>
+							<div class="form-group">
+								<label for="latitudFacultad"><span
+									class="glyphicon glyphicon-eye-open"></span> Latitud</label>
+								<sf:input type="text" class="form-control" id="latitudFacultad"
+									path="coordenadas.latitud" placeholder="Latitud" />
+							</div>
+
+							<div class="form-group">
+								<label for="longitudFacultad"><span
+									class="glyphicon glyphicon-eye-open"></span> Longitud</label>
+								<sf:input type="text" class="form-control" id="longitudFacultad"
+									path="coordenadas.longitud" placeholder="Longitud" />
+							</div>
+
+
+							<button type="submit" class="btn btn-success btn-block">
+								<span class="glyphicon glyphicon-off" id="guardarF"></span>
+								Guardar Cambios
+							</button>
+						</sf:form>
 					</div>
-					
-<!-- 					aqui -->
+
+					<!-- 					aqui -->
 				</div>
-				
-				
-				
+
+
+
 				<div class="modal-footer">
 					<button type="submit" class="btn btn-danger btn-default pull-left"
 						data-dismiss="modal" id="cancell">
@@ -562,9 +688,9 @@
 								src="<%=request.getContextPath()%>/res/design/img/core-img/logo_1.png"
 								width="170"></a>
 						</div>
-						<p>La Universidad nacional de Innovacion Tecnologica es la institución de
-							educación superior más grande y antigua de la República de El
-							Salvador.</p>
+						<p>La Universidad nacional de Innovacion Tecnologica es la
+							institución de educación superior más grande y antigua de la
+							República de El Salvador.</p>
 						<div class="footer-social-info">
 							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
 								class="fa fa-twitter"></i></a> <a href="#"><i
@@ -633,7 +759,7 @@
 						</div>
 						<div class="single-contact d-flex mb-30">
 							<i class="icon-placeholder"></i>
-							<p> ${campusdir.ubicacion} </p>
+							<p>${campusdir.ubicacion}</p>
 						</div>
 						<div class="single-contact d-flex mb-30">
 							<i class="icon-telephone-1"></i>
@@ -692,7 +818,8 @@
 
 	<!-- Active js -->
 	<script src="<c:url value='/res/design/js/active.js'></c:url>"></script>
-	<script type="text/javascript" src="<c:url value='/res/design/js/mapa.js'></c:url>"></script>
-		
+	<script type="text/javascript"
+		src="<c:url value='/res/design/js/mapa.js'></c:url>"></script>
+
 </body>
 </html>
