@@ -207,14 +207,11 @@ $('#buttonDemo2').click(function() {
 						<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
 							id="showCarreras">
 							<div class="section-heading text-left" id="infCarr">
-								<span>Unit</span>
-								<button class="atras">ATRAS</button>
-								<h3 id="nombreFacultad" ></h3>
- 							
-									<p class="nameOfCar"></p>
-
-
-
+								<span>Unit</span>								
+								<h3 id="nombreFacultad" ></h3> 							
+							<div class="izq" id="id">				
+							</div>
+<button class="atras">ATRAS</button>
 							</div>
 
 							Single Contact Info
@@ -262,12 +259,6 @@ $('#buttonDemo2').click(function() {
 
 
 			<!-- 	//////////////////////////////////////////////////////////////////////////////////////////// -->
-			<button id="clash">Splash</button>
-
-
-
-
-
 						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showFacultad">
 							<div class="section-heading text-left">
 								<span>Unit</span>
@@ -275,34 +266,22 @@ $('#buttonDemo2').click(function() {
 
 								<c:forEach var="e" items="${facultadList}">
 								
-								<p class="izq"  >
-								<a class="obtenerFx" ><label class="obtenerF">${e.facultad}</label>
-
-									<img class="carreras" 
-										src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
-										class="flip"> <img
-										src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-										class="flip2">
+								<div class="izq">  								
+								<a class="obtenerFx" >
+								<label class="obtenerF nombreFacultadd">${e.facultad}</label>
 								</a>
-								</p>
-								
+						<p class="tel">${e.telefono}</p>
+						<p class="ubic">${e.ubicacion}</p>	
+								</div>
+								<hr/>								
 								</c:forEach>
-
-
 							</div>
-
-
-
-							Single Contact Info
 							<div class="single-contact-info d-flex">
 								<div class="contact-icon mr-15">
 									<i class="icon-placeholder"></i>
 								</div>
 								<p>Ubicacion: ${campusdir.ubicacion}</p>
-
-
 							</div>
-							Single Contact Info
 							<div class="single-contact-info d-flex">
 								<div class="contact-icon mr-15">
 									<i class="icon-telephone-1"></i>
@@ -311,7 +290,6 @@ $('#buttonDemo2').click(function() {
 									Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648
 								</p>
 							</div>
-							Single Contact Info
 							<div class="single-contact-info d-flex">
 								<div class="contact-icon mr-15">
 									<i class="icon-contract"></i>
@@ -319,23 +297,13 @@ $('#buttonDemo2').click(function() {
 								<p>Correo: universidadTeconolica@unit.sv</p>
 
 							</div>
-
-
-
 							<div class="botonMapa">
 								<button id="editar" class="editar" onclick="editar">EDITAR</button>
 								<button id="finalizar">Finalizar</button>
-
-			>
 							</div>
 						</div>
-
-
-
-
 		</div>
-
-
+		<!-- ##### Fin formulario ##### -->
 	</div>
 
 
