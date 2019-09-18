@@ -35,6 +35,28 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/res/design/style.css">
 
+
+<script type="text/javascript">
+$(document).ready(function(){
+	console.log("vista");
+$('#buttonDemo2').click(function() {
+	console.log("dio click");
+	var fullName = $('#fullName').val();
+	console.log("fullName = "+fullName);
+	$.ajax({
+		type : 'GET',
+		url : '/api/ajaxrest/demo2/' + fullName,
+		success : function(result) {
+			$('#result2').text(result);
+			console.log("chido");
+		}
+	});
+});
+});
+
+</script>
+
+
 </head>
 
 <body>
@@ -179,144 +201,145 @@
 
 
 
+
 		<div id="formulario">
 
-<!-- 			<div class="contact-information wow fadeInUp" data-wow-delay="400ms"> -->
-<!-- 				<div class="section-heading text-left"> -->
-<!-- 					<span>Unit</span> -->
-<!-- 					<h3>Facultad de Ingenieria</h3> -->
-<%-- 					<c:forEach var="e" items="${es}"> --%>
-<!-- 					<div class="izq"> -->
-<%-- 						<p class="nombreFacultad">${e.nombreEscuela}</p> --%>
-<%-- 						<p class="tel">${e.telefono}</p> --%>
-<%-- 						<p class="ubic">${e.direccion}</p>						 --%>
-<!-- 					</div> -->
-<!-- 					<hr/> -->
-<%-- 					</c:forEach> --%>
-					
-					
-<!-- 				</div> -->
-
-<!-- 				Single Contact Info -->
-<!-- 				<div class="single-contact-info d-flex"> -->
-<!-- 					<div class="contact-icon mr-15"> -->
-<!-- 						<i class="icon-placeholder"></i> -->
-<!-- 					</div> -->
-<%-- 					<p>Ubicacion: ${campusdir.ubicacion}</p> --%>
+						<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
+							id="showCarreras">
+							<div class="section-heading text-left" id="infCarr">
+								<span>Unit</span>
+								<button class="atras">ATRAS</button>
+								<h3 id="nombreFacultad" ></h3>
+ 							
+									<p class="nameOfCar"></p>
 
 
-<!-- 				</div> -->
-<!-- 				Single Contact Info -->
-<!-- 				<div class="single-contact-info d-flex"> -->
-<!-- 					<div class="contact-icon mr-15"> -->
-<!-- 						<i class="icon-telephone-1"></i> -->
-<!-- 					</div> -->
-<!-- 					<p> -->
-<%-- 						Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648 --%>
-<!-- 					</p> -->
-<!-- 				</div> -->
-<!-- 				Single Contact Info -->
-<!-- 				<div class="single-contact-info d-flex"> -->
-<!-- 					<div class="contact-icon mr-15"> -->
-<!-- 						<i class="icon-contract"></i> -->
-<!-- 					</div> -->
-<!-- 					<p>Correo: universidadTeconolica@unit.sv</p> -->
 
-<!-- 				</div> -->
-<%-- 				<c:forEach var="e" items="${es}"> --%>
-<!-- 					<div class="single-contact-info d-flex"> -->
+							</div>
 
-<!-- 						<div class="contact-icon mr-15"> -->
-<!-- 							<i class="icon-contract"></i> -->
-<!-- 						</div> -->
-
-<!-- 						<br> -->
-<%-- 						<p>carrera: ${e.nombreEscuela}</p> --%>
-
-<!-- 					</div> -->
-<%-- 				</c:forEach> --%>
-
-<!-- 				<div class="botonMapa"> -->
-<!-- 					<button id="editar" class="editar" onclick="editar">EDITAR</button> -->
-<!-- 					<button id="finalizar">Finalizar</button> -->
-<!-- 					<div id="qp2"> -->
-<!-- 						<label> <a id="2qp" -->
-<%-- 							href="buscarF/<c:out value='${facultadName}'/>/encontrar"></a>Buscar --%>
-<!-- 						</label> <label> <a id="22qp" -->
-<%-- 							href="buscarF/'${facultadName}'/encontrar"></a>busqueda --%>
-<!-- 						</label> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-
-<!-- 			</div> -->
-			
-	
-<!-- 	//////////////////////////////////////////////////////////////////////////////////////////// -->
-	
-	
-	
-			
-			<div class="contact-information wow fadeInUp" data-wow-delay="400ms">
-				<div class="section-heading text-left">
-					<span>Unit</span>
-					<h3>Universidad Nacional de Innovacion Tecnologica</h3>
-					<c:forEach var="e" items="${facultadList}">
-					<div class="izq" >
-						<p class="nombreFacultad">${e.facultad}</p>
-						<p class="tel">${e.telefono}</p>
-						<p class="ubic">${e.ubicacion}</p>						
-					</div>
-					<hr/>
-					</c:forEach>
-					
-					
-				</div>
-
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-placeholder"></i>
-					</div>
-					<p>Ubicacion: ${campusdir.ubicacion}</p>
+							Single Contact Info
+							<div class="single-contact-info d-flex">
+								<div class="contact-icon mr-15">
+									<i class="icon-placeholder"></i>
+								</div>
+								<p>Ubicacion: ${campusdir.ubicacion}</p>
 
 
-				</div>
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-telephone-1"></i>
-					</div>
-					<p>
-						Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648
-					</p>
-				</div>
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-contract"></i>
-					</div>
-					<p>Correo: universidadTeconolica@unit.sv</p>
+							</div>
+							Single Contact Info
+							<div class="single-contact-info d-flex">
+								<div class="contact-icon mr-15">
+									<i class="icon-telephone-1"></i>
+								</div>
+								<p>
+									Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648
 
-				</div>
+								</p>
+							</div>
+							Single Contact Info
+							<div class="single-contact-info d-flex">
+								<div class="contact-icon mr-15">
+									<i class="icon-contract"></i>
+								</div>
+								<p>Correo: universidadTeconolica@unit.sv</p>
 
-				<div class="botonMapa">
-					<button id="editar" class="editar" onclick="editar">EDITAR</button>
-					<button id="finalizar">Finalizar</button>
-					<div id="qp2">
-						<label> <a id="2qp"
-							href="buscarF/<c:out value='${facultadName}'/>/encontrar"></a>Buscar
-						</label> <label> <a id="22qp"
-							href="buscarF/'${facultadName}'/encontrar"></a>busqueda
-						</label>
-					</div>
-				</div>
+							</div>
+							<c:forEach var="e" items="${es}">
+								<div class="single-contact-info d-flex">
 
-			</div>
-			
-			
-			
+									<div class="contact-icon mr-15">
+										<i class="icon-contract"></i>
+									</div>
+
+									<br>
+									<p>carrera: ${e.nombreEscuela}</p>
+
+								</div>
+							</c:forEach>
+
+
+						</div>
+
+
+			<!-- 	//////////////////////////////////////////////////////////////////////////////////////////// -->
+			<button id="clash">Splash</button>
+
+
+
+
+
+						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showFacultad">
+							<div class="section-heading text-left">
+								<span>Unit</span>
+								<h3>Universidad Nacional de Innovacion Tecnologica</h3>
+
+								<c:forEach var="e" items="${facultadList}">
+								
+								<p class="izq"  >
+								<a class="obtenerFx" ><label class="obtenerF">${e.facultad}</label>
+
+									<img class="carreras" 
+										src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
+										class="flip"> <img
+										src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+										class="flip2">
+								</a>
+								</p>
+								
+								</c:forEach>
+
+
+							</div>
+
+
+
+							Single Contact Info
+							<div class="single-contact-info d-flex">
+								<div class="contact-icon mr-15">
+									<i class="icon-placeholder"></i>
+								</div>
+								<p>Ubicacion: ${campusdir.ubicacion}</p>
+
+
+							</div>
+							Single Contact Info
+							<div class="single-contact-info d-flex">
+								<div class="contact-icon mr-15">
+									<i class="icon-telephone-1"></i>
+								</div>
+								<p>
+									Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648
+								</p>
+							</div>
+							Single Contact Info
+							<div class="single-contact-info d-flex">
+								<div class="contact-icon mr-15">
+									<i class="icon-contract"></i>
+								</div>
+								<p>Correo: universidadTeconolica@unit.sv</p>
+
+							</div>
+
+
+
+							<div class="botonMapa">
+								<button id="editar" class="editar" onclick="editar">EDITAR</button>
+								<button id="finalizar">Finalizar</button>
+
+			>
+							</div>
+						</div>
+
+
+
+
 		</div>
+
+
 	</div>
+
+
+
 
 	<!-- ##### Contact Area End ##### -->
 

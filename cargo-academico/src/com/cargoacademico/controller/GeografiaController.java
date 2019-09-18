@@ -44,6 +44,7 @@ public class GeografiaController {
 
 		List<String> listLatitud = new ArrayList<String>();
 		List<String> listLongitud = new ArrayList<String>();
+		
 		List<String> nombreFacultad = new ArrayList<String>();
 
 		
@@ -159,7 +160,6 @@ public class GeografiaController {
 		model.addAttribute("campus", campus);
 		model.addAttribute("campusdir", cam);
 		model.addAttribute("es", escuelas);
-//		System.out.println("------------------asdasd-----------------------"+escuelaList.size());
 		System.out.println("-----------------------------------------" + cam.getTelefono());
 		return "contacto";
 	}
@@ -313,8 +313,19 @@ public class GeografiaController {
 		return "contacto";
 	}
 
-	@RequestMapping("/buscarF/{facultadName}/encontrar")
+	@RequestMapping("/buscarF/{facultadName}/ <a class='h'></a>/encontrar")
 	public String buscarFacultad(@PathVariable("facultadName") String facultadName, RedirectAttributes ra) {
+
+		String nombre = facultadName;
+
+		ra.addAttribute("idFF", nombre);
+
+		return "redirect:/contacto";
+	}
+	
+	
+	@RequestMapping("/buscarF/{facultadName}/encontrar")
+	public String buscarFacultadDiv(@PathVariable("facultadName") String facultadName, RedirectAttributes ra) {
 
 		String nombre = facultadName;
 
