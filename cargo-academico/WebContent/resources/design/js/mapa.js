@@ -36,13 +36,13 @@ L.tileLayer(
 
 var x = [];
 var jaja = [];
-var ht = "<a class='h'></a>";
+var ht = "<button class='h' value=></button>";
 
 // PARA AGREGAR EL MARCADOR
 for (var i = 0; i < lat.length; i++) {
 	var idd = id[i];
 	var marker = {};
-	marker = new L.marker([ lat[i], -lon[i] ]).bindPopup(asd[i]+"/ "+ht)
+	marker = new L.marker([ lat[i], -lon[i] ]).bindPopup(asd[i]+"/ "+"<button class='h' value='"+asd[i]+"'></button>")
 			.addTo(map);
 
 	
@@ -83,7 +83,7 @@ $(document).ready(function() {
 	var afirmar;
 	var lat;
 	var lon;
-	
+	var nameFacultad;
 	
 	
 	//----------------------------------------------------
@@ -108,16 +108,57 @@ $(document).ready(function() {
 		console.log("hola e" + e);
 		var facultadName = e.popup._content;
 		$('.h').text(nota);
-		$('.h').attr('href', "buscarF/" + facultadName + "/encontrar")
 				
 		$('.h').click(function(e){
-			$('#showCarreras').show();
-			$('#showFacultad').hide();
-			$('.atras').show();	
-//			break;
-			window.onbeforeunload = function(){
-				return false;
-			};
+	
+			nameFacultad = $('.h').val();
+			console.log("nameFacultad == "+nameFacultad);
+			
+			
+			$.ajax({
+				type : 'GET',
+				timeout: 5000,
+				url : 'api/ajaxrest/obtenerFacultad/' + nameFacultad,
+//				dataType : 'json',
+				contentType : 'application/json',
+				success : function(result) {
+					resultado = result;
+					
+					console.log("resulttt = "+ resultado);
+					console.log("result = "+ resultado[0].nombreEscuela);
+					
+					var h ='';
+					var hh ='';
+					for (var i = 0; i < result.length; i++) {
+						h += resultado[i].nombreEscuela;
+					}
+					
+					$('#nombreFacultad').text(nameFacultad);
+					$('.nameOfCar').text(h);
+
+					
+					$('#showFacultad').hide();
+					$('#showCarreras').show();
+					$('.atras').show();
+					
+				},
+			
+			error:function (xhr, ajaxOptions, thrownError){
+				console.log("************************************");
+		        alert(xhr.status);
+		        alert(xhr.statusText);
+		        alert(xhr.responseText);
+		        alert(thrownError);	        
+//					console.log("result = "+(xhr.status);
+				console.log("xhr.statusText = "+xhr.statusText);
+				console.log("xhr.responseText = "+xhr.responseText);
+				console.log("************************************");
+			}
+			});
+
+			
+
+
 		});
 
 	});
@@ -125,7 +166,6 @@ $(document).ready(function() {
 	// ------------------------------------------------------
 
 	// ----------------------------------------------------
-	var nameFacultad;
 	// PARA LA PARTE DEL PANEL DE DIV
 	$('#showFacultad').show(function() {
 		$('#showCarreras').hide();
@@ -135,7 +175,7 @@ $(document).ready(function() {
 	$('.obtenerFx').click(function(e) {
 
 		var ax = e.delegateTarget;
-		var nameFacultad = ax.text;
+		nameFacultad = ax.text;
 		var resultado;
 		console.log("************************************");
 		console.log(nameFacultad);
