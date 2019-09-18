@@ -32,61 +32,65 @@
 	href="<%=request.getContextPath()%>/res/design/style.css">
 
 <style>
-* {box-sizing: border-box}
-body {font-family: "Lato", Bahnschrift Light;}
+* {
+	box-sizing: border-box
+}
+
+body {
+	font-family: "Lato", Bahnschrift Light;
+}
 
 /* Style the tab */
 .tab {
-  float: left;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-  width: 30%;
-  height: 400px;
+	float: left;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+	width: 30%;
+	height: 400px;
 }
 
 /* Style the buttons inside the tab */
 .tab button {
-  display: block;
-  background-color: #A5231F;
-  color: white;
-  padding: 22px 16px;
-  width: 100%;
-  border: none;
-  outline: none;
-  text-align: left;
-  cursor: pointer;
-  font-size: 17px;
+	display: block;
+	background-color: #A5231F;
+	color: white;
+	padding: 22px 16px;
+	width: 100%;
+	border: none;
+	outline: none;
+	text-align: left;
+	cursor: pointer;
+	font-size: 17px;
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: #D52727;
+	background-color: #D52727;
 }
 
 /* Create an active/current "tab button" class */
 .tab button.active {
-  background-color: #000000;
+	background-color: #000000;
 }
 
 /* Style the tab content */
 .tabcontent {
-  float: left;
-  padding: 0px 12px;
-  border: 1px solid #ccc;
-  width: 50%;
-  border-left: none;
-  height: 200px;
-  display: none;
-  color: Blue;
+	float: left;
+	padding: 0px 12px;
+	border: 1px solid #ccc;
+	width: 50%;
+	border-left: none;
+	height: 200px;
+	display: none;
+	color: Blue;
 }
 
 /* Clear floats after the tab */
 .clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+	content: "";
+	clear: both;
+	display: table;
 }
-
 </style>
 <!-- Fin de mi estilo -->
 
@@ -287,9 +291,9 @@ body {font-family: "Lato", Bahnschrift Light;}
 									<a href="#" class="post-title">Maya Curricular por Facultad</a>
 									<!-- Post Thumb -->
 									<div class="blog-post-thumb mb-50">
-										 <img src="res/design/img/blog-img/2.jpg" alt="">
+										<img src="res/design/img/blog-img/2.jpg" alt="">
 									</div>
-									
+
 									<!-- Post Meta
 									<div class="post-meta">
 										<p>
@@ -298,46 +302,85 @@ body {font-family: "Lato", Bahnschrift Light;}
 										</p>
 									</div>-->
 									<!-- Post Excerpt -->
-<div class="tab">
-  <button class="tablinks" onmouseover="openCity(event, 'Ingenieria Industrial')">Ingenieria Industrial</button>
-  <button class="tablinks" onmouseover="openCity(event, 'Ingenieria Electrica')">Ingenieria Electrica</button>
-  <button class="tablinks" onmouseover="openCity(event, 'Ingeniera en Sistemas Informaticos')">Ingeniera en Sistemas Informaticos</button>
-  <button class="tablinks" onmouseover="openCity(event, 'Ingenieria Mecanica')">Ingenieria Mecanica</button>
-  <button class="tablinks" onmouseover="openCity(event, 'Arquitectura')">Arquitectura</button>
-</div>
+									<div class="tab">
+										<button class="tablinks"
+											onmouseover="openCity(event, 'Ingenieria Industrial')">Ingenieria
+											Industrial</button>
+										<button class="tablinks"
+											onmouseover="openCity(event, 'Ingenieria Electrica')">Ingenieria
+											Electrica</button>
+										<button class="tablinks"
+											onmouseover="openCity(event, 'Ingeniera en Sistemas Informaticos')">Ingeniera
+											en Sistemas Informaticos</button>
+										<button class="tablinks"
+											onmouseover="openCity(event, 'Ingenieria Mecanica')">Ingenieria
+											Mecanica</button>
+										<button class="tablinks"
+											onmouseover="openCity(event, 'Arquitectura')">Arquitectura</button>
+									</div>
 
-<div id="Ingenieria Industrial" class="tabcontent">
-  <h3>Descargar</h3>
-  <h2> <u> <a href="res/pdf/maya_curricular1.pdf" download="Maya de IngIn"> <p>Maya Curricular de Ingenieria industrial</p> </a> </u> </h2>
-  <h3>Editar Reporte</h3>
-  
-</div>
+									<div id="Ingenieria Industrial" class="tabcontent">
+										<h3>Descargar</h3>
+										<h2>
+											<u> <a href="res/pdf/maya_curricular1.pdf"
+												download="Maya de IngIn">
+													<p>Maya Curricular de Ingenieria industrial</p>
+											</a>
+											</u>
+										</h2>
+										<h3>Editar Reporte</h3>
 
-<div id="Ingenieria Electrica" class="tabcontent">
-  <h3>Descargar</h3>
-    <h2> <u> <a href="res/pdf/maya_curricular2.pdf" download="Maya de IngIn"> <p>Maya Curricular de Ingenieria Electrica</p> </a> </u> </h2>
-   <h3>Editar Reporte</h3>
-</div>
+									</div>
 
-<div id="Ingeniera en Sistemas Informaticos" class="tabcontent">
-  <h3>Descargar</h3>
-   <h2> <u> <a href="res/pdf/maya_curricular3.pdf" download="Maya de IngIn"> <p>Maya Curricular de Ingenieria Sistemas Informaticos</p> </a> </u> </h2>
-   <h3>Editar Reporte</h3>
-</div>
+									<div id="Ingenieria Electrica" class="tabcontent">
+										<h3>Descargar</h3>
+										<h2>
+											<u> <a href="res/pdf/maya_curricular2.pdf"
+												download="Maya de IngIn">
+													<p>Maya Curricular de Ingenieria Electrica</p>
+											</a>
+											</u>
+										</h2>
+										<h3>Editar Reporte</h3>
+									</div>
 
-<div id="Ingenieria Mecanica" class="tabcontent">
-  <h3>Descargar</h3>
-  <h2> <u> <a href="res/pdf/maya_curricular4.pdf" download="Maya de IngIn"> <p>Maya Curricular de Ingenieria Mecanica</p> </a> </u> </h2>
-  <h3>Editar Reporte</h3>
-</div>
+									<div id="Ingeniera en Sistemas Informaticos" class="tabcontent">
+										<h3>Descargar</h3>
+										<h2>
+											<u> <a href="res/pdf/maya_curricular3.pdf"
+												download="Maya de IngIn">
+													<p>Maya Curricular de Ingenieria Sistemas Informaticos</p>
+											</a>
+											</u>
+										</h2>
+										<h3>Editar Reporte</h3>
+									</div>
 
-<div id="Arquitectura" class="tabcontent">
-  <h3>Descargar</h3>
-   <h2> <u> <a href="res/pdf/maya_curricular5.pdf" download="Maya de IngIn"> <p>Maya Curricular de Arquitectura</p> </a> </u> </h2>
-   <h3>Editar Reporte</h3>
-</div>
+									<div id="Ingenieria Mecanica" class="tabcontent">
+										<h3>Descargar</h3>
+										<h2>
+											<u> <a href="res/pdf/maya_curricular4.pdf"
+												download="Maya de IngIn">
+													<p>Maya Curricular de Ingenieria Mecanica</p>
+											</a>
+											</u>
+										</h2>
+										<h3>Editar Reporte</h3>
+									</div>
 
-<div class="clearfix"></div>
+									<div id="Arquitectura" class="tabcontent">
+										<h3>Descargar</h3>
+										<h2>
+											<u> <a href="res/pdf/maya_curricular5.pdf"
+												download="Maya de IngIn">
+													<p>Maya Curricular de Arquitectura</p>
+											</a>
+											</u>
+										</h2>
+										<h3>Editar Reporte</h3>
+									</div>
+
+									<div class="clearfix"></div>
 
 									<!-- fin -->
 								</div>
@@ -345,7 +388,7 @@ body {font-family: "Lato", Bahnschrift Light;}
 
 						</div>
 					</div>
-					
+
 				</div>
 
 				<div class="col-12 col-md-4">
@@ -406,7 +449,7 @@ body {font-family: "Lato", Bahnschrift Light;}
 									<img src="res/design/img/imgreport/icon-pdf.png" alt="">
 								</div>
 								<div class="latest-blog-post-content">
-									<a href="report1.html" target="_blank"  class="post-title">
+									<a href="report1.html" target="_blank" class="post-title">
 										<h6>Informacion</h6>
 									</a> <a href="#" class="post-date">March 18, 2018</a>
 								</div>
@@ -444,7 +487,7 @@ body {font-family: "Lato", Bahnschrift Light;}
 
 						</div>
 
-						
+
 					</div>
 				</div>
 			</div>
@@ -585,7 +628,7 @@ body {font-family: "Lato", Bahnschrift Light;}
 		}
 	</script>
 	<!-- moto -->
-	
+
 	<!-- ##### All Javascript Script ##### -->
 	<!-- jQuery-2.2.4 js -->
 	<script

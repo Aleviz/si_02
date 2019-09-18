@@ -1,6 +1,5 @@
 package com.cargoacademico.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -12,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cargoacademico.model.Unidad;
 import com.cargoacademico.model.Universidad;
 
 @SuppressWarnings("unchecked")
@@ -31,25 +29,21 @@ public class UniversidadImpl implements UniversidadDao {
 	}
 
 	@Override
-	public Universidad saveUniversidad(Universidad universidad) {
+	public void saveUniversidad(Universidad universidad) {
 		try {
 			getSession().save(universidad);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return null;
 		}
-		return universidad;
 	}
 
 	@Override
-	public Universidad updateUniversidad(Universidad universidad) {
+	public void updateUniversidad(Universidad universidad) {
 		try {
 			getSession().saveOrUpdate(universidad);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return null;
 		}
-		return universidad;
 	}
 
 	@Override
@@ -67,16 +61,9 @@ public class UniversidadImpl implements UniversidadDao {
 	}
 
 	@Override
-	public List<Universidad> findAllUniversidad() {
-		try {
-			listUniversidad = new ArrayList<Universidad>();
-			Query query = getSession().createQuery("from Universidad");
-			listUniversidad = query.list();
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-		return listUniversidad;
+	public List<Universidad> encontrarTodo() {
+		Query query = getSession().createQuery("from Universidad");
+		return query.list();
 	}
 
 	@Override
@@ -90,4 +77,5 @@ public class UniversidadImpl implements UniversidadDao {
 		}
 
 	}
+
 }

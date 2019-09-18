@@ -32,414 +32,457 @@
 
 </head>
 <body>
-    <!-- ##### Preloader ##### -->
-    <div id="preloader">
-        <i class="circle-preloader"></i>
-    </div>
+	<!-- ##### Preloader ##### -->
+	<div id="preloader">
+		<i class="circle-preloader"></i>
+	</div>
 
-    <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
+	<!-- ##### Header Area Start ##### -->
+	<header class="header-area">
 
-        <!-- Top Header Area -->
-        <div class="top-header">
-            <div class="container h-100">
-                <div class="row h-100">
-                    <div class="col-12 h-100">
-                        <div class="header-content h-100 d-flex align-items-center justify-content-between">
-                            <div class="academy-logo">
-                                <a href="index.html"><img src="res/design/img/core-img/image.png" width="150px"></a>
-                            </div>
-                            <div class="login-content">
-                                <a href="#">Register / Login</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+		<!-- Top Header Area -->
+		<div class="top-header">
+			<div class="container h-100">
+				<div class="row h-100">
+					<div class="col-12 h-100">
+						<div
+							class="header-content h-100 d-flex align-items-center justify-content-between">
+							<div class="academy-logo">
+								<a href="index.html"><img
+									src="res/design/img/core-img/image.png" width="150px"></a>
+							</div>
+							<div class="login-content">
+								<a href="#">Register / Login</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <!-- Navbar Area -->
-        <div class="academy-main-menu">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="academyNav">
+		<!-- Navbar Area -->
+		<div class="academy-main-menu">
+			<div class="classy-nav-container breakpoint-off">
+				<div class="container">
+					<!-- Menu -->
+					<nav class="classy-navbar justify-content-between" id="academyNav">
 
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
+						<!-- Navbar Toggler -->
+						<div class="classy-navbar-toggler">
+							<span class="navbarToggler"><span></span><span></span><span></span></span>
+						</div>
 
-                        <!-- Menu -->
-                        <div class="classy-menu">
+						<!-- Menu -->
+						<div class="classy-menu">
 
-                            <!-- close btn -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
+							<!-- close btn -->
+							<div class="classycloseIcon">
+								<div class="cross-wrap">
+									<span class="top"></span><span class="bottom"></span>
+								</div>
+							</div>
 
-                            <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="about-us.html">About Us</a></li>
-                                            <li><a href="course.html">Course</a></li>
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="elements.html">Elements</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Mega Menu</a>
-                                        <div class="megamenu">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="#">Home</a></li>
-                                                <li><a href="#">Services &amp; Features</a></li>
-                                                <li><a href="#">Accordions and tabs</a></li>
-                                                <li><a href="#">Menu ideas</a></li>
-                                                <li><a href="#">Students Gallery</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="#">Home</a></li>
-                                                <li><a href="#">Services &amp; Features</a></li>
-                                                <li><a href="#">Accordions and tabs</a></li>
-                                                <li><a href="#">Menu ideas</a></li>
-                                                <li><a href="#">Students Gallery</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="#">Home</a></li>
-                                                <li><a href="#">Services &amp; Features</a></li>
-                                                <li><a href="#">Accordions and tabs</a></li>
-                                                <li><a href="#">Menu ideas</a></li>
-                                                <li><a href="#">Students Gallery</a></li>
-                                            </ul>
-                                            <div class="single-mega cn-col-4">
-                                                <img src="res/design/img/bg-img/bg-1.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li><a href="Documentacion.jsp">Documentos</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-                            <!-- Nav End -->
-                        </div>
+							<!-- Nav Start -->
+							<div class="classynav">
+								<ul>
+									<li><a href="index.html">Home</a></li>
+									<li><a href="#">Pages</a>
+										<ul class="dropdown">
+											<li><a href="index.html">Home</a></li>
+											<li><a href="about-us.html">About Us</a></li>
+											<li><a href="course.html">Course</a></li>
+											<li><a href="blog.html">Blog</a></li>
+											<li><a href="contact.html">Contact</a></li>
+											<li><a href="elements.html">Elements</a></li>
+										</ul></li>
+									<li><a href="#">Mega Menu</a>
+										<div class="megamenu">
+											<ul class="single-mega cn-col-4">
+												<li><a href="#">Home</a></li>
+												<li><a href="#">Services &amp; Features</a></li>
+												<li><a href="#">Accordions and tabs</a></li>
+												<li><a href="#">Menu ideas</a></li>
+												<li><a href="#">Students Gallery</a></li>
+											</ul>
+											<ul class="single-mega cn-col-4">
+												<li><a href="#">Home</a></li>
+												<li><a href="#">Services &amp; Features</a></li>
+												<li><a href="#">Accordions and tabs</a></li>
+												<li><a href="#">Menu ideas</a></li>
+												<li><a href="#">Students Gallery</a></li>
+											</ul>
+											<ul class="single-mega cn-col-4">
+												<li><a href="#">Home</a></li>
+												<li><a href="#">Services &amp; Features</a></li>
+												<li><a href="#">Accordions and tabs</a></li>
+												<li><a href="#">Menu ideas</a></li>
+												<li><a href="#">Students Gallery</a></li>
+											</ul>
+											<div class="single-mega cn-col-4">
+												<img src="res/design/img/bg-img/bg-1.jpg" alt="">
+											</div>
+										</div></li>
+									<li><a href="about-us.html">About Us</a></li>
+									<li><a href="Documentacion.jsp">Documentos</a></li>
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+							</div>
+							<!-- Nav End -->
+						</div>
 
-                        <!-- Calling Info -->
-                        <div class="calling-info">
-                            <div class="call-center">
-                                <a href="tel:+654563325568889"><i class="icon-telephone-2"></i> <span>(+65) 456 332 5568 889</span></a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ##### Header Area End ##### -->
+						<!-- Calling Info -->
+						<div class="calling-info">
+							<div class="call-center">
+								<a href="tel:+654563325568889"><i class="icon-telephone-2"></i>
+									<span>(+65) 456 332 5568 889</span></a>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- ##### Header Area End ##### -->
 
-    <!-- ##### Breadcumb Area Start ##### -->
-    <div class="breadcumb-area bg-img" style="background-image: url(res/design/img/bg-img/breadcumb.jpg);">
-        <div class="bradcumbContent">
-            <h2>Documentacion</h2>
-        </div>
-    </div>
-    <!-- ##### Breadcumb Area End ##### -->
+	<!-- ##### Breadcumb Area Start ##### -->
+	<div class="breadcumb-area bg-img"
+		style="background-image: url(res/design/img/bg-img/breadcumb.jpg);">
+		<div class="bradcumbContent">
+			<h2>Documentacion</h2>
+		</div>
+	</div>
+	<!-- ##### Breadcumb Area End ##### -->
 
-    <!-- ##### Documentacion Area Start ##### -->
-    <div class="blog-area mt-50 section-padding-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-8">
-                    <div class="academy-blog-posts">
-                        <div class="row">
+	<!-- ##### Documentacion Area Start ##### -->
+	<div class="blog-area mt-50 section-padding-100">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-8">
+					<div class="academy-blog-posts">
+						<div class="row">
 
-                            <!-- Single Blog Start -->
-                            <div class="col-12">
-                                <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms">
-                                    <!-- Post Thumb -->
-                                    <div class="blog-post-thumb mb-50">
-                                        <img src="res/design/img/blog-img/salones.jpg" alt="">
-                                    </div>
-                                    <!-- Post Title -->
-                                    <a href="#" class="post-title">Horario de clases</a>
-                                    <!-- Post Meta -->
-                                    <div class="post-meta">
-                                        <p>By <a href="#">Simon Smith</a> | <a href="#">March 18, 2018</a> | <a href="#">3 comments</a></p>
-                                    </div>
-                                    <!-- Post Excerpt -->
-                                   	<form>
-                                   	<input type="text" placeholder="nombre profesor"> 
-                                   	</form>
-                                    <!-- Read More btn -->
-                                    <a href="#" class="btn academy-btn btn-sm mt-15">Read More</a>
-                                </div>
-                            </div>
+							<!-- Single Blog Start -->
+							<div class="col-12">
+								<div class="single-blog-post mb-50 wow fadeInUp"
+									data-wow-delay="300ms">
+									<!-- Post Thumb -->
+									<div class="blog-post-thumb mb-50">
+										<img src="res/design/img/blog-img/salones.jpg" alt="">
+									</div>
+									<!-- Post Title -->
+									<a href="#" class="post-title">Horario de clases</a>
+									<!-- Post Meta -->
+									<div class="post-meta">
+										<p>
+											By <a href="#">Simon Smith</a> | <a href="#">March 18,
+												2018</a> | <a href="#">3 comments</a>
+										</p>
+									</div>
+									<!-- Post Excerpt -->
+									<form>
+										<input type="text" placeholder="nombre profesor">
+									</form>
+									<!-- Read More btn -->
+									<a href="#" class="btn academy-btn btn-sm mt-15">Read More</a>
+								</div>
+							</div>
 
-                            <!-- Single Blog Start -->
-                            <div class="col-12">
-                                <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="400ms">
-                                    <!-- Post Thumb -->
-                                    <div class="blog-post-thumb mb-50">
-                                        <img src="res/design/img/blog-img/3.jpg" alt="">
-                                    </div>
-                                    <!-- Post Title -->
-                                    <a href="#" class="post-title">PENSUM de la facultad</a>
-                                    <!-- Post Meta -->
-                                    <div class="post-meta">
-                                        <p>By <a href="#">Simon Smith</a> | <a href="#">March 18, 2018</a> | <a href="#">3 comments</a></p>
-                                    </div>
-                                    <!-- Post Excerpt -->
-                                    <form action="">
-                                    	<select name="Facultad" >
-                                    	<option value="1"> Ingenieria y arquitectura </option>
-                                    	<option value="2"> Medicina </option>
-                                    	<option value="3"> Quimica y Farmacia </option>
-                                    	<option value="4"> Ciencias Naturales y Matematicas </option>
-                                    	<option value="5"> Ciencias Economicas </option>
-                                    </select>
-                                    </form>
-                                    <!-- Read More btn -->
-                                    <a href="#" class="btn academy-btn btn-sm mt-15">Consultar</a>
-                                </div>
-                            </div>
+							<!-- Single Blog Start -->
+							<div class="col-12">
+								<div class="single-blog-post mb-50 wow fadeInUp"
+									data-wow-delay="400ms">
+									<!-- Post Thumb -->
+									<div class="blog-post-thumb mb-50">
+										<img src="res/design/img/blog-img/3.jpg" alt="">
+									</div>
+									<!-- Post Title -->
+									<a href="#" class="post-title">PENSUM de la facultad</a>
+									<!-- Post Meta -->
+									<div class="post-meta">
+										<p>
+											By <a href="#">Simon Smith</a> | <a href="#">March 18,
+												2018</a> | <a href="#">3 comments</a>
+										</p>
+									</div>
+									<!-- Post Excerpt -->
+									<form action="">
+										<select name="Facultad">
+											<option value="1">Ingenieria y arquitectura</option>
+											<option value="2">Medicina</option>
+											<option value="3">Quimica y Farmacia</option>
+											<option value="4">Ciencias Naturales y Matematicas</option>
+											<option value="5">Ciencias Economicas</option>
+										</select>
+									</form>
+									<!-- Read More btn -->
+									<a href="#" class="btn academy-btn btn-sm mt-15">Consultar</a>
+								</div>
+							</div>
 
-                            <!-- Single Blog Start -->
-                            <div class="col-12">
-                                <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="500ms">
-                                    <!-- Post Thumb -->
-                                    <div class="blog-post-thumb mb-50">
-                                        <img src="res/design/img/blog-img/2.jpg" alt="">
-                                    </div>
-                                    <!-- Post Title -->
-                                    <a href="#" class="post-title">Top ten courses we love for you to try</a>
-                                    <!-- Post Meta -->
-                                    <div class="post-meta">
-                                        <p>By <a href="#">Simon Smith</a> | <a href="#">March 18, 2018</a> | <a href="#">3 comments</a></p>
-                                    </div>
-                                    <!-- Post Excerpt -->
-                                    <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod. Vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est.</p>
-                                    <!-- Read More btn -->
-                                    <a href="#" class="btn academy-btn btn-sm mt-15">Read More</a>
-                                </div>
-                            </div>
+							<!-- Single Blog Start -->
+							<div class="col-12">
+								<div class="single-blog-post mb-50 wow fadeInUp"
+									data-wow-delay="500ms">
+									<!-- Post Thumb -->
+									<div class="blog-post-thumb mb-50">
+										<img src="res/design/img/blog-img/2.jpg" alt="">
+									</div>
+									<!-- Post Title -->
+									<a href="#" class="post-title">Top ten courses we love for
+										you to try</a>
+									<!-- Post Meta -->
+									<div class="post-meta">
+										<p>
+											By <a href="#">Simon Smith</a> | <a href="#">March 18,
+												2018</a> | <a href="#">3 comments</a>
+										</p>
+									</div>
+									<!-- Post Excerpt -->
+									<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum
+										nisi. Donec et sollicitudin est, in euismod. Vitae turpis
+										lacinia, lacinia lacus non, fermentum nisi. Donec et
+										sollicitudin est.</p>
+									<!-- Read More btn -->
+									<a href="#" class="btn academy-btn btn-sm mt-15">Read More</a>
+								</div>
+							</div>
 
-                        </div>
-                    </div>
-                    <!-- Pagination Area Start -->
-                    <div class="academy-pagination-area wow fadeInUp" data-wow-delay="400ms">
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                <li class="page-item"><a class="page-link" href="#">03</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+						</div>
+					</div>
+					<!-- Pagination Area Start -->
+					<div class="academy-pagination-area wow fadeInUp"
+						data-wow-delay="400ms">
+						<nav>
+							<ul class="pagination">
+								<li class="page-item active"><a class="page-link" href="#">01</a></li>
+								<li class="page-item"><a class="page-link" href="#">02</a></li>
+								<li class="page-item"><a class="page-link" href="#">03</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
 
-                <div class="col-12 col-md-4">
-                    <div class="academy-blog-sidebar">
-                        <!-- Blog Post Widget -->
-                        <div class="blog-post-search-widget mb-30">
-                            <form action="#" method="post">
-                                <input type="search" name="search" id="Search" placeholder="Search">
-                                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                            </form>
-                        </div>
+				<div class="col-12 col-md-4">
+					<div class="academy-blog-sidebar">
+						<!-- Blog Post Widget -->
+						<div class="blog-post-search-widget mb-30">
+							<form action="#" method="post">
+								<input type="search" name="search" id="Search"
+									placeholder="Search">
+								<button type="submit">
+									<i class="fa fa-search" aria-hidden="true"></i>
+								</button>
+							</form>
+						</div>
 
-                        
 
-                        <!-- Latest Blog Posts Area -->
-                        <div class="latest-blog-posts mb-30">
-                            <h5>Documentos Extras</h5>
-                            <!-- Single Latest Blog Post -->
-                            <div class="single-latest-blog-post d-flex mb-30">
-                                <div class="latest-blog-post-thumb">
-                                    <img src="res/design/img/imgreport/icon-pdf.png" alt="">
-                                </div>
-                                <div class="latest-blog-post-content">
-                                    <a href="#" class="post-title">
-                                        <h6>Horario de clases</h6>
-                                    </a>
-                                    <a href="#" class="post-date">March 18, 2018</a>
-                                </div>
-                            </div>
-                            <!-- Single Latest Blog Post -->
-                            <div class="single-latest-blog-post d-flex mb-30">
-                                <div class="latest-blog-post-thumb">
-                                    <img src="res/design/img/imgreport/icon-pdf.png" alt="">
-                                </div>
-                                <div class="latest-blog-post-content">
-                                    <a href="#" class="post-title">
-                                        <h6> Maya Curricular </h6>
-                                    </a>
-                                    <a href="#" class="post-date">March 18, 2018</a>
-                                </div>
-                            </div>
-                            <!-- Single Latest Blog Post -->
-                            <div class="single-latest-blog-post d-flex mb-30">
-                                <div class="latest-blog-post-thumb">
-                                    <img src="res/design/img/imgreport/icon-pdf.png" alt="">
-                                </div>
-                                <div class="latest-blog-post-content">
-                                    <a href="#" class="post-title">
-                                        <h6>Carta Didactica</h6>
-                                    </a>
-                                    <a href="#" class="post-date">March 18, 2018</a>
-                                </div>
-                            </div>
-                            <!-- Single Latest Blog Post -->
-                            <div class="single-latest-blog-post d-flex">
-                                <div class="latest-blog-post-thumb">
-                                    <img src="res/design/img/imgreport/icon-pdf.png" alt="">
-                                </div>
-                                <div class="latest-blog-post-content">
-                                    <a href="#" class="post-title">
-                                        <h6>Informacion</h6>
-                                    </a>
-                                    <a href="#" class="post-date">March 18, 2018</a>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Add Widget -->
-                        
-                        
-                        <!-- Latest Blog Posts Area -->
-                        <div class="latest-blog-posts mb-30">
-                            <h5>Estadisticas</h5>
-                            <!-- Single Latest Blog Post -->
-                            <div class="single-latest-blog-post d-flex mb-30">
-                                <div class="latest-blog-post-thumb">
-                                    <img src="res/design/img/imgreport/icon-pdf.png" alt="">
-                                </div>
-                                <div class="latest-blog-post-content">
-                                    <a href="#" class="post-title">
-                                        <h6>Grafico de barras</h6>
-                                    </a>
-                                    <a href="#" class="post-date">March 18, 2018</a>
-                                </div>
-                            </div>
-                            <!-- Single Latest Blog Post -->
-                            <div class="single-latest-blog-post d-flex mb-30">
-                                <div class="latest-blog-post-thumb">
-                                    <img src="res/design/img/imgreport/icon-pdf.png" alt="">
-                                </div>
-                                <div class="latest-blog-post-content">
-                                    <a href="#" class="post-title">
-                                        <h6> Grafico Circular </h6>
-                                    </a>
-                                    <a href="#" class="post-date">March 18, 2018</a>
-                                </div>
-                            </div>
-                            
-                        </div>
+						<!-- Latest Blog Posts Area -->
+						<div class="latest-blog-posts mb-30">
+							<h5>Documentos Extras</h5>
+							<!-- Single Latest Blog Post -->
+							<div class="single-latest-blog-post d-flex mb-30">
+								<div class="latest-blog-post-thumb">
+									<img src="res/design/img/imgreport/icon-pdf.png" alt="">
+								</div>
+								<div class="latest-blog-post-content">
+									<a href="#" class="post-title">
+										<h6>Horario de clases</h6>
+									</a> <a href="#" class="post-date">March 18, 2018</a>
+								</div>
+							</div>
+							<!-- Single Latest Blog Post -->
+							<div class="single-latest-blog-post d-flex mb-30">
+								<div class="latest-blog-post-thumb">
+									<img src="res/design/img/imgreport/icon-pdf.png" alt="">
+								</div>
+								<div class="latest-blog-post-content">
+									<a href="#" class="post-title">
+										<h6>Maya Curricular</h6>
+									</a> <a href="#" class="post-date">March 18, 2018</a>
+								</div>
+							</div>
+							<!-- Single Latest Blog Post -->
+							<div class="single-latest-blog-post d-flex mb-30">
+								<div class="latest-blog-post-thumb">
+									<img src="res/design/img/imgreport/icon-pdf.png" alt="">
+								</div>
+								<div class="latest-blog-post-content">
+									<a href="#" class="post-title">
+										<h6>Carta Didactica</h6>
+									</a> <a href="#" class="post-date">March 18, 2018</a>
+								</div>
+							</div>
+							<!-- Single Latest Blog Post -->
+							<div class="single-latest-blog-post d-flex">
+								<div class="latest-blog-post-thumb">
+									<img src="res/design/img/imgreport/icon-pdf.png" alt="">
+								</div>
+								<div class="latest-blog-post-content">
+									<a href="#" class="post-title">
+										<h6>Informacion</h6>
+									</a> <a href="#" class="post-date">March 18, 2018</a>
+								</div>
+							</div>
+						</div>
 
-                        <!-- Add Widget -->
-                        
-                        <div class="add-widget">
-                            <a href="#"><img src="resources/desing/img/blog-img/add.png" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Blog Area End ##### -->
+						<!-- Add Widget -->
 
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area">
-        <div class="main-footer-area section-padding-100-0">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="footer-widget mb-100">
-                            <div class="widget-title">
-                                <a href="#"><img src="res/design/img/core-img/logo_1.png" width="170"></a>
-                            </div>
-                            <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget.</p>
-                            <div class="footer-social-info">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                                <a href="#"><i class="fa fa-behance"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="footer-widget mb-100">
-                            <div class="widget-title">
-                                <h6>Usefull Links</h6>
-                            </div>
-                            <nav>
-                                <ul class="useful-links">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Services &amp; Features</a></li>
-                                    <li><a href="#">Accordions and tabs</a></li>
-                                    <li><a href="#">Menu ideas</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="footer-widget mb-100">
-                            <div class="widget-title">
-                                <h6>Gallery</h6>
-                            </div>
-                            <div class="gallery-list d-flex justify-content-between flex-wrap">
-                                <a href="img/bg-img/gallery1.jpg" class="gallery-img" title="Gallery Image 1"><img src="res/design/img/bg-img/gallery1.jpg" alt=""></a>
-                                <a href="img/bg-img/gallery2.jpg" class="gallery-img" title="Gallery Image 2"><img src="res/design/img/bg-img/gallery2.jpg" alt=""></a>
-                                <a href="img/bg-img/gallery3.jpg" class="gallery-img" title="Gallery Image 3"><img src="res/design/img/bg-img/gallery3.jpg" alt=""></a>
-                                <a href="img/bg-img/gallery4.jpg" class="gallery-img" title="Gallery Image 4"><img src="res/design/img/bg-img/gallery4.jpg" alt=""></a>
-                                <a href="img/bg-img/gallery5.jpg" class="gallery-img" title="Gallery Image 5"><img src="res/design/img/bg-img/gallery5.jpg" alt=""></a>
-                                <a href="img/bg-img/gallery6.jpg" class="gallery-img" title="Gallery Image 6"><img src="res/design/img/bg-img/gallery6.jpg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="footer-widget mb-100">
-                            <div class="widget-title">
-                                <h6>Contact</h6>
-                            </div>
-                            <div class="single-contact d-flex mb-30">
-                                <i class="icon-placeholder"></i>
-                                <p>4127/ 5B-C Mislane Road, Gibraltar, UK</p>
-                            </div>
-                            <div class="single-contact d-flex mb-30">
-                                <i class="icon-telephone-1"></i>
-                                <p>Main: 203-808-8613 <br>Office: 203-808-8648</p>
-                            </div>
-                            <div class="single-contact d-flex">
-                                <i class="icon-contract"></i>
-                                <p>office@yourbusiness.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bottom-footer-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- ##### Footer Area Start ##### -->
+
+						<!-- Latest Blog Posts Area -->
+						<div class="latest-blog-posts mb-30">
+							<h5>Estadisticas</h5>
+							<!-- Single Latest Blog Post -->
+							<div class="single-latest-blog-post d-flex mb-30">
+								<div class="latest-blog-post-thumb">
+									<img src="res/design/img/imgreport/icon-pdf.png" alt="">
+								</div>
+								<div class="latest-blog-post-content">
+									<a href="#" class="post-title">
+										<h6>Grafico de barras</h6>
+									</a> <a href="#" class="post-date">March 18, 2018</a>
+								</div>
+							</div>
+							<!-- Single Latest Blog Post -->
+							<div class="single-latest-blog-post d-flex mb-30">
+								<div class="latest-blog-post-thumb">
+									<img src="res/design/img/imgreport/icon-pdf.png" alt="">
+								</div>
+								<div class="latest-blog-post-content">
+									<a href="#" class="post-title">
+										<h6>Grafico Circular</h6>
+									</a> <a href="#" class="post-date">March 18, 2018</a>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- Add Widget -->
+
+						<div class="add-widget">
+							<a href="#"><img src="resources/desing/img/blog-img/add.png"
+								alt=""></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ##### Blog Area End ##### -->
+
+	<!-- ##### Footer Area Start ##### -->
+	<footer class="footer-area">
+		<div class="main-footer-area section-padding-100-0">
+			<div class="container">
+				<div class="row">
+					<!-- Footer Widget Area -->
+					<div class="col-12 col-sm-6 col-lg-3">
+						<div class="footer-widget mb-100">
+							<div class="widget-title">
+								<a href="#"><img src="res/design/img/core-img/logo_1.png"
+									width="170"></a>
+							</div>
+							<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum
+								nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et
+								arcu pulvinar cursus a eget.</p>
+							<div class="footer-social-info">
+								<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+									class="fa fa-twitter"></i></a> <a href="#"><i
+									class="fa fa-dribbble"></i></a> <a href="#"><i
+									class="fa fa-behance"></i></a> <a href="#"><i
+									class="fa fa-instagram"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- Footer Widget Area -->
+					<div class="col-12 col-sm-6 col-lg-3">
+						<div class="footer-widget mb-100">
+							<div class="widget-title">
+								<h6>Usefull Links</h6>
+							</div>
+							<nav>
+								<ul class="useful-links">
+									<li><a href="#">Home</a></li>
+									<li><a href="#">Services &amp; Features</a></li>
+									<li><a href="#">Accordions and tabs</a></li>
+									<li><a href="#">Menu ideas</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- Footer Widget Area -->
+					<div class="col-12 col-sm-6 col-lg-3">
+						<div class="footer-widget mb-100">
+							<div class="widget-title">
+								<h6>Gallery</h6>
+							</div>
+							<div
+								class="gallery-list d-flex justify-content-between flex-wrap">
+								<a href="img/bg-img/gallery1.jpg" class="gallery-img"
+									title="Gallery Image 1"><img
+									src="res/design/img/bg-img/gallery1.jpg" alt=""></a> <a
+									href="img/bg-img/gallery2.jpg" class="gallery-img"
+									title="Gallery Image 2"><img
+									src="res/design/img/bg-img/gallery2.jpg" alt=""></a> <a
+									href="img/bg-img/gallery3.jpg" class="gallery-img"
+									title="Gallery Image 3"><img
+									src="res/design/img/bg-img/gallery3.jpg" alt=""></a> <a
+									href="img/bg-img/gallery4.jpg" class="gallery-img"
+									title="Gallery Image 4"><img
+									src="res/design/img/bg-img/gallery4.jpg" alt=""></a> <a
+									href="img/bg-img/gallery5.jpg" class="gallery-img"
+									title="Gallery Image 5"><img
+									src="res/design/img/bg-img/gallery5.jpg" alt=""></a> <a
+									href="img/bg-img/gallery6.jpg" class="gallery-img"
+									title="Gallery Image 6"><img
+									src="res/design/img/bg-img/gallery6.jpg" alt=""></a>
+							</div>
+						</div>
+					</div>
+					<!-- Footer Widget Area -->
+					<div class="col-12 col-sm-6 col-lg-3">
+						<div class="footer-widget mb-100">
+							<div class="widget-title">
+								<h6>Contact</h6>
+							</div>
+							<div class="single-contact d-flex mb-30">
+								<i class="icon-placeholder"></i>
+								<p>4127/ 5B-C Mislane Road, Gibraltar, UK</p>
+							</div>
+							<div class="single-contact d-flex mb-30">
+								<i class="icon-telephone-1"></i>
+								<p>
+									Main: 203-808-8613 <br>Office: 203-808-8648
+								</p>
+							</div>
+							<div class="single-contact d-flex">
+								<i class="icon-contract"></i>
+								<p>office@yourbusiness.com</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom-footer-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<p>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;
+							<script>document.write(new Date().getFullYear());</script>
+							All rights reserved | This template is made with <i
+								class="fa fa-heart-o" aria-hidden="true"></i> by <a
+								href="https://colorlib.com" target="_blank">Colorlib</a>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- ##### Footer Area Start ##### -->
 
 	<!-- ##### All Javascript Script ##### -->
 	<!-- jQuery-2.2.4 js -->
