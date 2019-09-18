@@ -186,13 +186,12 @@
 <!-- 					<span>Unit</span> -->
 <!-- 					<h3>Facultad de Ingenieria</h3> -->
 <%-- 					<c:forEach var="e" items="${es}"> --%>
-<!-- 					<p class="izq"> -->
-<!-- 						<img -->
-<%-- 							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg" --%>
-<!-- 							class="flip"> <img -->
-<%-- 							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" --%>
-<!-- 							class="flip2"> -->
-<!-- 					</p> -->
+<!-- 					<div class="izq"> -->
+<%-- 						<p class="nombreFacultad">${e.nombreEscuela}</p> --%>
+<%-- 						<p class="tel">${e.telefono}</p> --%>
+<%-- 						<p class="ubic">${e.direccion}</p>						 --%>
+<!-- 					</div> -->
+<!-- 					<hr/> -->
 <%-- 					</c:forEach> --%>
 					
 					
@@ -262,13 +261,12 @@
 					<span>Unit</span>
 					<h3>Universidad Nacional de Innovacion Tecnologica</h3>
 					<c:forEach var="e" items="${facultadList}">
-					<p class="izq">
-						<img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
+					<div class="izq" >
+						<p class="nombreFacultad">${e.facultad}</p>
+						<p class="tel">${e.telefono}</p>
+						<p class="ubic">${e.ubicacion}</p>						
+					</div>
+					<hr/>
 					</c:forEach>
 					
 					

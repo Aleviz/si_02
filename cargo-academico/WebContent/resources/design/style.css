@@ -1557,68 +1557,36 @@ keyframes spin { 100% {
 }
 
 .izq {
-	float: left;
-	margin-left: 6px;
-	height: 192px;
 	position: relative;
-	transition: all 1s ease;
-	transform: perspective(600px);
-	transform-origin: 100% 50%;
-	transform-style: preserve-3d;
-	
+	margin-bottom: -10px;
+	margin-left: 10px;
+	margin-top: -10px;
 	
 }
-
-.izq:der {
-	float: right;
-	margin-right: 6px;
-	height: 192px;
-	position: relative;
-	transition: all 1s ease;
-	transform: perspective(600px);
-	transform-origin: 100% 50%;
-	transform-style: preserve-3d;
+.nombreFacultad{
+	margin: 0px; 
+	padding: 0px;
+	color: #850000;
+	font-size: 17px;
+	margin-bottom: -10px;
 }
 
-.izq:hover {
-	transform: perspective(600px) rotateY(-180deg) translateX(100%);
+.nombreFacultad:hover{
+	color: #d75151;
 }
 
-.izq:hover {
-	transform: rotateY(-180deg) translateX(100%);
+.tel{
+	color: #878787;
+	margin: 0px; 
+	padding: 0px;
+	margin-bottom: -10px;
 }
 
-.izq .flip, .izq .flip2 {
-	position: absolute;
-	backface-visibility: hidden;
-}
 
-.izq .flip2 {
-	transform: rotateY(-180deg);
-	height: 192px;
-	width: 192px;
-}
-
-.izq:.der .flip, .der .flip2 {
-	position: absolute;
-	backface-visibility: hidden;
-}
-
-.izq:.der .flip2 {
-	transform: rotateY(180deg);
-	height: 192px;
-	width: 192px;
-}
-
-.der {
-	float: right;
-	margin-right: 6px;
-	height: 192px;
-	position: relative;
-	transition: all 1s ease;
-	transform: perspective(600px);
-	transform-origin: 100% 50%;
-	transform-style: preserve-3d;
+.ubic{
+	margin-bottom:-10px; 
+	padding: 0px;
+	color: black;
 }
 
 .single-contact-info {
@@ -1633,9 +1601,10 @@ keyframes spin { 100% {
 }
 
 .map-area #formulario .section-heading p {
-	padding-bottom: 100px;
-	width: 192px;
+	padding-bottom: 10px;
+	width: 400px;
 }
+
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.map-area #mapa {
