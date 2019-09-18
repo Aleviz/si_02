@@ -95,7 +95,7 @@ $(document).ready(function() {
 	console.log(confirmacion);
 
 
-	$('.obtenerF').hide();
+//	$('.obtenerF').hide();
 	$('#showCarreras').hide();
 	$('.atras').hide();
 
@@ -154,13 +154,22 @@ $(document).ready(function() {
 				console.log("result = "+ resultado[0].nombreEscuela);
 				
 				var h ='';
+				var h2='';
+				var h3 ='';
 				var hh ='';
-				for (var i = 0; i < result.length; i++) {
-					h += resultado[i].nombreEscuela;
+				for (var i = 0; i < result.length; i++) {									
+					hh += "<label class='nombreFacultadd' style='font-weight: bold;'>"+resultado[i].nombreEscuela+"</label>";
+					hh+= "<p class='tel'>"+resultado[i].telefono+"</p>";
+					hh+= "<p class='ubic'>"+resultado[i].direccion+"</p>";
+					hh += '<hr/>';
 				}
+				console.log(hh);
 				
 				$('#nombreFacultad').text(nameFacultad);
-				$('.nameOfCar').text(h);
+//				$('.nameOfCar').text(h);
+//				$('.telOfCar').text(h2);
+//				$('.dirOfCar').text(h3);
+				$('#id').html(hh);
 
 				
 				$('#showFacultad').hide();
