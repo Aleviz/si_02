@@ -44,6 +44,7 @@ public class GeografiaController {
 
 		List<String> listLatitud = new ArrayList<String>();
 		List<String> listLongitud = new ArrayList<String>();
+		
 		List<String> nombreFacultad = new ArrayList<String>();
 
 		
@@ -321,6 +322,8 @@ public class GeografiaController {
 
 		return "redirect:/contacto";
 	}
+	
+	
 	@RequestMapping("/buscarF/{facultadName}/encontrar")
 	public String buscarFacultadDiv(@PathVariable("facultadName") String facultadName, RedirectAttributes ra) {
 
