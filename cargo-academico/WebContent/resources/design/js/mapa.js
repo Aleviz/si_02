@@ -36,15 +36,13 @@ L.tileLayer(
 
 var x = [];
 var jaja = [];
-var ht = "<button class='h' value=></button>";
 
 // PARA AGREGAR EL MARCADOR
 for (var i = 0; i < lat.length; i++) {
 	var idd = id[i];
 	var marker = {};
-	marker = new L.marker([ lat[i], -lon[i] ]).bindPopup(asd[i]+"/ "+"<button class='h' value='"+asd[i]+"'></button>")
-			.addTo(map);
-
+	marker = new L.marker([ lat[i], -lon[i] ]).bindPopup(asd[i]+" "+"<button class='h' value='"+asd[i]+"'></button>")
+	.addTo(map);
 	
 	
 	// PARA AGREGARLO AL ARRAY
@@ -75,7 +73,7 @@ $(document).ready(function() {
 	$.getScript("res/design/js/mapa.js");
 
 	
-
+	var nameFacultad;
 	var confirmacion;
 	var mensaje = [ "El mapa se modificara, ¿continuar?",
 			"estas seguro de agregar un marcador aca, ¿continuar?",
@@ -128,13 +126,22 @@ $(document).ready(function() {
 					console.log("result = "+ resultado[0].nombreEscuela);
 					
 					var h ='';
+					var h2='';
+					var h3 ='';
 					var hh ='';
-					for (var i = 0; i < result.length; i++) {
-						h += resultado[i].nombreEscuela;
+					for (var i = 0; i < result.length; i++) {									
+						hh += "<label class='nombreFacultadd' style='font-weight: bold;'>"+resultado[i].nombreEscuela+"</label>";
+						hh+= "<p class='tel'>"+resultado[i].telefono+"</p>";
+						hh+= "<p class='ubic'>"+resultado[i].direccion+"</p>";
+						hh += '<hr/>';
 					}
+					console.log(hh);
 					
 					$('#nombreFacultad').text(nameFacultad);
-					$('.nameOfCar').text(h);
+//					$('.nameOfCar').text(h);
+//					$('.telOfCar').text(h2);
+//					$('.dirOfCar').text(h3);
+					$('#id').html(hh);
 
 					
 					$('#showFacultad').hide();
@@ -156,16 +163,17 @@ $(document).ready(function() {
 			}
 			});
 
+
 			
 
 
 		});
 
 	});
-
 	// ------------------------------------------------------
 
 	// ----------------------------------------------------
+
 	// PARA LA PARTE DEL PANEL DE DIV
 	$('#showFacultad').show(function() {
 		$('#showCarreras').hide();
