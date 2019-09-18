@@ -36,11 +36,25 @@
 	href="<%=request.getContextPath()%>/res/design/style.css">
 
 
+<script type="text/javascript">
+$(document).ready(function(){
+	console.log("vista");
+$('#buttonDemo2').click(function() {
+	console.log("dio click");
+	var fullName = $('#fullName').val();
+	console.log("fullName = "+fullName);
+	$.ajax({
+		type : 'GET',
+		url : '/api/ajaxrest/demo2/' + fullName,
+		success : function(result) {
+			$('#result2').text(result);
+			console.log("chido");
+		}
+	});
+});
+});
 
-
-
-
-
+</script>
 
 
 </head>
@@ -184,343 +198,148 @@
 
 
 
-		
-	
-<<<<<<< HEAD
-		<div id="formulario">
-		
-			<div class="contact-information wow fadeInUp" data-wow-delay="400ms">    <!--   donde estara todo  -->
-			<div>
-				<div class="section-heading text-left" id="showFacultad">   <!-- solo es para MOSTRAR todas las facultades -->
-					<span>Unit</span>
-					<h3>Universidad Nacional De Innovacion Tecnológica</h3>
-					<p class="izq" id="fingenieria">
-						<img 
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="der" id="fquimica">
-						<img 
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="izq" id="fjurisprudencia">
-						<img 
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="der"  id="fcnmate">
-						<img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="izq">
-						<img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-5.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="der"></p>
-				</div>
-				
-				<div class="section-heading text-left" id="showIngenieria">   <!-- solo es para MOSTRAR todas las facultades -->
-				<button class="atras">Atras</button>
-					<span>Unit</span>
-					<h3>Facultad de Ingenieria y Arquitectura</h3>
-					<p class="izq">
-						<img id="sistemas"
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="der">
-						<img id="arqui"
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="izq">
-						<img id="electrica"
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="der">
-						<img id="mecanica"
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="izq">
-						<img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-5.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="der"></p>
-				</div>
-				
-				<div class="section-heading text-left" id="showQuimica">   <!-- solo es para MOSTRAR todas las facultades -->
-						<button class="atras">Atras</button>
-					<span>Unit</span>
-					<h3>Facultad de Quimica y Farmacia</h3>
-					<p class="izq">
-						<img id="q1"
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="der">
-						<img id="q2"
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="izq">
-						<img id="q3"
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="der">
-						<img id="q4"
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="izq">
-						<img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-5.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="der"></p>
-				</div>
-				
-				<div class="section-heading text-left" id="showJurisprudencia">   <!-- solo es para MOSTRAR todas las facultades -->
-					<span>Unit</span>
-					<h3>Facultad de Jurisprudencia</h3>
-					<p class="izq">
-						<img id="j1"
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="der">
-						<img id="j2"
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="izq">
-						<img id="j3"
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="der">
-						<img id="j4"
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-=======
 
-=======
->>>>>>> Geografico
+
 
 
 		<div id="formulario">
 
-			<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showCarreras">
-				<div class="section-heading text-left">
-					<span>Unit</span>
-					<button class="atras">ATRAS</button>
-					<h3>Facultad de Ingenieria</h3>
-					<c:forEach var="e" items="${es}">
-						<p>carrera: ${e.nombreEscuela}</p>
-<!-- 					<p class="izq"> -->
-<!-- 						<img -->
-<%-- 							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg" --%>
-<!-- 							class="flip"> <img -->
-<%-- 							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" --%>
-<!-- 							class="flip2"> -->
-<!-- 					</p> -->
-					</c:forEach>
-					
-					
-				</div>
-
-				Single Contact Info
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-placeholder"></i>
-					</div>
-					<p>Ubicacion: ${campusdir.ubicacion}</p>
+						<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
+							id="showCarreras">
+							<div class="section-heading text-left" id="infCarr">
+								<span>Unit</span>
+								<button class="atras">ATRAS</button>
+								<h3 id="nombreFacultad" ></h3>
+ 							
+									<p class="nameOfCar"></p>
 
 
-				</div>
-				Single Contact Info
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-telephone-1"></i>
-					</div>
-					<p>
-						Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648
-<<<<<<< HEAD
->>>>>>> Geografico
-=======
 
->>>>>>> Geografico
-					</p>
-				</div>
-				Single Contact Info
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-contract"></i>
-					</div>
-					<p>Correo: universidadTeconolica@unit.sv</p>
+							</div>
 
-				</div>
-				<c:forEach var="e" items="${es}">
-					<div class="single-contact-info d-flex">
+							Single Contact Info
+							<div class="single-contact-info d-flex">
+								<div class="contact-icon mr-15">
+									<i class="icon-placeholder"></i>
+								</div>
+								<p>Ubicacion: ${campusdir.ubicacion}</p>
 
-						<div class="contact-icon mr-15">
-							<i class="icon-contract"></i>
+
+							</div>
+							Single Contact Info
+							<div class="single-contact-info d-flex">
+								<div class="contact-icon mr-15">
+									<i class="icon-telephone-1"></i>
+								</div>
+								<p>
+									Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648
+
+								</p>
+							</div>
+							Single Contact Info
+							<div class="single-contact-info d-flex">
+								<div class="contact-icon mr-15">
+									<i class="icon-contract"></i>
+								</div>
+								<p>Correo: universidadTeconolica@unit.sv</p>
+
+							</div>
+							<c:forEach var="e" items="${es}">
+								<div class="single-contact-info d-flex">
+
+									<div class="contact-icon mr-15">
+										<i class="icon-contract"></i>
+									</div>
+
+									<br>
+									<p>carrera: ${e.nombreEscuela}</p>
+
+								</div>
+							</c:forEach>
+
+
 						</div>
 
-						<br>
-						<p>carrera: ${e.nombreEscuela}</p>
 
-					</div>
-				</c:forEach>
+			<!-- 	//////////////////////////////////////////////////////////////////////////////////////////// -->
+			<button id="clash">Splash</button>
 
 
-			</div>
-			
-	
-<!-- 	//////////////////////////////////////////////////////////////////////////////////////////// -->
-	<button id="clash">Splash</button>
-	
-			
-			<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showFacultad">
-				<div class="section-heading text-left">
-					<span>Unit</span>
-					<h3>Universidad Nacional de Innovacion Tecnologica</h3>
-
-					<c:forEach var="e" items="${facultadList}">
-					<p class="obtenerF">${e.facultad}</p>
-					<p class="izq"  >
-					<a  class="btCarreras"  href="buscarF/<c:out value='${e.facultad}'/>/encontrar">
-						<img class="carreras"
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-							</a>
-					</p>
-					</c:forEach>
-					
-					
-				</div>
-				
-				
-
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-placeholder"></i>
-					</div>
-					<p>Ubicacion: ${campusdir.ubicacion}</p>
 
 
-				</div>
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-telephone-1"></i>
-					</div>
-					<p>
-						Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648
-					</p>
-				</div>
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-contract"></i>
-					</div>
-					<p>Correo: universidadTeconolica@unit.sv</p>
 
-				</div>
+						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showFacultad">
+							<div class="section-heading text-left">
+								<span>Unit</span>
+								<h3>Universidad Nacional de Innovacion Tecnologica</h3>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+								<c:forEach var="e" items="${facultadList}">
+								
+								<p class="izq"  >
+								<a class="obtenerFx" ><label class="obtenerF">${e.facultad}</label>
 
-					<div class="botonMapa">
-					<button id="editar" class="editar" onclick="editar">EDITAR</button>
-					<button id="finalizar">Finalizar</button>
-					<div id="qp2">
-						<input  id="2qp" value=""/>
-					</div>
-=======
-=======
+									<img class="carreras" 
+										src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
+										class="flip"> <img
+										src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+										class="flip2">
+								</a>
+								</p>
+								
+								</c:forEach>
 
 
->>>>>>> Geografico
-				<div class="botonMapa">
-					<button id="editar" class="editar" onclick="editar">EDITAR</button>
-					<button id="finalizar">Finalizar</button>
+							</div>
 
-<<<<<<< HEAD
->>>>>>> Geografico
-				</div>
-			</div>
-<<<<<<< HEAD
-			</div>
-=======
-			
-			
->>>>>>> Geografico
-			
+
+
+							Single Contact Info
+							<div class="single-contact-info d-flex">
+								<div class="contact-icon mr-15">
+									<i class="icon-placeholder"></i>
+								</div>
+								<p>Ubicacion: ${campusdir.ubicacion}</p>
+
+
+							</div>
+							Single Contact Info
+							<div class="single-contact-info d-flex">
+								<div class="contact-icon mr-15">
+									<i class="icon-telephone-1"></i>
+								</div>
+								<p>
+									Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648
+								</p>
+							</div>
+							Single Contact Info
+							<div class="single-contact-info d-flex">
+								<div class="contact-icon mr-15">
+									<i class="icon-contract"></i>
+								</div>
+								<p>Correo: universidadTeconolica@unit.sv</p>
+
+							</div>
+
+
+
+							<div class="botonMapa">
+								<button id="editar" class="editar" onclick="editar">EDITAR</button>
+								<button id="finalizar">Finalizar</button>
+
+			>
+							</div>
+						</div>
+
+
+
+
 		</div>
-				
-				
-		</div>
-=======
->
-				</div>
-			</div>
 
-			</div>
 
-			
-		</div>
-				
->>>>>>> Geografico
-		
-	
+	</div>
+
+
+
 
 	<!-- ##### Contact Area End ##### -->
 

@@ -87,60 +87,10 @@ $(document).ready(function() {
 	
 	
 	//----------------------------------------------------
-	$('#buttonDemo2').click(function() {
-		var fullName = $('#fullName').val();
-		$.ajax({
-			type : 'GET',
-			url : '/api/ajaxrest/demo2/' + fullName,
-			success : function(result) {
-				$('#result2').text(result);
-			}
-		});
-	});
+
 	
 	//----------------------------------------------------	
 	
-	$('#finalizar').hide();
-	$('#showFacultad').show(function(){
-		$('#showIngenieria').hide();
-		$('#showQuimica').hide();
-		$('#showJurisprudencia').hide();
-	});
-	
-
-	$('#fingenieria').click(function(){
-		$('#showIngenieria').show();
-		
-		$('#showQuimica').hide();
-		$('#showJurisprudencia').hide();
-		$('#showFacultad').hide();
-	});
-
-
-	$('#fquimica').click(function(){
-		$('#showQuimica').show();
-		
-		$('#showIngenieria').hide();
-		$('#showJurisprudencia').hide();
-		$('#showFacultad').hide();
-	});
-	
-	$('.atras').click(function(){
-		$('#showFacultad').show();
-		$('#showIngenieria').hide();
-		$('#showQuimica').hide();
-		$('#showJurisprudencia').hide();
-	});
-	
-
-	$('#fjurisprudencia').click(function(){
-		$('#showJurisprudencia').show();		
-		
-		$('#showQuimica').hide();
-		$('#showJurisprudencia').hide();
-		$('#showFacultad').hide();
-
-	});
 
 	console.log(confirmacion);
 
@@ -175,18 +125,65 @@ $(document).ready(function() {
 	// ------------------------------------------------------
 
 	// ----------------------------------------------------
-
+	var nameFacultad;
 	// PARA LA PARTE DEL PANEL DE DIV
 	$('#showFacultad').show(function() {
 		$('#showCarreras').hide();
 		$('.atras').hide();
 	});
 
-	$('#clash').click(function(e) {
+	$('.obtenerFx').click(function(e) {
+
+		var ax = e.delegateTarget;
+		var nameFacultad = ax.text;
+		var resultado;
+		console.log("************************************");
+		console.log(nameFacultad);
+		console.log("************************************");
+
+		$.ajax({
+			type : 'GET',
+			timeout: 5000,
+			url : 'api/ajaxrest/obtenerFacultad/' + nameFacultad,
+//			dataType : 'json',
+			contentType : 'application/json',
+			success : function(result) {
+				resultado = result;
+				
+				console.log("resulttt = "+ resultado);
+				console.log("result = "+ resultado[0].nombreEscuela);
+				
+				var h ='';
+				var hh ='';
+				for (var i = 0; i < result.length; i++) {
+					h += resultado[i].nombreEscuela;
+				}
+				
+				$('#nombreFacultad').text(nameFacultad);
+				$('.nameOfCar').text(h);
+
+				
+				$('#showFacultad').hide();
+				$('#showCarreras').show();
+				$('.atras').show();
+				
+			},
 		
-		$('#showCarreras').show();
-		$('#showFacultad').hide();
-		$('.atras').show();
+		error:function (xhr, ajaxOptions, thrownError){
+			console.log("************************************");
+	        alert(xhr.status);
+	        alert(xhr.statusText);
+	        alert(xhr.responseText);
+	        alert(thrownError);	        
+//				console.log("result = "+(xhr.status);
+			console.log("xhr.statusText = "+xhr.statusText);
+			console.log("xhr.responseText = "+xhr.responseText);
+			console.log("************************************");
+		}
+		});
+
+		
+	
 	});
 
 	$('.atras').click(function() {
