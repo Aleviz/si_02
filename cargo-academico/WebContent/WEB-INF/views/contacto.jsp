@@ -214,7 +214,6 @@ $('#buttonDemo2').click(function() {
 <button class="atras">ATRAS</button>
 							</div>
 
-							Single Contact Info
 							<div class="single-contact-info d-flex">
 								<div class="contact-icon mr-15">
 									<i class="icon-placeholder"></i>
@@ -223,7 +222,6 @@ $('#buttonDemo2').click(function() {
 
 
 							</div>
-							Single Contact Info
 							<div class="single-contact-info d-flex">
 								<div class="contact-icon mr-15">
 									<i class="icon-telephone-1"></i>
@@ -233,7 +231,6 @@ $('#buttonDemo2').click(function() {
 
 								</p>
 							</div>
-							Single Contact Info
 							<div class="single-contact-info d-flex">
 								<div class="contact-icon mr-15">
 									<i class="icon-contract"></i>
