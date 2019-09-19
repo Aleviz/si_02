@@ -96,27 +96,19 @@
 			theme : "light1", // "light2", "dark1", "dark2"
 			animationEnabled : true, // change to true		
 			title : {
-				text : "Basic Column Chart"
+				text : "Valoración Nota por Materia"
 			},
 			data : [ {
 				// Change type to "bar", "area", "spline", "pie",etc.
 				type : "column",
-				dataPoints : [ {
-					label : "apple",
-					y : 10
-				}, {
-					label : "orange",
-					y : 15
-				}, {
-					label : "banana",
-					y : 25
-				}, {
-					label : "mango",
-					y : 30
-				}, {
-					label : "grape",
-					y : 28
-				} ]
+				dataPoints : [
+					<c:forEach var="tema" items="${listMaterias}">
+					 {
+						 label : "${tema.materia}",
+							y : ${tema.unidadValorativa}
+						},
+					</c:forEach>
+					  ]
 			} ]
 		});
 		chart.render();
@@ -456,7 +448,7 @@
 					aria-labelledby="v-pills-messages-tab">
 					<p>Prueba3 xd</p>
 					</br>
-					<div id="chartContainer2" style="height: 600px; width: 1100px;"></div>
+					<div id="chartContainer2" style="height: 1000px; width: 1100px;" ></div>
 				</div>
 				<div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
 					aria-labelledby="v-pills-settings-tab">

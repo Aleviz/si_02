@@ -36,5 +36,11 @@ public class EstadisticasController {
 		model.addAttribute("listMaterias", listMaterias);
 		return "estadisticas";
 	}
+	
+	public List<Materias> showMateriasList(List<Materias> listMaterias) {
+		listMaterias = new ArrayList<Materias>();
+		listMaterias = servicetemario.findAllMaterias();
+		return listMaterias;
+	}
 
 }
