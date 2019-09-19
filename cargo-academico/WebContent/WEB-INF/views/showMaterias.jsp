@@ -13,7 +13,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/res/design/leaflet.css" />
-<script src="<c:url value='res/design/leaflet.js'></c:url>"></script>
+<script src="<c:url value='res/design/css/leaflet.js'></c:url>"></script>
 <link rel="stylesheet"
 	href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
 <script
@@ -100,6 +100,16 @@
 									<li><a href="blog.html">Blog</a></li>
 									<li><a href="contact.html">Contact</a></li>
 									<li><a href="elements.html">Elements</a></li>
+								</ul></li>
+							<li><a style="color: #850000;" href="#">Estadísticas</a>
+								<ul class="dropdown">
+									<li><a href="statistics">Temario</a></li>
+									<li><a
+										href="${pageContext.request.contextPath}/estadisticas">Unidad</a></li>
+									<li><a href="course.html">Temas</a></li>
+									<li><a href="blog.html">Actividades</a></li>
+									<li><a href="contact.html">Practicas</a></li>
+									<li><a href="elements.html">Temas</a></li>
 								</ul></li>
 							<li><a href="#">Mega Menu</a>
 								<div class="megamenu">
@@ -580,9 +590,9 @@
 								src="<%=request.getContextPath()%>/res/design/img/core-img/logo_1.png"
 								width="170"></a>
 						</div>
-						<p>La Universidad nacional de Innovacion Tecnologica es la institución de
-							educación superior más grande y antigua de la República de El
-							Salvador.</p>
+						<p>La Universidad nacional de Innovacion Tecnologica es la
+							institución de educación superior más grande y antigua de la
+							República de El Salvador.</p>
 						<div class="footer-social-info">
 							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
 								class="fa fa-twitter"></i></a> <a href="#"><i
@@ -703,7 +713,6 @@
 		src="<c:url value='/res/design/js/bootstrap/bootstrap.min.js'></c:url>">
 		
 	</script>
-
 	<!-- All Plugins js -->
 	<script src="<c:url value='/res/design/js/plugins/plugins.js'></c:url>"></script>
 

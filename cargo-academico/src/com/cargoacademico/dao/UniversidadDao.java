@@ -6,9 +6,12 @@ import com.cargoacademico.model.Universidad;
 
 public interface UniversidadDao {
 	public List<Universidad> encontrarTodo();
-	public void save(Universidad uni);
-	public Universidad findById(int idUniversidad);
-	public void update(Universidad uni);
-	public void delete(Universidad uni);
+	public void saveUniversidad(Universidad uni);
+	public Universidad findByIdUniversidad(int id);
+	public void updateUniversidad(Universidad uni);
+
+	public void deleteUniversidad(int id);
+
 	
 }
+

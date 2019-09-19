@@ -171,28 +171,39 @@
 					<span>Unit</span>
 					<h3>Universidad Nacional De Innovacion Tecnológica</h3>
 					<p class="izq">
-						<img src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg" class="flip"> 
-							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" class="flip2">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
 					</p>
 					<p class="der">
 						<img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg" class="flip">
-							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" class="flip2">
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
 					</p>
 					<p class="izq">
 						<img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg" class="flip">
-							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" class="flip2">
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
 					</p>
 					<p class="der">
 						<img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg" class="flip">
-							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" class="flip2">
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
 					</p>
 					<p class="izq">
 						<img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-5.jpg" class="flip">
-							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg" class="flip2">
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-5.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
 					</p>
 					<p class="der"></p>
 				</div>
@@ -222,18 +233,18 @@
 						<i class="icon-contract"></i>
 					</div>
 					<p>Correo: universidadTeconolica@unit.sv</p>
-				</div>				
+				</div>
 			</div>
 			<button id="editar" class="editar" onclick="editar">EDITAR</button>
-		<button id="finalizar">Finalizar</button>
+			<button id="finalizar">Finalizar</button>
 
 
-		<!-- 			ESTO ES PARA ACCIONAR EL MODAL -->
-		<!-- 		  <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button> -->
+			<!-- 			ESTO ES PARA ACCIONAR EL MODAL -->
+			<!-- 		  <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button> -->
 
 
 
-		<script>
+			<script>
 			$(document).ready(function() {
 			$.getScript("res/design/js/mapa.js");
 			$('#finalizar').hide();

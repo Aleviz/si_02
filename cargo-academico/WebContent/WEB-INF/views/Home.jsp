@@ -349,7 +349,9 @@
 					<div class="single-testimonial-area mb-100 d-flex wow fadeInUp"
 						data-wow-delay="400ms">
 						<div class="testimonial-thumb">
-							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/t1.jpg" alt="">
+							<img
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/t1.jpg"
+								alt="">
 						</div>
 						<div class="testimonial-content">
 							<h5>Great teachers</h5>
@@ -369,7 +371,9 @@
 					<div class="single-testimonial-area mb-100 d-flex wow fadeInUp"
 						data-wow-delay="500ms">
 						<div class="testimonial-thumb">
-							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/t2.jpg" alt="">
+							<img
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/t2.jpg"
+								alt="">
 						</div>
 						<div class="testimonial-content">
 							<h5>Easy and user friendly courses</h5>
@@ -388,7 +392,9 @@
 					<div class="single-testimonial-area mb-100 d-flex wow fadeInUp"
 						data-wow-delay="600ms">
 						<div class="testimonial-thumb">
-							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/t3.jpg" alt="">
+							<img
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/t3.jpg"
+								alt="">
 						</div>
 						<div class="testimonial-content">
 							<h5>I just love the courses here</h5>
@@ -407,7 +413,9 @@
 					<div class="single-testimonial-area mb-100 d-flex wow fadeInUp"
 						data-wow-delay="700ms">
 						<div class="testimonial-thumb">
-							<img src="<%=request.getContextPath()%>/res/design/img/bg-img/t4.jpg" alt="">
+							<img
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/t4.jpg"
+								alt="">
 						</div>
 						<div class="testimonial-content">
 							<h5>One good academy</h5>
@@ -435,78 +443,92 @@
 		</div>
 	</div>
 	<!-- ##### Testimonials Area End ##### -->
-	
-	<!-- ##### Top Popular Courses Area Start ##### -->
-    <div class="top-popular-courses-area section-padding-100-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
-                        <span>The Best</span>
-                        <h3>Nuestras Facultades</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-            
-               <c:forEach var="f" items="${facultadList}">
-               <div class="col-12 col-lg-6">
-                    <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="popular-course-content">
-                            <h5>${f.facultad }</h5>
-                            <span> ${f.ubicacion}   |<br>  ${f.telefono} </span>
-                            <div class="course-ratings">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </div>
-                            <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod.</p>
-                            <a href="#" class="btn academy-btn btn-sm">Leer+</a>
-                        </div>
-                        <div class="popular-course-thumb bg-img" style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg);"></div>
-                    </div>
-                </div>
-               </c:forEach>
-            
-            </div>
-        </div>
-    </div>
-    <!-- ##### Top Popular Courses Area End ##### -->
-    
-        <!-- ##### Partner Area Start ##### -->
-    <div class="partner-area section-padding-0-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="partners-logo d-flex align-items-center justify-content-between flex-wrap">
-                        <a href="#"><img src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-1.png" alt=""></a>
-                        <a href="#"><img src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-2.png" alt=""></a>
-                        <a href="#"><img src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-3.png" alt=""></a>
-                        <a href="#"><img src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-4.png" alt=""></a>
-                        <a href="#"><img src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-5.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Partner Area End ##### -->
 
-	    <!-- ##### CTA Area Start ##### -->
-    <div class="call-to-action-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="cta-content d-flex align-items-center justify-content-between flex-wrap">
-                        <h3>Do you want to enrole at our Academy? Get in touch!</h3>
-                        <a href="#" class="btn academy-btn">See More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### CTA Area End ##### -->
+	<!-- ##### Top Popular Courses Area Start ##### -->
+	<div class="top-popular-courses-area section-padding-100-70">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="section-heading text-center mx-auto wow fadeInUp"
+						data-wow-delay="300ms">
+						<span>The Best</span>
+						<h3>Nuestras Facultades</h3>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+
+				<c:forEach var="f" items="${facultadList}">
+					<div class="col-12 col-lg-6">
+						<div
+							class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp"
+							data-wow-delay="400ms">
+							<div class="popular-course-content">
+								<h5>${f.facultad }</h5>
+								<span> ${f.ubicacion} |<br> ${f.telefono}
+								</span>
+								<div class="course-ratings">
+									<i class="fa fa-star" aria-hidden="true"></i> <i
+										class="fa fa-star" aria-hidden="true"></i> <i
+										class="fa fa-star" aria-hidden="true"></i> <i
+										class="fa fa-star" aria-hidden="true"></i> <i
+										class="fa fa-star-o" aria-hidden="true"></i>
+								</div>
+								<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum
+									nisi. Donec et sollicitudin est, in euismod.</p>
+								<a href="#" class="btn academy-btn btn-sm">Leer+</a>
+							</div>
+							<div class="popular-course-thumb bg-img"
+								style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg);"></div>
+						</div>
+					</div>
+				</c:forEach>
+
+			</div>
+		</div>
+	</div>
+	<!-- ##### Top Popular Courses Area End ##### -->
+
+	<!-- ##### Partner Area Start ##### -->
+	<div class="partner-area section-padding-0-100">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div
+						class="partners-logo d-flex align-items-center justify-content-between flex-wrap">
+						<a href="#"><img
+							src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-1.png"
+							alt=""></a> <a href="#"><img
+							src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-2.png"
+							alt=""></a> <a href="#"><img
+							src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-3.png"
+							alt=""></a> <a href="#"><img
+							src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-4.png"
+							alt=""></a> <a href="#"><img
+							src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-5.png"
+							alt=""></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ##### Partner Area End ##### -->
+
+	<!-- ##### CTA Area Start ##### -->
+	<div class="call-to-action-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div
+						class="cta-content d-flex align-items-center justify-content-between flex-wrap">
+						<h3>Do you want to enrole at our Academy? Get in touch!</h3>
+						<a href="#" class="btn academy-btn">See More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ##### CTA Area End ##### -->
 
 	<!-- ##### Footer Area Start ##### -->
 	<footer class="footer-area">
@@ -521,9 +543,9 @@
 								src="<%=request.getContextPath()%>/res/design/img/core-img/logo_1.png"
 								width="170"></a>
 						</div>
-						<p>La Universidad nacional de Innovacion Tecnologica es la institución de
-							educación superior más grande y antigua de la República de El
-							Salvador.</p>
+						<p>La Universidad nacional de Innovacion Tecnologica es la
+							institución de educación superior más grande y antigua de la
+							República de El Salvador.</p>
 						<div class="footer-social-info">
 							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
 								class="fa fa-twitter"></i></a> <a href="#"><i
@@ -592,7 +614,7 @@
 						</div>
 						<div class="single-contact d-flex mb-30">
 							<i class="icon-placeholder"></i>
-							<p> ${campusdir.ubicacion} </p>
+							<p>${campusdir.ubicacion}</p>
 						</div>
 						<div class="single-contact d-flex mb-30">
 							<i class="icon-telephone-1"></i>
