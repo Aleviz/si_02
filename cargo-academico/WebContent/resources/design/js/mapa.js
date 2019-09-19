@@ -3,6 +3,14 @@ var z = 13.7178;
 var x = 89.2046;
 var y = 16;
 
+
+//var z = 36.65051708060764;
+//var x = 4.340629577636719;
+//var y = 16;
+
+
+
+
 var latitudBD = document.getElementById('latitud').textContent;
 var longitudBD = document.getElementById('longitud').textContent;
 var nombreBD = document.getElementById('facultad').textContent;
@@ -29,19 +37,153 @@ var map = L.map('mapa').setView([ z, -x ], y);
 
 // PARA AGREGAR LOS DERECHOS DE AUTOR AL MAPA
 L.tileLayer(
-				'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-				{
-					attribution : '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+				'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png ',
+		{
+					attribution : '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors ' +'|| made by Aleviz'
 				}).addTo(map);
 
 var x = [];
 var jaja = [];
+var iconos = L.icon({
+	iconUrl: 'res/design/svg/facultad.svg',
+	iconSize: [20,75],
+});
+
+//--------------------------------------------------------------------------------------------
+
+function popUpInfo(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.tipo) {
+        layer.bindPopup(feature.properties.tipo);
+    }
+}
+
+
+var geojsonFeaturePolygon = [
+	  {
+	    "type": "Feature",
+	    "properties": {
+	        "tipo": "Polígono"
+	    },
+	    "geometry": {
+	      "type": "Polygon",
+	      "coordinates": [
+	        [
+	          [
+	        	  -89.2060830207032,
+	        	  13.715267703483761
+	          ],
+	          [
+	        	  -89.20567448390554,
+	        	  13.719707822751698
+	          ],
+	          [
+	        	  -89.20567503479154,
+	        	 13.719756462024524
+	          ],
+	          [
+	        	 -89.20560198312789,
+	        	13.720003132866195
+	          ],
+	          [
+	        	 -89.20560562915132,
+	        	 13.720001395775455
+	          ],
+	          
+	          
+	          
+	          [
+	        	  -89.20539626268094,
+	        	  13.720253277616465
+	          ],
+	          [
+	        	  -89.20515468607883,
+	        	 13.720378349891604
+	          ],
+	          [
+	        	  -89.20492384621461,
+	        	 13.720466942712843
+
+	          ],
+	          
+	          [
+	        	 - 89.2040434337092,
+	        	  13.720866478536665
+
+	          ],
+	          
+	          
+	          //-----------------------------------------------------------
+//	          
+//	          	  [
+//		        	 -89.20390896692905,
+//		        	 13.720927277425332
+//		          ],
+	          
+	          
+	          
+//		          
+//		          [
+//		        	 -89.20364087265915,
+//		        	13.722047710962507
+//
+//		          ],
+//		          
+//		          [
+//		        	  -89.20354435872198,
+//		        	 13.722292642232452
+//		          ],
+		          
+//		          [
+//		        	  -89.20339422593084,
+//		        	 13.722777292715238
+//
+//		          ],
+		          
+//		          [
+//		        	 -89.2031851124003,
+//		        	  13.72324109707856
+//
+//		          ]
+	          
+	          
+	          
+	          //-----*-******
+	          
+//	          [
+//		        	 -89.20311540789014,
+//		        	13.723329688818955
+//
+//		          ],
+//		          
+//		          [
+//		        	  -89.20302961772377,
+//		     13.723381801591783
+//		          ],
+//		          
+//		          [
+//		        	  -89.20298136075519,
+//		        	 13.723381801591783
+//
+//		          ],
+//		          
+		         
+	          
+	        ]
+	      ]
+	    }
+	  }
+	];
+
+var polygon = new L.geoJson(geojsonFeaturePolygon).addTo(map);
+
+//-----------------------------------------------------------------------------------------------
 
 // PARA AGREGAR EL MARCADOR
 for (var i = 0; i < lat.length; i++) {
 	var idd = id[i];
 	var marker = {};
-	marker = new L.marker([ lat[i], -lon[i] ]).bindPopup(asd[i]+" "+"<button class='h' value='"+asd[i]+"'></button>")
+	marker = new L.marker([ lat[i], -lon[i] ], {icon: iconos}).bindPopup(asd[i]+" "+"<button class='h' value='"+asd[i]+"'></button>")
 	.addTo(map);
 	
 	
@@ -86,7 +228,14 @@ $(document).ready(function() {
 	
 	//----------------------------------------------------
 
-	
+	map.on('click', function(e) {
+		lat = e.latlng.lat;
+		lon = e.latlng.lng;
+		console.log("=============================");
+		console.log("lon ======== "+lon);
+		console.log("lat ======== "+lat);
+		console.log("=============================");
+	});
 	//----------------------------------------------------	
 	
 
@@ -264,10 +413,12 @@ $(document).ready(function() {
 			map.on('click', function(e) {
 				afirmar = confirm(mensaje[1]);
 				if (afirmar == true) {
+					console.log()
 					idm = e.target._leaflet_id;
 					lat = e.latlng.lat;
 					lon = e.latlng.lng;
-
+					console.log("lat ======== "+lat);
+					console.log("lon ======== "+lon);
 					confirmacion = false;
 					$('#myModal').modal("show");
 					$('#formCampus').hide();
