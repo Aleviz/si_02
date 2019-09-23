@@ -15,9 +15,14 @@
 
 <link rel="stylesheet" href="<%=request.getContextPath()%>/res/design/leaflet.css" />
 <script src="<c:url value='res/design/leaflet.js'></c:url>"></script>
-
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
 <script	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
+
 
 <script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script>
 
@@ -57,6 +62,59 @@ $('#buttonDemo2').click(function() {
 });
 
 </script>
+
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+
+
+
+.button {
+  background-color: #33CEFF; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  
+  font-family:"Righteous", cursive;
+  
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  
+    background-color:#33CEFF; 
+  background: -webkit-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+background: -moz-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+background: -ms-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+background: -o-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+background: linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+  
+  color: black; 
+ 
+}
+
+.button1:hover {
+
+background-color: #DC143C;
+	  background: -webkit-linear-gradient(90deg, STEELBLUE 15%, MEDIUMSLATEBLUE 85%);
+background: -moz-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+background: -ms-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+background: -o-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+  border: 2px solid #7B68EE;
+  color: white;
+}
+</style>
 
 
 </head>
@@ -185,8 +243,14 @@ $('#buttonDemo2').click(function() {
 
 	<!-- ##### Google Maps ##### -->
 
+
 	<div class="map-area wow fadeInUp" data-wow-delay="300ms">
-		<div id="mapa"></div>
+		<div id="mapa">
+		
+		<p></p>
+		</div>
+		
+		
 		<div style="display: none">
 
 			<p id="latitud">${jsonLatitud}</p>
@@ -208,8 +272,8 @@ $('#buttonDemo2').click(function() {
 
 						<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
 							id="showCarreras">
-							<div class="section-heading text-left" id="infCarr">
-								<span>Unit</span>								
+							<div class="section-heading text-left" style="background-color: floralwhite;" id="infCarr">
+								<span>dlkhfjgsakjdhf</span>								
 								<h3 id="nombreFacultad" ></h3> 							
 							<div class="izq" id="id">				
 							</div>
@@ -259,7 +323,7 @@ $('#buttonDemo2').click(function() {
 
 			<!-- 	//////////////////////////////////////////////////////////////////////////////////////////// -->
 						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showFacultad">
-							<div class="section-heading text-left">
+							<div class="section-heading text-left" style="background-color: floralwhite;">
 								<span>Unit</span>
 								<h3>Universidad Nacional de Innovacion Tecnologica</h3>
 
@@ -297,7 +361,7 @@ $('#buttonDemo2').click(function() {
 
 							</div>
 							<div class="botonMapa">
-								<button id="editar" class="editar" onclick="editar">EDITAR</button>
+<!-- 								<button id="editar" class="button button1" onclick="editar">EDITAR</button> -->
 								<button id="finalizar">Finalizar</button>
 							</div>
 						</div>

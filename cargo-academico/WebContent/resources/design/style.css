@@ -1527,22 +1527,22 @@ keyframes spin { 100% {
 }
 
 .map-area #mapa {
-	width: 70%;
+	width: 50%;
 	height: 650px;
 	float: right;
 }
 
 .map-area #formulario {
-	background-color: #E6E6E6;
+	background-color: white;
 	bottom: 650px;
-	width: 30%;
+	width: 50%;
 	height: 650px;
 	overflow: auto;
 }
 
 .map-area #formulario span {
 	text-align: center;
-	background-color: #F2F2F2;
+	background-color: darkred;
 	margin-bottom: 0px;
 	color: white;
 }
@@ -1552,7 +1552,8 @@ keyframes spin { 100% {
 	margin-top: 0px;
 	text-align: center;
 	font-size: 30px;
-	background-color: #F2F2F2;
+	background-color: maroon;
+	color: white;
 	margin-bottom: 40px;
 }
 
@@ -1836,5 +1837,14 @@ keyframes spin { 100% {
 .academy-tabs-content .tab-content h6 {
 	font-size: 18px;
 }
+
+
+
+.star{
+  font-size: 1.5em;
+} 
+
+/* //----- */
+
 
 /*# sourceMappingURL=style.css.map */

@@ -4,13 +4,6 @@ var x = 89.2046;
 var y = 16;
 
 
-//var z = 36.65051708060764;
-//var x = 4.340629577636719;
-//var y = 16;
-
-
-
-
 var latitudBD = document.getElementById('latitud').textContent;
 var longitudBD = document.getElementById('longitud').textContent;
 var nombreBD = document.getElementById('facultad').textContent;
@@ -20,17 +13,9 @@ var lat = latitudBD.match(/\d+(?:\.\d+)?/g).map(Number);
 var lon = longitudBD.match(/\d+(?:\.\d+)?/g).map(Number);
 
 var asd = JSON.parse(nombreBD);
-
-console.log("NOMBRE ==== " + asd);
-console.log("LATITUD ==== " + lat);
-console.log("LONGITUD ==== " + lon);
-
-var nota = "click aqui";
-
-
+var nota = "Mostrar Carreras";
 
 var obtenerFF = [];
-// COORDENADAS DE LOS MARCADORES A MOSTRAR
 
 // PARA INSERTAR LAS COORDENADAS DEL MAPA EN EL MAPA
 var map = L.map('mapa').setView([ z, -x ], y);
@@ -42,21 +27,116 @@ L.tileLayer(
 					attribution : '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors ' +'|| made by Aleviz'
 				}).addTo(map);
 
+
+//*************************************************************
+var btn = '<button id="editar" >que p2</button>';
+
+var iconoss = L.icon({
+	iconUrl: 'res/design/svg/facultad.svg',
+	iconSize: [30,75],
+});
+
+var nameFacultad;
+var confirmacion;
+var mensaje = [ "El mapa se modificara, ¿continuar?",
+		"estas seguro de agregar un marcador aca, ¿continuar?",
+		"Los datos se guardaran, ¿continuar?" ];
+var afirmar = true;
+var lat;
+var lon;
+var nameFacultad;
+var funci = $("#funciones");
+
+var stateChangingButton = new L.easyButton({
+    states: [{
+            stateName: 'editar',        // name the state
+            id: 'nkop',
+            icon:      'fa-tree',               // and define its properties
+            title:     'editar',      // like its title
+            onClick: function(btn, map) {   // and its callback
+          
+            	
+            	if(afirmar){
+            	map.on('click', function(e) {
+
+    				console.log(afirmar);
+    				if (afirmar == true) {
+    					console.log()
+    					idm = e.target._leaflet_id;
+    					lat = e.latlng.lat;
+    					lon = e.latlng.lng;
+    					console.log("lat ======== "+lat);
+    					console.log("lon ======== "+lon);
+    					
+    					$('#myModal').modal("show");
+    					$('#formCampus').hide();
+    					$('#formFacultad').hide();
+
+    					$('#campus').click(function() {
+    						$('#formCampus').show();
+    						$('#formFacultad').hide();
+    						$('#latitudCampus').val(lat);
+    						$('#longitudCampus').val(lon);
+
+    						$('#guardarC').click(function() {
+    							market = L.marker([ lat, lon ]).addTo(map);
+    						});
+    					});
+
+    					$('#facultade').click(function() {
+
+    						$('#formFacultad').show();
+    						$('#formCampus').hide();
+    						$('#latitudFacultad').val(lat);
+    						$('#longitudFacultad').val(lon);
+
+    						$('#guardarF').click(function() {
+    							market = L.marker([ lat, lon ]).addTo(map);
+    						});
+    					});
+
+    				} else {
+    					console.log("denegado");
+    				}
+    			});
+}
+            	
+                console.log("distes click en editar y cambia el boton a finalizar");
+                btn.state('finalizar');    // change state on click!
+                afirmar = true;
+                console.log(afirmar);            
+            }
+    
+    
+        }, {
+            stateName: 'finalizar',
+            icon:      'fa-university',
+            title:     'finalizar',
+            onClick: function(btn) {
+            	afirmar = false;
+			     
+                console.log("distes click en finalizar y cambia el boton a editar");               
+                btn.state('editar');    // change state on click!
+
+
+            }
+    }]
+});
+
+stateChangingButton.addTo(map);
+
+//****************************************************************************
+
+
 var x = [];
 var jaja = [];
 var iconos = L.icon({
 	iconUrl: 'res/design/svg/facultad.svg',
-	iconSize: [20,75],
+	iconSize: [30,75],
 });
+//------------------------------------------------------------
 
-//--------------------------------------------------------------------------------------------
 
-function popUpInfo(feature, layer) {
-    // does this feature have a property named popupContent?
-    if (feature.properties && feature.properties.tipo) {
-        layer.bindPopup(feature.properties.tipo);
-    }
-}
 
 
 var geojsonFeaturePolygon = [
@@ -624,7 +704,7 @@ var polygon = new L.geoJson(geojsonFeaturePolygon, color).addTo(map);
 for (var i = 0; i < lat.length; i++) {
 	var idd = id[i];
 	var marker = {};
-	marker = new L.marker([ lat[i], -lon[i] ], {icon: iconos}).bindPopup(asd[i]+" "+"<button class='h' value='"+asd[i]+"'></button>")
+	marker = new L.marker([ lat[i], -lon[i] ], {icon: iconos}).bindPopup(asd[i]+" "+"<button class='h button button1' value='"+asd[i]+"'></button>")
 	.addTo(map);
 	
 	
@@ -634,56 +714,17 @@ for (var i = 0; i < lat.length; i++) {
 
 	jaja.push(obtenerFF);
 
-	console.log("********************");
-	console.log("JAJA==== " + jaja[i]);
-	console.log("NOMBRE ==== " + asd[i]);
-	console.log("LATITUD ==== " + lat[i]);
-	console.log("LONGITUD ==== " + lon[i])
-	console.log("Facultadesssss === " + obtenerFF);
-	console.log("********************");
-
-	console.log(x[i]);
-
 }
 
 
 
 //*****************************************************************************
-
+//*****************************************************************************
 // PARA MODIFICAR EL MAPA
 
 $(document).ready(function() {
 	$.getScript("res/design/js/mapa.js");
 
-	
-	var nameFacultad;
-	var confirmacion;
-	var mensaje = [ "El mapa se modificara, ¿continuar?",
-			"estas seguro de agregar un marcador aca, ¿continuar?",
-			"Los datos se guardaran, ¿continuar?" ];
-	var afirmar;
-	var lat;
-	var lon;
-	var nameFacultad;
-	
-	
-	//----------------------------------------------------
-
-	map.on('click', function(e) {
-		lat = e.latlng.lat;
-		lon = e.latlng.lng;
-		console.log("=============================");
-		console.log("lon ======== "+lon);
-		console.log("lat ======== "+lat);
-		console.log("=============================");
-	});
-	//----------------------------------------------------	
-	
-
-	console.log(confirmacion);
-
-
-//	$('.obtenerF').hide();
 	$('#showCarreras').hide();
 	$('.atras').hide();
 
@@ -844,7 +885,7 @@ $(document).ready(function() {
 
 	// PARA LA EDICION DEL MAPA
 
-	$('#editar').click(function() {
+	$('#editarr').click(function() {
 		confirmacion = confirm(mensaje[0]);
 
 		if (confirmacion == true) {
