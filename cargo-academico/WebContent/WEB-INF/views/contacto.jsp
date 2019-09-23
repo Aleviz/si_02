@@ -324,7 +324,7 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 			<!-- 	//////////////////////////////////////////////////////////////////////////////////////////// -->
 						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showFacultad">
 							<div class="section-heading text-left" style="background-color: floralwhite;">
-								<span>Unit</span>
+								<span>hhhh</span>
 								<h3>Universidad Nacional de Innovacion Tecnologica</h3>
 
 								<c:forEach var="e" items="${facultadList}">
