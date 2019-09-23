@@ -1527,7 +1527,7 @@ keyframes spin { 100% {
 }
 
 .map-area #mapa {
-	width: 50%;
+	width: 75%;
 	height: 650px;
 	float: right;
 }
@@ -1535,7 +1535,7 @@ keyframes spin { 100% {
 .map-area #formulario {
 	background-color: white;
 	bottom: 650px;
-	width: 50%;
+	width: 25%;
 	height: 650px;
 	overflow: auto;
 }
