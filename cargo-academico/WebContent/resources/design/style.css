@@ -1527,22 +1527,22 @@ keyframes spin { 100% {
 }
 
 .map-area #mapa {
-	width: 70%;
+	width: 75%;
 	height: 650px;
 	float: right;
 }
 
 .map-area #formulario {
-	background-color: #E6E6E6;
+	background-color: white;
 	bottom: 650px;
-	width: 30%;
+	width: 25%;
 	height: 650px;
 	overflow: auto;
 }
 
 .map-area #formulario span {
 	text-align: center;
-	background-color: #F2F2F2;
+	background-color: darkred;
 	margin-bottom: 0px;
 	color: white;
 }
@@ -1552,7 +1552,8 @@ keyframes spin { 100% {
 	margin-top: 0px;
 	text-align: center;
 	font-size: 30px;
-	background-color: #F2F2F2;
+	background-color: maroon;
+	color: white;
 	margin-bottom: 40px;
 }
 
@@ -1563,7 +1564,7 @@ keyframes spin { 100% {
 	margin-top: -10px;
 	
 }
-.nombreFacultad{
+.nombreFacultadd{
 	margin: 0px; 
 	padding: 0px;
 	color: #850000;
@@ -1571,7 +1572,7 @@ keyframes spin { 100% {
 	margin-bottom: -10px;
 }
 
-.nombreFacultad:hover{
+.nombreFacultadd:hover{
 	color: #d75151;
 }
 
@@ -1838,23 +1839,12 @@ keyframes spin { 100% {
 }
 
 
-.btCarreras{
-	
-}
 
-.atras;
+.star{
+  font-size: 1.5em;
+} 
 
-.obtenerF;
-
-.h;
-
-<<<<<<< HEAD
+/* //----- */
 
 
-
-.atras
 /*# sourceMappingURL=style.css.map */
-=======
-.carreras;
-/*# sourceMappingURL=style.css.map */
->>>>>>> Geografico

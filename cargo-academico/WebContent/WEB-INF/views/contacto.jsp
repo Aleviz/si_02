@@ -11,16 +11,23 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/res/design/leaflet.css" />
+
+
+<link rel="stylesheet" href="<%=request.getContextPath()%>/res/design/leaflet.css" />
 <script src="<c:url value='res/design/leaflet.js'></c:url>"></script>
-<link rel="stylesheet"
-	href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
-<script
-	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
+<script	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
+
 
 <script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script>
 
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> 
 
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -55,6 +62,59 @@ $('#buttonDemo2').click(function() {
 });
 
 </script>
+
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+
+
+
+.button {
+  background-color: #33CEFF; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  
+  font-family:"Righteous", cursive;
+  
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  
+    background-color:#33CEFF; 
+  background: -webkit-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+background: -moz-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+background: -ms-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+background: -o-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+background: linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+  
+  color: black; 
+ 
+}
+
+.button1:hover {
+
+background-color: #DC143C;
+	  background: -webkit-linear-gradient(90deg, STEELBLUE 15%, MEDIUMSLATEBLUE 85%);
+background: -moz-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+background: -ms-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+background: -o-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+  border: 2px solid #7B68EE;
+  color: white;
+}
+</style>
 
 
 </head>
@@ -183,8 +243,14 @@ $('#buttonDemo2').click(function() {
 
 	<!-- ##### Google Maps ##### -->
 
+
 	<div class="map-area wow fadeInUp" data-wow-delay="300ms">
-		<div id="mapa"></div>
+		<div id="mapa">
+		
+		<p></p>
+		</div>
+		
+		
 		<div style="display: none">
 
 			<p id="latitud">${jsonLatitud}</p>
@@ -206,18 +272,14 @@ $('#buttonDemo2').click(function() {
 
 						<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
 							id="showCarreras">
-							<div class="section-heading text-left" id="infCarr">
-								<span>Unit</span>
-								<button class="atras">ATRAS</button>
-								<h3 id="nombreFacultad" ></h3>
- 							
-									<p class="nameOfCar"></p>
-
-
-
+							<div class="section-heading text-left" style="background-color: floralwhite;" id="infCarr">
+								<span>Unit</span>								
+								<h3 id="nombreFacultad" ></h3> 							
+							<div class="izq" id="id">				
+							</div>
+<button class="atras">ATRAS</button>
 							</div>
 
-							Single Contact Info
 							<div class="single-contact-info d-flex">
 								<div class="contact-icon mr-15">
 									<i class="icon-placeholder"></i>
@@ -226,7 +288,6 @@ $('#buttonDemo2').click(function() {
 
 
 							</div>
-							Single Contact Info
 							<div class="single-contact-info d-flex">
 								<div class="contact-icon mr-15">
 									<i class="icon-telephone-1"></i>
@@ -236,7 +297,6 @@ $('#buttonDemo2').click(function() {
 
 								</p>
 							</div>
-							Single Contact Info
 							<div class="single-contact-info d-flex">
 								<div class="contact-icon mr-15">
 									<i class="icon-contract"></i>
@@ -262,47 +322,29 @@ $('#buttonDemo2').click(function() {
 
 
 			<!-- 	//////////////////////////////////////////////////////////////////////////////////////////// -->
-			<button id="clash">Splash</button>
-
-
-
-
-
 						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showFacultad">
-							<div class="section-heading text-left">
+							<div class="section-heading text-left" style="background-color: floralwhite;">
 								<span>Unit</span>
 								<h3>Universidad Nacional de Innovacion Tecnologica</h3>
 
 								<c:forEach var="e" items="${facultadList}">
 								
-								<p class="izq"  >
-								<a class="obtenerFx" ><label class="obtenerF">${e.facultad}</label>
-
-									<img class="carreras" 
-										src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
-										class="flip"> <img
-										src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-										class="flip2">
+								<div class="izq">  								
+								<a class="obtenerFx" >
+								<label class="obtenerF nombreFacultadd">${e.facultad}</label>
 								</a>
-								</p>
-								
+						<p class="tel">${e.telefono}</p>
+						<p class="ubic">${e.ubicacion}</p>	
+								</div>
+								<hr/>								
 								</c:forEach>
-
-
 							</div>
-
-
-
-							Single Contact Info
 							<div class="single-contact-info d-flex">
 								<div class="contact-icon mr-15">
 									<i class="icon-placeholder"></i>
 								</div>
 								<p>Ubicacion: ${campusdir.ubicacion}</p>
-
-
 							</div>
-							Single Contact Info
 							<div class="single-contact-info d-flex">
 								<div class="contact-icon mr-15">
 									<i class="icon-telephone-1"></i>
@@ -311,7 +353,6 @@ $('#buttonDemo2').click(function() {
 									Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648
 								</p>
 							</div>
-							Single Contact Info
 							<div class="single-contact-info d-flex">
 								<div class="contact-icon mr-15">
 									<i class="icon-contract"></i>
@@ -319,23 +360,13 @@ $('#buttonDemo2').click(function() {
 								<p>Correo: universidadTeconolica@unit.sv</p>
 
 							</div>
-
-
-
 							<div class="botonMapa">
-								<button id="editar" class="editar" onclick="editar">EDITAR</button>
+<!-- 								<button id="editar" class="button button1" onclick="editar">EDITAR</button> -->
 								<button id="finalizar">Finalizar</button>
-
-			>
 							</div>
 						</div>
-
-
-
-
 		</div>
-
-
+		<!-- ##### Fin formulario ##### -->
 	</div>
 
 
