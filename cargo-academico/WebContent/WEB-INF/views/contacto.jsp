@@ -273,7 +273,7 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 						<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
 							id="showCarreras">
 							<div class="section-heading text-left" style="background-color: floralwhite;" id="infCarr">
-								<span>dsfsdfdsfsdfsd</span>								
+								<span>dlkhfjgsakjdhf</span>								
 								<h3 id="nombreFacultad" ></h3> 							
 							<div class="izq" id="id">				
 							</div>
