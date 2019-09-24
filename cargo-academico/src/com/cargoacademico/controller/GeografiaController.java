@@ -40,7 +40,7 @@ public class GeografiaController {
 		ela = esService.findById(1);
 		List<Campus> campusList = geografiaService.allCampus();
 		Campus campus = new Campus();
-		Campus cam = geografiaService.findByIdCp(2);
+//		Campus cam = geografiaService.findByIdCp(2);
 		List<Coordenadas> coordenadasList = new ArrayList<Coordenadas>();
 		coordenadasList = geografiaService.allCoordenadas();
 
@@ -155,10 +155,10 @@ public class GeografiaController {
 		model.addAttribute("facultad", facultad);
 		model.addAttribute("campusList", campusList);
 		model.addAttribute("campus", campus);
-		model.addAttribute("campusdir", cam);
+//		model.addAttribute("campusdir", cam);
 		model.addAttribute("ela", ela);
 		model.addAttribute("es", escuelas);
-		System.out.println("-----------------------------------------" + cam.getTelefono());
+//		System.out.println("-----------------------------------------" + cam.getTelefono());
 		return "contacto";
 	}
 
@@ -174,7 +174,7 @@ public class GeografiaController {
 
 		List<Campus> campusList = geografiaService.allCampus();
 		Campus campus = new Campus();
-		Campus cam = geografiaService.findByIdCp(2);
+//		Campus cam = geografiaService.findByIdCp(2);
 		List<Coordenadas> coordenadasList = new ArrayList<Coordenadas>();
 		coordenadasList = geografiaService.allCoordenadas();
 
@@ -235,8 +235,8 @@ public class GeografiaController {
 		model.addAttribute("facultad", facultad);
 		model.addAttribute("campusList", campusList);
 		model.addAttribute("campus", campus);
-		model.addAttribute("campusdir", cam);
-		System.out.println("-----------------------------------------" + cam.getTelefono());
+//		model.addAttribute("campusdir", cam);
+//		System.out.println("-----------------------------------------" + cam.getTelefono());
 		return "Home";
 	}
 
@@ -303,11 +303,11 @@ public class GeografiaController {
 	@RequestMapping("/contacto/campus/{idCampus}/update")
 	public String findIdC(Model model, @PathVariable("idCampus") int id) {
 
-		Campus campus = geografiaService.findByIdCp(id);
+//		Campus campus = geografiaService.findByIdCp(id);
 		List<Campus> campusList = geografiaService.allCampus();
 		model.addAttribute("mensaje", "Materia Lista para Actualizar");
 		model.addAttribute("campusList", campusList);
-		model.addAttribute("campus", campus);
+//		model.addAttribute("campus", campus);
 		return "contacto";
 	}
 

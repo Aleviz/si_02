@@ -74,8 +74,8 @@ public class GeografiaService {
 		return geografiaDao.allCampus();
 	}
 
-	public Campus findByIdCp(int id) {
-		return geografiaDao.findByIdCp(id);
+	public Campus findByIdCp(String nameCampus) {
+		return geografiaDao.findByNameCp(nameCampus);
 	}
 
 	public void saveOrUpdateCampus(Campus campus) {
