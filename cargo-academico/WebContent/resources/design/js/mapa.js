@@ -45,6 +45,8 @@ var afirmar = true;
 var lat;
 var lon;
 var nameFacultad;
+var nameCarrera;
+var namecCampus;
 var funci = $("#funciones");
 
 var stateChangingButton = new L.easyButton({
@@ -801,9 +803,8 @@ $(document).ready(function() {
 		});
 
 	});
-	// ------------------------------------------------------
 
-	// ----------------------------------------------------
+	// ------------------------------------------------------
 
 	// PARA LA PARTE DEL PANEL DE DIV
 	$('#showFacultad').show(function() {
@@ -873,6 +874,75 @@ $(document).ready(function() {
 		
 	
 	});
+	
+	//---------------------------------PARA MOSTRAR INFORMACION DE LAS CARRERAS-------------------------------------
+	
+	
+	$('.obtenerFx').click(function(e) {
+
+		var ax = e.delegateTarget;
+		nameCarrera = ax.text;
+		var resultado;
+		console.log("************************************");
+		console.log(nameCarrera);
+		console.log("************************************");
+
+		$.ajax({
+			type : 'GET',
+			timeout: 5000,
+			url : 'api/ajaxrest/obtenerCarrera/' + nameCarrera,
+//			dataType : 'json',
+			contentType : 'application/json',
+			success : function(result) {
+				resultado = result;
+				
+				console.log("resulttt = "+ resultado);
+				console.log("result = "+ resultado[0].nombreEscuela);
+				
+				var h ='';
+				var h2='';
+				var h3 ='';
+				var hh ='';
+				for (var i = 0; i < result.length; i++) {									
+					hh += "<label class='nombreFacultadd' style='font-weight: bold;'>"+resultado[i].nombreEscuela+"</label>";
+					hh+= "<p class='tel'>"+resultado[i].telefono+"</p>";
+					hh+= "<p class='ubic'>"+resultado[i].direccion+"</p>";
+					hh += '<hr/>';
+				}
+				console.log(hh);
+				
+				$('#nombreFacultad').text(nameFacultad);
+//				$('.nameOfCar').text(h);
+//				$('.telOfCar').text(h2);
+//				$('.dirOfCar').text(h3);
+				$('#id').html(hh);
+
+				
+				$('#showFacultad').hide();
+				$('#showCarreras').show();
+				$('.atras').show();
+				
+			},
+		
+		error:function (xhr, ajaxOptions, thrownError){
+			console.log("************************************");
+	        alert(xhr.status);
+	        alert(xhr.statusText);
+	        alert(xhr.responseText);
+	        alert(thrownError);	        
+//				console.log("result = "+(xhr.status);
+			console.log("xhr.statusText = "+xhr.statusText);
+			console.log("xhr.responseText = "+xhr.responseText);
+			console.log("************************************");
+		}
+		});
+
+		
+	
+	});
+	//-----------------------------------------------------------------------------------------------------------------
+	
+	
 
 	$('.atras').click(function() {
 		$('#showFacultad').show();
@@ -885,74 +955,7 @@ $(document).ready(function() {
 
 	// PARA LA EDICION DEL MAPA
 
-	$('#editarr').click(function() {
-		confirmacion = confirm(mensaje[0]);
 
-		if (confirmacion == true) {
-			$('#editar').hide();
-			$('#finalizar').show();
-
-			map.on('click', function(e) {
-				afirmar = confirm(mensaje[1]);
-				if (afirmar == true) {
-					console.log()
-					idm = e.target._leaflet_id;
-					lat = e.latlng.lat;
-					lon = e.latlng.lng;
-					console.log("lat ======== "+lat);
-					console.log("lon ======== "+lon);
-					confirmacion = false;
-					$('#myModal').modal("show");
-					$('#formCampus').hide();
-					$('#formFacultad').hide();
-
-					$('#campus').click(function() {
-						$('#formCampus').show();
-						$('#formFacultad').hide();
-						$('#latitudCampus').val(lat);
-						$('#longitudCampus').val(lon);
-
-						$('#guardarC').click(function() {
-							market = L.marker([ lat, lon ]).addTo(map);
-						});
-					});
-
-					$('#facultade').click(function() {
-
-						$('#formFacultad').show();
-						$('#formCampus').hide();
-						$('#latitudFacultad').val(lat);
-						$('#longitudFacultad').val(lon);
-
-						$('#guardarF').click(function() {
-							market = L.marker([ lat, lon ]).addTo(map);
-						});
-					});
-
-				} else {
-					console.log("denegado");
-				}
-			});
-
-			$('#finalizar').click(function() {
-				var confirmar1 = confirm(mensaje[2]);
-				if (confirmar1 == true) {
-					$(this).hide();
-					$('#editar').show();
-
-				} else {
-					console.log("cambios no guardados");
-				}
-
-			});
-
-		} else if (confirmacion == false) {
-			$('#editar').show();
-			$('#finalizar').hide();
-			console.log("no acepto la edicion");
-		}
-
-	});
 	
 
 

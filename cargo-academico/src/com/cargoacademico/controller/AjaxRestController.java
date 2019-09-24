@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cargoacademico.model.Campus;
 import com.cargoacademico.model.Escuela;
 import com.cargoacademico.model.EscuelaEspejo;
 import com.cargoacademico.model.Facultad;
@@ -33,22 +34,7 @@ public class AjaxRestController {
 	private EscuelaService esService;
 	
 	List<Escuela> escuelas;
-	
-	@RequestMapping(value = "demo2/{fullName}", method = RequestMethod.GET, produces = {
-			MimeTypeUtils.TEXT_PLAIN_VALUE })
-	public ResponseEntity<String> demo2(@PathVariable("fullName") String fullName) {
-		try {
-			ResponseEntity<String> responseEntity = new ResponseEntity<String>("Hi " + fullName, HttpStatus.OK);
-			return responseEntity;
-		} catch (Exception e) {
-			System.out.println("ERORRRRR");
-			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
-		}
-	}
-	
-	
-	
-	
+
 
 
 	@RequestMapping(value = "obtenerFacultad/{nameFacultad}", method = RequestMethod.GET, produces = { MimeTypeUtils.APPLICATION_JSON_VALUE })
@@ -121,26 +107,36 @@ public class AjaxRestController {
 			System.out.println("ERORRRRR");
 			return new ResponseEntity<List<EscuelaEspejo>>(HttpStatus.BAD_REQUEST);
 		}
-		
-		
-		
 
 	}
 	
 	
+	//--------------------------------------------------------
 	
 	
-	@RequestMapping(value = "demo4", method = RequestMethod.GET, produces = { MimeTypeUtils.APPLICATION_JSON_VALUE })
-	public ResponseEntity<List<Escuela>> demo4() {
+	
+	
+	
+	@RequestMapping(value = "obtenerCarrera/{idEscuela}", method = RequestMethod.GET, produces = { MimeTypeUtils.APPLICATION_JSON_VALUE })
+	public ResponseEntity<Escuela> obtenerCarrera(@PathVariable("idEscuela") Integer idEscuela) {
+		
+		
+		//-*---------------------------------------------------------------------------------------------------------
+		Escuela ela = new Escuela();
+		ela = esService.findById(idEscuela);
+		
 		
 		try {
-
-			ResponseEntity<List<Escuela>> responseEntity = new ResponseEntity<List<Escuela>>(escuelas,
-					HttpStatus.OK);
+			ResponseEntity<Escuela> responseEntity = new ResponseEntity<Escuela>(ela, HttpStatus.OK);
 			return responseEntity;
 		} catch (Exception e) {
-			return new ResponseEntity<List<Escuela>>(HttpStatus.BAD_REQUEST);
+			System.out.println("ERORRRRR");
+			return new ResponseEntity<Escuela>(HttpStatus.BAD_REQUEST);
 		}
+		
+		
+		
+
 	}
 	
 	

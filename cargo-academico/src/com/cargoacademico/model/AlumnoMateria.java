@@ -1,5 +1,5 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-24-2019 09:07:03 AM by Hibernate Tools 5.2.12.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,10 +18,6 @@ import javax.persistence.Table;
 @Table(name = "alumno_materia", catalog = "cargo_academico")
 public class AlumnoMateria implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private Integer idAlumnoMateria;
 	private AulaEmpleado aulaEmpleado;
 	private Inscripcion inscripcion;

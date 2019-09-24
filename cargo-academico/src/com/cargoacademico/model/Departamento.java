@@ -1,5 +1,5 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-24-2019 09:07:03 AM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -21,10 +21,6 @@ import javax.persistence.Table;
 @Table(name = "departamento", catalog = "cargo_academico")
 public class Departamento implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private Integer idDepartamento;
 	private Empleado empleado;
 	private Escuela escuela;
@@ -35,10 +31,9 @@ public class Departamento implements java.io.Serializable {
 	public Departamento() {
 	}
 
-	public Departamento(Empleado empleado, Escuela escuela, String telefono) {
+	public Departamento(Empleado empleado, Escuela escuela) {
 		this.empleado = empleado;
 		this.escuela = escuela;
-		this.telefono = telefono;
 	}
 
 	public Departamento(Empleado empleado, Escuela escuela, String nombre, String telefono, Set<Materias> materiases) {
@@ -90,7 +85,7 @@ public class Departamento implements java.io.Serializable {
 		this.nombre = nombre;
 	}
 
-	@Column(name = "telefono", nullable = false, length = 9)
+	@Column(name = "telefono", length = 20)
 	public String getTelefono() {
 		return this.telefono;
 	}

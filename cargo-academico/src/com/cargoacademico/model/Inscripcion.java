@@ -1,5 +1,5 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-24-2019 09:07:03 AM by Hibernate Tools 5.2.12.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -24,10 +24,6 @@ import javax.persistence.TemporalType;
 @Table(name = "inscripcion", catalog = "cargo_academico")
 public class Inscripcion implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private Integer idInscripcion;
 	private Alumno alumno;
 	private MateriaCarreraCiclo materiaCarreraCiclo;

@@ -1,5 +1,5 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-24-2019 09:07:03 AM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -21,10 +21,6 @@ import javax.persistence.Table;
 @Table(name = "materia_carrera_ciclo", catalog = "cargo_academico")
 public class MateriaCarreraCiclo implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private Integer idMateriaCarreraCiclo;
 	private CarrerasCiclo carrerasCiclo;
 	private Materias materias;
