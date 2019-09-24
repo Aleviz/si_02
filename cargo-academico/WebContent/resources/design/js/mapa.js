@@ -878,8 +878,8 @@ $(document).ready(function() {
 	//---------------------------------PARA MOSTRAR INFORMACION DE LAS CARRERAS-------------------------------------
 	
 	
-	$('.obtenerFx').click(function(e) {
-
+	$('.nombreFacultadd').click(function(e) {
+		console.log(e);
 		var ax = e.delegateTarget;
 		nameCarrera = ax.text;
 		var resultado;

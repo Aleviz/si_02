@@ -1,5 +1,5 @@
 package com.cargoacademico.model;
-// Generated 09-24-2019 09:07:03 AM by Hibernate Tools 5.2.12.Final
+// Generated 09-24-2019 09:24:18 AM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -27,7 +27,7 @@ public class Escuela implements java.io.Serializable {
 	private String telefono;
 	private String direccion;
 	private String descripcion;
-	private byte[] campoDeAccion;
+	private String campoDeAccion;
 	private String mision;
 	private String vision;
 	private String objetivo;
@@ -37,7 +37,7 @@ public class Escuela implements java.io.Serializable {
 	public Escuela() {
 	}
 
-	public Escuela(Facultad facultad, String telefono, String direccion, String descripcion, byte[] campoDeAccion,
+	public Escuela(Facultad facultad, String telefono, String direccion, String descripcion, String campoDeAccion,
 			String mision, String vision, String objetivo) {
 		this.facultad = facultad;
 		this.telefono = telefono;
@@ -50,7 +50,7 @@ public class Escuela implements java.io.Serializable {
 	}
 
 	public Escuela(Facultad facultad, String nombreEscuela, String telefono, String direccion, String descripcion,
-			byte[] campoDeAccion, String mision, String vision, String objetivo, Set<Departamento> departamentos,
+			String campoDeAccion, String mision, String vision, String objetivo, Set<Departamento> departamentos,
 			Set<CarrerasCiclo> carrerasCiclos) {
 		this.facultad = facultad;
 		this.nombreEscuela = nombreEscuela;
@@ -123,12 +123,12 @@ public class Escuela implements java.io.Serializable {
 		this.descripcion = descripcion;
 	}
 
-	@Column(name = "campo_de_accion", nullable = false)
-	public byte[] getCampoDeAccion() {
+	@Column(name = "campo_de_accion", nullable = false, length = 65535)
+	public String getCampoDeAccion() {
 		return this.campoDeAccion;
 	}
 
-	public void setCampoDeAccion(byte[] campoDeAccion) {
+	public void setCampoDeAccion(String campoDeAccion) {
 		this.campoDeAccion = campoDeAccion;
 	}
 

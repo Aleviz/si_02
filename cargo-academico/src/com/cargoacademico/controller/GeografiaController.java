@@ -106,17 +106,17 @@ public class GeografiaController {
 		for (int i = 0; i < facultadList.size(); i++) {
 
 			Coordenadas cor = facultadList.get(i).getCoordenadas();
-			listLatitud.add(cor.getLatitud());
+//			listLatitud.add(cor.getLatitud());
 
 			Coordenadas cord = facultadList.get(i).getCoordenadas();
-			listLongitud.add(cord.getLongitud());
-
-			nombre = facultadList.get(i).getFacultad();
-			nombreFacultad.add(nombre);
+//			listLongitud.add(cord.getLongitud());
+//
+//			nombre = facultadList.get(i).getFacultad();
+//			nombreFacultad.add(nombre);
 
 			System.out.println("-------------------------------------------");
-			System.out.println("latitud = " + cor.getLatitud());
-			System.out.println("longitud = " + cord.getLongitud());
+//			System.out.println("latitud = " + facultadList.get(i).getCoordenadas());
+//			System.out.println("longitud = " + cord.getLongitud());
 			System.out.println("nombre =  " + nombre);
 			System.out.println("-------------------------------------------");
 
