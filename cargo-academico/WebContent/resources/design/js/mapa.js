@@ -890,6 +890,15 @@ $(document).ready(function() {
 							$('#showCarreras').show();
 							$('.atras').show();
 							
+							$('.atras').click(function() {
+								$('#mapa').show();
+								$('#mapa2').hide();
+								$('#showCampus').hide();
+								$('#showFacultad').show();
+								$('#showCarreras').hide();
+								$('.atras').hide();
+							});
+							
 						},
 					
 					error:function (xhr, ajaxOptions, thrownError){
@@ -929,11 +938,7 @@ $(document).ready(function() {
 	
 	});
 
-	$('.atras').click(function() {
-		$('#showFacultad').show();
-		$('#showCarreras').hide();
-		$('.atras').hide();
-	});
+
 	
 	
 	

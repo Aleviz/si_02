@@ -101,9 +101,9 @@ public class GeografiaImpl implements GeografiaDao {
 	}
 	
 	@Override
-	public Campus findByIdCp (int id) {
+	public Campus findByNameCp (String nameCampus) {
 		Criteria crit = getSession().createCriteria(Campus.class);
-		crit.add(Restrictions.eq("idCampus", id));
+		crit.add(Restrictions.eq("idCampus", nameCampus));
 		return (Campus)crit.uniqueResult();
 	}
 	

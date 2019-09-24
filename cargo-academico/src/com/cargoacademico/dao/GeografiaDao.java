@@ -27,7 +27,7 @@ public interface GeografiaDao {
 	//DAO CAMPUS
 	public void saveCampus(Campus campus);
 	public List<Campus> allCampus();
-	public Campus findByIdCp(int id);
+	public Campus findByNameCp(String nameCampus);
 	public void updateCampus(Campus campus);
 	
 	
