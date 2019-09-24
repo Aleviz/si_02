@@ -26,6 +26,11 @@ public class EscuelaService {
 		return escuelaDao.findById(id);
 	}
 	
+	public List<Escuela> findByNameE(String name){
+		return escuelaDao.findByNameE(name);
+	}
+	
+	
 	public List<Escuela> consultarFacultad(int id){
 		return escuelaDao.encontrarXFacultad(id);
 	}

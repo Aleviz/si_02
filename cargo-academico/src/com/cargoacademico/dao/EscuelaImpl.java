@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.cargoacademico.model.Escuela;
+import com.cargoacademico.model.Facultad;
 
 @SuppressWarnings("unchecked")
 @Transactional
@@ -36,6 +37,14 @@ public class EscuelaImpl implements EscuelaDao {
 	Criteria crit = getSession().createCriteria(Escuela.class);
 	crit.add(Restrictions.eq("idEscuela",id));	
 	return(Escuela) crit.uniqueResult();
+	}
+	
+	
+	@Override
+	public  List<Escuela>  findByNameE(String name) {
+		Query query = getSession().createQuery("from Escuela where nombreEscuela ='"+name+"'");
+		System.out.println("hola  "+name+" xxxxxx "+query.list().size());
+		return query.list();
 	}
 	
 	

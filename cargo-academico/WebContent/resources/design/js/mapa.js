@@ -36,7 +36,7 @@ var iconoss = L.icon({
 	iconSize: [30,75],
 });
 
-var nameFacultad;
+
 var confirmacion;
 var mensaje = [ "El mapa se modificara, ¿continuar?",
 		"estas seguro de agregar un marcador aca, ¿continuar?",
@@ -46,7 +46,7 @@ var lat;
 var lon;
 var nameFacultad;
 var nameCarrera;
-var namecCampus;
+var nameCampus;
 var funci = $("#funciones");
 
 var stateChangingButton = new L.easyButton({
@@ -729,7 +729,8 @@ $(document).ready(function() {
 
 	$('#showCarreras').hide();
 	$('.atras').hide();
-
+	$('#mapa2').hide();
+	$('#showCampus').hide();
 
 	
 	//--------------------------------------------------------------------------
@@ -763,7 +764,7 @@ $(document).ready(function() {
 					var h3 ='';
 					var hh ='';
 					for (var i = 0; i < result.length; i++) {									
-						hh += "<label class='nombreFacultadd' style='font-weight: bold;'>"+resultado[i].nombreEscuela+"</label>";
+						hh += "<a class='obtenerCs'> <label class='es nombreFacultadd' style='font-weight: bold;'>"+resultado[i].nombreEscuela+"</label></a>";
 						hh+= "<p class='tel'>"+resultado[i].telefono+"</p>";
 						hh+= "<p class='ubic'>"+resultado[i].direccion+"</p>";
 						hh += '<hr/>';
@@ -771,12 +772,11 @@ $(document).ready(function() {
 					console.log(hh);
 					
 					$('#nombreFacultad').text(nameFacultad);
-//					$('.nameOfCar').text(h);
-//					$('.telOfCar').text(h2);
-//					$('.dirOfCar').text(h3);
 					$('#id').html(hh);
 
 					
+					$('#mapa2').hide();
+					$('#showCampus').hide();
 					$('#showFacultad').hide();
 					$('#showCarreras').show();
 					$('.atras').show();
@@ -803,9 +803,17 @@ $(document).ready(function() {
 		});
 
 	});
-
 	// ------------------------------------------------------
 
+	// ----------------------------------------------------
+
+	$('#showFacultad').show(function() {
+		$('#showCarreras').hide();
+		$('.atras').hide();
+	});
+	
+	
+	
 	// PARA LA PARTE DEL PANEL DE DIV
 	$('#showFacultad').show(function() {
 		$('#showCarreras').hide();
@@ -837,8 +845,9 @@ $(document).ready(function() {
 				var h2='';
 				var h3 ='';
 				var hh ='';
+				
 				for (var i = 0; i < result.length; i++) {									
-					hh += "<label class='nombreFacultadd' style='font-weight: bold;'>"+resultado[i].nombreEscuela+"</label>";
+					hh += "<a class='obtenerCs'> <label class='es nombreFacultadd' style='font-weight: bold;'>"+resultado[i].nombreEscuela+"</label></a>";
 					hh+= "<p class='tel'>"+resultado[i].telefono+"</p>";
 					hh+= "<p class='ubic'>"+resultado[i].direccion+"</p>";
 					hh += '<hr/>';
@@ -846,15 +855,60 @@ $(document).ready(function() {
 				console.log(hh);
 				
 				$('#nombreFacultad').text(nameFacultad);
-//				$('.nameOfCar').text(h);
-//				$('.telOfCar').text(h2);
-//				$('.dirOfCar').text(h3);
 				$('#id').html(hh);
-
-				
+	
+				$('#mapa2').hide();
+				$('#showCampus').hide();
 				$('#showFacultad').hide();
 				$('#showCarreras').show();
 				$('.atras').show();
+				
+				//--------------------------------------------------para mostrar carrera-------------------
+				
+				$('.obtenerCs').click(function(e){
+					var obtenerCrs = e.delegateTarget;
+					nameCarrera = obtenerCrs.text; 
+					console.log(nameCarrera);
+					
+					
+					
+					$.ajax({
+						type : 'GET',
+						timeout: 5000,
+						url : 'api/ajaxrest/obtenerCarrera/' + nameCarrera,
+//						dataType : 'json',
+						contentType : 'application/json',
+						success : function(result) {
+							resultado = result;
+							console.log("resultttCarrera = "+ resultado[0].nombreEscuela);
+							
+							
+							$('#mapa2').show();
+							$('#mapa').hide();
+							$('#showCampus').hide();
+							$('#showFacultad').hide();
+							$('#showCarreras').show();
+							$('.atras').show();
+							
+						},
+					
+					error:function (xhr, ajaxOptions, thrownError){
+						console.log("************************************");
+				        alert(xhr.status);
+				        alert(xhr.statusText);
+				        alert(xhr.responseText);
+				        alert(thrownError);	        
+//							console.log("result = "+(xhr.status);
+						console.log("xhr.statusText = "+xhr.statusText);
+						console.log("xhr.responseText = "+xhr.responseText);
+						console.log("************************************");
+					}
+					});
+					
+				});
+				
+				
+				//------------------------------------------------------------
 				
 			},
 		
@@ -874,88 +928,89 @@ $(document).ready(function() {
 		
 	
 	});
-	
-	//---------------------------------PARA MOSTRAR INFORMACION DE LAS CARRERAS-------------------------------------
-	
-	
-	$('.nombreFacultadd').click(function(e) {
-		console.log(e);
-		var ax = e.delegateTarget;
-		nameCarrera = ax.text;
-		var resultado;
-		console.log("************************************");
-		console.log(nameCarrera);
-		console.log("************************************");
-
-		$.ajax({
-			type : 'GET',
-			timeout: 5000,
-			url : 'api/ajaxrest/obtenerCarrera/' + nameCarrera,
-//			dataType : 'json',
-			contentType : 'application/json',
-			success : function(result) {
-				resultado = result;
-				
-				console.log("resulttt = "+ resultado);
-				console.log("result = "+ resultado[0].nombreEscuela);
-				
-				var h ='';
-				var h2='';
-				var h3 ='';
-				var hh ='';
-				for (var i = 0; i < result.length; i++) {									
-					hh += "<label class='nombreFacultadd' style='font-weight: bold;'>"+resultado[i].nombreEscuela+"</label>";
-					hh+= "<p class='tel'>"+resultado[i].telefono+"</p>";
-					hh+= "<p class='ubic'>"+resultado[i].direccion+"</p>";
-					hh += '<hr/>';
-				}
-				console.log(hh);
-				
-				$('#nombreFacultad').text(nameFacultad);
-//				$('.nameOfCar').text(h);
-//				$('.telOfCar').text(h2);
-//				$('.dirOfCar').text(h3);
-				$('#id').html(hh);
-
-				
-				$('#showFacultad').hide();
-				$('#showCarreras').show();
-				$('.atras').show();
-				
-			},
-		
-		error:function (xhr, ajaxOptions, thrownError){
-			console.log("************************************");
-	        alert(xhr.status);
-	        alert(xhr.statusText);
-	        alert(xhr.responseText);
-	        alert(thrownError);	        
-//				console.log("result = "+(xhr.status);
-			console.log("xhr.statusText = "+xhr.statusText);
-			console.log("xhr.responseText = "+xhr.responseText);
-			console.log("************************************");
-		}
-		});
-
-		
-	
-	});
-	//-----------------------------------------------------------------------------------------------------------------
-	
-	
 
 	$('.atras').click(function() {
 		$('#showFacultad').show();
 		$('#showCarreras').hide();
 		$('.atras').hide();
 	});
+	
+	
+	
 
 	// ----------------------------------------------------
 
 
 	// PARA LA EDICION DEL MAPA
 
+	$('#editarr').click(function() {
+		confirmacion = confirm(mensaje[0]);
 
+		if (confirmacion == true) {
+			$('#editar').hide();
+			$('#finalizar').show();
+
+			map.on('click', function(e) {
+				afirmar = confirm(mensaje[1]);
+				if (afirmar == true) {
+					console.log()
+					idm = e.target._leaflet_id;
+					lat = e.latlng.lat;
+					lon = e.latlng.lng;
+					console.log("lat ======== "+lat);
+					console.log("lon ======== "+lon);
+					confirmacion = false;
+					$('#myModal').modal("show");
+					$('#formCampus').hide();
+					$('#formFacultad').hide();
+
+					$('#campus').click(function() {
+						$('#formCampus').show();
+						$('#formFacultad').hide();
+						$('#latitudCampus').val(lat);
+						$('#longitudCampus').val(lon);
+
+						$('#guardarC').click(function() {
+							market = L.marker([ lat, lon ]).addTo(map);
+						});
+					});
+
+					$('#facultade').click(function() {
+
+						$('#formFacultad').show();
+						$('#formCampus').hide();
+						$('#latitudFacultad').val(lat);
+						$('#longitudFacultad').val(lon);
+
+						$('#guardarF').click(function() {
+							market = L.marker([ lat, lon ]).addTo(map);
+						});
+					});
+
+				} else {
+					console.log("denegado");
+				}
+			});
+
+			$('#finalizar').click(function() {
+				var confirmar1 = confirm(mensaje[2]);
+				if (confirmar1 == true) {
+					$(this).hide();
+					$('#editar').show();
+
+				} else {
+					console.log("cambios no guardados");
+				}
+
+			});
+
+		} else if (confirmacion == false) {
+			$('#editar').show();
+			$('#finalizar').hide();
+			console.log("no acepto la edicion");
+		}
+
+	});
 	
 
 
@@ -963,4 +1018,3 @@ $(document).ready(function() {
 
 
 //*****************************************************************************
-

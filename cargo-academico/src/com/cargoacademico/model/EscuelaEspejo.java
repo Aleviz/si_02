@@ -9,6 +9,15 @@ public class EscuelaEspejo {
 	private String direccion;
 	
 	
+	
+
+	private String descripcion;
+	private String campoDeAccion;
+	private String mision;
+	private String vision;
+	private String objetivo;
+	
+	
 	public String getIdEscuela() {
 		return idEscuela;
 	}
@@ -39,6 +48,38 @@ public class EscuelaEspejo {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	public String getCampoDeAccion() {
+		return campoDeAccion;
+	}
+	public void setCampoDeAccion(String campoDeAccion) {
+		this.campoDeAccion = campoDeAccion;
+	}
+	public String getMision() {
+		return mision;
+	}
+	public void setMision(String mision) {
+		this.mision = mision;
+	}
+	public String getVision() {
+		return vision;
+	}
+	public void setVision(String vision) {
+		this.vision = vision;
+	}
+	public String getObjetivo() {
+		return objetivo;
+	}
+	public void setObjetivo(String objetivo) {
+		this.objetivo = objetivo;
+	}
+	
+	//-------------------------------------------
 	
 	
 

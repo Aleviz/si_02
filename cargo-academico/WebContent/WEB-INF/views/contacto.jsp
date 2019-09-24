@@ -249,18 +249,18 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 		
 		<p></p>
 		</div>
-<!-- 		<div id="mapa2" > -->
-<%-- 		<h1>${ela.nombreEscuela}</h1> --%>
-<%-- 		<p>${ela.descripcion}</p> --%>
-<!-- 		mision -->
-<%-- 	<p${ela.mision}></p> --%>
-<!-- 	vision -->
-<%-- 	<p>${ela.vision}</p> --%>
-<!-- 	objetivos -->
-<%-- 	<p>${ela.objetivo}</p> --%>
-<!-- 	campos de accion -->
-<%-- 	<p>${ela.campoDeAccion}</p> --%>
-<!-- 		</div> -->
+		<div id="mapa2" >
+		<h1>${ela.nombreEscuela}</h1>
+		<p>${ela.descripcion}</p>
+		mision
+	<p${ela.mision}></p>
+	vision
+	<p>${ela.vision}</p>
+	objetivos
+	<p>${ela.objetivo}</p>
+	campos de accion
+	<p>${ela.campoDeAccion}</p>
+		</div>
 		
 		
 		<div style="display: none">
@@ -328,24 +328,24 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 						</div>
 						
 			<!-- 	//////////////////////////////////////////Campus////////////////////////////////////////////////// -->
-<!-- 						<div class="contact-information wow fadeInUp" data-wow-delay="400ms"> -->
-<!-- 							<div class="section-heading text-left" style="background-color: floralwhite;"> -->
-<!-- 								<span>UNIT</span> -->
-<!-- 								<h3>Universidad Nacional de Innovacion Tecnologica</h3> -->
+						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showCampus">
+							<div class="section-heading text-left" style="background-color: floralwhite;" >
+								<span>UNIT</span>
+								<h3>Universidad Nacional de Innovacion Tecnologica</h3>
 
-<%-- 								<c:forEach var="c" items="${campusList}"> --%>
+								<c:forEach var="c" items="${campusList}">
 								
-<!-- 								<div class="izq">  								 -->
-<!-- 								<a class="obtenerFx" > -->
-<%-- 								<label class="obtenerF nombreFacultadd">${c.campus}</label> --%>
-<!-- 								</a> -->
-<%-- 						<p class="tel">${c.telefono}</p> --%>
-<%-- 						<p class="ubic">${c.ubicacion}</p>	 --%>
-<!-- 								</div> -->
-<!-- 								<hr/>								 -->
-<%-- 								</c:forEach> --%>
-<!-- 							</div> -->
-<!-- 						</div> -->
+								<div class="izq">  								
+								<a class="obtenerFx" >
+								<label class="obtenerF nombreFacultadd">${c.campus}</label>
+								</a>
+						<p class="tel">${c.telefono}</p>
+						<p class="ubic">${c.ubicacion}</p>	
+								</div>
+								<hr/>								
+								</c:forEach>
+							</div>
+						</div>
 		</div>
 		<!-- ##### Fin formulario ##### -->
 	</div>

@@ -117,21 +117,38 @@ public class AjaxRestController {
 	
 	
 	
-	@RequestMapping(value = "obtenerCarrera/{idEscuela}", method = RequestMethod.GET, produces = { MimeTypeUtils.APPLICATION_JSON_VALUE })
-	public ResponseEntity<Escuela> obtenerCarrera(@PathVariable("idEscuela") Integer idEscuela) {
+	@RequestMapping(value = "obtenerCarrera/{nameCarrera}", method = RequestMethod.GET, produces = { MimeTypeUtils.APPLICATION_JSON_VALUE })
+	public ResponseEntity<List<EscuelaEspejo>> obtenerCarrera(@PathVariable("nameCarrera") String nameCarrera) {
 		
 		
 		//-*---------------------------------------------------------------------------------------------------------
-		Escuela ela = new Escuela();
-		ela = esService.findById(idEscuela);
+
 		
+		List<EscuelaEspejo> escEList = new ArrayList<EscuelaEspejo>();
+		EscuelaEspejo escEsp = new EscuelaEspejo();
+		
+		
+		List<Escuela> escuelaList = new ArrayList<Escuela>();
+		escuelaList = esService.findByNameE(nameCarrera);
+		System.out.println(escuelaList.size());
+		for(int i=0 ; i< escuelaList.size(); i++) {
+			
+			escEsp = new EscuelaEspejo();
+		escEsp.setNombreEscuela(escuelaList.get(i).getNombreEscuela());
+		escEsp.setDescripcion(escuelaList.get(i).getDescripcion());
+		escEsp.setCampoDeAccion(escuelaList.get(i).getCampoDeAccion());
+		escEsp.setMision(escuelaList.get(i).getMision());
+		escEsp.setVision(escuelaList.get(i).getVision());
+		escEsp.setObjetivo(escuelaList.get(i).getObjetivo());
+		escEList.add(escEsp);
+		}
 		
 		try {
-			ResponseEntity<Escuela> responseEntity = new ResponseEntity<Escuela>(ela, HttpStatus.OK);
+			ResponseEntity<List<EscuelaEspejo>> responseEntity = new ResponseEntity<List<EscuelaEspejo>>(escEList, HttpStatus.OK);
 			return responseEntity;
 		} catch (Exception e) {
 			System.out.println("ERORRRRR");
-			return new ResponseEntity<Escuela>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<List<EscuelaEspejo>>(HttpStatus.BAD_REQUEST);
 		}
 		
 		
