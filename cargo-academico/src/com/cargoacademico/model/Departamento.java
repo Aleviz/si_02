@@ -21,6 +21,10 @@ import javax.persistence.Table;
 @Table(name = "departamento", catalog = "cargo_academico")
 public class Departamento implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idDepartamento;
 	private Empleado empleado;
 	private Escuela escuela;

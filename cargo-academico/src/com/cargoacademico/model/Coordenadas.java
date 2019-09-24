@@ -19,6 +19,10 @@ import javax.persistence.Table;
 @Table(name = "coordenadas", catalog = "cargo_academico")
 public class Coordenadas implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idCoordenada;
 	private String latitud;
 	private String longitud;
