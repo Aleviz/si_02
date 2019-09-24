@@ -1522,13 +1522,19 @@ keyframes spin { 100% {
 .map-area {
 	position: relative;
 	z-index: 2;
-	bottom: -80px;
+	bottom: -120px;
 	height: 800px;
+	margin-bottom: 0px;
 }
 
 .map-area #mapa {
 	width: 75%;
-	height: 650px;
+	height: 550px;
+	float: right;
+}
+.map-area #mapa2 {
+	width: 75%;
+	height: 550px;
 	float: right;
 }
 
@@ -1536,8 +1542,17 @@ keyframes spin { 100% {
 	background-color: white;
 	bottom: 650px;
 	width: 25%;
-	height: 650px;
+	height: 550px;
 	overflow: auto;
+	overflow-x:hidden;
+}
+
+.scroll2::-webkit-scrollbar {
+  width: 5px;
+}
+ 
+.scroll2::-webkit-scrollbar-thumb {
+  background: #666; 
 }
 
 .map-area #formulario span {
@@ -1548,6 +1563,16 @@ keyframes spin { 100% {
 }
 
 .map-area #formulario h3 {
+	padding-top: 0px;
+	margin-top: 0px;
+	text-align: center;
+	font-size: 30px;
+	background-color: maroon;
+	color: white;
+	margin-bottom: 40px;
+}
+
+.map-area #formulario .abc{
 	padding-top: 0px;
 	margin-top: 0px;
 	text-align: center;
@@ -1592,13 +1617,15 @@ keyframes spin { 100% {
 
 .single-contact-info {
 	float: left;
-	margin-left: 10px;
+	margin-left: 0px;
 }
 
 .botonMapa {
 	float: left;
 	margin-left: 10px;
-	margin-top: 50px;
+	margin-top: -70px;
+	margin-bottom: 0px;
+	width: 500px;
 }
 
 .map-area #formulario .section-heading p {

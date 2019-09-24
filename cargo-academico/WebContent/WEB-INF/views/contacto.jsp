@@ -249,6 +249,18 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 		
 		<p></p>
 		</div>
+<!-- 		<div id="mapa2" > -->
+<%-- 		<h1>${ela.nombreEscuela}</h1> --%>
+<%-- 		<p>${ela.descripcion}</p> --%>
+<!-- 		mision -->
+<%-- 	<p${ela.mision}></p> --%>
+<!-- 	vision -->
+<%-- 	<p>${ela.vision}</p> --%>
+<!-- 	objetivos -->
+<%-- 	<p>${ela.objetivo}</p> --%>
+<!-- 	campos de accion -->
+<%-- 	<p>${ela.campoDeAccion}</p> --%>
+<!-- 		</div> -->
 		
 		
 		<div style="display: none">
@@ -268,7 +280,7 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 
 
 
-		<div id="formulario">
+		<div id="formulario" class="scroll2">
 
 						<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
 							id="showCarreras">
@@ -277,46 +289,20 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 								<h3 id="nombreFacultad" ></h3> 							
 							<div class="izq" id="id">				
 							</div>
-<button class="atras">ATRAS</button>
-							</div>
-
-							<div class="single-contact-info d-flex">
-								<div class="contact-icon mr-15">
-									<i class="icon-placeholder"></i>
-								</div>
-								<p>Ubicacion: ${campusdir.ubicacion}</p>
-
-
-							</div>
-							<div class="single-contact-info d-flex">
-								<div class="contact-icon mr-15">
-									<i class="icon-telephone-1"></i>
-								</div>
-								<p>
-									Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648
-
-								</p>
-							</div>
-							<div class="single-contact-info d-flex">
-								<div class="contact-icon mr-15">
-									<i class="icon-contract"></i>
-								</div>
-								<p>Correo: universidadTeconolica@unit.sv</p>
-
 							</div>
 							<c:forEach var="e" items="${es}">
 								<div class="single-contact-info d-flex">
-
 									<div class="contact-icon mr-15">
 										<i class="icon-contract"></i>
 									</div>
-
 									<br>
 									<p>carrera: ${e.nombreEscuela}</p>
-
 								</div>
 							</c:forEach>
-
+							<div class="botonMapa">
+<!-- 								<button id="editar" class="button button1" onclick="editar">EDITAR</button> -->
+									<button class="atras">ATRAS</button>
+							</div>
 
 						</div>
 
@@ -338,31 +324,6 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 								</div>
 								<hr/>								
 								</c:forEach>
-							</div>
-							<div class="single-contact-info d-flex">
-								<div class="contact-icon mr-15">
-									<i class="icon-placeholder"></i>
-								</div>
-								<p>Ubicacion: ${campusdir.ubicacion}</p>
-							</div>
-							<div class="single-contact-info d-flex">
-								<div class="contact-icon mr-15">
-									<i class="icon-telephone-1"></i>
-								</div>
-								<p>
-									Telefono: ${campusdir.telefono} <br> Fax: 203-808-8648
-								</p>
-							</div>
-							<div class="single-contact-info d-flex">
-								<div class="contact-icon mr-15">
-									<i class="icon-contract"></i>
-								</div>
-								<p>Correo: universidadTeconolica@unit.sv</p>
-
-							</div>
-							<div class="botonMapa">
-<!-- 								<button id="editar" class="button button1" onclick="editar">EDITAR</button> -->
-								<button id="finalizar">Finalizar</button>
 							</div>
 						</div>
 		</div>

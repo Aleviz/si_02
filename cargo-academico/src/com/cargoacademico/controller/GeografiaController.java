@@ -36,6 +36,8 @@ public class GeografiaController {
 
 		List<Facultad> facultadList = geografiaService.allFacultad();
 		Facultad facultad = new Facultad();
+		Escuela ela = new Escuela();
+		ela = esService.findById(1);
 		List<Campus> campusList = geografiaService.allCampus();
 		Campus campus = new Campus();
 		Campus cam = geografiaService.findByIdCp(2);
@@ -47,11 +49,6 @@ public class GeografiaController {
 		
 		List<String> nombreFacultad = new ArrayList<String>();
 
-		
-		
-		
-		
-		
 		
 		
 		
@@ -159,6 +156,7 @@ public class GeografiaController {
 		model.addAttribute("campusList", campusList);
 		model.addAttribute("campus", campus);
 		model.addAttribute("campusdir", cam);
+		model.addAttribute("ela", ela);
 		model.addAttribute("es", escuelas);
 		System.out.println("-----------------------------------------" + cam.getTelefono());
 		return "contacto";
