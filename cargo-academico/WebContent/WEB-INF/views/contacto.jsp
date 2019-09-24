@@ -282,45 +282,65 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 
 		<div id="formulario" class="scroll2">
 
-						<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
-							id="showCarreras">
-							<div class="section-heading text-left" style="background-color: floralwhite;" id="infCarr">
-								<span>Unit</span>								
-								<h3 id="nombreFacultad" ></h3> 							
-							<div class="izq" id="id">				
-							</div>
-							</div>
-							<c:forEach var="e" items="${es}">
-								<div class="single-contact-info d-flex">
-									<div class="contact-icon mr-15">
-										<i class="icon-contract"></i>
-									</div>
-									<br>
-									<p>carrera: ${e.nombreEscuela}</p>
-								</div>
-							</c:forEach>
-							<div class="botonMapa">
-<!-- 								<button id="editar" class="button button1" onclick="editar">EDITAR</button> -->
-									<button class="atras">ATRAS</button>
-							</div>
+<!-- 						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" -->
+<!-- 							id="showCarreras"> -->
+<!-- 							<div class="section-heading text-left" style="background-color: floralwhite;" id="infCarr"> -->
+<!-- 								<span>Unit</span>								 -->
+<!-- 								<h3 id="nombreFacultad" ></h3> 							 -->
+<!-- 							<div class="izq" id="id">				 -->
+<!-- 							</div> -->
+<!-- 							</div> -->
+<%-- 							<c:forEach var="e" items="${es}"> --%>
+<!-- 								<div class="single-contact-info d-flex"> -->
+<!-- 									<div class="contact-icon mr-15"> -->
+<!-- 										<i class="icon-contract"></i> -->
+<!-- 									</div> -->
+<!-- 									<br> -->
+<%-- 									<p>carrera: ${e.nombreEscuela}</p> --%>
+<!-- 								</div> -->
+<%-- 							</c:forEach> --%>
+<!-- 							<div class="botonMapa"> -->
+<!-- <!-- 								<button id="editar" class="button button1" onclick="editar">EDITAR</button> --> -->
+<!-- 									<button class="atras">ATRAS</button> -->
+<!-- 							</div> -->
 
-						</div>
+<!-- 						</div> -->
 
-
+						
 			<!-- 	//////////////////////////////////////////////////////////////////////////////////////////// -->
-						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showFacultad">
+<!-- 						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showFacultad"> -->
+<!-- 							<div class="section-heading text-left" style="background-color: floralwhite;"> -->
+<!-- 								<span>hhhh</span> -->
+<!-- 								<h3>Universidad Nacional de Innovacion Tecnologica</h3> -->
+
+<%-- 								<c:forEach var="e" items="${facultadList}"> --%>
+								
+<!-- 								<div class="izq">  								 -->
+<!-- 								<a class="obtenerFx" > -->
+<%-- 								<label class="obtenerF nombreFacultadd">${e.facultad}</label> --%>
+<!-- 								</a> -->
+<%-- 						<p class="tel">${e.telefono}</p> --%>
+<%-- 						<p class="ubic">${e.ubicacion}</p>	 --%>
+<!-- 								</div> -->
+<!-- 								<hr/>								 -->
+<%-- 								</c:forEach> --%>
+<!-- 							</div> -->
+<!-- 						</div> -->
+						
+			<!-- 	//////////////////////////////////////////Campus////////////////////////////////////////////////// -->
+						<div class="contact-information wow fadeInUp" data-wow-delay="400ms">
 							<div class="section-heading text-left" style="background-color: floralwhite;">
-								<span>hhhh</span>
+								<span>UNIT</span>
 								<h3>Universidad Nacional de Innovacion Tecnologica</h3>
 
-								<c:forEach var="e" items="${facultadList}">
+								<c:forEach var="c" items="${campusList}">
 								
 								<div class="izq">  								
 								<a class="obtenerFx" >
-								<label class="obtenerF nombreFacultadd">${e.facultad}</label>
+								<label class="obtenerF nombreFacultadd">${c.campus}</label>
 								</a>
-						<p class="tel">${e.telefono}</p>
-						<p class="ubic">${e.ubicacion}</p>	
+						<p class="tel">${c.telefono}</p>
+						<p class="ubic">${c.ubicacion}</p>	
 								</div>
 								<hr/>								
 								</c:forEach>
