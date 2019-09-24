@@ -881,8 +881,10 @@ $(document).ready(function() {
 						success : function(result) {
 							resultado = result;
 							console.log("resultttCarrera = "+ resultado[0].nombreEscuela);
-							
-							
+							 var hh = "<h1>"+resultado[0].nombreEscuela+"</h1><p>"+resultado[0].descripcion+"</p> mision <p>"+resultado[0].mision+"</p>" +
+							 		"vision <p>"+resultado[0].vision+"</p> objetivos<p>"+resultado[0].objetivo+"</p> campos de accion <p>"
+							 		+resultado[0].campoDeAccion+"</p>";
+							 $('#mapa2').html(hh);
 							$('#mapa2').show();
 							$('#mapa').hide();
 							$('#showCampus').hide();

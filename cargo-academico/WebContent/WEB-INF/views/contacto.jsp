@@ -249,17 +249,9 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 		
 		<p></p>
 		</div>
+		
 		<div id="mapa2" >
-		<h1>${ela.nombreEscuela}</h1>
-		<p>${ela.descripcion}</p>
-		mision
-	<p${ela.mision}></p>
-	vision
-	<p>${ela.vision}</p>
-	objetivos
-	<p>${ela.objetivo}</p>
-	campos de accion
-	<p>${ela.campoDeAccion}</p>
+
 		</div>
 		
 		
