@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package com.cargoacademico.model;
+<<<<<<< HEAD
+=======
+// Generated 09-24-2019 09:24:18 AM by Hibernate Tools 5.2.12.Final
+>>>>>>> Geografico
 
 import java.io.Serializable;
 import java.util.List;
@@ -27,6 +31,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author william.raudausam
  */
 @Entity
+<<<<<<< HEAD
 @Table(name = "carreras_ciclo")
 @XmlRootElement
 public class CarrerasCiclo implements Serializable {
@@ -111,4 +116,73 @@ public class CarrerasCiclo implements Serializable {
         return "com.cargoacademico.model.CarrerasCiclo[ idCarreraCiclo=" + idCarreraCiclo + " ]";
     }
     
+=======
+@Table(name = "carreras_ciclo", catalog = "cargo_academico")
+public class CarrerasCiclo implements java.io.Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Integer idCarreraCiclo;
+	private Ciclo ciclo;
+	private Escuela escuela;
+	private Set<MateriaCarreraCiclo> materiaCarreraCiclos = new HashSet<MateriaCarreraCiclo>(0);
+
+	public CarrerasCiclo() {
+	}
+
+	public CarrerasCiclo(Ciclo ciclo, Escuela escuela) {
+		this.ciclo = ciclo;
+		this.escuela = escuela;
+	}
+
+	public CarrerasCiclo(Ciclo ciclo, Escuela escuela, Set<MateriaCarreraCiclo> materiaCarreraCiclos) {
+		this.ciclo = ciclo;
+		this.escuela = escuela;
+		this.materiaCarreraCiclos = materiaCarreraCiclos;
+	}
+
+	@Id
+	@GeneratedValue(strategy = IDENTITY)
+
+	@Column(name = "id_carrera_ciclo", unique = true, nullable = false)
+	public Integer getIdCarreraCiclo() {
+		return this.idCarreraCiclo;
+	}
+
+	public void setIdCarreraCiclo(Integer idCarreraCiclo) {
+		this.idCarreraCiclo = idCarreraCiclo;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ciclo", nullable = false)
+	public Ciclo getCiclo() {
+		return this.ciclo;
+	}
+
+	public void setCiclo(Ciclo ciclo) {
+		this.ciclo = ciclo;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "carrera", nullable = false)
+	public Escuela getEscuela() {
+		return this.escuela;
+	}
+
+	public void setEscuela(Escuela escuela) {
+		this.escuela = escuela;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "carrerasCiclo")
+	public Set<MateriaCarreraCiclo> getMateriaCarreraCiclos() {
+		return this.materiaCarreraCiclos;
+	}
+
+	public void setMateriaCarreraCiclos(Set<MateriaCarreraCiclo> materiaCarreraCiclos) {
+		this.materiaCarreraCiclos = materiaCarreraCiclos;
+	}
+
+>>>>>>> Geografico
 }

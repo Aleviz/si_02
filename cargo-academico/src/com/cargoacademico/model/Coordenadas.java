@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package com.cargoacademico.model;
+<<<<<<< HEAD
+=======
+// Generated 09-24-2019 09:24:18 AM by Hibernate Tools 5.2.12.Final
+>>>>>>> Geografico
 
 import java.io.Serializable;
 
@@ -25,6 +29,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author william.raudausam
  */
 @Entity
+<<<<<<< HEAD
 @Table(name = "coordenadas")
 @XmlRootElement
 public class Coordenadas implements Serializable {
@@ -142,4 +147,94 @@ public class Coordenadas implements Serializable {
         return "com.cargoacademico.model.Coordenadas[ idCoordenada=" + idCoordenada + " ]";
     }
     
+=======
+@Table(name = "coordenadas", catalog = "cargo_academico")
+public class Coordenadas implements java.io.Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Integer idCoordenada;
+	private String latitud;
+	private String longitud;
+	private String altitud;
+	private Set<Facultad> facultads = new HashSet<Facultad>(0);
+	private Set<Campus> campuses = new HashSet<Campus>(0);
+
+	public Coordenadas() {
+	}
+
+	public Coordenadas(String latitud, String longitud, String altitud) {
+		this.latitud = latitud;
+		this.longitud = longitud;
+		this.altitud = altitud;
+	}
+
+	public Coordenadas(String latitud, String longitud, String altitud, Set<Facultad> facultads, Set<Campus> campuses) {
+		this.latitud = latitud;
+		this.longitud = longitud;
+		this.altitud = altitud;
+		this.facultads = facultads;
+		this.campuses = campuses;
+	}
+
+	@Id
+	@GeneratedValue(strategy = IDENTITY)
+
+	@Column(name = "id_coordenada", unique = true, nullable = false)
+	public Integer getIdCoordenada() {
+		return this.idCoordenada;
+	}
+
+	public void setIdCoordenada(Integer idCoordenada) {
+		this.idCoordenada = idCoordenada;
+	}
+
+	@Column(name = "latitud", nullable = false, length = 50)
+	public String getLatitud() {
+		return this.latitud;
+	}
+
+	public void setLatitud(String latitud) {
+		this.latitud = latitud;
+	}
+
+	@Column(name = "longitud", nullable = false, length = 50)
+	public String getLongitud() {
+		return this.longitud;
+	}
+
+	public void setLongitud(String longitud) {
+		this.longitud = longitud;
+	}
+
+	@Column(name = "altitud", nullable = false, length = 50)
+	public String getAltitud() {
+		return this.altitud;
+	}
+
+	public void setAltitud(String altitud) {
+		this.altitud = altitud;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "coordenadas")
+	public Set<Facultad> getFacultads() {
+		return this.facultads;
+	}
+
+	public void setFacultads(Set<Facultad> facultads) {
+		this.facultads = facultads;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "coordenadas")
+	public Set<Campus> getCampuses() {
+		return this.campuses;
+	}
+
+	public void setCampuses(Set<Campus> campuses) {
+		this.campuses = campuses;
+	}
+
+>>>>>>> Geografico
 }

@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package com.cargoacademico.model;
+<<<<<<< HEAD
+=======
+// Generated 09-24-2019 09:24:18 AM by Hibernate Tools 5.2.12.Final
+>>>>>>> Geografico
 
 import java.io.Serializable;
 import java.util.List;
@@ -30,6 +34,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author william.raudausam
  */
 @Entity
+<<<<<<< HEAD
 @Table(name = "escuela")
 @XmlRootElement
 public class Escuela implements Serializable {
@@ -227,4 +232,169 @@ public class Escuela implements Serializable {
         return "com.cargoacademico.model.Escuela[ idEscuela=" + idEscuela + " ]";
     }
     
+=======
+@Table(name = "escuela", catalog = "cargo_academico")
+public class Escuela implements java.io.Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Integer idEscuela;
+	private Facultad facultad;
+	private String nombreEscuela;
+	private String telefono;
+	private String direccion;
+	private String descripcion;
+	private String campoDeAccion;
+	private String mision;
+	private String vision;
+	private String objetivo;
+	private Set<Departamento> departamentos = new HashSet<Departamento>(0);
+	private Set<CarrerasCiclo> carrerasCiclos = new HashSet<CarrerasCiclo>(0);
+
+	public Escuela() {
+	}
+
+	public Escuela(Facultad facultad, String telefono, String direccion, String descripcion, String campoDeAccion,
+			String mision, String vision, String objetivo) {
+		this.facultad = facultad;
+		this.telefono = telefono;
+		this.direccion = direccion;
+		this.descripcion = descripcion;
+		this.campoDeAccion = campoDeAccion;
+		this.mision = mision;
+		this.vision = vision;
+		this.objetivo = objetivo;
+	}
+
+	public Escuela(Facultad facultad, String nombreEscuela, String telefono, String direccion, String descripcion,
+			String campoDeAccion, String mision, String vision, String objetivo, Set<Departamento> departamentos,
+			Set<CarrerasCiclo> carrerasCiclos) {
+		this.facultad = facultad;
+		this.nombreEscuela = nombreEscuela;
+		this.telefono = telefono;
+		this.direccion = direccion;
+		this.descripcion = descripcion;
+		this.campoDeAccion = campoDeAccion;
+		this.mision = mision;
+		this.vision = vision;
+		this.objetivo = objetivo;
+		this.departamentos = departamentos;
+		this.carrerasCiclos = carrerasCiclos;
+	}
+
+	@Id
+	@GeneratedValue(strategy = IDENTITY)
+
+	@Column(name = "id_escuela", unique = true, nullable = false)
+	public Integer getIdEscuela() {
+		return this.idEscuela;
+	}
+
+	public void setIdEscuela(Integer idEscuela) {
+		this.idEscuela = idEscuela;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_facultad", nullable = false)
+	public Facultad getFacultad() {
+		return this.facultad;
+	}
+
+	public void setFacultad(Facultad facultad) {
+		this.facultad = facultad;
+	}
+
+	@Column(name = "nombre_escuela", length = 45)
+	public String getNombreEscuela() {
+		return this.nombreEscuela;
+	}
+
+	public void setNombreEscuela(String nombreEscuela) {
+		this.nombreEscuela = nombreEscuela;
+	}
+
+	@Column(name = "telefono", nullable = false, length = 20)
+	public String getTelefono() {
+		return this.telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	@Column(name = "direccion", nullable = false, length = 70)
+	public String getDireccion() {
+		return this.direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	@Column(name = "descripcion", nullable = false, length = 65535)
+	public String getDescripcion() {
+		return this.descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	@Column(name = "campo_de_accion", nullable = false, length = 65535)
+	public String getCampoDeAccion() {
+		return this.campoDeAccion;
+	}
+
+	public void setCampoDeAccion(String campoDeAccion) {
+		this.campoDeAccion = campoDeAccion;
+	}
+
+	@Column(name = "mision", nullable = false, length = 65535)
+	public String getMision() {
+		return this.mision;
+	}
+
+	public void setMision(String mision) {
+		this.mision = mision;
+	}
+
+	@Column(name = "vision", nullable = false, length = 65535)
+	public String getVision() {
+		return this.vision;
+	}
+
+	public void setVision(String vision) {
+		this.vision = vision;
+	}
+
+	@Column(name = "objetivo", nullable = false, length = 65535)
+	public String getObjetivo() {
+		return this.objetivo;
+	}
+
+	public void setObjetivo(String objetivo) {
+		this.objetivo = objetivo;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "escuela")
+	public Set<Departamento> getDepartamentos() {
+		return this.departamentos;
+	}
+
+	public void setDepartamentos(Set<Departamento> departamentos) {
+		this.departamentos = departamentos;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "escuela")
+	public Set<CarrerasCiclo> getCarrerasCiclos() {
+		return this.carrerasCiclos;
+	}
+
+	public void setCarrerasCiclos(Set<CarrerasCiclo> carrerasCiclos) {
+		this.carrerasCiclos = carrerasCiclos;
+	}
+
+>>>>>>> Geografico
 }

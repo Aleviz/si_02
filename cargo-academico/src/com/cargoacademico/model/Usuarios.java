@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.cargoacademico.model;
+// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
 
 import java.io.Serializable;
 

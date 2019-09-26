@@ -210,183 +210,48 @@ chart.render();
 	<div class="map-area wow fadeInUp" data-wow-delay="300ms">
 		<div id="mapa">
 			<script src="<c:url value='/res/design/js/mapa.js'></c:url>"></script>
-
 		</div>
-
-		<button id="editar" class="editar" onclick="editar">EDITAR</button>
-		<button id="finalizar">Finalizar</button>
-
-
-		<!-- 			ESTO ES PARA ACCIONAR EL MODAL -->
-		<!-- 		  <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button> -->
-
-
-
-		<script>
-			$(document)
-					.ready(
-							function() {
-								$.getScript("res/design/js/mapa.js");
-								$('#finalizar').hide();
-								$('#editar')
-										.click(
-												function() {
-													var nombre = [
-															"El mapa se modificara, ¿continuar?",
-															"estas seguro de agregar un marcador aca, ¿continuar?",
-															"Los datos se guardaran, ¿continuar?" ]
-													console.log('Expresion: ');
-													var opcion = confirm(nombre[0]);
-													$(this).hide();
-													$('#finalizar').show();
-
-													console.log(opcion
-															+ "holaaaaaa");
-
-													if (opcion == true) {
-
-														alert("aceptado");
-														map
-																.on(
-																		'click',
-																		function(
-																				e) {
-																			var lat = e.latlng.lat;
-																			var lon = e.latlng.lng;
-
-																			var afirmar = confirm(nombre[1]);
-
-																			if (afirmar == true) {
-																				$(
-																						'#myModal')
-																						.modal(
-																								"show");
-																				$(
-																						'#formCampus')
-																						.hide();
-																				$(
-																						'#formFacultad')
-																						.hide();
-
-																				$(
-																						'#campus')
-																						.click(
-																								function() {
-																									$(
-																											'#formCampus')
-																											.show();
-																									$(
-																											'#formFacultad')
-																											.hide();
-
-																									$(
-																											'#guardarC')
-																											.click(
-																													function() {
-																														market = L
-																																.marker(
-																																		[
-																																				lat,
-																																				lon ])
-																																.addTo(
-																																		map);
-
-																													})
-																								})
-																				$(
-																						'#facultad')
-																						.click(
-																								function() {
-																									$(
-																											'#formFacultad')
-																											.show();
-																									$(
-																											'#formCampus')
-																											.hide();
-
-																									$(
-																											'#guardarF')
-																											.click(
-																													function() {
-																														market = L
-																																.marker(
-																																		[
-																																				lat,
-																																				lon ])
-																																.addTo(
-																																		map);
-																													})
-																								})
-
-																				$(
-																						'#finalizar')
-																						.click(
-																								function() {
-																									var confirmar1 = confirm(nombre[2]);
-																									if (confirmar1 == true) {
-
-																										latitud
-																												.push(e.latlng.lat);
-																										longitud
-																												.push(e.latlng.lng);
-
-																										$(
-																												this)
-																												.hide();
-																										$(
-																												'#editar')
-																												.show();
-
-																										console
-																												.log();
-																									} else {
-
-																										console
-																												.log("cambios no guardados");
-
-																									}
-
-																								})
-
-																			} else {
-
-																				console
-																						.log("denegado");
-
-																			}
-
-																		})
-
-													} else {
-
-														alert("cancelado");
-
-													}
-
-												})
-
-							})
-		</script>
-
 		<div id="formulario">
 			<div class="contact-information wow fadeInUp" data-wow-delay="400ms">
 				<div class="section-heading text-left">
-					<span>The Best</span>
-					<h3>Contact Us</h3>
-					<p class="mt-30">Lacinia, lacinia la cus non, fermen tum nisi.
-						Donec et sollicitudin. Morbi vel arcu gravida, iaculis lacus vel,
-						posuere ipsum. Sed faucibus mauris vitae urna consectetur, sit
-						amet maximus nisl sagittis. Ut in iaculis enim, et pulvinar
-				</div>
-
-				<!-- Contact Social Info -->
-				<div class="contact-social-info d-flex mb-30">
-					<a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-					<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a
-						href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> <a
-						href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a> <a
-						href="#"><i class="fa fa-behance" aria-hidden="true"></i></a> <a
-						href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+					<span>Unit</span>
+					<h3>Universidad Nacional De Innovacion Tecnológica</h3>
+					<p class="izq">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="der">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="izq">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="der">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="izq">
+						<img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-5.jpg"
+							class="flip"> <img
+							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
+							class="flip2">
+					</p>
+					<p class="der"></p>
 				</div>
 
 				<!-- Single Contact Info -->
@@ -394,29 +259,187 @@ chart.render();
 					<div class="contact-icon mr-15">
 						<i class="icon-placeholder"></i>
 					</div>
-					<p>
-						4127/ 5B-C Mislane Road,<br> Gibraltar, UK
-					</p>
-				</div>
+					<p>Ubicacion: Final 25 Avenida Norte, San Salvador</p>
 
+
+				</div>
 				<!-- Single Contact Info -->
 				<div class="single-contact-info d-flex">
 					<div class="contact-icon mr-15">
 						<i class="icon-telephone-1"></i>
 					</div>
 					<p>
-						Main: 203-808-8613 <br> Office: 203-808-8648
+						Telefono: 2511 2000 <br> Fax: 203-808-8648
 					</p>
 				</div>
-
 				<!-- Single Contact Info -->
 				<div class="single-contact-info d-flex">
 					<div class="contact-icon mr-15">
 						<i class="icon-contract"></i>
 					</div>
-					<p>office@yourbusiness.com</p>
+					<p>Correo: universidadTeconolica@unit.sv</p>
 				</div>
+
+				<div class="botonMapa">
+					<button id="editar" class="editar" onclick="editar">EDITAR</button>
+					<button id="finalizar">Finalizar</button>
+				</div>
+
 			</div>
+
+
+
+			<!-- 			ESTO ES PARA ACCIONAR EL MODAL -->
+			<!-- 		  <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button> -->
+
+
+
+			<script>
+				$(document)
+						.ready(
+								function() {
+									$.getScript("res/design/js/mapa.js");
+									$('#finalizar').hide();
+									$('#editar')
+											.click(
+													function() {
+														var nombre = [
+																"El mapa se modificara, ¿continuar?",
+																"estas seguro de agregar un marcador aca, ¿continuar?",
+																"Los datos se guardaran, ¿continuar?" ]
+														console
+																.log('Expresion: ');
+														var opcion = confirm(nombre[0]);
+														$(this).hide();
+														$('#finalizar').show();
+
+														console.log(opcion
+																+ "holaaaaaa");
+
+														if (opcion == true) {
+
+															alert("aceptado");
+															map
+																	.on(
+																			'click',
+																			function(
+																					e) {
+																				var lat = e.latlng.lat;
+																				var lon = e.latlng.lng;
+														alert(lat+" " + lon);
+																				var afirmar = confirm(nombre[1]);
+
+																				if (afirmar == true) {
+																					$(
+																							'#myModal')
+																							.modal(
+																									"show");
+																					$(
+																							'#formCampus')
+																							.hide();
+																					$(
+																							'#formFacultad')
+																							.hide();
+
+																					$(
+																							'#campus')
+																							.click(
+																									function() {
+																										$(
+																												'#formCampus')
+																												.show();
+																										$(
+																												'#formFacultad')
+																												.hide();
+
+																										$(
+																												'#guardarC')
+																												.click(
+																														function() {
+																															market = L
+																																	.marker(
+																																			[
+																																					lat,
+																																					lon ])
+																																	.addTo(
+																																			map);
+
+																														})
+																									})
+																					$(
+																							'#facultad')
+																							.click(
+				function() {
+																										$(
+																												'#formFacultad')
+																												.show();
+																										$(
+																												'#formCampus')
+																												.hide();
+
+																										$(
+																												'#guardarF')
+																												.click(
+																														function() {
+																															market = L
+																																	.marker(
+																																			[
+																																					lat,
+																																					lon ])
+																																	.addTo(
+																																			map);
+																														})
+																									})
+
+																					$(
+																							'#finalizar')
+																							.click(
+																									function() {
+																										var confirmar1 = confirm(nombre[2]);
+																										if (confirmar1 == true) {
+
+																											latitud
+																													.push(e.latlng.lat);
+																											longitud
+																													.push(e.latlng.lng);
+
+																											$(
+																													this)
+																													.hide();
+																											$(
+																													'#editar')
+																													.show();
+
+																											console
+																													.log();
+																										} else {
+
+																											console
+																													.log("cambios no guardados");
+
+																										}
+
+																									})
+
+																				} else {
+
+																					console
+																							.log("denegado");
+
+																				}
+
+																			})
+
+														} else {
+
+															alert("cancelado");
+
+														}
+
+													})
+
+								})
+			</script>
 		</div>
 	</div>
 
@@ -603,9 +626,9 @@ chart.render();
 								src="<%=request.getContextPath()%>/res/design/img/core-img/logo_1.png"
 								width="170"></a>
 						</div>
-						<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum
-							nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et
-							arcu pulvinar cursus a eget.</p>
+						<p>La Universidad nacional de Innovacion Tecnologica es la
+							institución de educación superior más grande y antigua de la
+							República de El Salvador.</p>
 						<div class="footer-social-info">
 							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
 								class="fa fa-twitter"></i></a> <a href="#"><i
@@ -665,8 +688,6 @@ chart.render();
 								alt="Dem"></a>
 						</div>
 					</div>
-					<p><%=request.getContextPath()%>/img/gallery6.jpg
-					</p>
 				</div>
 				<!-- Footer Widget Area -->
 				<div class="col-12 col-sm-6 col-lg-3">
@@ -703,9 +724,8 @@ chart.render();
 						<script>
 							document.write(new Date().getFullYear());
 						</script>
-						All rights reserved | This template is made with <i
-							class="fa fa-heart-o" aria-hidden="true"></i> by <a
-							href="https://colorlib.com" target="_blank">Colorlib</a>
+						Derechos reservados | Colaboración con <a
+							href="https://www.usam.edu.sv" target="_blank">USAM</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
 				</div>

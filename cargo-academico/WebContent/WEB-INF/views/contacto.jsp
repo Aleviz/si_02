@@ -11,17 +11,23 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/res/design/leaflet.css" />
+
+
+<link rel="stylesheet" href="<%=request.getContextPath()%>/res/design/leaflet.css" />
 <script src="<c:url value='res/design/leaflet.js'></c:url>"></script>
-<link rel="stylesheet"
-	href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
-<script
-	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
+<script	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
+
 
 <script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> 
 
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -35,6 +41,81 @@
 <!-- Core Stylesheet -->
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/res/design/style.css">
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	console.log("vista");
+$('#buttonDemo2').click(function() {
+	console.log("dio click");
+	var fullName = $('#fullName').val();
+	console.log("fullName = "+fullName);
+	$.ajax({
+		type : 'GET',
+		url : '/api/ajaxrest/demo2/' + fullName,
+		success : function(result) {
+			$('#result2').text(result);
+			console.log("chido");
+		}
+	});
+});
+});
+
+</script>
+
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+
+
+
+.button {
+  background-color: #33CEFF; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  
+  font-family:"Righteous", cursive;
+  
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  
+    background-color:#33CEFF; 
+  background: -webkit-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+background: -moz-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+background: -ms-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+background: -o-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+background: linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+  
+  color: black; 
+ 
+}
+
+.button1:hover {
+
+background-color: #DC143C;
+	  background: -webkit-linear-gradient(90deg, STEELBLUE 15%, MEDIUMSLATEBLUE 85%);
+background: -moz-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+background: -ms-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+background: -o-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+  border: 2px solid #7B68EE;
+  color: white;
+}
+</style>
+
 
 </head>
 
@@ -53,7 +134,7 @@
 					<div
 						class="header-content h-100 d-flex align-items-center justify-content-between">
 						<div class="academy-logo">
-							<a href="index.html"><img
+							<a href="<c:url value="/Home"/>"><img
 								src="<c:url value='/res/design/img/core-img/image.png'></c:url>"
 								width="150px"></a>
 						</div>
@@ -91,7 +172,7 @@
 					<!-- Nav Start -->
 					<div class="classynav">
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<li><a href="<c:url value="/Home"/>">Home</a></li>
 							<li><a href="#">Pages</a>
 								<ul class="dropdown">
 									<li><a href="index.html">Home</a></li>
@@ -142,7 +223,7 @@
 				<div class="calling-info">
 					<div class="call-center">
 						<a href="tel:+654563325568889"><i class="icon-telephone-2"></i>
-							<span>(+65) 456 332 5568 889</span></a>
+							<span>(+503) ${campusdir.telefono}</span></a>
 					</div>
 				</div>
 				</nav>
@@ -161,177 +242,108 @@
         <!-- ##### Breadcumb Area End ##### -->
 
 	<!-- ##### Google Maps ##### -->
+
+
 	<div class="map-area wow fadeInUp" data-wow-delay="300ms">
 		<div id="mapa">
-			<script src="<c:url value='/res/design/js/mapa.js'></c:url>"></script>
+		
+		<p></p>
 		</div>
-		<div id="formulario">
-			<div class="contact-information wow fadeInUp" data-wow-delay="400ms">
-				<div class="section-heading text-left">
-					<span>Unit</span>
-					<h3>Universidad Nacional De Innovacion Tecnológica</h3>
-					<p class="izq">
-						<img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="der">
-						<img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="izq">
-						<img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="der">
-						<img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="izq">
-						<img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/pc-5.jpg"
-							class="flip"> <img
-							src="<%=request.getContextPath()%>/res/design/img/bg-img/negro2.jpg"
-							class="flip2">
-					</p>
-					<p class="der"></p>
-				</div>
+		
+		<div id="mapa2" >
 
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-placeholder"></i>
-					</div>
-					<p>
-					<p>Ubicacion: Final 25 Avenida Norte, San Salvador</p>
+		</div>
+		
+		
+		<div style="display: none">
 
+			<p id="latitud">${jsonLatitud}</p>
+			<p id="longitud">${jsonLongitud}</p>
+			<p id="facultad">${jsonNombre}</p>
 
-				</div>
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-telephone-1"></i>
-					</div>
-					<p>
-						Telefono: 2511 2000 <br> Fax: 203-808-8648
-					</p>
-				</div>
-				<!-- Single Contact Info -->
-				<div class="single-contact-info d-flex">
-					<div class="contact-icon mr-15">
-						<i class="icon-contract"></i>
-					</div>
-					<p>Correo: universidadTeconolica@unit.sv</p>
-				</div>
-			</div>
-			<button id="editar" class="editar" onclick="editar">EDITAR</button>
-			<button id="finalizar">Finalizar</button>
+		</div>
 
-
-			<!-- 			ESTO ES PARA ACCIONAR EL MODAL -->
-			<!-- 		  <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button> -->
+		<!-- 			ESTO ES PARA ACCIONAR EL MODAL -->
+		<!-- 		  <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button> -->
 
 
 
-			<script>
-			$(document).ready(function() {
-			$.getScript("res/design/js/mapa.js");
-			$('#finalizar').hide();
-			$('#editar').click(function() {
-			var nombre = ["El mapa se modificara, ¿continuar?",
-						"estas seguro de agregar un marcador aca, ¿continuar?",
-						"Los datos se guardaran, ¿continuar?" ]
-			console.log('Expresion: ');
-			var opcion = confirm(nombre[0]);
-			$(this).hide();
-			$('#finalizar').show();
 
-			console.log(opcion+ "holaaaaaa");
-								
-			if (opcion == true) {
 
-				alert("aceptado");
-				map.on(	'click',function(e) {
-				var lat = e.latlng.lat;
-				var lon = e.latlng.lng;
 
-				var afirmar = confirm(nombre[1]);
 
-			if (afirmar == true) {
-				$('#myModal').modal("show");
-				$('#formCampus').hide();
-				$('#formFacultad').hide();							
+		<div id="formulario" class="scroll2">
 
-				
-				$('#campus').click(function(){
-					$('#formCampus').show();
-					$('#formFacultad').hide();
-					
-					$('#guardarC').click(function(){
-						market = L.marker([	lat,	lon ]).addTo(map);
+						<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
+							id="showCarreras">
+							<div class="section-heading text-left" style="background-color: floralwhite;" id="infCarr">
+								<span>Unit</span>								
+								<h3 id="nombreFacultad" ></h3> 							
+							<div class="izq" id="id">				
+							</div>
+							</div>
+							<c:forEach var="e" items="${es}">
+								<div class="single-contact-info d-flex">
+									<div class="contact-icon mr-15">
+										<i class="icon-contract"></i>
+									</div>
+									<br>
+									<p>carrera: ${e.nombreEscuela}</p>
+								</div>
+							</c:forEach>
+							<div class="botonMapa">
+<!-- 								<button id="editar" class="button button1" onclick="editar">EDITAR</button> -->
+									<button class="atras">ATRAS</button>
+							</div>
+
+						</div>
+
 						
-					})
-				})
-				$('#facultad').click(function(){
-					$('#formFacultad').show();
-					$('#formCampus').hide();	
-					
-					$('#guardarF').click(function(){
-						market = L.marker([	lat,	lon ]).addTo(map);
-					})
-				})
+<!-- 				//////////////////////////////////////////////////////////////////////////////////////////// -->
+						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showFacultad">
+							<div class="section-heading text-left" style="background-color: floralwhite;">
+								<span>hhhh</span>
+								<h3>Universidad Nacional de Innovacion Tecnologica</h3>
 
-				$('#finalizar').click(function() {
-				var confirmar1 = confirm(nombre[2]);
-					if (confirmar1 == true) {
-																				
-						latitud.push(e.latlng.lat);
-						longitud.push(e.latlng.lng);
-																					
-						$(this).hide();
-						$('#editar').show();
-																							
-						console.log();							
-						} else {
-																				
-							console.log("cambios no guardados");
+								<c:forEach var="e" items="${facultadList}">
+								
+								<div class="izq">  								
+								<a class="obtenerFx" >
+								<label class="obtenerF nombreFacultadd">${e.facultad}</label>
+								</a>
+						<p class="tel">${e.telefono}</p>
+						<p class="ubic">${e.ubicacion}</p>	
+								</div>
+								<hr/>								
+								</c:forEach>
+							</div>
+						</div>
+						
+			<!-- 	//////////////////////////////////////////Campus////////////////////////////////////////////////// -->
+						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showCampus">
+							<div class="section-heading text-left" style="background-color: floralwhite;" >
+								<span>UNIT</span>
+								<h3>Universidad Nacional de Innovacion Tecnologica</h3>
 
-						}
-					
-				})
-				
-			} else {
-																		
-				console.log("denegado");
-			
-			}
-			
-				})
-
-			} else {
-			
-				alert("cancelado");
-				
-			}
-
-
-			})
-			
-			})
-		</script>
+								<c:forEach var="c" items="${campusList}">
+								
+								<div class="izq">  								
+								<a class="obtenerFx" >
+								<label class="obtenerF nombreFacultadd">${c.campus}</label>
+								</a>
+						<p class="tel">${c.telefono}</p>
+						<p class="ubic">${c.ubicacion}</p>	
+								</div>
+								<hr/>								
+								</c:forEach>
+							</div>
+						</div>
 		</div>
+		<!-- ##### Fin formulario ##### -->
 	</div>
+
+
+
 
 	<!-- ##### Contact Area End ##### -->
 
@@ -342,84 +354,77 @@
 
 			<!-- Modal content-->
 			<div class="modal-content">
-				<div class="modal-header" style="padding: 35px 50px;">
-
-					<h4>
-						<span class="glyphicon glyphicon-lock"></span> Login
-					</h4>
+				<div class="modal-header" style="padding: 15px 20px;">
+					<center>
+						<h4>
+							<span class="glyphicon glyphicon-lock"></span> REGISTRO
+						</h4>
+					</center>
 				</div>
 				<div class="modal-body" style="padding: 40px 50px;">
 
-					<!-- Material unchecked -->
-					<div class="btn-group">
-						<button type="button" class="btn btn-primary" id="campus">Campus</button>
-						<br></br>
-						<button type="button" class="btn btn-primary"
-							style="margin-left: 3px" id="facultad">Facultad</button>
-					</div>
-
+					<center>
+						<!-- Material unchecked -->
+						<div class="btn-group">
+							<button type="button" class="btn btn-primary" id="campus">Campus</button>
+							<br></br>
+							<button type="button" class="btn btn-primary"
+								style="margin-left: 3px" class="x" id="facultade">Facultad</button>
+						</div>
+					</center>
 					<div>
 						<br></br>
-						<sf:form
-							action="${pageContext.request.contextPath}/showMaterias/save"
-							method="post" commandName="mate" role="form">
-							<div class="form-group">
-								<label for="unidadValorativa"><span
-									class="glyphicon glyphicon-eye-open"></span> Latitud</label> <input
-									type="text" class="form-control" id="unidadValorativa"
-									path="unidadValorativa" placeholder="Latitud" />
-							</div>
 
-							<div class="form-group">
-								<label for="ciclo"><span
-									class="glyphicon glyphicon-eye-open"></span> Longitud</label> <input
-									type="text" class="form-control" id="ciclo"
-									placeholder="Longitud" />
-							</div>
-						</sf:form>
 					</div>
 
 					<div id="formCampus">
 						<sf:form
-							action="${pageContext.request.contextPath}/showMaterias/save"
-							method="post" commandName="mate" role="form">
+							action="${pageContext.request.contextPath}/contacto/campus/save"
+							method="post" commandName="campus" role="form">
 
 							<div class="form-group">
-								<label for="idMateria"><span
-									class="glyphicon glyphicon-user"></span> ID</label>
-								<sf:input type="text" class="form-control" id="idMateria"
-									placeholder="ID " path="idMateria" />
+								<label for="idCampus"> <span
+									class="glyphicon glyphicon-user"></span> ID
+								</label>
+								<sf:input type="text" class="form-control" id="idCampus"
+									placeholder="ID " path="idCampus" />
 							</div>
 
 							<div class="form-group">
-								<label for="materia"><span
+								<label for="campuscampus"><span
 									class="glyphicon glyphicon-eye-open"></span> Nombre del Campus</label>
-								<input type="text" class="form-control" id="materia"
-									path="materia" placeholder="Nombre" />
+								<sf:input type="text" class="form-control" id="campuscampus"
+									path="campus" placeholder="Nombre" />
 							</div>
 
 							<div class="form-group">
-								<label for="codigo"><span
+								<label for="telefono"><span
 									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
-								<input type="text" class="form-control" id="codigo"
-									path="codigo" placeholder="Telefono" />
+								<sf:input type="text" class="form-control" id="telefono"
+									path="telefono" placeholder="Telefono" />
 							</div>
-
 
 							<div class="form-group">
-								<label for="departamento.idDepartamento"><span
-									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> <input
-									type="text" class="form-control"
-									id="departamento.idDepartamento"
-									path="departamento.idDepartamento" placeholder="Ubicacion" />
+								<label for="ubicacion"><span
+									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label>
+								<sf:input type="text" class="form-control" id="ubicacion"
+									path="ubicacion" placeholder="Ubicacion" />
 							</div>
-
 
 							<div class="form-group">
-								<label for="ciclo"><span
-									class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
-									type="text" class="form-control" id="ciclo" placeholder="ciclo" />
+								<label for="latitudCampus"><span
+									class="glyphicon glyphicon-eye-open"></span> Latitud</label>
+								<sf:input type="text" class="form-control" id="latitudCampus"
+									path="coordenadas.latitud" placeholder="Latitud" />
 							</div>
+
+							<div class="form-group">
+								<label for="longitudCampus"><span
+									class="glyphicon glyphicon-eye-open"></span> Longitud</label>
+								<sf:input type="text" class="form-control" id="longitudCampus"
+									path="coordenadas.longitud" placeholder="Longitud" />
+							</div>
+
 
 
 							<button type="submit" class="btn btn-success btn-block">
@@ -427,52 +432,63 @@
 								Guardar Cambios
 							</button>
 						</sf:form>
-
-
 					</div>
-
 
 
 					<div id="formFacultad">
 						<sf:form
-							action="${pageContext.request.contextPath}/showMaterias/save"
-							method="post" commandName="mate" role="form">
+							action="${pageContext.request.contextPath}/contacto/facultad/save"
+							method="post" commandName="facultad" role="form">
 
 							<div class="form-group">
-								<label for="idMateria"><span
+								<label for="idFacultad"><span
 									class="glyphicon glyphicon-user"></span> ID</label>
-								<sf:input type="text" class="form-control" id="idMateria"
-									placeholder="ID " path="idMateria" />
+								<sf:input type="text" class="form-control" id="idFacultad"
+									placeholder="ID " path="idFacultad" />
 							</div>
 
 							<div class="form-group">
-								<label for="materia"><span
+								<label for="facultadfacultad"><span
 									class="glyphicon glyphicon-eye-open"></span> Nombre de la
-									Facultad</label> <input type="text" class="form-control" id="materia"
-									path="materia" placeholder="Nombre" />
+									Facultad</label>
+								<sf:input type="text" class="form-control" id="facultadfacultad"
+									path="facultad" placeholder="Nombre" />
 							</div>
 
 							<div class="form-group">
-								<label for="codigo"><span
+								<label for="telefono"><span
 									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
-								<input type="text" class="form-control" id="codigo"
-									path="codigo" placeholder="Telefono" />
+								<sf:input type="text" class="form-control" id="telefono"
+									path="telefono" placeholder="Telefono" />
 							</div>
 
 
 							<div class="form-group">
-								<label for="departamento.idDepartamento"><span
-									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> <input
-									type="text" class="form-control"
-									id="departamento.idDepartamento"
-									path="departamento.idDepartamento" placeholder="Ubicacion" />
+								<label for="ubicacion"><span
+									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label>
+								<sf:input type="text" class="form-control" id="ubicacion"
+									path="ubicacion" placeholder="Ubicacion" />
 							</div>
 
 
 							<div class="form-group">
-								<label for="ciclo"><span
-									class="glyphicon glyphicon-eye-open"></span> Coordenadas</label> <input
-									type="text" class="form-control" id="ciclo" placeholder="ciclo" />
+								<label for="campusfacultad"><span
+									class="glyphicon glyphicon-eye-open"></span> Campus</label>
+								<sf:input type="text" class="form-control" id="campusfacultad"
+									path="campus.idCampus" placeholder="campus" />
+							</div>
+							<div class="form-group">
+								<label for="latitudFacultad"><span
+									class="glyphicon glyphicon-eye-open"></span> Latitud</label>
+								<sf:input type="text" class="form-control" id="latitudFacultad"
+									path="coordenadas.latitud" placeholder="Latitud" />
+							</div>
+
+							<div class="form-group">
+								<label for="longitudFacultad"><span
+									class="glyphicon glyphicon-eye-open"></span> Longitud</label>
+								<sf:input type="text" class="form-control" id="longitudFacultad"
+									path="coordenadas.longitud" placeholder="Longitud" />
 							</div>
 
 
@@ -481,8 +497,6 @@
 								Guardar Cambios
 							</button>
 						</sf:form>
-
-
 					</div>
 
 					<!-- 					aqui -->
@@ -516,9 +530,9 @@
 								src="<%=request.getContextPath()%>/res/design/img/core-img/logo_1.png"
 								width="170"></a>
 						</div>
-						<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum
-							nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et
-							arcu pulvinar cursus a eget.</p>
+						<p>La Universidad nacional de Innovacion Tecnologica es la
+							institución de educación superior más grande y antigua de la
+							República de El Salvador.</p>
 						<div class="footer-social-info">
 							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
 								class="fa fa-twitter"></i></a> <a href="#"><i
@@ -578,8 +592,6 @@
 								alt="Dem"></a>
 						</div>
 					</div>
-					<p><%=request.getContextPath()%>/img/gallery6.jpg
-					</p>
 				</div>
 				<!-- Footer Widget Area -->
 				<div class="col-12 col-sm-6 col-lg-3">
@@ -589,17 +601,17 @@
 						</div>
 						<div class="single-contact d-flex mb-30">
 							<i class="icon-placeholder"></i>
-							<p>4127/ 5B-C Mislane Road, Gibraltar, UK</p>
+							<p>${campusdir.ubicacion}</p>
 						</div>
 						<div class="single-contact d-flex mb-30">
 							<i class="icon-telephone-1"></i>
 							<p>
-								Main: 203-808-8613 <br>Office: 203-808-8648
+								Teléfono: ${campusdir.telefono} <br> Oficina: 203-808-8648
 							</p>
 						</div>
 						<div class="single-contact d-flex">
 							<i class="icon-contract"></i>
-							<p>office@yourbusiness.com</p>
+							<p>universidadTecnologica@unit.sv</p>
 						</div>
 					</div>
 				</div>
@@ -616,9 +628,8 @@
 						<script>
 							document.write(new Date().getFullYear());
 						</script>
-						All rights reserved | This template is made with <i
-							class="fa fa-heart-o" aria-hidden="true"></i> by <a
-							href="https://colorlib.com" target="_blank">Colorlib</a>
+						Derechos reservados | Colaboración con <a
+							href="https://www.usam.edu.sv" target="_blank">USAM</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
 				</div>
@@ -646,13 +657,11 @@
 	<!-- All Plugins js -->
 	<script src="<c:url value='/res/design/js/plugins/plugins.js'></c:url>"></script>
 
+
 	<!-- Active js -->
 	<script src="<c:url value='/res/design/js/active.js'></c:url>"></script>
+	<script type="text/javascript"
+		src="<c:url value='/res/design/js/mapa.js'></c:url>"></script>
 
-	<!-- Google Maps -->
-	<script
-		src="<c:url value='/res/design/https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s'></c:url>"></script>
-	<script
-		src="<c:url value='/res/design/js/google-map/map-active.js'></c:url>"></script>
 </body>
 </html>

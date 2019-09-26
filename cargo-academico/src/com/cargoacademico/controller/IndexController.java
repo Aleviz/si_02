@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+
 /*el dispatcher se encargar de recibir todas las peticiones http en spring, un handler mapping detecta
  * la peticion la envia al dispatcher y este buscara un controlador spring con la anotacion @Controller
  * y buscara un controlador para la peticion el controlador returnara un nombre logico de la vista

@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package com.cargoacademico.model;
+<<<<<<< HEAD
+=======
+// Generated 09-24-2019 09:24:18 AM by Hibernate Tools 5.2.12.Final
+>>>>>>> Geografico
 
 import java.io.Serializable;
 import java.util.List;
