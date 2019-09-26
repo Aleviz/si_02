@@ -82,6 +82,14 @@ public class GeografiaImpl implements GeografiaDao {
 	
 
 	@Override
+	public  List<Facultad>  findByCampus(int idCampus) {
+		Query query = getSession().createQuery("from Facultad where campus ='"+idCampus+"'");
+		System.out.println("hola  "+idCampus+" xxxxxx "+query.list().size());
+		return query.list();
+	}
+	
+	
+	@Override
 	public void updateFacultad(Facultad facultad) {
 		getSession().update(facultad);
 	}
@@ -103,7 +111,7 @@ public class GeografiaImpl implements GeografiaDao {
 	@Override
 	public Campus findByNameCp (String nameCampus) {
 		Criteria crit = getSession().createCriteria(Campus.class);
-		crit.add(Restrictions.eq("idCampus", nameCampus));
+		crit.add(Restrictions.eq("campus", nameCampus));
 		return (Campus)crit.uniqueResult();
 	}
 	

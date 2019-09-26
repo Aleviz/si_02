@@ -53,6 +53,11 @@ public class GeografiaService {
 	public Facultad findByIdF(int id) {
 		return geografiaDao.findByIdF(id);
 	}
+	
+	
+	public List<Facultad> findByCampus(int idCampus){
+		return geografiaDao.findByCampus(idCampus);
+	}
 
 	public void saveOrUpdateFacultad(Facultad facultad) {
 		System.out.println("XXXXX   "+ facultad.getIdFacultad());

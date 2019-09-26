@@ -22,6 +22,7 @@ public interface GeografiaDao {
 	public  List<Facultad>  findByNameF(String name);
 	public Facultad findByIdF(int id);
 	public void updateFacultad(Facultad facultad);
+	public List<Facultad> findByCampus(int idCampus);
 	
 	
 	//DAO CAMPUS

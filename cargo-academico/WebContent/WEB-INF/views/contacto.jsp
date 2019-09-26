@@ -13,8 +13,8 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-<link rel="stylesheet" href="<%=request.getContextPath()%>/res/design/leaflet.css" />
-<script src="<c:url value='res/design/leaflet.js'></c:url>"></script>
+<%-- <link rel="stylesheet" href="<%=request.getContextPath()%>/res/design/leaflet.css" /> --%>
+<%-- <script src="<c:url value='res/design/leaflet.js'></c:url>"></script> --%>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
 <script	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
 
@@ -22,12 +22,57 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
 <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
 
-
-
-<script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script>
+<%-- <script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script> --%>
 
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> 
+
+
+
+
+<!-- ********************* -->
+
+	<script
+		src="<c:url value='/res/design/js/jquery/jquery-2.2.4.min.js'></c:url>"></script>
+
+
+	<script
+		src="<c:url value='/res/design/js/bootstrap/popper.min.js'></c:url>"></script>
+
+
+	<script
+		src="<c:url value='/res/design/js/bootstrap/bootstrap.min.js'></c:url>">
+	</script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<!-- /**** -->
+
+<!-- //-------------------------------------------------------------------------- -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+  <style>
+  .modal-header, h4, .close {
+    background-color: #5cb85c;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-footer {
+    background-color: #f9f9f9;
+  }
+  </style>
+  
+  
+  
+
+<!-- //------------------------------------------------------ -->
 
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -41,29 +86,9 @@
 <!-- Core Stylesheet -->
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/res/design/style.css">
-
-
-<script type="text/javascript">
-$(document).ready(function(){
-	console.log("vista");
-$('#buttonDemo2').click(function() {
-	console.log("dio click");
-	var fullName = $('#fullName').val();
-	console.log("fullName = "+fullName);
-	$.ajax({
-		type : 'GET',
-		url : '/api/ajaxrest/demo2/' + fullName,
-		success : function(result) {
-			$('#result2').text(result);
-			console.log("chido");
-		}
-	});
-});
-});
-
-</script>
-
-
+	
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/res/design/css/font-awesome.min.css">
 
 <style>
 
@@ -120,12 +145,16 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 </head>
 
 <body>
+
 	<!-- ##### Preloader ##### -->
 	<div id="preloader">
 		<i class="circle-preloader"></i>
 	</div>
 
-	<!-- ##### Header Area Start ##### -->
+
+
+
+
 	<header class="header-area"> <!-- Top Header Area -->
 	<div class="top-header">
 		<div class="container h-100">
@@ -231,24 +260,22 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 		</div>
 	</div>
 	</header>
-	<!-- ##### Header Area End ##### -->
-
-	<!-- ##### Breadcumb Area Start ##### 
-        <div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
-            <div class="bradcumbContent">
-                <h2>Contact</h2>
-            </div>
-        </div>
-        <!-- ##### Breadcumb Area End ##### -->
-
-	<!-- ##### Google Maps ##### -->
 
 
 	<div class="map-area wow fadeInUp" data-wow-delay="300ms">
+	
+	
+	
 		<div id="mapa">
-		
+
 		<p></p>
 		</div>
+		
+		
+		
+		
+		
+		
 		
 		<div id="mapa2" >
 
@@ -263,17 +290,44 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 
 		</div>
 
-		<!-- 			ESTO ES PARA ACCIONAR EL MODAL -->
-		<!-- 		  <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button> -->
-
-
-
-
-
-
+	
 
 		<div id="formulario" class="scroll2">
 
+			<!-- 	//////////////////////////////////////////CAMPUS////////////////////////////////////////////////// -->
+						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showCampus">
+							<div class="section-heading text-left" style="background-color: floralwhite;" >
+								<span>UNIT</span>
+								<h3>Universidad Nacional de Innovacion Tecnologica</h3>
+								<div class="izq">  	
+						<c:forEach var="c" items="${campusList}">							
+								<a class="obtenerCx" >
+								<label class="obtenerC nombreCampuss">${c.campus}</label>
+								</a>
+						<p class="tel">${c.telefono}</p>
+						<p class="ubic">${c.ubicacion}</p>	
+							<hr/>								
+								</c:forEach>
+								</div>		
+							</div>
+						</div>
+
+		
+<!-- 			//////////////////////////////////////FACULTAD////////////////////////////////////////////////////// --> 	
+						<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
+							id="showFacultad">
+							<div class="section-heading text-left" style="background-color: floralwhite;" id="infCarr">
+								<span>Unit</span>								
+								<h3 id="nombreCampus" ></h3> 							
+							<div class="izq" id="idFacu">				
+							</div>
+							</div>
+							<div class="botonMapa">
+									<button class="atrass">VOLVER A CAMPUS</button>
+							</div>
+						</div>
+		
+<!-- 						///////////////////////////////////CARRERAS/////////////////////////////////////////////////// -->
 						<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
 							id="showCarreras">
 							<div class="section-heading text-left" style="background-color: floralwhite;" id="infCarr">
@@ -282,75 +336,21 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 							<div class="izq" id="id">				
 							</div>
 							</div>
-							<c:forEach var="e" items="${es}">
-								<div class="single-contact-info d-flex">
-									<div class="contact-icon mr-15">
-										<i class="icon-contract"></i>
-									</div>
-									<br>
-									<p>carrera: ${e.nombreEscuela}</p>
-								</div>
-							</c:forEach>
 							<div class="botonMapa">
-<!-- 								<button id="editar" class="button button1" onclick="editar">EDITAR</button> -->
-									<button class="atras">ATRAS</button>
-							</div>
-
-						</div>
-
-						
-<!-- 				//////////////////////////////////////////////////////////////////////////////////////////// -->
-						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showFacultad">
-							<div class="section-heading text-left" style="background-color: floralwhite;">
-								<span>hhhh</span>
-								<h3>Universidad Nacional de Innovacion Tecnologica</h3>
-
-								<c:forEach var="e" items="${facultadList}">
-								
-								<div class="izq">  								
-								<a class="obtenerFx" >
-								<label class="obtenerF nombreFacultadd">${e.facultad}</label>
-								</a>
-						<p class="tel">${e.telefono}</p>
-						<p class="ubic">${e.ubicacion}</p>	
-								</div>
-								<hr/>								
-								</c:forEach>
+							<button id="editarr">asd</button>
+									<button class="atras">VOLVER A FACULTAD</button>
 							</div>
 						</div>
-						
-			<!-- 	//////////////////////////////////////////Campus////////////////////////////////////////////////// -->
-						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showCampus">
-							<div class="section-heading text-left" style="background-color: floralwhite;" >
-								<span>UNIT</span>
-								<h3>Universidad Nacional de Innovacion Tecnologica</h3>
 
-								<c:forEach var="c" items="${campusList}">
-								
-								<div class="izq">  								
-								<a class="obtenerFx" >
-								<label class="obtenerF nombreFacultadd">${c.campus}</label>
-								</a>
-						<p class="tel">${c.telefono}</p>
-						<p class="ubic">${c.ubicacion}</p>	
-								</div>
-								<hr/>								
-								</c:forEach>
-							</div>
-						</div>
-		</div>
-		<!-- ##### Fin formulario ##### -->
 	</div>
+	
 
-
-
-
-	<!-- ##### Contact Area End ##### -->
-
+</div>
 
 	<!-- ESTO ES PARA QUE APAREZCA EL MODAL -->
-	<div class="modal fade" id="myModal" role="dialog">
-		<div class="modal-dialog">
+
+	<div class="modal fade" id="myModal"  role="dialog">
+		<div class="modal-dialog" style="padding-right: 10px; margin-top: 25%; margin-left: 37%;" >
 
 			<!-- Modal content-->
 			<div class="modal-content">
@@ -366,7 +366,7 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 					<center>
 						<!-- Material unchecked -->
 						<div class="btn-group">
-							<button type="button" class="btn btn-primary" id="campus">Campus</button>
+<!-- 							<button type="button" class="btn btn-primary" id="campus">Campus</button> -->
 							<br></br>
 							<button type="button" class="btn btn-primary"
 								style="margin-left: 3px" class="x" id="facultade">Facultad</button>
@@ -377,62 +377,62 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 
 					</div>
 
-					<div id="formCampus">
-						<sf:form
-							action="${pageContext.request.contextPath}/contacto/campus/save"
-							method="post" commandName="campus" role="form">
+<!-- 					<div id="formCampus"> -->
+<%-- 						<sf:form --%>
+<%-- 							action="${pageContext.request.contextPath}/contacto/campus/save" --%>
+<%-- 							method="post" commandName="campus" role="form"> --%>
 
-							<div class="form-group">
-								<label for="idCampus"> <span
-									class="glyphicon glyphicon-user"></span> ID
-								</label>
-								<sf:input type="text" class="form-control" id="idCampus"
-									placeholder="ID " path="idCampus" />
-							</div>
+<!-- 							<div class="form-group"> -->
+<!-- 								<label for="idCampus"> <span -->
+<!-- 									class="glyphicon glyphicon-user"></span> ID -->
+<!-- 								</label> -->
+<%-- 								<sf:input type="text" class="form-control" id="idCampus" --%>
+<%-- 									placeholder="ID " path="idCampus" /> --%>
+<!-- 							</div> -->
 
-							<div class="form-group">
-								<label for="campuscampus"><span
-									class="glyphicon glyphicon-eye-open"></span> Nombre del Campus</label>
-								<sf:input type="text" class="form-control" id="campuscampus"
-									path="campus" placeholder="Nombre" />
-							</div>
+<!-- 							<div class="form-group"> -->
+<!-- 								<label for="campuscampus"><span -->
+<!-- 									class="glyphicon glyphicon-eye-open"></span> Nombre del Campus</label> -->
+<%-- 								<sf:input type="text" class="form-control" id="campuscampus" --%>
+<%-- 									path="campus" placeholder="Nombre" /> --%>
+<!-- 							</div> -->
 
-							<div class="form-group">
-								<label for="telefono"><span
-									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
-								<sf:input type="text" class="form-control" id="telefono"
-									path="telefono" placeholder="Telefono" />
-							</div>
+<!-- 							<div class="form-group"> -->
+<!-- 								<label for="telefono"><span -->
+<!-- 									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label> -->
+<%-- 								<sf:input type="text" class="form-control" id="telefono" --%>
+<%-- 									path="telefono" placeholder="Telefono" /> --%>
+<!-- 							</div> -->
 
-							<div class="form-group">
-								<label for="ubicacion"><span
-									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label>
-								<sf:input type="text" class="form-control" id="ubicacion"
-									path="ubicacion" placeholder="Ubicacion" />
-							</div>
+<!-- 							<div class="form-group"> -->
+<!-- 								<label for="ubicacion"><span -->
+<!-- 									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label> -->
+<%-- 								<sf:input type="text" class="form-control" id="ubicacion" --%>
+<%-- 									path="ubicacion" placeholder="Ubicacion" /> --%>
+<!-- 							</div> -->
 
-							<div class="form-group">
-								<label for="latitudCampus"><span
-									class="glyphicon glyphicon-eye-open"></span> Latitud</label>
-								<sf:input type="text" class="form-control" id="latitudCampus"
-									path="coordenadas.latitud" placeholder="Latitud" />
-							</div>
+<!-- 							<div class="form-group"> -->
+<!-- 								<label for="latitudCampus"><span -->
+<!-- 									class="glyphicon glyphicon-eye-open"></span> Latitud</label> -->
+<%-- 								<sf:input type="text" class="form-control" id="latitudCampus" --%>
+<%-- 									path="coordenadas.latitud" placeholder="Latitud" /> --%>
+<!-- 							</div> -->
 
-							<div class="form-group">
-								<label for="longitudCampus"><span
-									class="glyphicon glyphicon-eye-open"></span> Longitud</label>
-								<sf:input type="text" class="form-control" id="longitudCampus"
-									path="coordenadas.longitud" placeholder="Longitud" />
-							</div>
+<!-- 							<div class="form-group"> -->
+<!-- 								<label for="longitudCampus"><span -->
+<!-- 									class="glyphicon glyphicon-eye-open"></span> Longitud</label> -->
+<%-- 								<sf:input type="text" class="form-control" id="longitudCampus" --%>
+<%-- 									path="coordenadas.longitud" placeholder="Longitud" /> --%>
+<!-- 							</div> -->
 
 
 
-							<button type="submit" class="btn btn-success btn-block">
-								<span class="glyphicon glyphicon-off" id="guardarC"></span>
-								Guardar Cambios
-							</button>
-						</sf:form>
-					</div>
+<!-- 							<button type="submit" class="btn btn-success btn-block"> -->
+<!-- 								<span class="glyphicon glyphicon-off" id="guardarC"></span> -->
+<!-- 								Guardar Cambios -->
+<!-- 							</button> -->
+<%-- 						</sf:form> --%>
+<!-- 					</div> -->
 
 
 					<div id="formFacultad">
@@ -449,7 +449,7 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 
 							<div class="form-group">
 								<label for="facultadfacultad"><span
-									class="glyphicon glyphicon-eye-open"></span> Nombre de la
+									class="fas fa-university"></span> Nombre de la
 									Facultad</label>
 								<sf:input type="text" class="form-control" id="facultadfacultad"
 									path="facultad" placeholder="Nombre" />
@@ -457,7 +457,7 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 
 							<div class="form-group">
 								<label for="telefono"><span
-									class="glyphicon glyphicon-eye-open"></span> Numero Telefónico</label>
+									class="icon-telephone-3"></span> Numero Telefónico</label>
 								<sf:input type="text" class="form-control" id="telefono"
 									path="telefono" placeholder="Telefono" />
 							</div>
@@ -465,7 +465,7 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 
 							<div class="form-group">
 								<label for="ubicacion"><span
-									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label>
+									class="fas fa-map-marker-alt"></span> Ubicacion</label>
 								<sf:input type="text" class="form-control" id="ubicacion"
 									path="ubicacion" placeholder="Ubicacion" />
 							</div>
@@ -473,20 +473,26 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 
 							<div class="form-group">
 								<label for="campusfacultad"><span
-									class="glyphicon glyphicon-eye-open"></span> Campus</label>
-								<sf:input type="text" class="form-control" id="campusfacultad"
-									path="campus.idCampus" placeholder="campus" />
+									class="fas fa-map-marked-alt"></span> Campus</label>
+<%-- 								<sf:input type="text" class="form-control" id="campusfacultad" --%>
+<%-- 							path="campus.idCampus" placeholder="campus" /> --%>
+
+									<sf:select path="campus.idCampus" id="campusfacultad" class="form-control">
+
+										<sf:options var="cc" items="${campusList}" itemValue="idCampus" itemLabel="campus"/>
+									</sf:select>
+									
 							</div>
 							<div class="form-group">
 								<label for="latitudFacultad"><span
-									class="glyphicon glyphicon-eye-open"></span> Latitud</label>
+									class="icon-map"></span> Latitud</label>
 								<sf:input type="text" class="form-control" id="latitudFacultad"
 									path="coordenadas.latitud" placeholder="Latitud" />
 							</div>
 
 							<div class="form-group">
 								<label for="longitudFacultad"><span
-									class="glyphicon glyphicon-eye-open"></span> Longitud</label>
+									class="icon-map"></span> Longitud</label>
 								<sf:input type="text" class="form-control" id="longitudFacultad"
 									path="coordenadas.longitud" placeholder="Longitud" />
 							</div>
@@ -515,9 +521,12 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 
 		</div>
 	</div>
+	
 
 
-	<!-- ##### Footer Area Start ##### -->
+
+
+
 	<footer class="footer-area">
 	<div class="main-footer-area section-padding-100-0">
 		<div class="container">
@@ -618,6 +627,9 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 			</div>
 		</div>
 	</div>
+	
+	
+	
 	<div class="bottom-footer-area">
 		<div class="container">
 			<div class="row">
@@ -637,28 +649,12 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 		</div>
 	</div>
 	</footer>
-	<!-- ##### Footer Area Start ##### -->
-
-	<!-- ##### All Javascript Script ##### -->
-	<!-- jQuery-2.2.4 js -->
-	<script
-		src="<c:url value='/res/design/js/jquery/jquery-2.2.4.min.js'></c:url>"></script>
-
-	<!-- Popper js -->
-	<script
-		src="<c:url value='/res/design/js/bootstrap/popper.min.js'></c:url>"></script>
-
-	<!-- Bootstrap js -->
-	<script
-		src="<c:url value='/res/design/js/bootstrap/bootstrap.min.js'></c:url>">
-		
-	</script>
-
-	<!-- All Plugins js -->
-	<script src="<c:url value='/res/design/js/plugins/plugins.js'></c:url>"></script>
 
 
-	<!-- Active js -->
+
+<%-- 	<script src="<c:url value='/res/design/js/plugins/plugins.js'></c:url>"></script> --%>
+
+
 	<script src="<c:url value='/res/design/js/active.js'></c:url>"></script>
 	<script type="text/javascript"
 		src="<c:url value='/res/design/js/mapa.js'></c:url>"></script>
