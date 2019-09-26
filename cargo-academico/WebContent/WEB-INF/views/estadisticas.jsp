@@ -6,6 +6,9 @@
 <html>
 
 <head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <script>
 	window.onload = function() {
 
@@ -113,10 +116,26 @@
 		});
 		chart.render();
 		chart2.render();
-
+		$('#buttonUnidades').click(function() {
+			$.ajax({
+				type : 'GET',
+				url : './unidades',
+				dataType : 'json',
+				contentType : 'application/json',
+				success : function(result) {
+					var s = '';
+					for (var i = 0; i < result.length; i++) {
+						s += '<br/>Id: ' + result[i].idUnidad;
+						s += '<br/>Name: ' + result[i].nombreUnidad;
+						s += '<br/>objetive: ' + result[i].objetivo;
+						s += '<br/>======================';
+					}
+					$('#result4').html(s);
+				}
+			});
+		});
 	}
 </script>
-<meta charset="UTF-8">
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
@@ -124,6 +143,7 @@
 <link rel="stylesheet" href="res/design/leaflet/leaflet.css" />
 <link rel="stylesheet" href="res/bootstrap/css/bootstrap.css"
 	type="text/css" />
+
 <!-- Esto es para los ICONOS -->
 <script src="res/design/leaflet/leaflet.js"></script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
@@ -131,10 +151,7 @@
 	href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
 <script
 	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
-
 <script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -177,6 +194,7 @@
 			</div>
 		</div>
 	</div>
+
 
 	<!-- Navbar Area -->
 	<div class="academy-main-menu">
@@ -309,21 +327,26 @@
 	</div>
 	</section>
 	<!-- ##### Hero Area End ##### -->
+	<a href="<%=request.getContextPath()%>/xd">Paginacion</a>
+
 	<div class="row">
 		<div class="col-2">
 			<div class="nav flex-column nav-pills red-active" id="v-pills-tab"
 				role="tablist" aria-orientation="vertical">
-				<a class="nav-link active" style="background-color: transparent;" id="v-pills-home-tab" data-toggle="pill"
-					href="#v-pills-home" role="tab" aria-controls="v-pills-home"
-					aria-selected="true">Materias</a> <a class="nav-link"
-					id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
-					role="tab" aria-controls="v-pills-profile" aria-selected="false" style="background-color: transparent;">Prueba de cards</a>
-				<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill"
-					href="#v-pills-messages" role="tab"
-					aria-controls="v-pills-messages" aria-selected="false" style="background-color: transparent;">Grafica 1</a>
-				<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill"
+				<a class="nav-link active" style="background-color: transparent;"
+					id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+					role="tab" aria-controls="v-pills-home" aria-selected="true">Materias</a>
+				<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill"
+					href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
+					aria-selected="false" style="background-color: transparent;">Prueba
+					de cards</a> <a class="nav-link" id="v-pills-messages-tab"
+					data-toggle="pill" href="#v-pills-messages" role="tab"
+					aria-controls="v-pills-messages" aria-selected="false"
+					style="background-color: transparent;">Grafica 1</a> <a
+					class="nav-link" id="v-pills-settings-tab" data-toggle="pill"
 					href="#v-pills-settings" role="tab"
-					aria-controls="v-pills-settings" aria-selected="false" style="background-color: transparent;">Grafica 2</a>
+					aria-controls="v-pills-settings" aria-selected="false"
+					style="background-color: transparent;">Grafica 2</a>
 			</div>
 		</div>
 		<div class="col-10">
@@ -333,43 +356,68 @@
 					role="tabpanel" aria-labelledby="v-pills-home-tab">
 					<div class="container">
 						<div class="row">
-							<c:forEach var="tema" items="${listMaterias}">
-								<div class="card" style="width: 21rem;">
-									<div class="card-body">
-										<h5 style="text-align: center;" class="card-title">${tema.materia}</h5>
-										<h6 style="text-align: center;"
-											class="card-subtitle mb-2 text-muted">Codigo:
-											${tema.codigo}</h6>
-										<h6 style="text-align: center;"
-											class="card-subtitle mb-2 text-muted">Valoración:
-											${tema.unidadValorativa}</h6>
-										<did class="row">
-										<div class="col-6">
-											<h6 style="text-align: center;"
-												class="card-subtitle mb-2 text-muted">Pre-requisito:
-												${preRequisito[tema.idMateria]}</h6>
-										</div>
-										<div class="col-6">
-											<h6 style="text-align: center;"
-												class="card-subtitle mb-2 text-muted">Co-requisito:
-												${coRequisito[tema.idMateria]}</h6>
-										</div>
-										</did>
-										<p class="card-text">Some quick example text to build on
-											the card title and make up the bulk of the card's content.</p>
-										<a href="#" class="card-link">Card link</a> <a href="#"
-											class="card-link">Another link</a>
-									</div>
-								</div>
-							</c:forEach>
+							<table id="data" class="table table-striped table-bordered"
+								style="width: 100%">
+								<thead></thead>
+								<tbody>
+									<tr>
+										<c:forEach var="tema" items="${listMaterias}">
+											<div class="card" style="width: 21rem;">
+												<div class="card-body">
+													<h5 style="text-align: center;" class="card-title">${tema.materia}</h5>
+													<h6 style="text-align: center;"
+														class="card-subtitle mb-2 text-muted">Codigo:
+														${tema.codigo}</h6>
+													<h6 style="text-align: center;"
+														class="card-subtitle mb-2 text-muted">Valoración:
+														${tema.unidadValorativa}</h6>
+													<did class="row">
+													<div class="col-6">
+														<a href="#">
+															<h6 style="text-align: center;" class="card-subtitle">
+																<c:choose>
+																	<c:when test="${tema.prerequisito==null}">
+																		<a>Pre-requisito: Bachillerato </a>
+																	</c:when>
+																	<c:otherwise>
+																		<a>Pre-requisito: ${tema.prerequisito.materia}</a>
+																	</c:otherwise>
+																</c:choose>
+															</h6>
+														</a>
+													</div>
+													<div class="col-6">
+														<a href="#">
+															<h6 style="text-align: center;" class="card-subtitle">
+																<c:choose>
+																	<c:when test="${tema.corequisito==null}">Co-requisito: No posee</c:when>
+																	<c:otherwise>Co-requisito: ${tema.corequisito.materia}</c:otherwise>
+																</c:choose>
+															</h6>
+														</a>
+													</div>
+													</did>
+													<p class="card-text">Some quick example text to build
+														on the card title and make up the bulk of the card's
+														content.</p>
+													<a href="#" data-toggle="modal"
+														data-target="#exampleModalCenter" class="card-link">Temario</a>
+													<a id="buttonUnidades" href="#" data-toggle="modal"
+														data-target="#exampleModalCenter1" class="card-link">Unidades</a>
+												</div>
+											</div>
+											<tr>
+										</c:forEach>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
 				<div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
 					aria-labelledby="v-pills-profile-tab">
-					Prueba2
 					<div class="container">
 						<div class="row">
+							<div style="background-color: red;" id="result4">xd</div>
 							<div class="card text-white bg-primary mb-3"
 								style="max-width: 18rem;">
 								<div class="card-header">Header</div>
@@ -444,16 +492,75 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
 					aria-labelledby="v-pills-messages-tab">
 					<p>Prueba3 xd</p>
 					</br>
-					<div id="chartContainer2" style="height: 1000px; width: 1100px;" ></div>
+					<div id="chartContainer2" style="height: 1000px; width: 1100px;"></div>
 				</div>
 				<div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
 					aria-labelledby="v-pills-settings-tab">
 					Prueba 4
 					<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+				</div>
+			</div>
+		</div>
+		<div id="modalPrueba" class="modal fade" id="exampleModalCenter"
+			tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle"
+							style="text-align: center;">Temario general</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body" style="text-align: center;">
+						<c:forEach items="${listTemario}" var="te">
+							<c:out value="${te.idTemario}" />
+							<br />
+							<c:out value="${te.nombreTemario}" />
+						</c:forEach>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal"
+							style="margin-right: 10px; border-radius: 0px;">Close</button>
+						<button class="btn academy-btn btn-sm">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="exampleModalCenter1" tabindex="-1"
+			role="dialog" aria-labelledby="exampleModalCenterTitle"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle"
+							style="text-align: center;">Temario general</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body" style="text-align: center;">
+						<c:forEach items="${listUnidades}" var="uni">
+							<c:out value="${uni.nombreUnidad}" />
+							<br />
+							<c:out value="${uni.objetivo}" />
+						</c:forEach>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal"
+							style="margin-right: 10px; border-radius: 0px;">Close</button>
+						<button class="btn academy-btn btn-sm">Save changes</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -952,8 +1059,6 @@
 
 	<!-- ##### All Javascript Script ##### -->
 	<!-- jQuery-2.2.4 js -->
-	<script
-		src="<c:url value='/res/design/js/jquery/jquery-2.2.4.min.js'></c:url>"></script>
 
 	<!-- Popper js -->
 	<script
