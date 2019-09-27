@@ -60,4 +60,13 @@ public List<Empleado> encontrarEmpleado(){
 	return query.list();
 }
 
+@Override
+public List<Empleado> buscarEmpleado(){
+	Query query = getSession().createQuery("FROM Empleado as e JOIN e.TipoDocente as td");
+	System.out.println(query.list());
+	return query.list();
+}
+
+
+
 }

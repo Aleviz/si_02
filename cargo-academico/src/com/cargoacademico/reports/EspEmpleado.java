@@ -14,7 +14,6 @@ public class EspEmpleado {
 	private String ecarnet;
 	private String tdtipo_docente;
 	
-	//moto la bastarda de la programacion
 	
 	public EspEmpleado() {
 		super();

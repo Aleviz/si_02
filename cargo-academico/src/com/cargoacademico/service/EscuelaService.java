@@ -36,6 +36,10 @@ public class EscuelaService {
 	public void delete(int idEscuela) {
 		Escuela es = escuelaDao.findById(idEscuela);
 		escuelaDao.deleteEscuela(es);
-	}	
+	}
+	
+	public List<Escuela> buscarescuela(int idFacultad) {
+		return escuelaDao.listaEscuela(idFacultad);
+	}
 	
 }
