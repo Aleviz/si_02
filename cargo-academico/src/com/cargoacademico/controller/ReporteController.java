@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView;
 import org.springframework.web.servlet.view.jasperreports.JasperReportsViewResolver;
 
+
 import com.cargoacademico.service.EmpleadoService;
 
 
@@ -25,8 +26,6 @@ public class ReporteController {
 	
 	@Autowired
 	private EmpleadoService empleadoService;
-	
-	
 	
 
 	
@@ -50,12 +49,10 @@ public class ReporteController {
                     required = false) String format) {
 
         model.addAttribute("format", format);
-        model.addAttribute("datasource", empleadoService.Buscar());
+        model.addAttribute("datasource", empleadoService.findAll());
         
 
         return "allempleados_report";
     }
-	
-	
 	
 }

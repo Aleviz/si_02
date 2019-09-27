@@ -13,8 +13,7 @@ import org.springframework.web.servlet.view.jasperreports.JasperReportsViewResol
 @EnableWebMvc
 @ComponentScan(basePackages = {
     "com.cargoacademico.controller",
-    "com.cargoacademico.service",
-    "com.cargoacademico.reports"})
+    "com.cargoacademico.service"})
 public class WebAppConfig {
 	
 

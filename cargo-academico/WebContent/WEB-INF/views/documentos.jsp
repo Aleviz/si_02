@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<spr:url value="/report" var="reportLink" />
 <meta charset="UTF-8">
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -237,46 +238,16 @@ body {
 									<!-- Post Meta -->
 									<div class="post-meta">
 										<p>
-											By <a href="#">Miguel Guadron</a> | <a href="#">October 1 </a>
+											By <a href="#">Simon Smith</a> | <a href="#">March 18,
+												2018</a> | <a href="#">3 comments</a>
 										</p>
 									</div>
 									<!-- Post Excerpt -->
 									<form>
-										
+										<input type="text" placeholder="nombre profesor">
 									</form>
 									<!-- Read More btn -->
 									<a href="${reportLink}" class="btn academy-btn btn-sm mt-15">Consultar</a>
-								</div>
-							</div>
-							
-							<!-- Single Blog Start -->
-							<div class="col-12">
-								<div class="single-blog-post mb-50 wow fadeInUp"
-									data-wow-delay="300ms">
-									<!-- Post Thumb -->
-									<div class="blog-post-thumb mb-50">
-										<img src="res/design/img/blog-img/salones.jpg" alt="">
-									</div>
-									<!-- Post Title -->
-									<a class="post-title">Trabajadores por campus</a>
-									<!-- Post Meta -->
-									<div class="post-meta">
-										<p>
-											By <a href="#">Miguel Guadron</a> | <a href="#">October 1,
-												2018</a>
-										</p>
-									</div>
-									<!-- Post Excerpt -->
-									<form action="#" method="Post">
-										<select>
-										<option value="1"> Campus Occidental </option>
-										<option value="2"> Campus Central </option>
-										<option value="3"> Campus Oriental </option>
-										</select>
-									
-									<!-- Read More btn -->
-									<input type="submit" value="Consultar" class="btn academy-btn btn-sm mt-15">
-									</form>
 								</div>
 							</div>
 
@@ -311,8 +282,6 @@ body {
 									<a href="#" class="btn academy-btn btn-sm mt-15">Consultar</a>
 								</div>
 							</div>
-							
-							
 
 							<!-- Single Blog Start -->
 							<div class="col-12">
@@ -482,7 +451,7 @@ body {
 								<div class="latest-blog-post-content">
 									<a href="report1.html" target="_blank" class="post-title">
 										<h6>Informacion</h6>
-									</a> <a href="report1.html" class="post-date">March 18, 2018</a>
+									</a> <a href="#" class="post-date">March 18, 2018</a>
 								</div>
 							</div>
 						</div>
