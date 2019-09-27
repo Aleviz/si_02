@@ -21,39 +21,38 @@ FROM empleado empleado]]>
 	</queryString>
 	<field name="primerNombre" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="primerNombre"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Empleado"/>
+		<fieldDescription><![CDATA[primerNombre]]></fieldDescription>
 	</field>
 	<field name="segundoNombre" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="segundoNombre"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Empleado"/>
+		<fieldDescription><![CDATA[segundoNombre]]></fieldDescription>
 	</field>
 	<field name="primerApellido" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="primerApellido"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Empleado"/>
+		<fieldDescription><![CDATA[primerApellido]]></fieldDescription>
+	</field>
+	<field name="fechaNacimiento" class="java.util.Date">
+		<property name="com.jaspersoft.studio.field.label" value="fechaNacimiento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Empleado"/>
+		<fieldDescription><![CDATA[fechaNacimiento]]></fieldDescription>
 	</field>
 	<field name="segundoApellido" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="segundoApellido"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
-	</field>
-	<field name="fechaNacimiento" class="java.sql.Date">
-		<property name="com.jaspersoft.studio.field.label" value="fechaNacimiento"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
-	</field>
-	<field name="nit" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="nit"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
-	</field>
-	<field name="dui" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="dui"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Empleado"/>
+		<fieldDescription><![CDATA[segundoApellido]]></fieldDescription>
 	</field>
 	<field name="carnet" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="carnet"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Empleado"/>
+		<fieldDescription><![CDATA[carnet]]></fieldDescription>
 	</field>
-	<field name="foto" class="java.lang.Object">
-		<property name="com.jaspersoft.studio.field.label" value="foto"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
+	<field name="tipoDocente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tipoDocente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TipoDocente"/>
+		<fieldDescription><![CDATA[tipoDocente]]></fieldDescription>
 	</field>
 	<background>
 		<band height="575" splitType="Stretch">
@@ -175,46 +174,46 @@ FROM empleado empleado]]>
 			<frame>
 				<reportElement x="60" y="0" width="732" height="231" uuid="89a3da05-fdde-4ffe-965f-cc476f72e3ab"/>
 				<textField>
-					<reportElement x="20" y="17" width="100" height="30" uuid="7a3f5297-6b81-4964-b9e1-a577f4fe9c90"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="12"/>
-					</textElement>
+					<reportElement style="Detail" x="0" y="0" width="100" height="15" uuid="0c88931d-b5fa-4644-bc49-cc62d5ad40ba">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6db6f25c-2a24-4809-aac9-b89b69d1398a"/>
+					</reportElement>
 					<textFieldExpression><![CDATA[$F{primerNombre}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="120" y="16" width="100" height="30" uuid="9c96bfb4-c320-47a5-9010-f8195408024a"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="12"/>
-					</textElement>
+					<reportElement style="Detail" x="100" y="0" width="100" height="15" uuid="81d1c791-6d06-49ff-bfb4-9e5572ea91a0">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cf0764ef-c310-44b3-8548-815e5063af21"/>
+					</reportElement>
 					<textFieldExpression><![CDATA[$F{segundoNombre}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="220" y="16" width="100" height="30" uuid="d4d4e6b1-4ea2-4a04-8fdb-55c02407518c"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="12"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{primerNombre}]]></textFieldExpression>
+					<reportElement style="Detail" x="200" y="0" width="100" height="15" uuid="c41da9f0-c554-4c46-b2e0-2e22c38b4e4f">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="638b506e-4514-4949-b122-3e711c31c968"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{primerApellido}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="320" y="17" width="100" height="30" uuid="58ee1da7-2d0f-401c-87a7-55239461694e"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="12"/>
-					</textElement>
+					<reportElement style="Detail" x="300" y="0" width="100" height="15" uuid="809fb783-928c-4294-9971-28178ce5ef6b">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="210b9e27-437e-4ddd-ad2d-a9a5e403e282"/>
+					</reportElement>
 					<textFieldExpression><![CDATA[$F{segundoApellido}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="420" y="16" width="110" height="30" uuid="cc768599-3af0-42c7-ab09-ca6248733a20"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="Arial" size="12"/>
-					</textElement>
+					<reportElement style="Detail" x="400" y="0" width="100" height="15" uuid="a8e61d03-3d6c-45b9-bead-f033015710f7">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c98bab2a-56b3-4a96-b9a8-42b25e54c7ba"/>
+					</reportElement>
 					<textFieldExpression><![CDATA[$F{fechaNacimiento}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="530" y="17" width="100" height="30" uuid="4f69e079-e70e-46e2-a8a9-8be99c0bed0a"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="12"/>
-					</textElement>
+					<reportElement style="Detail" x="500" y="0" width="100" height="15" uuid="2531cdfe-066a-46e2-b0cb-c117e8880d98">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="90b336b9-b704-4c8f-b958-816fc4df1546"/>
+					</reportElement>
 					<textFieldExpression><![CDATA[$F{carnet}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="600" y="0" width="100" height="15" uuid="9965a6ab-4f1a-4941-8981-01741d97300a">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c3d86398-ad4f-4cbe-9268-adb87c0092d0"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{tipoDocente}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<line>

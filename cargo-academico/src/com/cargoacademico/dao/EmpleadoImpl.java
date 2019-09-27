@@ -1,6 +1,8 @@
 package com.cargoacademico.dao;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -60,4 +62,14 @@ public List<Empleado> encontrarEmpleado(){
 	return query.list();
 }
 
+@Override
+public List<Empleado> buscarEmpleado(){
+	Query query = getSession().createQuery("FROM Empleado as e JOIN e.tipoDocente as td");
+	ArrayList<Empleado> empleadoList = new ArrayList<Empleado>(Arrays.asList());
+	
+	for(Empleado empleado : empleadoList) {
+		query.list();
+	}
+	
+	return buscarEmpleado();
 }

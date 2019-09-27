@@ -5,12 +5,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<spr:url value="/report" var="reportLink" />
+        <spr:url value="/report" var="reportLink" />
 <meta charset="UTF-8">
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	        
+	
+	
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/res/design/leaflet.css" />
 <script src="<c:url value='res/design/leaflet.js'></c:url>"></script>
@@ -346,6 +350,36 @@ body {
 									<a href="${reportLink}" class="btn academy-btn btn-sm mt-15">Consultar</a>
 								</div>
 							</div>
+							
+							<!-- Single Blog Start -->
+							<div class="col-12">
+								<div class="single-blog-post mb-50 wow fadeInUp"
+									data-wow-delay="300ms">
+									<!-- Post Thumb -->
+									<div class="blog-post-thumb mb-50">
+										<img src="res/design/img/blog-img/3.jpg" alt="">
+									</div>
+									<!-- Post Title -->
+									<a class="post-title">Pemsun</a>
+									<!-- Post Meta -->
+									<div class="post-meta">
+										<p>
+											By <a href="#">Miguel Guadron</a> | <a href="#">October 1,
+												2018</a>
+										</p>
+									</div>
+									<a href="res/pdf/pensumcampu1.pdf"
+												download="Pensum1"> <h2 class="btn academy-btn btn-sm mt-15"> Campus Occidental </h2></a>
+									<a href="res/pdf/pensumcampu2.pdf"
+												download="Pensum2"><h2 class="btn academy-btn btn-sm mt-15"> Campus Oriental</h2></a>
+									<a href="res/pdf/pensumcampu3.pdf"
+												download="Pensum3"><h2 class="btn academy-btn btn-sm mt-15"> Campus Central </h2></a>
+									<a href="res/pdf/pensumcampu4.pdf"
+												download="Pensum4"><h2 class="btn academy-btn btn-sm mt-15"> Campus Sur</h2></a>
+									
+									
+								</div>
+							</div>
 
 							<!-- Single Blog Start -->
 							<div class="col-12">
@@ -424,7 +458,7 @@ body {
 											</a>
 											</u>
 										</h2>
-										<h3>Editar Reporte</h3>
+										
 
 									</div>
 
@@ -437,7 +471,7 @@ body {
 											</a>
 											</u>
 										</h2>
-										<h3>Editar Reporte</h3>
+										
 									</div>
 
 									<div id="Ingeniera en Sistemas Informaticos" class="tabcontent">
@@ -449,7 +483,7 @@ body {
 											</a>
 											</u>
 										</h2>
-										<h3>Editar Reporte</h3>
+										
 									</div>
 
 									<div id="Ingenieria Mecanica" class="tabcontent">
@@ -461,7 +495,7 @@ body {
 											</a>
 											</u>
 										</h2>
-										<h3>Editar Reporte</h3>
+										
 									</div>
 
 									<div id="Arquitectura" class="tabcontent">
@@ -473,7 +507,7 @@ body {
 											</a>
 											</u>
 										</h2>
-										<h3>Editar Reporte</h3>
+										
 									</div>
 
 									<div class="clearfix"></div>
@@ -514,7 +548,7 @@ body {
 									<a href="res/pdf/allempleados_report.pdf"
 										download="Todos los Empleados" class="post-title">
 										<h6>Empleados</h6>
-									</a> <a href="#" class="post-date">March 18, 2018</a>
+									</a> <a href="${reportes}" class="post-date">March 18, 2018</a>
 								</div>
 							</div>
 							<!-- Single Latest Blog Post -->
@@ -534,9 +568,10 @@ body {
 									<img src="res/design/img/imgreport/icon-pdf.png" alt="">
 								</div>
 								<div class="latest-blog-post-content">
-									<a href="${reportLink}" class="post-title">
+									<a href="res/pdf/CartaDidactica.pdf"
+												download="CartaDidactica" class="post-title">
 										<h6>Carta Didactica</h6>
-									</a> <a href="#" class="post-date">March 18, 2018</a>
+									
 								</div>
 							</div>
 							<!-- Single Latest Blog Post -->
