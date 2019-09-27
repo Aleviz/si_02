@@ -1,6 +1,5 @@
 package com.cargoacademico.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -54,11 +53,4 @@ public class EscuelaImpl implements EscuelaDao {
 		Query query = getSession().createQuery("from Escuela");	
 		return query.list();
 	}
-	
-	@Override 
-	public List<Escuela> listaEscuela(int idfa){
-		Query query = getSession().createQuery("from Escuela es where es.Facultad = :idFacultad").setParameter("idFacultad", idfa);
-		return query.list();
-	}
-	
 }

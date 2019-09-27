@@ -13,7 +13,7 @@ public interface EscuelaDao {
 	public void updateEscuela(Escuela escu);
 	public void deleteEscuela(Escuela escu);
 
-	public List<Escuela> listaEscuela(int idescu);
+	
 	
 	
 	

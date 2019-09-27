@@ -20,7 +20,7 @@
 	escuela.descripcion AS esdescripcion,
 	escuela.campo_de_accion AS escampodeaccion,
 	escuela.mision AS esmision,
-	escuela.vision AS esvision,
+	escuela.vision AS escvision,
 	escuela.objetivo AS esobjetivo,
 	escuela.telefono AS estelefono,
 	facultad.facultad AS ffacultad,
@@ -51,8 +51,8 @@ WHERE
 		<property name="com.jaspersoft.studio.field.label" value="esmision"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escuela"/>
 	</field>
-	<field name="esvision" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="esvision"/>
+	<field name="escvision" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="escvision"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escuela"/>
 	</field>
 	<field name="esobjetivo" class="java.lang.String">
@@ -121,7 +121,7 @@ WHERE
 					<font fontName="Arial" size="17"/>
 					<paragraph lineSpacing="Proportional"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{esvision}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{escvision}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="5" y="45" width="430" height="150" forecolor="#FFFFFF" backcolor="#7DBB37" uuid="874b0443-df62-4651-86ed-6bb82e82acb6"/>

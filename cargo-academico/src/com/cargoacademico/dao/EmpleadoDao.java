@@ -14,7 +14,7 @@ public interface EmpleadoDao {
 	public void updateEmpleado(Empleado emp);
 	public void deleteEmpleado(Empleado emp);
 	
-	public List<Empleado> buscarEmpleado();
+	
 	
 
 }
