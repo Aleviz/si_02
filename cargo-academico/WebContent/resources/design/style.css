@@ -1929,22 +1929,7 @@ keyframes spin { 100% {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*------------------------------------------aca comienza el style2-----------------------------*/
 
 <
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,400,900,800i");
@@ -2038,6 +2023,8 @@ a {
   margin-top: calc(-1 * (var(--button-height) + var(--button-spacing)));
 }
 #hero-slides #slides-cont #next:before, #hero-slides #slides-cont #next:after {
+	color: white;
+	font-size: 30px;
   content: '>';
 }
 #hero-slides #slides-cont #next:after {
@@ -2053,6 +2040,8 @@ a {
 }
 #hero-slides #slides-cont #prev:before, #hero-slides #slides-cont #prev:after {
   content: '<';
+  font-size: 30px;
+  color: white;
 }
 #hero-slides #slides-cont #prev:after {
   left: 70%;
