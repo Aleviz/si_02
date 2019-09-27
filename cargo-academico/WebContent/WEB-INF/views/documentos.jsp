@@ -30,7 +30,8 @@
 <!-- Core Stylesheet -->
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/res/design/style.css">
-
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/res/design/style2.css">
 <style>
 * {
 	box-sizing: border-box
@@ -213,12 +214,106 @@ body {
 		style="background-image: url(res/design/img/bg-img/breadcumb.jpg);">
 		<div class="bradcumbContent">
 			<h2>Documentacion</h2>
-		</div>
+		</div>		
 	</div>
 	<!-- ##### Breadcumb Area End ##### -->
 
 	<!-- ##### Documentacion Area Start ##### -->
 	<div class="blog-area mt-50 section-padding-100">
+	
+	<div id="hero-slides" style="margin-bottom: 500px;">
+  <div  id="slides-cont">
+    <div class="button" id="next"></div>
+    <div class="button" id="prev"></div>
+    <div id="slides">
+      <div class="slide" style="background-image: url(res/design/img/bg-img/ingenieria-industrial.jpg);">
+        <div class="number">01</div>
+        <div class="body">
+          <div class="location">Ingenieria</div>
+          <div class="headline"> Industrial</div><a href="https://www.google.com/maps" target="_blank">
+            <div class="link">PDF</div></a>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url(res/design/img/bg-img/list_640px.jpg);">
+        <div class="number">02</div>
+        <div class="body">
+          <div class="location">Ingenieria</div>
+          <div class="headline">Electronica</div><a href="https://unsplash.com/photos/ANJHXftvvJ8" target="_blank">
+            <div class="link">PDF</div></a>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url(res/design/img/bg-img/IngDeSistemas-1024x500.png);">
+        <div class="number">03</div>
+        <div class="body">
+          <div class="location">Ingenieria</div>
+          <div class="headline">Sistemas</div><a href="https://unsplash.com/photos/73aocAAt7rs" target="_blank">
+            <div class="link">PDF</div></a>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url(res/design/img/bg-img/ingenieria-mecanica-rhenus-lub.jpg);">
+        <div class="number">04</div>
+        <div class="body">
+          <div class="location">Ingenieria</div>
+          <div class="headline">Mecanica</div><a href="https://unsplash.com/photos/aPDCEoW7B78" target="_blank">
+            <div class="link">PDF</div></a>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url(res/design/img/bg-img/ka.jpg);">
+        <div class="number">05</div>
+        <div class="body">
+          <div class="location">Ingenieria</div>
+          <div class="headline">Arquitectura</div><a href="https://unsplash.com/photos/Akz00I_GGjU" target="_blank">
+            <div class="link">PDF</div></a>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url(res/design/img/bg-img/gf.jpg);">
+        <div class="number">06</div>
+        <div class="body">
+          <div class="location">Licenciatura</div>
+          <div class="headline">Enseñanza de la Matematica</div><a href="https://unsplash.com/photos/pTn26knnKVw" target="_blank">
+            <div class="link">PDF</div></a>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url(res/design/img/bg-img/programacion.jpg);">
+        <div class="number">07</div>
+        <div class="body">
+          <div class="location">Licenciatura</div>
+          <div class="headline">informatica Educativa</div><a href="https://unsplash.com/photos/v63B_MUiFw8" target="_blank">
+            <div class="link">PDF</div></a>
+        </div>
+      </div>
+       <div class="slide" style="background-image: url(res/design/img/bg-img/columna_delia_24.jpg);">
+        <div class="number">08</div>
+        <div class="body">
+          <div class="location">Jurisprudencia y Ciencias Sociales</div>
+          <div class="headline">Licenciatura en Ciencias Juridicas</div><a href="https://unsplash.com/photos/v63B_MUiFw8" target="_blank">
+            <div class="link">PDF</div></a>
+        </div>
+      </div>
+       <div class="slide" style="background-image: url(res/design/img/bg-img/Estra.jpg);">
+        <div class="number">09</div>
+        <div class="body">
+          <div class="location">Jurisprudencia y Ciencias Sociales</div>
+          <div class="headline">Licenciatura en Relaciones Internacionales</div><a href="https://unsplash.com/photos/v63B_MUiFw8" target="_blank">
+            <div class="link">PDF</div></a>
+        </div>
+      </div>
+       <div class="slide" style="background-image: url(res/design/img/bg-img/quimica-farmacia.jpg);">
+        <div class="number">10</div>
+        <div class="body">
+          <div class="location">Quimica y Farmaci</div>
+          <div class="headline">Química y Farmacia</div><a href="https://unsplash.com/photos/v63B_MUiFw8" target="_blank">
+            <div class="link">PDF</div></a>
+        </div>
+      
+    </div>
+  </div>
+    <div id="next-catch"></div>
+    <div id="prev-catch"></div>
+  </div>
+ 
+      <div id="dribbble"></div></a>
+</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-md-8">
@@ -641,9 +736,11 @@ body {
 	<!-- Bootstrap js -->
 	<script
 		src="<c:url value='/res/design/js/bootstrap/bootstrap.min.js'></c:url>">
-		
 	</script>
-
+	 <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js'></script>
+	<script
+	src="<c:url value='/res/design/js/script2.js'></c:url>">
+</script>
 	<!-- All Plugins js -->
 	<script src="<c:url value='/res/design/js/plugins/plugins.js'></c:url>"></script>
 
