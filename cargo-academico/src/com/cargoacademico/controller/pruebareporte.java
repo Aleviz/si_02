@@ -1,4 +1,4 @@
-package com.cargoacademico.reports;
+package com.cargoacademico.controller;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,15 +17,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cargoacademico.model.Empleado;
+import com.cargoacademico.model.Escuela;
+import com.cargoacademico.reports.EspMayaCurricular;
+import com.cargoacademico.reports.TodoEmpleado;
 import com.cargoacademico.service.EmpleadoService;
+import com.cargoacademico.service.EscuelaService;
 
 import net.sf.jasperreports.engine.JasperRunManager;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
-public class Reporte_Empleado {
+@Controller
+public class pruebareporte {
 	SimpleDateFormat format;
 	
 	@Autowired
@@ -33,8 +39,12 @@ public class Reporte_Empleado {
 	
 	@Autowired
 	EmpleadoService empleadoService;
-	List<TodoEmpleado> listacopiaempleado = new ArrayList<TodoEmpleado>();
-	List<Empleado> listaempleado = new ArrayList<Empleado>();
+	
+	@Autowired
+	EscuelaService escuelaService;
+	
+	
+	
 	
 	public void setServletContext(ServletContext servletContext) {
 		this.servletContext = servletContext;
@@ -45,7 +55,8 @@ public class Reporte_Empleado {
 			throws ServletException, IOException {
 
 		List<Empleado> listaempleado = new ArrayList<Empleado>();
-		format = new SimpleDateFormat("dd/MM/YYYY");
+		List<TodoEmpleado> listacopiaempleado = new ArrayList<TodoEmpleado>();
+		
 		listaempleado = empleadoService.findAll();
 		
 		
@@ -63,7 +74,7 @@ public class Reporte_Empleado {
 		
 		InputStream ubicacionReporte = null;
 		ubicacionReporte = request.getSession().getServletContext()
-				.getResourceAsStream("/resources/jasperreport/allempleados_report.jasper");
+				.getResourceAsStream("/jasper/allempleados_report.jasper");
 
 		try {
 			
@@ -87,5 +98,59 @@ public class Reporte_Empleado {
 
 		}
 	}
+	
+	@RequestMapping("/report2")
+	public void pdfEnVista2(HttpServletResponse response, ServletOutputStream outputStream, HttpServletRequest request)
+			throws ServletException, IOException {
+		if(null != request.getParameter("paramFacu")) {
+			
+			int idFacultad = Integer.parseInt(request.getParameter("paramFacu"));
+			List<EspMayaCurricular> ListcopiaMaya = new ArrayList<EspMayaCurricular>();
+			List<Escuela> listaMaya = new ArrayList<Escuela>();
+			
+			listaMaya = escuelaService.buscarescuela( idFacultad);
+			
+			
+			for(Escuela es : listaMaya) {
+				EspMayaCurricular copiamaya = new EspMayaCurricular();
+				copiamaya.setEsnombreescuela(es.getNombreEscuela());
+				copiamaya.setFfacultad(es.getFacultad().getFacultad());
+				copiamaya.setEsdescripcion(es.getDescripcion());
+				copiamaya.setEsvision(es.getVision());
+				copiamaya.setEsmision(es.getMision());
+				copiamaya.setEsobjectivo(es.getObjetivo());
+				copiamaya.setFubicacion(es.getFacultad().getUbicacion());
+				copiamaya.setEstelefono(es.getTelefono());
+			}
+			
+			InputStream ubicacionReporte = null;
+			ubicacionReporte = request.getSession().getServletContext()
+					.getResourceAsStream("/jasper/maya_curricular.jasper");
+
+			try {
+				
+
+				Map<String, Object> parameter = new HashMap<String, Object>();
+				byte[] bytes = JasperRunManager.runReportToPdf(ubicacionReporte, parameter, new JRBeanCollectionDataSource(ListcopiaMaya));
+
+				response.setContentType("application/pdf");
+				response.setContentLength(bytes.length);
+				response.setHeader("Content-disposition", "inline; filename=personas_report.pdf");
+
+				outputStream = response.getOutputStream();
+				outputStream.write(bytes, 0, bytes.length);
+
+				outputStream.flush();
+				outputStream.close();
+
+			} catch (Exception e) {
+				System.out.println("Error en pdfEnVista" + e.getMessage());
+			}
+		}else {
+			return;
+		}
+		
+	}	
+		
 	
 }

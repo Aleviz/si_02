@@ -41,4 +41,9 @@ public class EmpleadoService {
 		emplDao.deleteEmpleado(emp);
 	}
 	
+	public List<Empleado> Buscar(){
+		return emplDao.buscarEmpleado();
+		
+	}
+	
 }

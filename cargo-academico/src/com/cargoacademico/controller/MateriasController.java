@@ -39,7 +39,7 @@ public class MateriasController {
 	@RequestMapping(value = "/showMaterias/save", method = RequestMethod.POST)
 	public String registrar(@ModelAttribute("mate") Materias materia ,
 			Model model, RedirectAttributes ra) {
-		int x = materia.getPrerequisito().getIdMateria();
+		int x = materia.getMateriasByPrerequisito().getIdMateria();
 		System.out.println(x);
 
 		gd.saveOrUpdate(materia);

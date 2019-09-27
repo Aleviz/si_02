@@ -10,31 +10,31 @@
 	<queryString language="SQL">
 		<![CDATA[]]>
 	</queryString>
-	<field name="primerNombre" class="java.lang.String">
+	<field name="eprimernombre" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="primerNombre"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
 	</field>
-	<field name="segundoNombre" class="java.lang.String">
+	<field name="esegundonombre" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="segundoNombre"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
 	</field>
-	<field name="primerApellido" class="java.lang.String">
+	<field name="eprimerapellido" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="primerApellido"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
 	</field>
-	<field name="segundoApellido" class="java.lang.String">
+	<field name="esegundoapellido" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="segundoApellido"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
 	</field>
-	<field name="fechaNacimiento" class="java.sql.Date">
+	<field name="efechanacimiento" class="java.sql.Date">
 		<property name="com.jaspersoft.studio.field.label" value="fechaNacimiento"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
 	</field>
-	<field name="carnet" class="java.lang.String">
+	<field name="ecarnet" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="carnet"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="empleado"/>
 	</field>
-	<field name="tipoDocente" class="java.lang.String">
+	<field name="tdtipodocente" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="tipoDocente"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="tipo_docente"/>
 	</field>
@@ -79,14 +79,14 @@
 	<title>
 		<band height="104" splitType="Stretch">
 			<staticText>
-				<reportElement style="Title" x="0" y="0" width="802" height="67" uuid="1dcadd54-7d50-4470-85ed-189e4d910b25"/>
+				<reportElement style="Title" x="110" y="0" width="692" height="67" uuid="1dcadd54-7d50-4470-85ed-189e4d910b25"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="48" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Reporte de todos los empleados]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="SubTitle" x="96" y="67" width="704" height="37" uuid="862cb50c-5a5e-4906-a495-226e25115fb6"/>
+				<reportElement style="SubTitle" x="110" y="67" width="690" height="37" uuid="862cb50c-5a5e-4906-a495-226e25115fb6"/>
 				<textElement textAlignment="Right">
 					<font size="26"/>
 				</textElement>
@@ -175,7 +175,7 @@
 					<textFieldExpression><![CDATA[$F{esegundoapellido}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Detail" x="400" y="0" width="100" height="15" uuid="a8e61d03-3d6c-45b9-bead-f033015710f7">
+					<reportElement style="Detail" x="400" y="0" width="64" height="15" uuid="a8e61d03-3d6c-45b9-bead-f033015710f7">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c98bab2a-56b3-4a96-b9a8-42b25e54c7ba"/>
 					</reportElement>
 					<textFieldExpression><![CDATA[$F{efechanacimiento}]]></textFieldExpression>
