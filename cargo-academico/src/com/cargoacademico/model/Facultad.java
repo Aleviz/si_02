@@ -1,5 +1,5 @@
 package com.cargoacademico.model;
-// Generated 09-24-2019 09:24:18 AM by Hibernate Tools 5.2.12.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -8,8 +8,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -28,7 +26,7 @@ public class Facultad implements java.io.Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Integer idFacultad;
+	private int idFacultad;
 	private Campus campus;
 	private Coordenadas coordenadas;
 	private Empleado empleado;
@@ -42,14 +40,16 @@ public class Facultad implements java.io.Serializable {
 	public Facultad() {
 	}
 
-	public Facultad(Campus campus, Coordenadas coordenadas, Empleado empleado) {
+	public Facultad(int idFacultad, Campus campus, Coordenadas coordenadas, Empleado empleado) {
+		this.idFacultad = idFacultad;
 		this.campus = campus;
 		this.coordenadas = coordenadas;
 		this.empleado = empleado;
 	}
 
-	public Facultad(Campus campus, Coordenadas coordenadas, Empleado empleado, String facultad, String telefono,
-			String ubicacion, byte[] img, Set<Edificio> edificios, Set<Escuela> escuelas) {
+	public Facultad(int idFacultad, Campus campus, Coordenadas coordenadas, Empleado empleado, String facultad,
+			String telefono, String ubicacion, byte[] img, Set<Edificio> edificios, Set<Escuela> escuelas) {
+		this.idFacultad = idFacultad;
 		this.campus = campus;
 		this.coordenadas = coordenadas;
 		this.empleado = empleado;
@@ -62,14 +62,12 @@ public class Facultad implements java.io.Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
-
 	@Column(name = "id_facultad", unique = true, nullable = false)
-	public Integer getIdFacultad() {
+	public int getIdFacultad() {
 		return this.idFacultad;
 	}
 
-	public void setIdFacultad(Integer idFacultad) {
+	public void setIdFacultad(int idFacultad) {
 		this.idFacultad = idFacultad;
 	}
 

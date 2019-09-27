@@ -1,13 +1,11 @@
 package com.cargoacademico.model;
-// Generated 09-24-2019 09:24:18 AM by Hibernate Tools 5.2.12.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,11 +19,7 @@ import javax.persistence.Table;
 @Table(name = "escuela", catalog = "cargo_academico")
 public class Escuela implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private Integer idEscuela;
+	private int idEscuela;
 	private Facultad facultad;
 	private String nombreEscuela;
 	private String telefono;
@@ -41,8 +35,9 @@ public class Escuela implements java.io.Serializable {
 	public Escuela() {
 	}
 
-	public Escuela(Facultad facultad, String telefono, String direccion, String descripcion, String campoDeAccion,
-			String mision, String vision, String objetivo) {
+	public Escuela(int idEscuela, Facultad facultad, String telefono, String direccion, String descripcion,
+			String campoDeAccion, String mision, String vision, String objetivo) {
+		this.idEscuela = idEscuela;
 		this.facultad = facultad;
 		this.telefono = telefono;
 		this.direccion = direccion;
@@ -53,9 +48,10 @@ public class Escuela implements java.io.Serializable {
 		this.objetivo = objetivo;
 	}
 
-	public Escuela(Facultad facultad, String nombreEscuela, String telefono, String direccion, String descripcion,
-			String campoDeAccion, String mision, String vision, String objetivo, Set<Departamento> departamentos,
-			Set<CarrerasCiclo> carrerasCiclos) {
+	public Escuela(int idEscuela, Facultad facultad, String nombreEscuela, String telefono, String direccion,
+			String descripcion, String campoDeAccion, String mision, String vision, String objetivo,
+			Set<Departamento> departamentos, Set<CarrerasCiclo> carrerasCiclos) {
+		this.idEscuela = idEscuela;
 		this.facultad = facultad;
 		this.nombreEscuela = nombreEscuela;
 		this.telefono = telefono;
@@ -70,14 +66,13 @@ public class Escuela implements java.io.Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_escuela", unique = true, nullable = false)
-	public Integer getIdEscuela() {
+	public int getIdEscuela() {
 		return this.idEscuela;
 	}
 
-	public void setIdEscuela(Integer idEscuela) {
+	public void setIdEscuela(int idEscuela) {
 		this.idEscuela = idEscuela;
 	}
 

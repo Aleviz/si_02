@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.cargoacademico.model.Campus;
 import com.cargoacademico.model.Coordenadas;
+import com.cargoacademico.model.Empleado;
 import com.cargoacademico.model.Facultad;
 public interface GeografiaDao {
 
@@ -23,6 +24,7 @@ public interface GeografiaDao {
 	public Facultad findByIdF(int id);
 	public void updateFacultad(Facultad facultad);
 	public List<Facultad> findByCampus(int idCampus);
+	public List<Empleado> buscarDecano();
 	
 	
 	//DAO CAMPUS

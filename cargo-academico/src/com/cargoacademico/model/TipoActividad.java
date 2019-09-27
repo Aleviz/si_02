@@ -1,13 +1,11 @@
 package com.cargoacademico.model;
-// Generated 09-24-2019 09:24:18 AM by Hibernate Tools 5.2.12.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -19,7 +17,7 @@ import javax.persistence.Table;
 @Table(name = "tipo_actividad", catalog = "cargo_academico")
 public class TipoActividad implements java.io.Serializable {
 
-	private Integer idTipoActividad;
+	private int idTipoActividad;
 	private String descripcion;
 	private String actividad;
 	private Set<Actividades> actividadeses = new HashSet<Actividades>(0);
@@ -27,25 +25,26 @@ public class TipoActividad implements java.io.Serializable {
 	public TipoActividad() {
 	}
 
-	public TipoActividad(String actividad) {
+	public TipoActividad(int idTipoActividad, String actividad) {
+		this.idTipoActividad = idTipoActividad;
 		this.actividad = actividad;
 	}
 
-	public TipoActividad(String descripcion, String actividad, Set<Actividades> actividadeses) {
+	public TipoActividad(int idTipoActividad, String descripcion, String actividad, Set<Actividades> actividadeses) {
+		this.idTipoActividad = idTipoActividad;
 		this.descripcion = descripcion;
 		this.actividad = actividad;
 		this.actividadeses = actividadeses;
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_tipo_actividad", unique = true, nullable = false)
-	public Integer getIdTipoActividad() {
+	public int getIdTipoActividad() {
 		return this.idTipoActividad;
 	}
 
-	public void setIdTipoActividad(Integer idTipoActividad) {
+	public void setIdTipoActividad(int idTipoActividad) {
 		this.idTipoActividad = idTipoActividad;
 	}
 

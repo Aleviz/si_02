@@ -1,13 +1,11 @@
 package com.cargoacademico.model;
-// Generated 09-24-2019 09:24:18 AM by Hibernate Tools 5.2.12.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,7 +19,7 @@ import javax.persistence.Table;
 @Table(name = "unidad", catalog = "cargo_academico")
 public class Unidad implements java.io.Serializable {
 
-	private Integer idUnidad;
+	private int idUnidad;
 	private Temario temario;
 	private String nombreUnidad;
 	private String objetivo;
@@ -33,15 +31,17 @@ public class Unidad implements java.io.Serializable {
 	public Unidad() {
 	}
 
-	public Unidad(Temario temario, String nombreUnidad, String objetivo, int duracion) {
+	public Unidad(int idUnidad, Temario temario, String nombreUnidad, String objetivo, int duracion) {
+		this.idUnidad = idUnidad;
 		this.temario = temario;
 		this.nombreUnidad = nombreUnidad;
 		this.objetivo = objetivo;
 		this.duracion = duracion;
 	}
 
-	public Unidad(Temario temario, String nombreUnidad, String objetivo, int duracion, Integer ponderacion,
-			Set<Actividades> actividadeses, Set<Tema> temas) {
+	public Unidad(int idUnidad, Temario temario, String nombreUnidad, String objetivo, int duracion,
+			Integer ponderacion, Set<Actividades> actividadeses, Set<Tema> temas) {
+		this.idUnidad = idUnidad;
 		this.temario = temario;
 		this.nombreUnidad = nombreUnidad;
 		this.objetivo = objetivo;
@@ -52,14 +52,13 @@ public class Unidad implements java.io.Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_unidad", unique = true, nullable = false)
-	public Integer getIdUnidad() {
+	public int getIdUnidad() {
 		return this.idUnidad;
 	}
 
-	public void setIdUnidad(Integer idUnidad) {
+	public void setIdUnidad(int idUnidad) {
 		this.idUnidad = idUnidad;
 	}
 

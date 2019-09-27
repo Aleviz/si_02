@@ -441,10 +441,13 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 							method="post" commandName="facultad" role="form">
 
 							<div class="form-group">
-								<label for="idFacultad"><span
-									class="glyphicon glyphicon-user"></span> ID</label>
-								<sf:input type="text" class="form-control" id="idFacultad"
-									placeholder="ID " path="idFacultad" />
+								<label for="decanofacultad"><span
+									class="fas fa-map-marked-alt"></span> Decano</label>
+									<sf:select path="empleado.idEmpleado" id="decanofacultad" class="form-control">
+
+										<sf:options var="ed" items="${empleadoxDecano}" itemValue="idEmpleado" itemLabel="primerNombre"/>
+									</sf:select>
+									
 							</div>
 
 							<div class="form-group">
@@ -483,6 +486,7 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 									</sf:select>
 									
 							</div>
+							
 							<div class="form-group">
 								<label for="latitudFacultad"><span
 									class="icon-map"></span> Latitud</label>

@@ -3,6 +3,8 @@ package com.cargoacademico.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.ws.Service.Mode;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,6 +31,8 @@ public class GeografiaController {
 	@Autowired
 	private EscuelaService esService;
 
+	int id = 0;
+	
 	@RequestMapping("/contacto")
 	public String showContacto(Model model, @ModelAttribute("idFF") String nombreCarrera) {
 
@@ -42,6 +46,15 @@ public class GeografiaController {
 		Campus campus = new Campus();
 //		Campus cam = geografiaService.findByIdCp(2);
 		List<Coordenadas> coordenadasList = new ArrayList<Coordenadas>();
+		
+		List<Empleado> empleadoxDecano = geografiaService.buscarDecano();
+		
+		System.out.println("xddd   "+empleadoxDecano.size());
+		for(int i = 0; i< empleadoxDecano.size(); i++) {
+			System.out.println(empleadoxDecano.size());
+			System.out.println(empleadoxDecano.get(i).getPrimerApellido());
+		}
+		
 		coordenadasList = geografiaService.allCoordenadas();
 
 		List<String> listLatitud = new ArrayList<String>();
@@ -94,7 +107,16 @@ public class GeografiaController {
 		
 		
 		
-		
+	
+		for(int i = 0; i < coordenadasList.size();i++ ) {
+			 id = coordenadasList.get(i).getIdCoordenada();
+			
+				if(id < coordenadasList.get(i).getIdCoordenada()) {
+					id = coordenadasList.get(i).getIdCoordenada();
+				}
+			
+		} 
+		System.out.println("xxxxxxxxxxxxxxxxxxhola x "+id+" = fdidddddddddddxdxd");
 		
 		
 		
@@ -156,6 +178,7 @@ public class GeografiaController {
 		model.addAttribute("campusList", campusList);
 		model.addAttribute("campus", campus);
 //		model.addAttribute("campusdir", cam);
+		model.addAttribute("empleadoxDecano",empleadoxDecano);
 		model.addAttribute("ela", ela);
 		model.addAttribute("es", escuelas);
 //		System.out.println("-----------------------------------------" + cam.getTelefono());
@@ -182,6 +205,8 @@ public class GeografiaController {
 		List<String> listLongitud = new ArrayList<String>();
 		List<String> nombreFacultad = new ArrayList<String>();
 
+	
+		
 		String nombre = "";
 		for (int i = 0; i < facultadList.size(); i++) {
 
@@ -248,21 +273,37 @@ public class GeografiaController {
 	public String guardarActualizarF(@ModelAttribute("facultad") Facultad facultad, Model model,
 			RedirectAttributes ra) {
 
+		
+		List<Coordenadas> coordenadasList = new ArrayList<Coordenadas>();
+		coordenadasList = geografiaService.allCoordenadas();
+		
 		Coordenadas coordenadas = new Coordenadas();
-
-		facultad.getCoordenadas().setAltitud("16");
-
 		Empleado empleado = new Empleado();
-		empleado.setIdEmpleado(1);
-		facultad.setEmpleado(empleado);
+		
+		facultad.getCoordenadas().setAltitud("16");
+		coordenadas.setLatitud(facultad.getCoordenadas().getLatitud());
+		coordenadas.setLongitud(facultad.getCoordenadas().getLongitud());
+		coordenadas.setAltitud(facultad.getCoordenadas().getAltitud());
+		int nuevoId = id +1;
+		coordenadas.setIdCoordenada(nuevoId);
+		facultad.setCoordenadas(coordenadas);
+
+		System.out.println("asdasdasd   ");
+		
+//		
+//
+		
 
 		System.out.println("-----------*-*-*-*-*-*-*-*--*-*-*-*--*-**-*-");
-		System.out.println("nombre de la facultad : " + facultad.getFacultad() + "  " + "telefono:: "
-				+ facultad.getTelefono() + " ubicacion:: " + facultad.getUbicacion() + " campus::"
-				+ facultad.getCampus().getIdCampus() + "  coordenada::" + facultad.getCoordenadas().getIdCoordenada()
+		System.out.println("nombre de la facultad : " + facultad.getFacultad());
+		System.out.println("empleado  :: " + facultad.getEmpleado().getIdEmpleado());
+		System.out.println("telefono:: "+ facultad.getTelefono());
+		System.out.println(" ubicacion:: " + facultad.getUbicacion());
+		System.out.println( "campus::"	+ facultad.getCampus().getIdCampus());
+		System.out.println( " coordenada::" + facultad.getCoordenadas().getIdCoordenada()
 				+ " latitud ::: " + facultad.getCoordenadas().getLatitud() + " longitud ::: "
-				+ facultad.getCoordenadas().getLongitud() + "  altitud  " + facultad.getCoordenadas().getAltitud()
-				+ "   empleado  :: " + facultad.getEmpleado().getIdEmpleado());
+				+ facultad.getCoordenadas().getLongitud() + "  altitud  " + facultad.getCoordenadas().getAltitud());
+//		geografiaService.saveCoordenadas(coordenadas);
 		geografiaService.saveOrUpdateFacultad(facultad);
 
 		ra.addFlashAttribute("mensaje", "Se han guardado los cambios");
