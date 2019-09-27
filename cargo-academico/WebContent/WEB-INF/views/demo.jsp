@@ -56,11 +56,9 @@
 
 	<fieldset>
 		<legend>Demo 2</legend>
-		Full Name <input type="text" id="fullName" />
-		<br/>
-		<input type="button" value="Demo 2" id="buttonDemo2" />
-		<br/>
-		<span id="result2"></span>
+		Full Name <input type="text" id="fullName" /> <br /> <input
+			type="button" value="Demo 2" id="buttonDemo2" /> <br /> <span
+			id="result2"></span>
 	</fieldset>
 
 

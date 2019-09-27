@@ -181,7 +181,8 @@
 
 .icon-sms:before {
 	content: "\e927";
-<<<<<<< HEAD
+	<<<<<<<
+	HEAD
 }
 
 .icon-imbalido:before {
@@ -190,6 +191,7 @@
 
 .icon-books:before {
 	content: "\f518";
-=======
->>>>>>> Geografico
+	=======
+	>>>>>>>
+	Geografico
 }

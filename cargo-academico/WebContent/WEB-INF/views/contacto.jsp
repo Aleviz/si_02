@@ -13,21 +13,30 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-<link rel="stylesheet" href="<%=request.getContextPath()%>/res/design/leaflet.css" />
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/res/design/leaflet.css" />
 <script src="<c:url value='res/design/leaflet.js'></c:url>"></script>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
-<script	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
+<link rel="stylesheet"
+	href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
+<script
+	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
-<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
 
 
 
 <script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script>
 
-<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> 
+<link
+	href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css"
+	rel="stylesheet">
+<link
+	href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
 
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -66,53 +75,46 @@ $('#buttonDemo2').click(function() {
 
 
 <style>
-
-@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
-
-
+@import
+	url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
 
 .button {
-  background-color: #33CEFF; /* Green */
-  border: none;
-  color: white;
-  padding: 4px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 10px;
-  
-  font-family:"Righteous", cursive;
-  
-  margin: 4px 2px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
+	background-color: #33CEFF; /* Green */
+	border: none;
+	color: white;
+	padding: 4px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 10px;
+	font-family: "Righteous", cursive;
+	margin: 4px 2px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
 }
 
 .button1 {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  
-    background-color:#33CEFF; 
-  background: -webkit-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
-background: -moz-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
-background: -ms-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
-background: -o-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
-background: linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
-  
-  color: black; 
- 
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	background-color: #33CEFF;
+	background: -webkit-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+	background: -moz-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+	background: -ms-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+	background: -o-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+	background: linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+	color: black;
 }
 
 .button1:hover {
-
-background-color: #DC143C;
-	  background: -webkit-linear-gradient(90deg, STEELBLUE 15%, MEDIUMSLATEBLUE 85%);
-background: -moz-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
-background: -ms-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
-background: -o-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
-background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
-  border: 2px solid #7B68EE;
-  color: white;
+	background-color: #DC143C;
+	background: -webkit-linear-gradient(90deg, STEELBLUE 15%, MEDIUMSLATEBLUE 85%);
+	background: -moz-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+	background: -ms-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+	background: -o-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+	background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+	border: 2px solid #7B68EE;
+	color: white;
 }
 </style>
 
@@ -246,15 +248,13 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 
 	<div class="map-area wow fadeInUp" data-wow-delay="300ms">
 		<div id="mapa">
-		
-		<p></p>
-		</div>
-		
-		<div id="mapa2" >
 
+			<p></p>
 		</div>
-		
-		
+
+		<div id="mapa2"></div>
+
+
 		<div style="display: none">
 
 			<p id="latitud">${jsonLatitud}</p>
@@ -274,70 +274,72 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 
 		<div id="formulario" class="scroll2">
 
-						<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
-							id="showCarreras">
-							<div class="section-heading text-left" style="background-color: floralwhite;" id="infCarr">
-								<span>Unit</span>								
-								<h3 id="nombreFacultad" ></h3> 							
-							<div class="izq" id="id">				
-							</div>
-							</div>
-							<c:forEach var="e" items="${es}">
-								<div class="single-contact-info d-flex">
-									<div class="contact-icon mr-15">
-										<i class="icon-contract"></i>
-									</div>
-									<br>
-									<p>carrera: ${e.nombreEscuela}</p>
-								</div>
-							</c:forEach>
-							<div class="botonMapa">
-<!-- 								<button id="editar" class="button button1" onclick="editar">EDITAR</button> -->
-									<button class="atras">ATRAS</button>
-							</div>
-
+			<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
+				id="showCarreras">
+				<div class="section-heading text-left"
+					style="background-color: floralwhite;" id="infCarr">
+					<span>Unit</span>
+					<h3 id="nombreFacultad"></h3>
+					<div class="izq" id="id"></div>
+				</div>
+				<c:forEach var="e" items="${es}">
+					<div class="single-contact-info d-flex">
+						<div class="contact-icon mr-15">
+							<i class="icon-contract"></i>
 						</div>
+						<br>
+						<p>carrera: ${e.nombreEscuela}</p>
+					</div>
+				</c:forEach>
+				<div class="botonMapa">
+					<!-- 								<button id="editar" class="button button1" onclick="editar">EDITAR</button> -->
+					<button class="atras">ATRAS</button>
+				</div>
 
-						
-<!-- 				//////////////////////////////////////////////////////////////////////////////////////////// -->
-						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showFacultad">
-							<div class="section-heading text-left" style="background-color: floralwhite;">
-								<span>hhhh</span>
-								<h3>Universidad Nacional de Innovacion Tecnologica</h3>
+			</div>
 
-								<c:forEach var="e" items="${facultadList}">
-								
-								<div class="izq">  								
-								<a class="obtenerFx" >
-								<label class="obtenerF nombreFacultadd">${e.facultad}</label>
-								</a>
-						<p class="tel">${e.telefono}</p>
-						<p class="ubic">${e.ubicacion}</p>	
-								</div>
-								<hr/>								
-								</c:forEach>
-							</div>
+
+			<!-- 				//////////////////////////////////////////////////////////////////////////////////////////// -->
+			<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
+				id="showFacultad">
+				<div class="section-heading text-left"
+					style="background-color: floralwhite;">
+					<span>hhhh</span>
+					<h3>Universidad Nacional de Innovacion Tecnologica</h3>
+
+					<c:forEach var="e" items="${facultadList}">
+
+						<div class="izq">
+							<a class="obtenerFx"> <label class="obtenerF nombreFacultadd">${e.facultad}</label>
+							</a>
+							<p class="tel">${e.telefono}</p>
+							<p class="ubic">${e.ubicacion}</p>
 						</div>
-						
+						<hr />
+					</c:forEach>
+				</div>
+			</div>
+
 			<!-- 	//////////////////////////////////////////Campus////////////////////////////////////////////////// -->
-						<div class="contact-information wow fadeInUp" data-wow-delay="400ms" id="showCampus">
-							<div class="section-heading text-left" style="background-color: floralwhite;" >
-								<span>UNIT</span>
-								<h3>Universidad Nacional de Innovacion Tecnologica</h3>
+			<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
+				id="showCampus">
+				<div class="section-heading text-left"
+					style="background-color: floralwhite;">
+					<span>UNIT</span>
+					<h3>Universidad Nacional de Innovacion Tecnologica</h3>
 
-								<c:forEach var="c" items="${campusList}">
-								
-								<div class="izq">  								
-								<a class="obtenerFx" >
-								<label class="obtenerF nombreFacultadd">${c.campus}</label>
-								</a>
-						<p class="tel">${c.telefono}</p>
-						<p class="ubic">${c.ubicacion}</p>	
-								</div>
-								<hr/>								
-								</c:forEach>
-							</div>
+					<c:forEach var="c" items="${campusList}">
+
+						<div class="izq">
+							<a class="obtenerFx"> <label class="obtenerF nombreFacultadd">${c.campus}</label>
+							</a>
+							<p class="tel">${c.telefono}</p>
+							<p class="ubic">${c.ubicacion}</p>
 						</div>
+						<hr />
+					</c:forEach>
+				</div>
+			</div>
 		</div>
 		<!-- ##### Fin formulario ##### -->
 	</div>

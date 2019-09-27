@@ -8,19 +8,23 @@
 	<table-filter match-name="actividades"
 		match-catalog="cargo_academico">
 	</table-filter>
-	<table-filter match-name="alumno" match-catalog="cargo_academico"></table-filter>
+	<table-filter match-name="alumno"
+		match-catalog="cargo_academico"></table-filter>
 	<table-filter match-name="alumno_materia"
 		match-catalog="cargo_academico">
 	</table-filter>
-	<table-filter match-name="aula" match-catalog="cargo_academico"></table-filter>
+	<table-filter match-name="aula"
+		match-catalog="cargo_academico"></table-filter>
 	<table-filter match-name="aula_empleado"
 		match-catalog="cargo_academico">
 	</table-filter>
-	<table-filter match-name="campus" match-catalog="cargo_academico"></table-filter>
+	<table-filter match-name="campus"
+		match-catalog="cargo_academico"></table-filter>
 	<table-filter match-name="carreras_ciclo"
 		match-catalog="cargo_academico">
 	</table-filter>
-	<table-filter match-name="ciclo" match-catalog="cargo_academico"></table-filter>
+	<table-filter match-name="ciclo"
+		match-catalog="cargo_academico"></table-filter>
 	<table-filter match-name="coordenadas"
 		match-catalog="cargo_academico">
 	</table-filter>
@@ -54,8 +58,10 @@
 	<table-filter match-name="materias"
 		match-catalog="cargo_academico">
 	</table-filter>
-	<table-filter match-name="roles" match-catalog="cargo_academico"></table-filter>
-	<table-filter match-name="tema" match-catalog="cargo_academico"></table-filter>
+	<table-filter match-name="roles"
+		match-catalog="cargo_academico"></table-filter>
+	<table-filter match-name="tema"
+		match-catalog="cargo_academico"></table-filter>
 	<table-filter match-name="temario"
 		match-catalog="cargo_academico">
 	</table-filter>
@@ -65,7 +71,8 @@
 	<table-filter match-name="tipo_docente"
 		match-catalog="cargo_academico">
 	</table-filter>
-	<table-filter match-name="unidad" match-catalog="cargo_academico"></table-filter>
+	<table-filter match-name="unidad"
+		match-catalog="cargo_academico"></table-filter>
 	<table-filter match-name="universidad"
 		match-catalog="cargo_academico">
 	</table-filter>

@@ -6,9 +6,10 @@
 <html>
 
 <head>
+<script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
 <script>
 	window.onload = function() {
 
@@ -16,83 +17,50 @@
 			animationEnabled : true,
 			theme : "light2", // "light1", "light2", "dark1", "dark2"
 			title : {
-				text : "GDP Growth Rate - 2016"
+				text : "Desidad de carreras"
 			},
 			axisY : {
-				title : "Growth Rate (in %)",
+				title : "Tasa de desidad (en %)",
 				suffix : "%",
 				includeZero : false
 			},
 			axisX : {
-				title : "Materias"
+				title : "Carrearas"
 			},
 			data : [ {
 				type : "column",
 				yValueFormatString : "#,##0.0#\"%\"",
 				dataPoints : [ {
-					label : "India",
+					label : "Ingeniería Industrial",
 					y : 7.1
 				}, {
-					label : "China",
+					label : "Ingeniería Eléctrica",
 					y : 6.70
 				}, {
-					label : "Indonesia",
-					y : 5.00
+					label : "Ingeniería de Sistemas Informáticos",
+					y : 7.00
 				}, {
-					label : "Australia",
+					label : "Ingeniería Mecánica",
+					y : 8.50
+				}, {
+					label : "Arquitectura",
+					y : 6.30
+				}, {
+					label : "Quimica",
+					y : 4.80
+				}, {
+					label : "Licenciatura en Enseñanza de la Matemáticas",
+					y : 7.90
+				}, {
+					label : "Licenciatura en Informatica Educativa",
+					y : 6.50
+				}, {
+					label : "Licenciatura de Ciencias Juridicas",
+					y : 2.60
+				}, {
+					label : "Licenciatura en Relaciones Internacionales",
 					y : 2.50
-				}, {
-					label : "Mexico",
-					y : 2.30
-				}, {
-					label : "UK",
-					y : 1.80
-				}, {
-					label : "United States",
-					y : 1.60
-				}, {
-					label : "Japan",
-					y : 1.60
-				}, {
-					label : "El Salvador",
-					y : 1.60
-				}, {
-					label : "El Salvador",
-					y : 1.60
-				}, {
-					label : "El Salvador",
-					y : 1.60
-				}, {
-					label : "El Salvador",
-					y : 1.60
-				}, {
-					label : "El Salvador",
-					y : 1.60
-				}, {
-					label : "El Salvador",
-					y : 1.60
-				}, {
-					label : "El Salvador",
-					y : 1.60
-				}, {
-					label : "El Salvador",
-					y : 1.60
-				}, {
-					label : "El Salvador",
-					y : 1.60
-				}, {
-					label : "El Salvador",
-					y : 1.60
-				}, {
-					label : "El Salvador",
-					y : 1.60
-				}, {
-					label : "El Salvador",
-					y : 1.60
-				}, {
-					label : "El Salvador",
-					y : 1.60
-				} ]
+				}]
 			} ]
 		});
 		var chart2 = new CanvasJS.Chart("chartContainer2", {
@@ -116,26 +84,9 @@
 		});
 		chart.render();
 		chart2.render();
-		$('#buttonUnidades').click(function() {
-			$.ajax({
-				type : 'GET',
-				url : './unidades',
-				dataType : 'json',
-				contentType : 'application/json',
-				success : function(result) {
-					var s = '';
-					for (var i = 0; i < result.length; i++) {
-						s += '<br/>Id: ' + result[i].idUnidad;
-						s += '<br/>Name: ' + result[i].nombreUnidad;
-						s += '<br/>objetive: ' + result[i].objetivo;
-						s += '<br/>======================';
-					}
-					$('#result4').html(s);
-				}
-			});
-		});
 	}
 </script>
+
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
@@ -146,12 +97,10 @@
 
 <!-- Esto es para los ICONOS -->
 <script src="res/design/leaflet/leaflet.js"></script>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <link rel="stylesheet"
 	href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
 <script
 	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
-<script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script>
 
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -327,8 +276,6 @@
 	</div>
 	</section>
 	<!-- ##### Hero Area End ##### -->
-	<a href="<%=request.getContextPath()%>/xd">Paginacion</a>
-
 	<div class="row">
 		<div class="col-2">
 			<div class="nav flex-column nav-pills red-active" id="v-pills-tab"
@@ -338,15 +285,14 @@
 					role="tab" aria-controls="v-pills-home" aria-selected="true">Materias</a>
 				<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill"
 					href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
-					aria-selected="false" style="background-color: transparent;">Prueba
-					de cards</a> <a class="nav-link" id="v-pills-messages-tab"
+					aria-selected="false" style="background-color: transparent;">Escuelas</a> <a class="nav-link" id="v-pills-messages-tab"
 					data-toggle="pill" href="#v-pills-messages" role="tab"
 					aria-controls="v-pills-messages" aria-selected="false"
-					style="background-color: transparent;">Grafica 1</a> <a
+					style="background-color: transparent;">Valoracion Materia</a> <a
 					class="nav-link" id="v-pills-settings-tab" data-toggle="pill"
 					href="#v-pills-settings" role="tab"
 					aria-controls="v-pills-settings" aria-selected="false"
-					style="background-color: transparent;">Grafica 2</a>
+					style="background-color: transparent;">Densidad Carreras</a>
 			</div>
 		</div>
 		<div class="col-10">
@@ -376,11 +322,12 @@
 														<a href="#">
 															<h6 style="text-align: center;" class="card-subtitle">
 																<c:choose>
-																	<c:when test="${tema.prerequisito==null}">
+																	<c:when test="${tema.materiasByPrerequisito==null}">
 																		<a>Pre-requisito: Bachillerato </a>
 																	</c:when>
 																	<c:otherwise>
-																		<a>Pre-requisito: ${tema.prerequisito.materia}</a>
+																		<a>Pre-requisito:
+																			${tema.materiasByPrerequisito.materia}</a>
 																	</c:otherwise>
 																</c:choose>
 															</h6>
@@ -390,20 +337,17 @@
 														<a href="#">
 															<h6 style="text-align: center;" class="card-subtitle">
 																<c:choose>
-																	<c:when test="${tema.corequisito==null}">Co-requisito: No posee</c:when>
-																	<c:otherwise>Co-requisito: ${tema.corequisito.materia}</c:otherwise>
+																	<c:when test="${tema.materiasByCorequisito==null}">Co-requisito: No posee</c:when>
+																	<c:otherwise>Co-requisito: ${tema.materiasByCorequisito.materia}</c:otherwise>
 																</c:choose>
 															</h6>
 														</a>
 													</div>
 													</did>
-													<p class="card-text">Some quick example text to build
-														on the card title and make up the bulk of the card's
-														content.</p>
 													<a href="#" data-toggle="modal"
-														data-target="#exampleModalCenter" class="card-link">Temario</a>
+														data-target="#exampleModalCenter" class="card-link btn btn-danger">Temario</a>
 													<a id="buttonUnidades" href="#" data-toggle="modal"
-														data-target="#exampleModalCenter1" class="card-link">Unidades</a>
+														data-target="#exampleModalCenter1" class="card-link btn btn-secondary">Unidades</a>
 												</div>
 											</div>
 											<tr>
@@ -417,97 +361,34 @@
 					aria-labelledby="v-pills-profile-tab">
 					<div class="container">
 						<div class="row">
-							<div style="background-color: red;" id="result4">xd</div>
-							<div class="card text-white bg-primary mb-3"
-								style="max-width: 18rem;">
-								<div class="card-header">Header</div>
-								<div class="card-body">
-									<h5 class="card-title">Primary card title</h5>
-									<p class="card-text">Some quick example text to build on
-										the card title and make up the bulk of the card's content.</p>
-								</div>
-							</div>
-							<div class="card text-white bg-secondary mb-3"
-								style="max-width: 18rem;">
-								<div class="card-header">Header</div>
-								<div class="card-body">
-									<h5 class="card-title">Secondary card title</h5>
-									<p class="card-text">Some quick example text to build on
-										the card title and make up the bulk of the card's content.</p>
-								</div>
-							</div>
+							<c:forEach items="${listEscuelas}" var="es">
 							<div class="card text-white bg-success mb-3"
-								style="max-width: 18rem;">
-								<div class="card-header">Header</div>
+								style="max-width:23rem;">
+								<div class="card-header">${es.nombreEscuela}</div>
+								<div class="card-header">Dirección: ${es.direccion}</div>
 								<div class="card-body">
-									<h5 class="card-title">Success card title</h5>
-									<p class="card-text">Some quick example text to build on
-										the card title and make up the bulk of the card's content.</p>
+									<h5 class="card-title">Descripción: ${es.descripcion}</h5>
+									<p class="card-text">${es.vision}</p>
 								</div>
 							</div>
-							<div class="card text-white bg-danger mb-3"
-								style="max-width: 18rem;">
-								<div class="card-header">Header</div>
-								<div class="card-body">
-									<h5 class="card-title">Danger card title</h5>
-									<p class="card-text">Some quick example text to build on
-										the card title and make up the bulk of the card's content.</p>
-								</div>
-							</div>
-							<div class="card text-white bg-warning mb-3"
-								style="max-width: 18rem;">
-								<div class="card-header">Header</div>
-								<div class="card-body">
-									<h5 class="card-title">Warning card title</h5>
-									<p class="card-text">Some quick example text to build on
-										the card title and make up the bulk of the card's content.</p>
-								</div>
-							</div>
-							<div class="card text-white bg-info mb-3"
-								style="max-width: 18rem;">
-								<div class="card-header">Header</div>
-								<div class="card-body">
-									<h5 class="card-title">Info card title</h5>
-									<p class="card-text">Some quick example text to build on
-										the card title and make up the bulk of the card's content.</p>
-								</div>
-							</div>
-							<div class="card bg-light mb-3" style="max-width: 18rem;">
-								<div class="card-header">Header</div>
-								<div class="card-body">
-									<h5 class="card-title">Light card title</h5>
-									<p class="card-text">Some quick example text to build on
-										the card title and make up the bulk of the card's content.</p>
-								</div>
-							</div>
-							<div class="card text-white bg-dark mb-3"
-								style="max-width: 18rem;">
-								<div class="card-header">Header</div>
-								<div class="card-body">
-									<h5 class="card-title">Dark card title</h5>
-									<p class="card-text">Some quick example text to build on
-										the card title and make up the bulk of the card's content.</p>
-								</div>
-							</div>
+							</c:forEach>
+
 						</div>
 					</div>
 				</div>
 
 				<div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
 					aria-labelledby="v-pills-messages-tab">
-					<p>Prueba3 xd</p>
-					</br>
 					<div id="chartContainer2" style="height: 1000px; width: 1100px;"></div>
 				</div>
 				<div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
 					aria-labelledby="v-pills-settings-tab">
-					Prueba 4
 					<div id="chartContainer" style="height: 370px; width: 100%;"></div>
 				</div>
 			</div>
 		</div>
-		<div id="modalPrueba" class="modal fade" id="exampleModalCenter"
-			tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+		<div class="modal fade" id="exampleModalCenter" tabindex="-1"
+			role="dialog" aria-labelledby="exampleModalCenterTitle"
 			aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
@@ -525,24 +406,23 @@
 							<br />
 							<c:out value="${te.nombreTemario}" />
 						</c:forEach>
-					</div>
+						</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary"
 							data-dismiss="modal"
 							style="margin-right: 10px; border-radius: 0px;">Close</button>
-						<button class="btn academy-btn btn-sm">Save changes</button>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="modal fade" id="exampleModalCenter1" tabindex="-1"
-			role="dialog" aria-labelledby="exampleModalCenterTitle"
+		<div class="modal fade" id="exampleModalCenter1"
+			tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
 			aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="exampleModalLongTitle"
-							style="text-align: center;">Temario general</h5>
+							style="text-align: center;">lista de unidades general</h5>
 						<button type="button" class="close" data-dismiss="modal"
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span>
@@ -559,7 +439,6 @@
 						<button type="button" class="btn btn-secondary"
 							data-dismiss="modal"
 							style="margin-right: 10px; border-radius: 0px;">Close</button>
-						<button class="btn academy-btn btn-sm">Save changes</button>
 					</div>
 				</div>
 			</div>
@@ -1077,9 +956,4 @@
 	<script src="<c:url value='/res/design/js/active.js'></c:url>"></script>
 
 	<!-- Google Maps -->
-	<script
-		src="<c:url value='/res/design/https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s'></c:url>"></script>
-	<script
-		src="<c:url value='/res/design/js/google-map/map-active.js'></c:url>"></script>
-</body>
 </html>

@@ -2,21 +2,37 @@ package com.cargoacademico.model;
 
 public class EscuelaEspejo {
 	
+
+	//-----------INFORMACION PARA LA ESCUELA
 	private String idEscuela;
 	private String facultad;
 	private String nombreEscuela;
 	private String telefono;
 	private String direccion;
-	
-	
-	
 
 	private String descripcion;
 	private String campoDeAccion;
 	private String mision;
 	private String vision;
 	private String objetivo;
+	//------------------------------------------
 	
+	//---------INFORMACION PARA LA FACULTAD
+	
+	private Integer idFacultad;
+	private String campus;
+	private String empleado;
+	private String facultadxCampus;
+	private String telefonoxFacultad;
+	private String ubicacionxFacultad;
+	
+	
+//	
+//	//-----------INFORMACION PARA LOS CAMPUS
+//	private String campusxCampus;
+//	private String telefonoxCampus;
+//	private String ubicacionxCampus;
+//	
 	
 	public String getIdEscuela() {
 		return idEscuela;
@@ -78,8 +94,46 @@ public class EscuelaEspejo {
 	public void setObjetivo(String objetivo) {
 		this.objetivo = objetivo;
 	}
+	public Integer getIdFacultad() {
+		return idFacultad;
+	}
+	public void setIdFacultad(Integer idFacultad) {
+		this.idFacultad = idFacultad;
+	}
+	public String getCampus() {
+		return campus;
+	}
+	public void setCampus(String campus) {
+		this.campus = campus;
+	}
+	public String getEmpleado() {
+		return empleado;
+	}
+	public void setEmpleado(String empleado) {
+		this.empleado = empleado;
+	}
+	public String getFacultadxCampus() {
+		return facultadxCampus;
+	}
+	public void setFacultadxCampus(String facultadxCampus) {
+		this.facultadxCampus = facultadxCampus;
+	}
+	public String getTelefonoxFacultad() {
+		return telefonoxFacultad;
+	}
+	public void setTelefonoxFacultad(String telefonoxFacultad) {
+		this.telefonoxFacultad = telefonoxFacultad;
+	}
+	public String getUbicacionxFacultad() {
+		return ubicacionxFacultad;
+	}
+	public void setUbicacionxFacultad(String ubicacionxFacultad) {
+		this.ubicacionxFacultad = ubicacionxFacultad;
+	}
 	
 	//-------------------------------------------
+	
+	
 	
 	
 

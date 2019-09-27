@@ -716,10 +716,14 @@ keyframes spin { 100% {
 .top-features-area {
 	position: relative;
 	z-index: 50;
-<<<<<<< HEAD
-=======
-	margin-bottom: -60px;
->>>>>>> Geografico
+	<<<<<<<
+	HEAD
+	=======
+	margin-bottom
+	:
+	-60px;
+	>>>>>>>
+	Geografico
 }
 
 @media only screen and (max-width: 767px) {
@@ -1524,9 +1528,8 @@ keyframes spin { 100% {
 
 .map-area {
 	position: relative;
-	z-index: 2;
-<<<<<<< HEAD
-	bottom: -80px;
+	z-index: 2; <<<<<<<
+	HEAD bottom: -80px;
 	height: 800px;
 }
 
@@ -1544,16 +1547,355 @@ keyframes spin { 100% {
 }
 
 =======
-	bottom: -120px;
-	height: 800px;
-	margin-bottom: 0px;
-}
+bottom
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-120
+px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;
+height
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+800
+px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;
+margin-bottom
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;
+}
 .map-area #mapa {
 	width: 75%;
 	height: 550px;
 	float: right;
 }
+
 .map-area #mapa2 {
 	width: 75%;
 	height: 550px;
@@ -1566,15 +1908,15 @@ keyframes spin { 100% {
 	width: 25%;
 	height: 550px;
 	overflow: auto;
-	overflow-x:hidden;
+	overflow-x: hidden;
 }
 
 .scroll2::-webkit-scrollbar {
-  width: 5px;
+	width: 5px;
 }
- 
+
 .scroll2::-webkit-scrollbar-thumb {
-  background: #666; 
+	background: #666;
 }
 
 .map-area #formulario span {
@@ -1594,7 +1936,7 @@ keyframes spin { 100% {
 	margin-bottom: 40px;
 }
 
-.map-area #formulario .abc{
+.map-area #formulario .abc {
 	padding-top: 0px;
 	margin-top: 0px;
 	text-align: center;
@@ -1609,30 +1951,29 @@ keyframes spin { 100% {
 	margin-bottom: -10px;
 	margin-left: 10px;
 	margin-top: -10px;
-	
 }
-.nombreFacultadd{
-	margin: 0px; 
+
+.nombreFacultadd {
+	margin: 0px;
 	padding: 0px;
 	color: #850000;
 	font-size: 17px;
 	margin-bottom: -10px;
 }
 
-.nombreFacultadd:hover{
+.nombreFacultadd:hover {
 	color: #d75151;
 }
 
-.tel{
+.tel {
 	color: #878787;
-	margin: 0px; 
+	margin: 0px;
 	padding: 0px;
 	margin-bottom: -10px;
 }
 
-
-.ubic{
-	margin-bottom:-10px; 
+.ubic {
+	margin-bottom: -10px;
 	padding: 0px;
 	color: black;
 }
@@ -1655,8 +1996,46 @@ keyframes spin { 100% {
 	width: 340px;
 }
 
+>>>>>>>
+Geografico
 
->>>>>>> Geografico
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.map-area #mapa {
 		height: 500px;
@@ -1887,9 +2266,9 @@ keyframes spin { 100% {
 .academy-tabs-content .tab-content h6 {
 	font-size: 18px;
 }
-<<<<<<< HEAD
 
-/*# sourceMappingURL=style.css.map */
+<<<<<<<
+HEAD /*# sourceMappingURL=style.css.map */                   
 .amaya {
 	left: 40px;
 	z-index: 50;
@@ -1961,16 +2340,14 @@ keyframes spin { 100% {
 .myButton:hover {
 	color: white;
 }
+
 =======
-
-
-
-.star{
-  font-size: 1.5em;
-} 
+.star {
+	font-size: 1.5em;
+}
 
 /* //----- */
 
-
 /*# sourceMappingURL=style.css.map */
->>>>>>> Geografico
+>>>>>>>
+Geografico
