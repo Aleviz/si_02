@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pensum2" pageWidth="809" pageHeight="619" orientation="Landscape" columnWidth="769" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7a5c9b49-9dc5-422a-ac69-e92cf61ef530">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Cargo-academico"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="cargo_academico"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
@@ -23,52 +23,33 @@
 		</conditionalStyle>
 	</style>
 	<queryString language="SQL">
-		<![CDATA[SELECT
-     universidad.`nombre` AS unombre,
-     universidad.`logo` AS ulogo,
-     materias.`materia` AS mmateria,
-     materias.`codigo` AS mcodigo,
-     ciclo.`ciclo` AS ciciclo,
-     facultad.`facultad` AS ffacultad,
-     facultad.`id_facultad` AS fidfacultad
-FROM
-     `universidad` universidad,
-     `materias` materias,
-     `facultad` facultad,
-     `ciclo` ciclo
-     
-     where id_facultad = 1]]>
+		<![CDATA[select es.nombre_escuela,  mat.codigo, mat.unidad_valorativa, mat.materia, ci.ciclo from materia_carrera_ciclo mcc inner join materias mat on mcc.id_materia_carrera_ciclo = mat.id_materia
+inner join carreras_ciclo carrc on carrc.id_carrera_ciclo = mcc.carrera_ciclo
+inner join ciclo ci on ci.id_ciclo = carrc.ciclo
+inner join escuela es on es.id_escuela = carrc.carrera where es.id_escuela = 4]]>
 	</queryString>
-	<field name="unombre" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="unombre"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="universidad"/>
+	<field name="nombre_escuela" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombre_escuela"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="escuela"/>
 	</field>
-	<field name="ulogo" class="java.lang.Object">
-		<property name="com.jaspersoft.studio.field.label" value="ulogo"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="universidad"/>
-	</field>
-	<field name="mmateria" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="mmateria"/>
+	<field name="codigo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="codigo"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="materias"/>
 	</field>
-	<field name="mcodigo" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="mcodigo"/>
+	<field name="unidad_valorativa" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="unidad_valorativa"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="materias"/>
 	</field>
-	<field name="ciciclo" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="ciciclo"/>
+	<field name="materia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="materia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="materias"/>
+	</field>
+	<field name="ciclo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ciclo"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="ciclo"/>
 	</field>
-	<field name="ffacultad" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="ffacultad"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="facultad"/>
-	</field>
-	<field name="fidfacultad" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.label" value="fidfacultad"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="facultad"/>
-	</field>
 	<group name="Group1">
-		<groupExpression><![CDATA[$F{ciciclo}]]></groupExpression>
+		<groupExpression><![CDATA[$F{ciclo}]]></groupExpression>
 		<groupHeader>
 			<band height="27">
 				<frame>
@@ -78,7 +59,7 @@ FROM
 						<textElement>
 							<font isBold="false"/>
 						</textElement>
-						<textFieldExpression><![CDATA[$F{ciciclo}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$F{ciclo}]]></textFieldExpression>
 					</textField>
 				</frame>
 				<rectangle>
@@ -194,7 +175,7 @@ FROM
 					<textElement>
 						<font size="14"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{mmateria}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{materia}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
 					<reportElement style="Detail" positionType="Float" x="265" y="0" width="265" height="18" uuid="5fcad9d2-9c42-4ce3-bf59-294cb6b50d19">
@@ -203,7 +184,7 @@ FROM
 					<textElement>
 						<font size="14"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{mcodigo}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
 					<reportElement style="Detail" positionType="Float" x="530" y="0" width="240" height="18" uuid="90714edd-6785-4768-b14e-2c5b42e7a175">
@@ -212,7 +193,7 @@ FROM
 					<textElement>
 						<font size="14"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{ffacultad}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{nombre_escuela}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
