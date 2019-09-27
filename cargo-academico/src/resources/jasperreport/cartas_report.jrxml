@@ -46,8 +46,7 @@ FROM unidad unidad
 	INNER JOIN materias materias ON 
 	 temario.id_temario = materias.temario 
 	INNER JOIN tipo_actividad tipo_actividad ON 
-	 actividades.tipo_actividad = tipo_actividad.id_tipo_actividad 
-]]>
+	 actividades.tipo_actividad = tipo_actividad.id_tipo_actividad]]>
 	</queryString>
 	<field name="actividades_actividad" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="actividades_actividad"/>
