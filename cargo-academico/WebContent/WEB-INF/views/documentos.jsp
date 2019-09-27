@@ -39,6 +39,7 @@
 
 body {
 	font-family: "Lato", Bahnschrift Light;
+	overflow-x: hidden;
 }
 
 /* Style the tab */
