@@ -20,11 +20,7 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "materias", catalog = "cargo_academico", uniqueConstraints = @UniqueConstraint(columnNames = "codigo"))
 public class Materias implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 4849170564637770776L;
-	private Integer idMateria;
+	private int idMateria;
 	private Departamento departamento;
 	private Materias materiasByCorequisito;
 	private Materias materiasByPrerequisito;

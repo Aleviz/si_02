@@ -14,9 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cargoacademico.model.Campus;
-import com.cargoacademico.model.Departamento;
-import com.cargoacademico.model.Edificio;
 import com.cargoacademico.model.Escuela;
 import com.cargoacademico.model.EscuelaEspejo;
 import com.cargoacademico.model.Facultad;
@@ -47,23 +44,10 @@ public class AjaxRestController {
 			MimeTypeUtils.APPLICATION_JSON_VALUE })
 	public ResponseEntity<List<EscuelaEspejo>> obtenerCampus(@PathVariable("nameCampus") String nameCampus) {
 
-		System.out.println(nameCampus);
 		// -*---------------------------------------------------------------------------------------------------------
 
 		List<EscuelaEspejo> escEList = new ArrayList<EscuelaEspejo>();
 		EscuelaEspejo escEsp = new EscuelaEspejo();
-		List<Facultad> facultadxCampus = new ArrayList<Facultad>();
-		
-		Campus campus = geografiaService.findByIdCp(nameCampus);
-		System.out.println("idCampus =x= "+campus);
-		int idCampus = campus.getIdCampus();
-		
-		facultadxCampus = geografiaService.findByCampus(idCampus);
-		
-		
-		System.out.println(facultadxCampus.size());
-
-			
 
 		List<Escuela> escuelaList = new ArrayList<Escuela>();
 		escuelaList = esService.findByNameE(nameCampus);
@@ -71,12 +55,13 @@ public class AjaxRestController {
 		for (int i = 0; i < escuelaList.size(); i++) {
 
 			escEsp = new EscuelaEspejo();
-			escEsp.setFacultadxCampus(facultadxCampus.get(i).getFacultad());
-		escEsp.setCampus(nameCampus);
-		escEsp.setTelefonoxFacultad(facultadxCampus.get(i).getTelefono());
-		escEsp.setUbicacionxFacultad(facultadxCampus.get(i).getUbicacion());
-		escEList.add(escEsp);
-
+			escEsp.setNombreEscuela(escuelaList.get(i).getNombreEscuela());
+			escEsp.setDescripcion(escuelaList.get(i).getDescripcion());
+			escEsp.setCampoDeAccion(escuelaList.get(i).getCampoDeAccion());
+			escEsp.setMision(escuelaList.get(i).getMision());
+			escEsp.setVision(escuelaList.get(i).getVision());
+			escEsp.setObjetivo(escuelaList.get(i).getObjetivo());
+			escEList.add(escEsp);
 		}
 
 		try {
@@ -177,7 +162,6 @@ public class AjaxRestController {
 
 		List<Escuela> escuelaList = new ArrayList<Escuela>();
 		escuelaList = esService.findByNameE(nameCarrera);
-
 		System.out.println(escuelaList.size());
 		for (int i = 0; i < escuelaList.size(); i++) {
 

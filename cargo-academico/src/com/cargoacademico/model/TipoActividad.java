@@ -17,11 +17,7 @@ import javax.persistence.Table;
 @Table(name = "tipo_actividad", catalog = "cargo_academico")
 public class TipoActividad implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1186790606068282353L;
-	private Integer idTipoActividad;
+	private int idTipoActividad;
 	private String descripcion;
 	private String actividad;
 	private Set<Actividades> actividadeses = new HashSet<Actividades>(0);

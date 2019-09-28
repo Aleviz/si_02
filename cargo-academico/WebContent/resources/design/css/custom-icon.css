@@ -181,17 +181,4 @@
 
 .icon-sms:before {
 	content: "\e927";
-	<<<<<<<
-	HEAD
-}
-
-.icon-imbalido:before {
-	content: "\f2fe";
-}
-
-.icon-books:before {
-	content: "\f518";
-	=======
-	>>>>>>>
-	Geografico
 }

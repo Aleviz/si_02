@@ -2,17 +2,17 @@ package com.cargoacademico.dao;
 
 import java.util.List;
 
-import com.cargoacademico.model.TipoDocentes;
+import com.cargoacademico.model.TipoDocente;
 
 public interface TipoDocenteDao {
 
-	public TipoDocentes saveTipoDocente(TipoDocentes tipoDocente);
+	public TipoDocente saveTipoDocente(TipoDocente tipoDocente);
 
-	public TipoDocentes updateTipoDocente(TipoDocentes tipoDocente);
+	public TipoDocente updateTipoDocente(TipoDocente tipoDocente);
 
-	public TipoDocentes findByIdTipoDocente(int id);
+	public TipoDocente findByIdTipoDocente(int id);
 
-	public List<TipoDocentes> findAllTipoDocente();
+	public List<TipoDocente> findAllTipoDocente();
 
 	public void deleteTipoDocente(int id);
 }
