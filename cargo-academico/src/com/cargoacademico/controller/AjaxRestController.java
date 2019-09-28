@@ -62,7 +62,7 @@ public class AjaxRestController {
 		
 		
 		System.out.println(facultadxCampus.size());
-		for(int i=0 ; i< facultadxCampus.size(); i++) {
+
 			
 
 		List<Escuela> escuelaList = new ArrayList<Escuela>();
@@ -76,13 +76,7 @@ public class AjaxRestController {
 		escEsp.setTelefonoxFacultad(facultadxCampus.get(i).getTelefono());
 		escEsp.setUbicacionxFacultad(facultadxCampus.get(i).getUbicacion());
 		escEList.add(escEsp);
-			escEsp.setNombreEscuela(escuelaList.get(i).getNombreEscuela());
-			escEsp.setDescripcion(escuelaList.get(i).getDescripcion());
-			escEsp.setCampoDeAccion(escuelaList.get(i).getCampoDeAccion());
-			escEsp.setMision(escuelaList.get(i).getMision());
-			escEsp.setVision(escuelaList.get(i).getVision());
-			escEsp.setObjetivo(escuelaList.get(i).getObjetivo());
-			escEList.add(escEsp);
+
 		}
 
 		try {
