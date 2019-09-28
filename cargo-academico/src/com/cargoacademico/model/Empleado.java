@@ -33,7 +33,7 @@ public class Empleado implements java.io.Serializable {
 	 * 
 	 */
 	private int idEmpleado;
-	private TipoDocentes tipoDocentes;
+	private TipoDocente tipoDocente;
 	private Usuarios usuarios;
 	private String primerNombre;
 	private String segundoNombre;
@@ -63,12 +63,12 @@ public class Empleado implements java.io.Serializable {
 		this.carnet = carnet;
 	}
 
-	public Empleado(int idEmpleado, TipoDocentes tipoDocentes, Usuarios usuarios, String primerNombre,
+	public Empleado(int idEmpleado, TipoDocente tipoDocente, Usuarios usuarios, String primerNombre,
 			String segundoNombre, String primerApellido, String segundoApellido, Date fechaNacimiento, String nit,
 			String dui, String carnet, byte[] foto, Set<Facultad> facultads, Set<Departamento> departamentos,
 			Set<EmpleadoMateria> empleadoMaterias) {
 		this.idEmpleado = idEmpleado;
-		this.tipoDocentes = tipoDocentes;
+		this.tipoDocente = tipoDocente;
 		this.usuarios = usuarios;
 		this.primerNombre = primerNombre;
 		this.segundoNombre = segundoNombre;
@@ -95,13 +95,13 @@ public class Empleado implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "tipo_de_docente")
-	public TipoDocentes getTipoDocentes() {
-		return this.tipoDocentes;
+	@JoinColumn(name = "tipo_docente")
+	public TipoDocente getTipoDocente() {
+		return this.tipoDocente;
 	}
 
-	public void setTipoDocentes(TipoDocentes tipoDocentes) {
-		this.tipoDocentes = tipoDocentes;
+	public void setTipoDocente(TipoDocente tipoDocente) {
+		this.tipoDocente = tipoDocente;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)

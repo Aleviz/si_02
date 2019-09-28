@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cargoacademico.dao.TipoDocenteDao;
-import com.cargoacademico.model.TipoDocentes;
+import com.cargoacademico.model.TipoDocente;
 
 @Service
 public class TipoDocenteService {
@@ -14,19 +14,19 @@ public class TipoDocenteService {
 	@Autowired
 	private TipoDocenteDao tipoDao;
 
-	public TipoDocentes saveTipoDocente(TipoDocentes tipoDocente) {
+	public TipoDocente saveTipoDocente(TipoDocente tipoDocente) {
 		return tipoDao.saveTipoDocente(tipoDocente);
 	}
 
-	public TipoDocentes updateTipoDocente(TipoDocentes tipoDocente) {
+	public TipoDocente updateTipoDocente(TipoDocente tipoDocente) {
 		return tipoDao.updateTipoDocente(tipoDocente);
 	}
 
-	public TipoDocentes findByIdTipoDocente(int id) {
+	public TipoDocente findByIdTipoDocente(int id) {
 		return tipoDao.findByIdTipoDocente(id);
 	}
 
-	public List<TipoDocentes> findAllTipoDocente() {
+	public List<TipoDocente> findAllTipoDocente() {
 		return tipoDao.findAllTipoDocente();
 	}
 

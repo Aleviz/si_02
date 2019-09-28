@@ -7,7 +7,7 @@ import java.util.List;
 import com.cargoacademico.model.Campus;
 import com.cargoacademico.model.Empleado;
 import com.cargoacademico.model.Facultad;
-import com.cargoacademico.model.TipoDocentes;
+import com.cargoacademico.model.TipoDocente;
 import com.cargoacademico.service.EmpleadoService;
 
 public class ReporteList {
@@ -16,12 +16,12 @@ public class ReporteList {
 	private EspEmpleado espEmpleado;
 	private Campus campus;
 	private Facultad facultad;
-	private TipoDocentes tipodocente;
+	private TipoDocente tipodocente;
 	private List<EspEmpleado> listEspEmpleado;
 	private List<Empleado> ListEmpleado;
 	private List<Campus> ListCampus;
 	private List<Facultad> ListFacultad;
-	private List<TipoDocentes> ListDocente;
+	private List<TipoDocente> ListDocente;
 	private EmpleadoService empleadoDao;
 	
 	
@@ -30,7 +30,7 @@ public class ReporteList {
 		empleado = new Empleado();
 		campus = new Campus();
 		facultad=new Facultad();
-		tipodocente =new TipoDocentes();
+		tipodocente =new TipoDocente();
 		empleadoDao = new EmpleadoService();
 		
 		listEspEmpleado = new ArrayList<EspEmpleado>();

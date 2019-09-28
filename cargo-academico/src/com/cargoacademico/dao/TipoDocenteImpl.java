@@ -12,15 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cargoacademico.model.TipoDocentes;
+import com.cargoacademico.model.TipoDocente;
 
 @SuppressWarnings("unchecked")
 @Transactional
 @Repository
 public class TipoDocenteImpl implements TipoDocenteDao{
 	
-	private List<TipoDocentes> listTipoDocente;
-	private TipoDocentes tipoDocente;
+	private List<TipoDocente> listTipoDocente;
+	private TipoDocente tipoDocente;
 	@Autowired
 	private SessionFactory session;
 	
@@ -29,7 +29,7 @@ public class TipoDocenteImpl implements TipoDocenteDao{
 	}
 	
 	@Override
-	public TipoDocentes saveTipoDocente(TipoDocentes tipoDocente) {
+	public TipoDocente saveTipoDocente(TipoDocente tipoDocente) {
 		try {
 			getSession().save(tipoDocente);
 		} catch (Exception e) {
@@ -40,7 +40,7 @@ public class TipoDocenteImpl implements TipoDocenteDao{
 	}
 
 	@Override
-	public TipoDocentes updateTipoDocente(TipoDocentes tipoDocente) {
+	public TipoDocente updateTipoDocente(TipoDocente tipoDocente) {
 		try {
 			getSession().saveOrUpdate(tipoDocente);
 		} catch (Exception e) {
@@ -51,12 +51,12 @@ public class TipoDocenteImpl implements TipoDocenteDao{
 	}
 
 	@Override
-	public TipoDocentes findByIdTipoDocente(int id) {
+	public TipoDocente findByIdTipoDocente(int id) {
 		try {
-			tipoDocente = new TipoDocentes();
-			Criteria c = getSession().createCriteria(TipoDocentes.class);
+			tipoDocente = new TipoDocente();
+			Criteria c = getSession().createCriteria(TipoDocente.class);
 			c.add(Restrictions.eq("idTipoDocente", id));
-			tipoDocente = (TipoDocentes) c.uniqueResult();
+			tipoDocente = (TipoDocente) c.uniqueResult();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -65,9 +65,9 @@ public class TipoDocenteImpl implements TipoDocenteDao{
 	}
 
 	@Override
-	public List<TipoDocentes> findAllTipoDocente() {
+	public List<TipoDocente> findAllTipoDocente() {
 		try {
-			listTipoDocente = new ArrayList<TipoDocentes>();
+			listTipoDocente = new ArrayList<TipoDocente>();
 			Query query = getSession().createQuery("from TipoDocente");
 			listTipoDocente = query.list();
 		} catch (Exception e) {
@@ -80,7 +80,7 @@ public class TipoDocenteImpl implements TipoDocenteDao{
 	@Override
 	public void deleteTipoDocente(int id) {
 		try {
-			tipoDocente = new TipoDocentes();
+			tipoDocente = new TipoDocente();
 			tipoDocente = findByIdTipoDocente(id);
 			getSession().delete(tipoDocente);
 		} catch (Exception e) {
