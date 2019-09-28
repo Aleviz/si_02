@@ -30,7 +30,7 @@ public class AulaEmpleadoService {
 	
 	
 	public void saveOrUpdateAulaEmpleado(AulaEmpleado auem) {
-		if(auem.getIdAulaEmpleado()== null) {
+		if(auem.getIdAulaEmpleado()== 0) {
 			aulaEmpleadoDao.saveAulaEmpleado(auem);
 		}else {
 			aulaEmpleadoDao.updateAulaEmpleado(auem);

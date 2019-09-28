@@ -28,7 +28,7 @@ public class CicloService {
 	}
 	
 	public void saveOrUpdateCiclo(Ciclo ci) {
-		if(ci.getIdCiclo()==null) {
+		if(ci.getIdCiclo()==0) {
 			ciDao.saveCiclo(ci);
 		}else {
 			ciDao.updateCiclo(ci);

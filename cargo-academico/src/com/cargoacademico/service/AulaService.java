@@ -28,7 +28,7 @@ public class AulaService {
 	}
 	
 	public void saveOrUpdateAula(Aula au) {
-		if(au.getIdAula()== null) {
+		if(au.getIdAula()== 0) {
 			aulaDao.saveAula(au);
 		}else {
 			aulaDao.updateAula(au);

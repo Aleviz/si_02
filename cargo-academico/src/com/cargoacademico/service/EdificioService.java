@@ -27,7 +27,7 @@ public class EdificioService {
 	}
 	
 	public void saveOrUpdateEdificio(Edificio edi) {
-		if(edi.getIdEdificio()==null) {
+		if(edi.getIdEdificio()==0) {
 		}else {
 			ediDao.updateEdificio(edi);
 		}

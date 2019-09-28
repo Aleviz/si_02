@@ -29,7 +29,7 @@ public class AlumnoMateriaService {
 	
 	
 	public void saveOrUpdateAlumnoMateria(AlumnoMateria aluma) {
-		if(aluma.getIdAlumnoMateria()== null) {
+		if(aluma.getIdAlumnoMateria()== 0) {
 			alumnoMateriaDao.saveAlumnoMateria(aluma);
 		}else {
 			alumnoMateriaDao.updateAlumnoMateria(aluma);

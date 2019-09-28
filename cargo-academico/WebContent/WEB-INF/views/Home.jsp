@@ -87,7 +87,7 @@
 					<div class="classynav">
 						<ul>
 							<li><a href="<c:url value="/Home"/>">Home</a></li>
-							<li><a href="<c:url value="reporte"/>">Reportes</a></li>
+							<li><a href="<c:url value="documentos"/>">Reportes</a></li>
 							<li><a href="estadisticas">Estadisticas</a></li>
 							<li><a href="contacto">Contacto</a></li>
 						</ul>

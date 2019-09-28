@@ -26,7 +26,7 @@ public class DepartamentoService {
 	}
 	
 	public void saveOrUpdateDepartamento(Departamento dep) {
-		if(dep.getIdDepartamento()==null) {
+		if(dep.getIdDepartamento()==0) {
 			deparDao.saveDepartamento(dep);
 		}
 	}

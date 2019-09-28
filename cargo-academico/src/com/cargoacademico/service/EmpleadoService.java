@@ -29,7 +29,7 @@ public class EmpleadoService {
 	}
 	
 	public void saveOrUpdateEmpleado(Empleado emp) {
-		if(emp.getIdEmpleado()==null) {
+		if(emp.getIdEmpleado()==0) {
 			emplDao.saveEmpleado(emp);
 		}else {
 			emplDao.updateEmpleado(emp);

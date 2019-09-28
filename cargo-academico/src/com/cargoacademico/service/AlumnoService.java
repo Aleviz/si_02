@@ -27,7 +27,7 @@ public class AlumnoService {
 	}
 	
 	public void saveOrUpdateAlumno(Alumno alu) {
-		if(alu.getIdAlumno()== null) {
+		if(alu.getIdAlumno()== 0) {
 			alumnoDao.saveAlumno(alu);
 		}else {
 			alumnoDao.updateAlumno(alu);

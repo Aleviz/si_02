@@ -22,7 +22,7 @@ public class EmpleadoController {
 	@Autowired
 	private EmpleadoService ed;
 	
-	@RequestMapping("/showEmpleados")
+	@RequestMapping(value="/showEmpleados")
 	public String showEmpleados(Model model,
 			@ModelAttribute("mensaje") String mensaje) {
 		List<Empleado> empList = ed.findAll();

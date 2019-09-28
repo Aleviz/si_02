@@ -30,7 +30,7 @@ public class CarrerasCicloService {
 	}
 	
 	public void saveOrUpateCarrerasCiclo(CarrerasCiclo caCi) {
-		if(caCi.getIdCarreraCiclo()== null) {
+		if(caCi.getIdCarreraCiclo()== 0) {
 			
 		}else {
 			carreraCicloDao.updateCarrerasCiclo(caCi);

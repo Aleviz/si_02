@@ -127,10 +127,10 @@ public class GeografiaController {
 		String nombre = "";
 		for (int i = 0; i < facultadList.size(); i++) {
 
-			Coordenadas cor = facultadList.get(i).getIdCoordenada();
+			Coordenadas cor = facultadList.get(i).getCoordenadas();
 			listLatitud.add(cor.getLatitud());
 
-			Coordenadas cord = facultadList.get(i).getIdCoordenada();
+			Coordenadas cord = facultadList.get(i).getCoordenadas();
 			listLongitud.add(cord.getLongitud());
 
 			nombre = facultadList.get(i).getFacultad();
@@ -210,10 +210,10 @@ public class GeografiaController {
 		String nombre = "";
 		for (int i = 0; i < facultadList.size(); i++) {
 
-			Coordenadas cor = facultadList.get(i).getIdCoordenada();
+			Coordenadas cor = facultadList.get(i).getCoordenadas();
 			listLatitud.add(cor.getLatitud());
 
-			Coordenadas cord = facultadList.get(i).getIdCoordenada();
+			Coordenadas cord = facultadList.get(i).getCoordenadas();
 			listLongitud.add(cord.getLongitud());
 
 			nombre = facultadList.get(i).getFacultad();
