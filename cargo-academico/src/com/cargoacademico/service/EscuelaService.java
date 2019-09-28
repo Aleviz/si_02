@@ -36,7 +36,7 @@ public class EscuelaService {
 	}
 	
 	public void saveOrUpdateEscuela(Escuela escu) {
-		if(escu.getIdEscuela() == null) {
+		if(escu.getIdEscuela() == 0) {
 			escuelaDao.saveEscuela(escu);
 		}else {
 			escuelaDao.updateEscuela(escu);

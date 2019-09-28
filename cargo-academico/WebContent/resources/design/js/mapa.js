@@ -834,7 +834,7 @@ $(document).ready(function() {
 			success : function(result) {
 				resultadoCampus = result;
 				
-				console.log("resulttt = "+ resultadoCampus);
+				console.log("resulttt = "+ resultadoCampus[i]);
 				console.log("result = "+ resultadoCampus[0].facultadxCampus);
 				
 				var htmlCampus ='';

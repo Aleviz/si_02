@@ -33,7 +33,7 @@ public class GeografiaController {
 
 	int id = 0;
 	
-	@RequestMapping("/contacto")
+	@RequestMapping(value="/contacto")
 	public String showContacto(Model model, @ModelAttribute("idFF") String nombreCarrera) {
 
 		ObjectMapper mapper = new ObjectMapper();

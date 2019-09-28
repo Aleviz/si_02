@@ -122,6 +122,7 @@
 	<div id="preloader">
 		<i class="circle-preloader"></i>
 	</div>
+
 	<!-- ##### Header Area Start ##### -->
 	<header class="header-area"> <!-- Top Header Area -->
 	<div class="top-header">
@@ -132,18 +133,17 @@
 						class="header-content h-100 d-flex align-items-center justify-content-between">
 						<div class="academy-logo">
 							<a href="index.html"><img
-								src="<%=request.getContextPath()%>/res/design/img/core-img/logo.png"
-								alt=""></a>
+								src="<c:url value='/res/design/img/core-img/image.png'></c:url>"
+								width="150px"></a>
 						</div>
 						<div class="login-content">
-							<a href="#">Register / Login</a>
+							<a href="#">Log Out</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 
 	<!-- Navbar Area -->
 	<div class="academy-main-menu">
@@ -170,48 +170,10 @@
 					<!-- Nav Start -->
 					<div class="classynav">
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="#">Pages</a>
-								<ul class="dropdown">
-									<li><a href="index.html">Home</a></li>
-									<li><a href="about-us.html">About Us</a></li>
-									<li><a href="course.html">Course</a></li>
-									<li><a href="blog.html">Blog</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li><a href="elements.html">Elements</a></li>
-								</ul></li>
-							<li><a href="#">Mega Menu</a>
-								<div class="megamenu">
-									<ul class="single-mega cn-col-4">
-										<li><a href="#">Home</a></li>
-										<li><a href="#">Services &amp; Features</a></li>
-										<li><a href="#">Accordions and tabs</a></li>
-										<li><a href="#">Menu ideas</a></li>
-										<li><a href="#">Students Gallery</a></li>
-									</ul>
-									<ul class="single-mega cn-col-4">
-										<li><a href="#">Home</a></li>
-										<li><a href="#">Services &amp; Features</a></li>
-										<li><a href="#">Accordions and tabs</a></li>
-										<li><a href="#">Menu ideas</a></li>
-										<li><a href="#">Students Gallery</a></li>
-									</ul>
-									<ul class="single-mega cn-col-4">
-										<li><a href="#">Home</a></li>
-										<li><a href="#">Services &amp; Features</a></li>
-										<li><a href="#">Accordions and tabs</a></li>
-										<li><a href="#">Menu ideas</a></li>
-										<li><a href="#">Students Gallery</a></li>
-									</ul>
-									<div class="single-mega cn-col-4">
-										<img
-											src="${pageContext.request.contextPath}/res/design/img/bg-img/bg-1.jpg"
-											alt="">
-									</div>
-								</div></li>
-							<li><a href="about-us.html">About Us</a></li>
-							<li><a href="course.html">Course</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="<c:url value="/Home"/>">Home</a></li>
+							<li><a href="<c:url value="reporte"/>">Reportes</a></li>
+							<li><a href="estadisticas">Estadisticas</a></li>
+							<li><a href="contacto">Contacto</a></li>
 						</ul>
 					</div>
 					<!-- Nav End -->
@@ -221,7 +183,7 @@
 				<div class="calling-info">
 					<div class="call-center">
 						<a href="tel:+654563325568889"><i class="icon-telephone-2"></i>
-							<span>(+65) 456 332 5568 889</span></a>
+							<span>(+503) ${campusdir.telefono}</span></a>
 					</div>
 				</div>
 				</nav>
