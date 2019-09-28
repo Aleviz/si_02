@@ -716,7 +716,14 @@ keyframes spin { 100% {
 .top-features-area {
 	position: relative;
 	z-index: 50;
-	margin-bottom: -60px;
+	<<<<<<<
+	HEAD
+	=======
+	margin-bottom
+	:
+	-60px;
+	>>>>>>>
+	Geografico
 }
 
 @media only screen and (max-width: 767px) {
@@ -1521,17 +1528,374 @@ keyframes spin { 100% {
 
 .map-area {
 	position: relative;
-	z-index: 2;
-	bottom: -120px;
+	z-index: 2; <<<<<<<
+	HEAD bottom: -80px;
 	height: 800px;
-	margin-bottom: 0px;
 }
 
+.map-area #mapa {
+	width: 70%;
+	height: 650px;
+	float: right;
+}
+
+.map-area #formulario {
+	background-color: #FAFAFA;
+	bottom: 650px;
+	width: 30%;
+	height: 650px;
+}
+
+=======
+bottom
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-120
+px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;
+height
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+800
+px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;
+margin-bottom
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;
+}
 .map-area #mapa {
 	width: 75%;
 	height: 550px;
 	float: right;
 }
+
 .map-area #mapa2 {
 	width: 75%;
 	height: 550px;
@@ -1544,15 +1908,15 @@ keyframes spin { 100% {
 	width: 25%;
 	height: 550px;
 	overflow: auto;
-	overflow-x:hidden;
+	overflow-x: hidden;
 }
 
 .scroll2::-webkit-scrollbar {
-  width: 5px;
+	width: 5px;
 }
- 
+
 .scroll2::-webkit-scrollbar-thumb {
-  background: #666; 
+	background: #666;
 }
 
 .map-area #formulario span {
@@ -1572,7 +1936,7 @@ keyframes spin { 100% {
 	margin-bottom: 40px;
 }
 
-.map-area #formulario .abc{
+.map-area #formulario .abc {
 	padding-top: 0px;
 	margin-top: 0px;
 	text-align: center;
@@ -1587,17 +1951,17 @@ keyframes spin { 100% {
 	margin-bottom: -10px;
 	margin-left: 10px;
 	margin-top: -10px;
-	
 }
-.nombreFacultadd{
-	margin: 0px; 
+
+.nombreFacultadd {
+	margin: 0px;
 	padding: 0px;
 	color: #850000;
 	font-size: 17px;
 	margin-bottom: -10px;
 }
 
-.nombreFacultadd:hover{
+.nombreFacultadd:hover {
 	color: #d75151;
 }
 
@@ -1620,14 +1984,13 @@ keyframes spin { 100% {
 
 .tel{
 	color: #878787;
-	margin: 0px; 
+	margin: 0px;
 	padding: 0px;
 	margin-bottom: -10px;
 }
 
-
-.ubic{
-	margin-bottom:-10px; 
+.ubic {
+	margin-bottom: -10px;
 	padding: 0px;
 	color: black;
 }
@@ -1649,6 +2012,45 @@ keyframes spin { 100% {
 	padding-bottom: 10px;
 	width: 340px;
 }
+
+>>>>>>>
+Geografico
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1882,13 +2284,87 @@ keyframes spin { 100% {
 	font-size: 18px;
 }
 
+<<<<<<<
+HEAD /*# sourceMappingURL=style.css.map */                   
+.amaya {
+	left: 40px;
+	z-index: 50;
+	width: 90%;
+	background: #61ba6d;
+	background: -webkit-linear-gradient(to right, #850000, #D75151);
+	background: linear-gradient(to right, #850000, #D75151);
+	padding: 40px 15px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
 
+.icon-assistance:before {
+	content: "\e903";
+	font-size: 200%;
+	color: white;
+	margin-left: -55px;
+}
 
-.star{
-  font-size: 1.5em;
-} 
+.icon-telephone-3:before {
+	content: "\e913";
+	font-size: 200%;
+	color: white;
+	margin-left: -65px;
+}
+
+.icon-fas-fa-phone:before {
+	content: "\e913";
+	font-size: 200%;
+	color: white;
+	margin-left: -65px;
+}
+
+.icon-books:before {
+	content: "\f518";
+	font-size: 200%;
+	color: white;
+	margin-left: -65px;
+}
+
+.icon-imbalido {
+	content: "\f2fe";
+	color: black;
+}
+
+.myButton {
+	background-color: linear-gradient(to right, #850000, #D75151);
+	border: 1px;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 9px 23px;
+	text-decoration: none;
+	text-shadow: 0px -1px 0px #7a2a1d;
+}
+
+.myButton:hover {
+	background-color: #b34332;
+}
+
+.myButton:active {
+	position: relative;
+	top: 1px;
+}
+
+.myButton:hover {
+	color: white;
+}
+
+=======
+.star {
+	font-size: 1.5em;
+}
 
 /* //----- */
 
-
 /*# sourceMappingURL=style.css.map */
+>>>>>>>
+Geografico

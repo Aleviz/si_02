@@ -3,8 +3,9 @@ package com.cargoacademico.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.SessionAttributes;
+
+import com.cargoacademico.model.Usuarios;
 
 
 /*el dispatcher se encargar de recibir todas las peticiones http en spring, un handler mapping detecta
@@ -23,10 +24,13 @@ import org.springframework.web.bind.annotation.SessionAttributes;
  */
 @SessionAttributes("mensaje")
 public class IndexController {
+
+	private Usuarios usuario;
 	@RequestMapping("/")
 	public String mostrarIndex(Model model) {
+		usuario = new Usuarios();
+		model.addAttribute("usuario", usuario);
 		model.addAttribute("modelo", "eleccion");
-		model.addAttribute("mensaje", "Elije la opcion que desea ver");
 		return "index";
 	}
 

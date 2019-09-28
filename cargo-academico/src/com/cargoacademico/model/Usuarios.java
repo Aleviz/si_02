@@ -22,8 +22,8 @@ public class Usuarios implements java.io.Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	private int idUsuario;
+	private static final long serialVersionUID = 6759420681954017701L;
+	private Integer idUsuario;
 	private Roles roles;
 	private String username;
 	private String pass;

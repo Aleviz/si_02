@@ -19,8 +19,10 @@
 <script	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
-<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
 
 <%-- <script type="text/javascript" src='<c:url value="/res/js/jQuery.js" />'></script> --%>
 
@@ -91,53 +93,46 @@
 	href="<%=request.getContextPath()%>/res/design/css/font-awesome.min.css">
 
 <style>
-
-@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
-
-
+@import
+	url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
 
 .button {
-  background-color: #33CEFF; /* Green */
-  border: none;
-  color: white;
-  padding: 4px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 10px;
-  
-  font-family:"Righteous", cursive;
-  
-  margin: 4px 2px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
+	background-color: #33CEFF; /* Green */
+	border: none;
+	color: white;
+	padding: 4px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 10px;
+	font-family: "Righteous", cursive;
+	margin: 4px 2px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
 }
 
 .button1 {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  
-    background-color:#33CEFF; 
-  background: -webkit-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
-background: -moz-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
-background: -ms-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
-background: -o-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
-background: linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
-  
-  color: black; 
- 
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	background-color: #33CEFF;
+	background: -webkit-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+	background: -moz-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+	background: -ms-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+	background: -o-linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+	background: linear-gradient(90deg, STEELBLUE 15%, DEEPSKYBLUE 85%);
+	color: black;
 }
 
 .button1:hover {
-
-background-color: #DC143C;
-	  background: -webkit-linear-gradient(90deg, STEELBLUE 15%, MEDIUMSLATEBLUE 85%);
-background: -moz-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
-background: -ms-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
-background: -o-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
-background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
-  border: 2px solid #7B68EE;
-  color: white;
+	background-color: #DC143C;
+	background: -webkit-linear-gradient(90deg, STEELBLUE 15%, MEDIUMSLATEBLUE 85%);
+	background: -moz-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+	background: -ms-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+	background: -o-linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+	background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
+	border: 2px solid #7B68EE;
+	color: white;
 }
 </style>
 
@@ -279,9 +274,9 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 		
 		<div id="mapa2" >
 
-		</div>
-		
-		
+		<div id="mapa2"></div>
+
+
 		<div style="display: none">
 
 			<p id="latitud">${jsonLatitud}</p>
@@ -341,6 +336,14 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 									<button class="atras">VOLVER A FACULTAD</button>
 							</div>
 						</div>
+						<br>
+						<p>carrera: ${e.nombreEscuela}</p>
+					</div>
+				</c:forEach>
+				<div class="botonMapa">
+					<!-- 								<button id="editar" class="button button1" onclick="editar">EDITAR</button> -->
+					<button class="atras">ATRAS</button>
+				</div>
 
 	</div>
 	
