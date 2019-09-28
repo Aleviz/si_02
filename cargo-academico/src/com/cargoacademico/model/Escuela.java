@@ -1,13 +1,11 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,24 +19,25 @@ import javax.persistence.Table;
 @Table(name = "escuela", catalog = "cargo_academico")
 public class Escuela implements java.io.Serializable {
 
-	private Integer idEscuela;
+	private int idEscuela;
 	private Facultad facultad;
 	private String nombreEscuela;
 	private String telefono;
 	private String direccion;
-	private byte[] descripcion;
-	private byte[] campoDeAccion;
-	private byte[] mision;
-	private byte[] vision;
-	private byte[] objetivo;
+	private String descripcion;
+	private String campoDeAccion;
+	private String mision;
+	private String vision;
+	private String objetivo;
 	private Set<Departamento> departamentos = new HashSet<Departamento>(0);
 	private Set<CarrerasCiclo> carrerasCiclos = new HashSet<CarrerasCiclo>(0);
 
 	public Escuela() {
 	}
 
-	public Escuela(Facultad facultad, String telefono, String direccion, byte[] descripcion, byte[] campoDeAccion,
-			byte[] mision, byte[] vision, byte[] objetivo) {
+	public Escuela(int idEscuela, Facultad facultad, String telefono, String direccion, String descripcion,
+			String campoDeAccion, String mision, String vision, String objetivo) {
+		this.idEscuela = idEscuela;
 		this.facultad = facultad;
 		this.telefono = telefono;
 		this.direccion = direccion;
@@ -49,9 +48,10 @@ public class Escuela implements java.io.Serializable {
 		this.objetivo = objetivo;
 	}
 
-	public Escuela(Facultad facultad, String nombreEscuela, String telefono, String direccion, byte[] descripcion,
-			byte[] campoDeAccion, byte[] mision, byte[] vision, byte[] objetivo, Set<Departamento> departamentos,
-			Set<CarrerasCiclo> carrerasCiclos) {
+	public Escuela(int idEscuela, Facultad facultad, String nombreEscuela, String telefono, String direccion,
+			String descripcion, String campoDeAccion, String mision, String vision, String objetivo,
+			Set<Departamento> departamentos, Set<CarrerasCiclo> carrerasCiclos) {
+		this.idEscuela = idEscuela;
 		this.facultad = facultad;
 		this.nombreEscuela = nombreEscuela;
 		this.telefono = telefono;
@@ -66,14 +66,13 @@ public class Escuela implements java.io.Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_escuela", unique = true, nullable = false)
-	public Integer getIdEscuela() {
+	public int getIdEscuela() {
 		return this.idEscuela;
 	}
 
-	public void setIdEscuela(Integer idEscuela) {
+	public void setIdEscuela(int idEscuela) {
 		this.idEscuela = idEscuela;
 	}
 
@@ -96,7 +95,7 @@ public class Escuela implements java.io.Serializable {
 		this.nombreEscuela = nombreEscuela;
 	}
 
-	@Column(name = "telefono", nullable = false, length = 9)
+	@Column(name = "telefono", nullable = false, length = 20)
 	public String getTelefono() {
 		return this.telefono;
 	}
@@ -114,48 +113,48 @@ public class Escuela implements java.io.Serializable {
 		this.direccion = direccion;
 	}
 
-	@Column(name = "descripcion", nullable = false)
-	public byte[] getDescripcion() {
+	@Column(name = "descripcion", nullable = false, length = 65535)
+	public String getDescripcion() {
 		return this.descripcion;
 	}
 
-	public void setDescripcion(byte[] descripcion) {
+	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
 
-	@Column(name = "campo_de_accion", nullable = false)
-	public byte[] getCampoDeAccion() {
+	@Column(name = "campo_de_accion", nullable = false, length = 65535)
+	public String getCampoDeAccion() {
 		return this.campoDeAccion;
 	}
 
-	public void setCampoDeAccion(byte[] campoDeAccion) {
+	public void setCampoDeAccion(String campoDeAccion) {
 		this.campoDeAccion = campoDeAccion;
 	}
 
-	@Column(name = "mision", nullable = false)
-	public byte[] getMision() {
+	@Column(name = "mision", nullable = false, length = 65535)
+	public String getMision() {
 		return this.mision;
 	}
 
-	public void setMision(byte[] mision) {
+	public void setMision(String mision) {
 		this.mision = mision;
 	}
 
-	@Column(name = "vision", nullable = false)
-	public byte[] getVision() {
+	@Column(name = "vision", nullable = false, length = 65535)
+	public String getVision() {
 		return this.vision;
 	}
 
-	public void setVision(byte[] vision) {
+	public void setVision(String vision) {
 		this.vision = vision;
 	}
 
-	@Column(name = "objetivo", nullable = false)
-	public byte[] getObjetivo() {
+	@Column(name = "objetivo", nullable = false, length = 65535)
+	public String getObjetivo() {
 		return this.objetivo;
 	}
 
-	public void setObjetivo(byte[] objetivo) {
+	public void setObjetivo(String objetivo) {
 		this.objetivo = objetivo;
 	}
 

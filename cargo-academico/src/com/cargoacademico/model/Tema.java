@@ -1,11 +1,9 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,7 +16,7 @@ import javax.persistence.Table;
 @Table(name = "tema", catalog = "cargo_academico")
 public class Tema implements java.io.Serializable {
 
-	private Integer idTema;
+	private int idTema;
 	private Unidad unidad;
 	private String tema;
 	private String tiempoTema;
@@ -26,26 +24,27 @@ public class Tema implements java.io.Serializable {
 	public Tema() {
 	}
 
-	public Tema(Unidad unidad, String tema) {
+	public Tema(int idTema, Unidad unidad, String tema) {
+		this.idTema = idTema;
 		this.unidad = unidad;
 		this.tema = tema;
 	}
 
-	public Tema(Unidad unidad, String tema, String tiempoTema) {
+	public Tema(int idTema, Unidad unidad, String tema, String tiempoTema) {
+		this.idTema = idTema;
 		this.unidad = unidad;
 		this.tema = tema;
 		this.tiempoTema = tiempoTema;
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_tema", unique = true, nullable = false)
-	public Integer getIdTema() {
+	public int getIdTema() {
 		return this.idTema;
 	}
 
-	public void setIdTema(Integer idTema) {
+	public void setIdTema(int idTema) {
 		this.idTema = idTema;
 	}
 

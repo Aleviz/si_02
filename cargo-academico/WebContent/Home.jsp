@@ -1,12 +1,38 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spr" uri="http://www.springframework.org/tags"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>UNIT - Universidad Innovacion Tecnologica</title>
-<link rel="stylesheet" href="/res/design/style.css" type="text/css"/>
+<meta charset="UTF-8">
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/res/design/leaflet.css" />
+<script src="<c:url value='res/design/leaflet.js'></c:url>"></script>
+<link rel="stylesheet"
+	href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
+<script
+	src="<c:url value='https://unpkg.com/leaflet@1.5.1/dist/leaflet.js'></c:url>"></script>
+<!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<!-- Title -->
+<title>Universidad Innovacion Tecnologica</title>
+
+<!-- Favicon -->
+<link rel="icon"
+	href="<%=request.getContextPath()%>/res/design/img/core-img/favicon.ico">
+
+<!-- Core Stylesheet -->
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/res/design/style.css">
+
 </head>
+
 <body>
 	<!-- ##### Preloader ##### -->
 	<div id="preloader">
@@ -14,156 +40,157 @@
 	</div>
 
 	<!-- ##### Header Area Start ##### -->
-	<header class="header-area">
-
-		<!-- Top Header Area -->
-		<div class="top-header">
-			<div class="container h-100">
-				<div class="row h-100">
-					<div class="col-12 h-100">
-						<div
-							class="header-content h-100 d-flex align-items-center justify-content-between">
-							<div class="academy-logo">
-								<a href="index.html"><img src="WebContent/resources/design/img/core-img/image.png"
-									width="150px"></a>
-							</div>
-							<div class="login-content">
-								<a href="#">Register / Login</a>
-							</div>
+	<header class="header-area"> <!-- Top Header Area -->
+	<div class="top-header">
+		<div class="container h-100">
+			<div class="row h-100">
+				<div class="col-12 h-100">
+					<div
+						class="header-content h-100 d-flex align-items-center justify-content-between">
+						<div class="academy-logo">
+							<a href="index.html"><img
+								src="<c:url value='/res/design/img/core-img/image.png'></c:url>"
+								width="150px"></a>
+						</div>
+						<div class="login-content">
+							<a href="#">Register / Login</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<!-- Navbar Area -->
-		<div class="academy-main-menu">
-			<div class="classy-nav-container breakpoint-off">
-				<div class="container">
-					<!-- Menu -->
-					<nav class="classy-navbar justify-content-between" id="academyNav">
+	<!-- Navbar Area -->
+	<div class="academy-main-menu">
+		<div class="classy-nav-container breakpoint-off">
+			<div class="container">
+				<!-- Menu -->
+				<nav class="classy-navbar justify-content-between" id="academyNav">
 
-						<!-- Navbar Toggler -->
-						<div class="classy-navbar-toggler">
-							<span class="navbarToggler"><span></span><span></span><span></span></span>
+				<!-- Navbar Toggler -->
+				<div class="classy-navbar-toggler">
+					<span class="navbarToggler"><span></span><span></span><span></span></span>
+				</div>
+
+				<!-- Menu -->
+				<div class="classy-menu">
+
+					<!-- close btn -->
+					<div class="classycloseIcon">
+						<div class="cross-wrap">
+							<span class="top"></span><span class="bottom"></span>
 						</div>
+					</div>
 
-						<!-- Menu -->
-						<div class="classy-menu">
-
-							<!-- close btn -->
-							<div class="classycloseIcon">
-								<div class="cross-wrap">
-									<span class="top"></span><span class="bottom"></span>
-								</div>
-							</div>
-
-							<!-- Nav Start -->
-							<div class="classynav">
-								<ul>
-									<li><a href="index.html">Home</a></li>
-									<li><a href="#">Pages</a>
-										<ul class="dropdown">
-											<li><a href="index.html">Home</a></li>
-											<li><a href="about-us.html">About Us</a></li>
-											<li><a href="course.html">Course</a></li>
-											<li><a href="blog.html">Blog</a></li>
-											<li><a href="contact.html">Contact</a></li>
-											<li><a href="elements.html">Elements</a></li>
-										</ul></li>
-									<li><a href="#">Mega Menu</a>
-										<div class="megamenu">
-											<ul class="single-mega cn-col-4">
-												<li><a href="#">Home</a></li>
-												<li><a href="#">Services &amp; Features</a></li>
-												<li><a href="#">Accordions and tabs</a></li>
-												<li><a href="#">Menu ideas</a></li>
-												<li><a href="#">Students Gallery</a></li>
-											</ul>
-											<ul class="single-mega cn-col-4">
-												<li><a href="#">Home</a></li>
-												<li><a href="#">Services &amp; Features</a></li>
-												<li><a href="#">Accordions and tabs</a></li>
-												<li><a href="#">Menu ideas</a></li>
-												<li><a href="#">Students Gallery</a></li>
-											</ul>
-											<ul class="single-mega cn-col-4">
-												<li><a href="#">Home</a></li>
-												<li><a href="#">Services &amp; Features</a></li>
-												<li><a href="#">Accordions and tabs</a></li>
-												<li><a href="#">Menu ideas</a></li>
-												<li><a href="#">Students Gallery</a></li>
-											</ul>
-											<div class="single-mega cn-col-4">
-												<img src="img/bg-img/bg-1.jpg" alt="">
-											</div>
-										</div></li>
+					<!-- Nav Start -->
+					<div class="classynav">
+						<ul>
+							<li><a href="Home.jsp">Home</a></li>
+							<li><a href="#">Pages</a>
+								<ul class="dropdown">
+									<li><a href="Home.jsp">Home</a></li>
 									<li><a href="about-us.html">About Us</a></li>
 									<li><a href="course.html">Course</a></li>
-									<li><a href="contact.html">Contact</a></li>
-								</ul>
-							</div>
-							<!-- Nav End -->
-						</div>
-
-						<!-- Calling Info -->
-						<div class="calling-info">
-							<div class="call-center">
-								<a href="tel:+654563325568889"><i class="icon-telephone-2"></i>
-									<span>(+65) 456 332 5568 889</span></a>
-							</div>
-						</div>
-					</nav>
+									<li><a href="blog.html">Blog</a></li>
+									<li><a href="Contacto.jsp">Contact</a></li>
+									<li><a href="elements.html">Elements</a></li>
+								</ul></li>
+							<li><a href="#">Mega Menu</a>
+								<div class="megamenu">
+									<ul class="single-mega cn-col-4">
+										<li><a href="#">Home</a></li>
+										<li><a href="#">Services &amp; Features</a></li>
+										<li><a href="#">Accordions and tabs</a></li>
+										<li><a href="#">Menu ideas</a></li>
+										<li><a href="#">Students Gallery</a></li>
+									</ul>
+									<ul class="single-mega cn-col-4">
+										<li><a href="#">Home</a></li>
+										<li><a href="#">Services &amp; Features</a></li>
+										<li><a href="#">Accordions and tabs</a></li>
+										<li><a href="#">Menu ideas</a></li>
+										<li><a href="#">Students Gallery</a></li>
+									</ul>
+									<ul class="single-mega cn-col-4">
+										<li><a href="#">Home</a></li>
+										<li><a href="#">Services &amp; Features</a></li>
+										<li><a href="#">Accordions and tabs</a></li>
+										<li><a href="#">Menu ideas</a></li>
+										<li><a href="#">Students Gallery</a></li>
+									</ul>
+									<div class="single-mega cn-col-4">
+										<img
+											src="<%=request.getContextPath()%>/res/design/img/bg-img/bg-1.jpg"
+											alt="">
+									</div>
+								</div></li>
+							<li><a href="about-us.html">About Us</a></li>
+							<li><a href="course.html">Course</a></li>
+							<li><a href="Contacto.jsp">Contact</a></li>
+						</ul>
+					</div>
+					<!-- Nav End -->
 				</div>
+
+				<!-- Calling Info -->
+				<div class="calling-info">
+					<div class="call-center">
+						<a href="tel:+654563325568889"><i class="icon-telephone-2"></i>
+							<span>(+65) 456 332 5568 889</span></a>
+					</div>
+				</div>
+				</nav>
 			</div>
 		</div>
+	</div>
 	</header>
 	<!-- ##### Header Area End ##### -->
 
 	<!-- ##### Hero Area Start ##### -->
 	<section class="hero-area">
-		<div class="hero-slides owl-carousel">
+	<div class="hero-slides owl-carousel">
 
-			<!-- Single Hero Slide -->
-			<div class="single-hero-slide bg-img"
-				style="background-image: url(img/bg-img/bg-1.jpg);">
-				<div class="container h-100">
-					<div class="row h-100 align-items-center">
-						<div class="col-12">
-							<div class="hero-slides-content">
-								<h4 data-animation="fadeInUp" data-delay="100ms">All the
-									courses you need</h4>
-								<h2 data-animation="fadeInUp" data-delay="400ms">
-									Wellcome to our <br>Online University
-								</h2>
-								<a href="#" class="btn academy-btn" data-animation="fadeInUp"
-									data-delay="700ms">Read More</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Single Hero Slide -->
-			<div class="single-hero-slide bg-img"
-				style="background-image: url(img/bg-img/bg-2.jpg);">
-				<div class="container h-100">
-					<div class="row h-100 align-items-center">
-						<div class="col-12">
-							<div class="hero-slides-content">
-								<h4 data-animation="fadeInUp" data-delay="100ms">All the
-									courses you need</h4>
-								<h2 data-animation="fadeInUp" data-delay="400ms">
-									Wellcome to our <br>Online University
-								</h2>
-								<a href="#" class="btn academy-btn" data-animation="fadeInUp"
-									data-delay="700ms">Read More</a>
-							</div>
+		<!-- Single Hero Slide -->
+		<div class="single-hero-slide bg-img"
+			style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/bg-1.jpg);">
+			<div class="container h-100">
+				<div class="row h-100 align-items-center">
+					<div class="col-12">
+						<div class="hero-slides-content">
+							<h4 data-animation="fadeInUp" data-delay="100ms">All the
+								courses you need</h4>
+							<h2 data-animation="fadeInUp" data-delay="400ms">
+								Wellcome to our <br>Online University
+							</h2>
+							<a href="#" class="btn academy-btn" data-animation="fadeInUp"
+								data-delay="700ms">Read More</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<!-- Single Hero Slide -->
+		<div class="single-hero-slide bg-img"
+			style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/bg-2.jpg);">
+			<div class="container h-100">
+				<div class="row h-100 align-items-center">
+					<div class="col-12">
+						<div class="hero-slides-content">
+							<h4 data-animation="fadeInUp" data-delay="100ms">All the
+								courses you need</h4>
+							<h2 data-animation="fadeInUp" data-delay="400ms">
+								Wellcome to our <br>Online University
+							</h2>
+							<a href="#" class="btn academy-btn" data-animation="fadeInUp"
+								data-delay="700ms">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	</section>
 	<!-- ##### Hero Area End ##### -->
 
@@ -305,7 +332,7 @@
 
 	<!-- ##### Testimonials Area Start ##### -->
 	<div class="testimonials-area section-padding-100 bg-img bg-overlay"
-		style="background-image: url(img/bg-img/bg-2.jpg);">
+		style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/bg-2.jpg);">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -322,7 +349,9 @@
 					<div class="single-testimonial-area mb-100 d-flex wow fadeInUp"
 						data-wow-delay="400ms">
 						<div class="testimonial-thumb">
-							<img src="img/bg-img/t1.jpg" alt="">
+							<img
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/t1.jpg"
+								alt="">
 						</div>
 						<div class="testimonial-content">
 							<h5>Great teachers</h5>
@@ -342,7 +371,9 @@
 					<div class="single-testimonial-area mb-100 d-flex wow fadeInUp"
 						data-wow-delay="500ms">
 						<div class="testimonial-thumb">
-							<img src="img/bg-img/t2.jpg" alt="">
+							<img
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/t2.jpg"
+								alt="">
 						</div>
 						<div class="testimonial-content">
 							<h5>Easy and user friendly courses</h5>
@@ -361,7 +392,9 @@
 					<div class="single-testimonial-area mb-100 d-flex wow fadeInUp"
 						data-wow-delay="600ms">
 						<div class="testimonial-thumb">
-							<img src="img/bg-img/t3.jpg" alt="">
+							<img
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/t3.jpg"
+								alt="">
 						</div>
 						<div class="testimonial-content">
 							<h5>I just love the courses here</h5>
@@ -380,7 +413,9 @@
 					<div class="single-testimonial-area mb-100 d-flex wow fadeInUp"
 						data-wow-delay="700ms">
 						<div class="testimonial-thumb">
-							<img src="img/bg-img/t4.jpg" alt="">
+							<img
+								src="<%=request.getContextPath()%>/res/design/img/bg-img/t4.jpg"
+								alt="">
 						</div>
 						<div class="testimonial-content">
 							<h5>One good academy</h5>
@@ -443,7 +478,7 @@
 							<a href="#" class="btn academy-btn btn-sm">See More</a>
 						</div>
 						<div class="popular-course-thumb bg-img"
-							style="background-image: url(img/bg-img/pc-1.jpg);"></div>
+							style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/pc-1.jpg);"></div>
 					</div>
 				</div>
 
@@ -467,7 +502,7 @@
 							<a href="#" class="btn academy-btn btn-sm">See More</a>
 						</div>
 						<div class="popular-course-thumb bg-img"
-							style="background-image: url(img/bg-img/pc-2.jpg);"></div>
+							style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/pc-2.jpg);"></div>
 					</div>
 				</div>
 
@@ -491,7 +526,7 @@
 							<a href="#" class="btn academy-btn btn-sm">See More</a>
 						</div>
 						<div class="popular-course-thumb bg-img"
-							style="background-image: url(img/bg-img/pc-3.jpg);"></div>
+							style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/pc-3.jpg);"></div>
 					</div>
 				</div>
 
@@ -515,7 +550,7 @@
 							<a href="#" class="btn academy-btn btn-sm">See More</a>
 						</div>
 						<div class="popular-course-thumb bg-img"
-							style="background-image: url(img/bg-img/pc-4.jpg);"></div>
+							style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/pc-4.jpg);"></div>
 					</div>
 				</div>
 			</div>
@@ -530,11 +565,17 @@
 				<div class="col-12">
 					<div
 						class="partners-logo d-flex align-items-center justify-content-between flex-wrap">
-						<a href="#"><img src="img/clients-img/partner-1.png" alt=""></a>
-						<a href="#"><img src="img/clients-img/partner-2.png" alt=""></a>
-						<a href="#"><img src="img/clients-img/partner-3.png" alt=""></a>
-						<a href="#"><img src="img/clients-img/partner-4.png" alt=""></a>
-						<a href="#"><img src="img/clients-img/partner-5.png" alt=""></a>
+						<a href="#"><img
+							src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-1.png"
+							alt=""></a> <a href="#"><img
+							src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-2.png"
+							alt=""></a> <a href="#"><img
+							src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-3.png"
+							alt=""></a> <a href="#"><img
+							src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-4.png"
+							alt=""></a> <a href="#"><img
+							src="<%=request.getContextPath()%>/res/design/img/clients-img/partner-5.png"
+							alt=""></a>
 					</div>
 				</div>
 			</div>
@@ -560,6 +601,202 @@
 
 	<!-- ##### Footer Area Start ##### -->
 	<footer class="footer-area">
+	<div class="main-footer-area section-padding-100-0">
+		<div class="container">
+			<div class="row">
+				<!-- Footer Widget Area -->
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="footer-widget mb-100">
+						<div class="widget-title">
+							<a href="#"><img
+								src="<%=request.getContextPath()%>/res/design/img/core-img/logo_1.png"
+								width="170"></a>
+						</div>
+						<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum
+							nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et
+							arcu pulvinar cursus a eget.</p>
+						<div class="footer-social-info">
+							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+								class="fa fa-twitter"></i></a> <a href="#"><i
+								class="fa fa-dribbble"></i></a> <a href="#"><i
+								class="fa fa-behance"></i></a> <a href="#"><i
+								class="fa fa-instagram"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- Footer Widget Area -->
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="footer-widget mb-100">
+						<div class="widget-title">
+							<h6>Usefull Links</h6>
+						</div>
+						<nav>
+						<ul class="useful-links">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Services &amp; Features</a></li>
+							<li><a href="#">Accordions and tabs</a></li>
+							<li><a href="#">Menu ideas</a></li>
+						</ul>
+						</nav>
+					</div>
+				</div>
+				<!-- Footer Widget Area -->
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="footer-widget mb-100">
+						<div class="widget-title">
+							<h6>Gallery</h6>
+						</div>
+						<div class="gallery-list d-flex justify-content-between flex-wrap">
+							<a
+								href="<%=request.getContextPath()%>/res/design/img/gallery1.jpg"
+								class="gallery-img" title="Gallery Image 1"><img
+								src="<c:url value='/res/design/img/bg-img/gallery1.jpg'></c:url>"
+								alt=""></a> <a
+								href="<%=request.getContextPath()%>/res/design/img/gallery2.jpg"
+								class="gallery-img" title="Gallery Image 2"><img
+								src="<c:url value='/res/design/img/bg-img/gallery2.jpg'></c:url>"
+								alt=""></a> <a
+								href="<%=request.getContextPath()%>/res/design/img/gallery3.jpg"
+								class="gallery-img" title="Gallery Image 3"><img
+								src="<c:url value='/res/design/img/bg-img/gallery3.jpg'></c:url>"
+								alt=""></a> <a
+								href="<%=request.getContextPath()%>/res/design/img/gallery4.jpg"
+								class="gallery-img" title="Gallery Image 4"><img
+								src="<c:url value='/res/design/img/bg-img/gallery4.jpg'></c:url>"
+								alt=""></a> <a
+								href="<%=request.getContextPath()%>/res/design/img/gallery5.jpg"
+								class="gallery-img" title="Gallery Image 5"><img
+								src="<c:url value='/res/design/img/bg-img/gallery5.jpg'></c:url>"
+								alt=""></a> <a
+								href="<%=request.getContextPath()%>/res/design/img/gallery6.jpg"
+								class="gallery-img" title="Gallery Image 6"><img
+								src="<c:url value='/res/design/img/bg-img/gallery6.jpg'></c:url>"
+								alt="Dem"></a>
+						</div>
+					</div>
+				</div>
+				<!-- Footer Widget Area -->
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="footer-widget mb-100">
+						<div class="widget-title">
+							<h6>Contact</h6>
+						</div>
+						<div class="single-contact d-flex mb-30">
+							<i class="icon-placeholder"></i>
+							<p>4127/ 5B-C Mislane Road, Gibraltar, UK</p>
+						</div>
+						<div class="single-contact d-flex mb-30">
+							<i class="icon-telephone-1"></i>
+							<p>
+								Main: 203-808-8613 <br>Office: 203-808-8648
+							</p>
+						</div>
+						<div class="single-contact d-flex">
+							<i class="icon-contract"></i>
+							<p>office@yourbusiness.com</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<<<<<<< HEAD:cargo-academico/WebContent/Home.jsp
+	<div class="bottom-footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<p>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy;
+						<script>
+							document.write(new Date().getFullYear());
+						</script>
+						All rights reserved | This template is made with <i
+							class="fa fa-heart-o" aria-hidden="true"></i> by <a
+							href="https://colorlib.com" target="_blank">Colorlib</a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	======= <!-- ##### Partner Area End ##### -->
+
+	<thead>
+		<tr>
+			<td>Opciones</td>
+			<td>Dato 1</td>
+			<td>Dato 2</td>
+			<td>Dato 3</td>
+			<td>Dato 4</td>
+			<td>Dato 5</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Opcion 1</td>
+			<td><input type="number" class="form-control requerido"></td>
+			<td><input type="text" class="form-control requerido"></td>
+			<td><input type="number" class="form-control requerido"></td>
+			<td><input type="number" class="form-control requerido"></td>
+			<td><input type="number" class="form-control requerido"></td>
+		</tr>
+		<tr>
+			<td>Opcion 2</td>
+			<td><input type="number" class="form-control requerido"></td>
+			<td><input type="text" class="form-control requerido"></td>
+			<td><input type="number" class="form-control requerido"></td>
+			<td><input type="number" class="form-control requerido"></td>
+			<td><input type="number" class="form-control requerido"></td>
+		</tr>
+		<tr>
+			<td>Opcio 3</td>
+			<td><input type="number" class="form-control requerido"></td>
+			<td><input type="text" class="form-control requerido"></td>
+			<td><input type="number" class="form-control requerido"></td>
+			<td><input type="number" class="form-control requerido"></td>
+			<td><input type="number" class="form-control requerido"></td>
+		</tr>
+		<tr>
+			<td>Opcion 4</td>
+			<td><input type="number" class="form-control requerido"></td>
+			<td><input type="text" class="form-control requerido"></td>
+			<td><input type="number" class="form-control requerido"></td>
+			<td><input type="number" class="form-control requerido"></td>
+			<td><input type="number" class="form-control requerido"></td>
+		</tr>
+	</tbody>
+	</table>
+	<button id="btn-nuevo" type="button" class="btn btn-primary"
+		style="margin-bottom: 10px">
+		<i class="glyphicon glyphicon-plus"></i>
+
+
+		<script>
+		$("#btn-nuevo").click(function(){
+            var parametros=[];
+            var parame=[];
+            $("table tbody tr").each(function(i,e){
+            
+                var tr = [];
+                $(this).find("td").each(function(index, element){
+                    if(index != 0) // ignoramos el primer indice que dice Option #
+                    {
+                    var td = {};
+                    td["dato"+index] = $(this).find("input").val();
+                    tr.push(td);
+                    }
+                });
+                parametros.push(tr);    
+            });
+            
+            console.log(parametros);
+        });
+		
+		</script>
+
+		<!-- ##### Footer Area Start ##### -->
+		<footer class="footer-area">
 		<div class="main-footer-area section-padding-100-0">
 			<div class="container">
 				<div class="row">
@@ -588,12 +825,12 @@
 								<h6>Usefull Links</h6>
 							</div>
 							<nav>
-								<ul class="useful-links">
-									<li><a href="#">Home</a></li>
-									<li><a href="#">Services &amp; Features</a></li>
-									<li><a href="#">Accordions and tabs</a></li>
-									<li><a href="#">Menu ideas</a></li>
-								</ul>
+							<ul class="useful-links">
+								<li><a href="#">Home</a></li>
+								<li><a href="#">Services &amp; Features</a></li>
+								<li><a href="#">Accordions and tabs</a></li>
+								<li><a href="#">Menu ideas</a></li>
+							</ul>
 							</nav>
 						</div>
 					</div>
@@ -667,19 +904,35 @@
 				</div>
 			</div>
 		</div>
-	</footer>
-	<!-- ##### Footer Area Start ##### -->
+		>>>>>>> Geografico:cargo-academico/WebContent/NewFile.jsp </footer>
+		<!-- ##### Footer Area Start ##### -->
 
-	<!-- ##### All Javascript Script ##### -->
-	<!-- jQuery-2.2.4 js -->
-	<script src="WebContent/resources/design/js/jquery/jquery-2.2.4.min.js"></script>
-	<!-- Popper js -->
-	<script src="WebContent/resources/design/js/bootstrap/popper.min.js"></script>
-	<!-- Bootstrap js -->
-	<script src="WebContent/resources/design/js/bootstrap/bootstrap.min.js"></script>
-	<!-- All Plugins js -->
-	<script src="WebContent/resources/design/js/plugins/plugins.js"></script>
-	<!-- Active js -->
-	<script src="WebContent/resources/design/js/active.js"></script>
+		<!-- ##### All Javascript Script ##### -->
+		<!-- jQuery-2.2.4 js -->
+		<script
+			src="<c:url value='/res/design/js/jquery/jquery-2.2.4.min.js'></c:url>"></script>
+
+		<!-- Popper js -->
+		<script
+			src="<c:url value='/res/design/js/bootstrap/popper.min.js'></c:url>"></script>
+
+		<!-- Bootstrap js -->
+		<script
+			src="<c:url value='/res/design/js/bootstrap/bootstrap.min.js'></c:url>">
+		
+	</script>
+
+		<!-- All Plugins js -->
+		<script
+			src="<c:url value='/res/design/js/plugins/plugins.js'></c:url>"></script>
+
+		<!-- Active js -->
+		<script src="<c:url value='/res/design/js/active.js'></c:url>"></script>
+
+		<!-- Google Maps -->
+		<script
+			src="<c:url value='/res/design/https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s'></c:url>"></script>
+		<script
+			src="<c:url value='/res/design/js/google-map/map-active.js'></c:url>"></script>
 </body>
 </html>

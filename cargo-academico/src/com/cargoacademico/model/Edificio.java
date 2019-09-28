@@ -1,13 +1,11 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,7 +19,7 @@ import javax.persistence.Table;
 @Table(name = "edificio", catalog = "cargo_academico")
 public class Edificio implements java.io.Serializable {
 
-	private Integer idEdificio;
+	private int idEdificio;
 	private Facultad facultad;
 	private String nombreEdificio;
 	private Set<Aula> aulas = new HashSet<Aula>(0);
@@ -29,26 +27,27 @@ public class Edificio implements java.io.Serializable {
 	public Edificio() {
 	}
 
-	public Edificio(Facultad facultad, String nombreEdificio) {
+	public Edificio(int idEdificio, Facultad facultad, String nombreEdificio) {
+		this.idEdificio = idEdificio;
 		this.facultad = facultad;
 		this.nombreEdificio = nombreEdificio;
 	}
 
-	public Edificio(Facultad facultad, String nombreEdificio, Set<Aula> aulas) {
+	public Edificio(int idEdificio, Facultad facultad, String nombreEdificio, Set<Aula> aulas) {
+		this.idEdificio = idEdificio;
 		this.facultad = facultad;
 		this.nombreEdificio = nombreEdificio;
 		this.aulas = aulas;
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_edificio", unique = true, nullable = false)
-	public Integer getIdEdificio() {
+	public int getIdEdificio() {
 		return this.idEdificio;
 	}
 
-	public void setIdEdificio(Integer idEdificio) {
+	public void setIdEdificio(int idEdificio) {
 		this.idEdificio = idEdificio;
 	}
 

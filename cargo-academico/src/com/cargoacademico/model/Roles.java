@@ -1,13 +1,11 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -19,27 +17,35 @@ import javax.persistence.Table;
 @Table(name = "roles", catalog = "cargo_academico")
 public class Roles implements java.io.Serializable {
 
-	private Integer idRol;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int idRol;
 	private String nombre;
 	private Set<Usuarios> usuarioses = new HashSet<Usuarios>(0);
 
 	public Roles() {
 	}
 
-	public Roles(String nombre, Set<Usuarios> usuarioses) {
+	public Roles(int idRol) {
+		this.idRol = idRol;
+	}
+
+	public Roles(int idRol, String nombre, Set<Usuarios> usuarioses) {
+		this.idRol = idRol;
 		this.nombre = nombre;
 		this.usuarioses = usuarioses;
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_rol", unique = true, nullable = false)
-	public Integer getIdRol() {
+	public int getIdRol() {
 		return this.idRol;
 	}
 
-	public void setIdRol(Integer idRol) {
+	public void setIdRol(int idRol) {
 		this.idRol = idRol;
 	}
 

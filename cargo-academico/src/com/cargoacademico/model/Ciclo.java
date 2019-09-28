@@ -1,13 +1,11 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -19,7 +17,7 @@ import javax.persistence.Table;
 @Table(name = "ciclo", catalog = "cargo_academico")
 public class Ciclo implements java.io.Serializable {
 
-	private Integer idCiclo;
+	private int idCiclo;
 	private String ciclo;
 	private String duracion;
 	private Set<CarrerasCiclo> carrerasCiclos = new HashSet<CarrerasCiclo>(0);
@@ -27,21 +25,25 @@ public class Ciclo implements java.io.Serializable {
 	public Ciclo() {
 	}
 
-	public Ciclo(String ciclo, String duracion, Set<CarrerasCiclo> carrerasCiclos) {
+	public Ciclo(int idCiclo) {
+		this.idCiclo = idCiclo;
+	}
+
+	public Ciclo(int idCiclo, String ciclo, String duracion, Set<CarrerasCiclo> carrerasCiclos) {
+		this.idCiclo = idCiclo;
 		this.ciclo = ciclo;
 		this.duracion = duracion;
 		this.carrerasCiclos = carrerasCiclos;
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_ciclo", unique = true, nullable = false)
-	public Integer getIdCiclo() {
+	public int getIdCiclo() {
 		return this.idCiclo;
 	}
 
-	public void setIdCiclo(Integer idCiclo) {
+	public void setIdCiclo(int idCiclo) {
 		this.idCiclo = idCiclo;
 	}
 

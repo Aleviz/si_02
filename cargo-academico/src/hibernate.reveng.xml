@@ -2,30 +2,74 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-  <table-filter match-catalog="cargo_academico" match-name="actividades"/>
-  <table-filter match-catalog="cargo_academico" match-name="alumno"/>
-  <table-filter match-catalog="cargo_academico" match-name="alumno_materia"/>
-  <table-filter match-catalog="cargo_academico" match-name="aula"/>
-  <table-filter match-catalog="cargo_academico" match-name="aula_empleado"/>
-  <table-filter match-catalog="cargo_academico" match-name="campus"/>
-  <table-filter match-catalog="cargo_academico" match-name="carreras_ciclo"/>
-  <table-filter match-catalog="cargo_academico" match-name="ciclo"/>
-  <table-filter match-catalog="cargo_academico" match-name="departamento"/>
-  <table-filter match-catalog="cargo_academico" match-name="edificio"/>
-  <table-filter match-catalog="cargo_academico" match-name="empleado"/>
-  <table-filter match-catalog="cargo_academico" match-name="empleado_materia"/>
-  <table-filter match-catalog="cargo_academico" match-name="escuela"/>
-  <table-filter match-catalog="cargo_academico" match-name="facultad"/>
-  <table-filter match-catalog="cargo_academico" match-name="inscripcion"/>
-  <table-filter match-catalog="cargo_academico" match-name="materia_carrera_ciclo"/>
-  <table-filter match-catalog="cargo_academico" match-name="materia_horario"/>
-  <table-filter match-catalog="cargo_academico" match-name="materias"/>
-  <table-filter match-catalog="cargo_academico" match-name="roles"/>
-  <table-filter match-catalog="cargo_academico" match-name="tema"/>
-  <table-filter match-catalog="cargo_academico" match-name="temario"/>
-  <table-filter match-catalog="cargo_academico" match-name="tipo_actividad"/>
-  <table-filter match-catalog="cargo_academico" match-name="tipo_docente"/>
-  <table-filter match-catalog="cargo_academico" match-name="unidad"/>
-  <table-filter match-catalog="cargo_academico" match-name="universidad"/>
-  <table-filter match-catalog="cargo_academico" match-name="usuarios"/>
+	<type-mapping>
+		<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	</type-mapping>
+	<table-filter match-name="actividades"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="alumno" match-catalog="cargo_academico"></table-filter>
+	<table-filter match-name="alumno_materia"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="aula" match-catalog="cargo_academico"></table-filter>
+	<table-filter match-name="aula_empleado"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="campus" match-catalog="cargo_academico"></table-filter>
+	<table-filter match-name="carreras_ciclo"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="ciclo" match-catalog="cargo_academico"></table-filter>
+	<table-filter match-name="coordenadas"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="departamento"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="edificio"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="empleado"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="empleado_materia"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="escuela"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="facultad"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="inscripcion"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="materia_carrera_ciclo"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="materia_horario"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="materias"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="roles" match-catalog="cargo_academico"></table-filter>
+	<table-filter match-name="tema" match-catalog="cargo_academico"></table-filter>
+	<table-filter match-name="temario"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="tipo_actividad"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="tipo_docentes"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="unidad" match-catalog="cargo_academico"></table-filter>
+	<table-filter match-name="universidad"
+		match-catalog="cargo_academico">
+	</table-filter>
+	<table-filter match-name="usuarios"
+		match-catalog="cargo_academico">
+	</table-filter>
 </hibernate-reverse-engineering>

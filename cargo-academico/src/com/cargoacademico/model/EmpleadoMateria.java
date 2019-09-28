@@ -1,13 +1,11 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -22,7 +20,7 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "empleado_materia", catalog = "cargo_academico", uniqueConstraints = @UniqueConstraint(columnNames = "id_materia"))
 public class EmpleadoMateria implements java.io.Serializable {
 
-	private Integer idEmpMate;
+	private int idEmpMate;
 	private Empleado empleado;
 	private MateriaHorario materiaHorario;
 	private Set<AulaEmpleado> aulaEmpleados = new HashSet<AulaEmpleado>(0);
@@ -30,26 +28,28 @@ public class EmpleadoMateria implements java.io.Serializable {
 	public EmpleadoMateria() {
 	}
 
-	public EmpleadoMateria(Empleado empleado, MateriaHorario materiaHorario) {
+	public EmpleadoMateria(int idEmpMate, Empleado empleado, MateriaHorario materiaHorario) {
+		this.idEmpMate = idEmpMate;
 		this.empleado = empleado;
 		this.materiaHorario = materiaHorario;
 	}
 
-	public EmpleadoMateria(Empleado empleado, MateriaHorario materiaHorario, Set<AulaEmpleado> aulaEmpleados) {
+	public EmpleadoMateria(int idEmpMate, Empleado empleado, MateriaHorario materiaHorario,
+			Set<AulaEmpleado> aulaEmpleados) {
+		this.idEmpMate = idEmpMate;
 		this.empleado = empleado;
 		this.materiaHorario = materiaHorario;
 		this.aulaEmpleados = aulaEmpleados;
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_emp_mate", unique = true, nullable = false)
-	public Integer getIdEmpMate() {
+	public int getIdEmpMate() {
 		return this.idEmpMate;
 	}
 
-	public void setIdEmpMate(Integer idEmpMate) {
+	public void setIdEmpMate(int idEmpMate) {
 		this.idEmpMate = idEmpMate;
 	}
 

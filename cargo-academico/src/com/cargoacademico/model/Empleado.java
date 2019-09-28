@@ -1,5 +1,5 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -7,8 +7,6 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -27,8 +25,15 @@ import javax.persistence.UniqueConstraint;
 		@UniqueConstraint(columnNames = "usuario") })
 public class Empleado implements java.io.Serializable {
 
-	private Integer idEmpleado;
-	private TipoDocente tipoDocente;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
+	private int idEmpleado;
+	private TipoDocentes tipoDocentes;
 	private Usuarios usuarios;
 	private String primerNombre;
 	private String segundoNombre;
@@ -46,8 +51,9 @@ public class Empleado implements java.io.Serializable {
 	public Empleado() {
 	}
 
-	public Empleado(Usuarios usuarios, String primerNombre, String primerApellido, Date fechaNacimiento, String nit,
-			String dui, String carnet) {
+	public Empleado(int idEmpleado, Usuarios usuarios, String primerNombre, String primerApellido, Date fechaNacimiento,
+			String nit, String dui, String carnet) {
+		this.idEmpleado = idEmpleado;
 		this.usuarios = usuarios;
 		this.primerNombre = primerNombre;
 		this.primerApellido = primerApellido;
@@ -57,11 +63,12 @@ public class Empleado implements java.io.Serializable {
 		this.carnet = carnet;
 	}
 
-	public Empleado(TipoDocente tipoDocente, Usuarios usuarios, String primerNombre, String segundoNombre,
-			String primerApellido, String segundoApellido, Date fechaNacimiento, String nit, String dui, String carnet,
-			byte[] foto, Set<Facultad> facultads, Set<Departamento> departamentos,
+	public Empleado(int idEmpleado, TipoDocentes tipoDocentes, Usuarios usuarios, String primerNombre,
+			String segundoNombre, String primerApellido, String segundoApellido, Date fechaNacimiento, String nit,
+			String dui, String carnet, byte[] foto, Set<Facultad> facultads, Set<Departamento> departamentos,
 			Set<EmpleadoMateria> empleadoMaterias) {
-		this.tipoDocente = tipoDocente;
+		this.idEmpleado = idEmpleado;
+		this.tipoDocentes = tipoDocentes;
 		this.usuarios = usuarios;
 		this.primerNombre = primerNombre;
 		this.segundoNombre = segundoNombre;
@@ -78,25 +85,23 @@ public class Empleado implements java.io.Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
-
 	@Column(name = "id_empleado", unique = true, nullable = false)
-	public Integer getIdEmpleado() {
+	public int getIdEmpleado() {
 		return this.idEmpleado;
 	}
 
-	public void setIdEmpleado(Integer idEmpleado) {
+	public void setIdEmpleado(int idEmpleado) {
 		this.idEmpleado = idEmpleado;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "tipo_docente")
-	public TipoDocente getTipoDocente() {
-		return this.tipoDocente;
+	@JoinColumn(name = "tipo_de_docente")
+	public TipoDocentes getTipoDocentes() {
+		return this.tipoDocentes;
 	}
 
-	public void setTipoDocente(TipoDocente tipoDocente) {
-		this.tipoDocente = tipoDocente;
+	public void setTipoDocentes(TipoDocentes tipoDocentes) {
+		this.tipoDocentes = tipoDocentes;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)

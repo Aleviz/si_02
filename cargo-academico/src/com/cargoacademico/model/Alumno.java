@@ -1,5 +1,5 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -7,8 +7,6 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -22,7 +20,7 @@ import javax.persistence.TemporalType;
 @Table(name = "alumno", catalog = "cargo_academico")
 public class Alumno implements java.io.Serializable {
 
-	private Integer idAlumno;
+	private int idAlumno;
 	private String primerNombre;
 	private String segundoNombre;
 	private String primerApellido;
@@ -37,7 +35,9 @@ public class Alumno implements java.io.Serializable {
 	public Alumno() {
 	}
 
-	public Alumno(String primerNombre, String primerApellido, Date fechaNacimiento, String nit, String carnet) {
+	public Alumno(int idAlumno, String primerNombre, String primerApellido, Date fechaNacimiento, String nit,
+			String carnet) {
+		this.idAlumno = idAlumno;
 		this.primerNombre = primerNombre;
 		this.primerApellido = primerApellido;
 		this.fechaNacimiento = fechaNacimiento;
@@ -45,8 +45,10 @@ public class Alumno implements java.io.Serializable {
 		this.carnet = carnet;
 	}
 
-	public Alumno(String primerNombre, String segundoNombre, String primerApellido, String segundoApellido,
-			Date fechaNacimiento, String nit, String dui, String carnet, byte[] foto, Set<Inscripcion> inscripcions) {
+	public Alumno(int idAlumno, String primerNombre, String segundoNombre, String primerApellido,
+			String segundoApellido, Date fechaNacimiento, String nit, String dui, String carnet, byte[] foto,
+			Set<Inscripcion> inscripcions) {
+		this.idAlumno = idAlumno;
 		this.primerNombre = primerNombre;
 		this.segundoNombre = segundoNombre;
 		this.primerApellido = primerApellido;
@@ -60,14 +62,13 @@ public class Alumno implements java.io.Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_alumno", unique = true, nullable = false)
-	public Integer getIdAlumno() {
+	public int getIdAlumno() {
 		return this.idAlumno;
 	}
 
-	public void setIdAlumno(Integer idAlumno) {
+	public void setIdAlumno(int idAlumno) {
 		this.idAlumno = idAlumno;
 	}
 

@@ -1,11 +1,9 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,7 +16,7 @@ import javax.persistence.Table;
 @Table(name = "alumno_materia", catalog = "cargo_academico")
 public class AlumnoMateria implements java.io.Serializable {
 
-	private Integer idAlumnoMateria;
+	private int idAlumnoMateria;
 	private AulaEmpleado aulaEmpleado;
 	private Inscripcion inscripcion;
 	private String estado;
@@ -26,26 +24,27 @@ public class AlumnoMateria implements java.io.Serializable {
 	public AlumnoMateria() {
 	}
 
-	public AlumnoMateria(AulaEmpleado aulaEmpleado, Inscripcion inscripcion) {
+	public AlumnoMateria(int idAlumnoMateria, AulaEmpleado aulaEmpleado, Inscripcion inscripcion) {
+		this.idAlumnoMateria = idAlumnoMateria;
 		this.aulaEmpleado = aulaEmpleado;
 		this.inscripcion = inscripcion;
 	}
 
-	public AlumnoMateria(AulaEmpleado aulaEmpleado, Inscripcion inscripcion, String estado) {
+	public AlumnoMateria(int idAlumnoMateria, AulaEmpleado aulaEmpleado, Inscripcion inscripcion, String estado) {
+		this.idAlumnoMateria = idAlumnoMateria;
 		this.aulaEmpleado = aulaEmpleado;
 		this.inscripcion = inscripcion;
 		this.estado = estado;
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_alumno_materia", unique = true, nullable = false)
-	public Integer getIdAlumnoMateria() {
+	public int getIdAlumnoMateria() {
 		return this.idAlumnoMateria;
 	}
 
-	public void setIdAlumnoMateria(Integer idAlumnoMateria) {
+	public void setIdAlumnoMateria(int idAlumnoMateria) {
 		this.idAlumnoMateria = idAlumnoMateria;
 	}
 

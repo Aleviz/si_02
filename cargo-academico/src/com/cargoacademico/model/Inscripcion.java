@@ -1,5 +1,5 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -7,8 +7,6 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -24,7 +22,7 @@ import javax.persistence.TemporalType;
 @Table(name = "inscripcion", catalog = "cargo_academico")
 public class Inscripcion implements java.io.Serializable {
 
-	private Integer idInscripcion;
+	private int idInscripcion;
 	private Alumno alumno;
 	private MateriaCarreraCiclo materiaCarreraCiclo;
 	private Date fecha;
@@ -35,7 +33,9 @@ public class Inscripcion implements java.io.Serializable {
 	public Inscripcion() {
 	}
 
-	public Inscripcion(Alumno alumno, MateriaCarreraCiclo materiaCarreraCiclo, Date fecha, Date inicio, Date final_) {
+	public Inscripcion(int idInscripcion, Alumno alumno, MateriaCarreraCiclo materiaCarreraCiclo, Date fecha,
+			Date inicio, Date final_) {
+		this.idInscripcion = idInscripcion;
 		this.alumno = alumno;
 		this.materiaCarreraCiclo = materiaCarreraCiclo;
 		this.fecha = fecha;
@@ -43,8 +43,9 @@ public class Inscripcion implements java.io.Serializable {
 		this.final_ = final_;
 	}
 
-	public Inscripcion(Alumno alumno, MateriaCarreraCiclo materiaCarreraCiclo, Date fecha, Date inicio, Date final_,
-			Set<AlumnoMateria> alumnoMaterias) {
+	public Inscripcion(int idInscripcion, Alumno alumno, MateriaCarreraCiclo materiaCarreraCiclo, Date fecha,
+			Date inicio, Date final_, Set<AlumnoMateria> alumnoMaterias) {
+		this.idInscripcion = idInscripcion;
 		this.alumno = alumno;
 		this.materiaCarreraCiclo = materiaCarreraCiclo;
 		this.fecha = fecha;
@@ -54,14 +55,13 @@ public class Inscripcion implements java.io.Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_inscripcion", unique = true, nullable = false)
-	public Integer getIdInscripcion() {
+	public int getIdInscripcion() {
 		return this.idInscripcion;
 	}
 
-	public void setIdInscripcion(Integer idInscripcion) {
+	public void setIdInscripcion(int idInscripcion) {
 		this.idInscripcion = idInscripcion;
 	}
 

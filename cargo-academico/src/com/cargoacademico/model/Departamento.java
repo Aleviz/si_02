@@ -1,13 +1,11 @@
 package com.cargoacademico.model;
-// Generated 09-04-2019 10:57:02 AM by Hibernate Tools 5.2.10.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,7 +19,11 @@ import javax.persistence.Table;
 @Table(name = "departamento", catalog = "cargo_academico")
 public class Departamento implements java.io.Serializable {
 
-	private Integer idDepartamento;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int idDepartamento;
 	private Empleado empleado;
 	private Escuela escuela;
 	private String nombre;
@@ -31,13 +33,15 @@ public class Departamento implements java.io.Serializable {
 	public Departamento() {
 	}
 
-	public Departamento(Empleado empleado, Escuela escuela, String telefono) {
+	public Departamento(int idDepartamento, Empleado empleado, Escuela escuela) {
+		this.idDepartamento = idDepartamento;
 		this.empleado = empleado;
 		this.escuela = escuela;
-		this.telefono = telefono;
 	}
 
-	public Departamento(Empleado empleado, Escuela escuela, String nombre, String telefono, Set<Materias> materiases) {
+	public Departamento(int idDepartamento, Empleado empleado, Escuela escuela, String nombre, String telefono,
+			Set<Materias> materiases) {
+		this.idDepartamento = idDepartamento;
 		this.empleado = empleado;
 		this.escuela = escuela;
 		this.nombre = nombre;
@@ -46,14 +50,13 @@ public class Departamento implements java.io.Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_departamento", unique = true, nullable = false)
-	public Integer getIdDepartamento() {
+	public int getIdDepartamento() {
 		return this.idDepartamento;
 	}
 
-	public void setIdDepartamento(Integer idDepartamento) {
+	public void setIdDepartamento(int idDepartamento) {
 		this.idDepartamento = idDepartamento;
 	}
 
@@ -86,7 +89,7 @@ public class Departamento implements java.io.Serializable {
 		this.nombre = nombre;
 	}
 
-	@Column(name = "telefono", nullable = false, length = 9)
+	@Column(name = "telefono", length = 20)
 	public String getTelefono() {
 		return this.telefono;
 	}
