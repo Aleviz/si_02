@@ -123,29 +123,29 @@
 		<i class="circle-preloader"></i>
 	</div>
 
-	<!-- ##### Header Area Start ##### -->
-	<header class="header-area"> <!-- Top Header Area -->
-	<div class="top-header">
-		<div class="container h-100">
-			<div class="row h-100">
-				<div class="col-12 h-100">
-					<div
-						class="header-content h-100 d-flex align-items-center justify-content-between">
-						<div class="academy-logo">
-							<a href="index.html"><img
-								src="<c:url value='/res/design/img/core-img/image.png'></c:url>"
-								width="150px"></a>
-						</div>
-						<div class="login-content">
-							<a href="#">Log Out</a>
+	<header class="header-area">
+
+		<!-- Top Header Area -->
+		<div class="top-header">
+			<div class="container h-100">
+				<div class="row h-100">
+					<div class="col-12 h-100">
+						<div
+							class="header-content h-100 d-flex align-items-center justify-content-between">
+							<div class="academy-logo">
+								<a href="index.html"><img
+									src="res/design/img/core-img/image.png" width="150px"></a>
+							</div>
+							<div class="login-content">
+								<a href="#">Register / Login</a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Navbar Area -->
+		<!-- Navbar Area -->
 	<div class="academy-main-menu">
 		<div class="classy-nav-container breakpoint-off">
 			<div class="container">
@@ -193,51 +193,16 @@
 	</header>
 	<!-- ##### Header Area End ##### -->
 
-	<!-- ##### Hero Area Start ##### -->
-	<section class="hero-area">
-	<div class="hero-slides owl-carousel">
-
-		<!-- Single Hero Slide -->
-		<div class="single-hero-slide bg-img"
-			style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/bg-1.jpg);">
-			<div class="container h-100">
-				<div class="row h-100 align-items-center">
-					<div class="col-12">
-						<div class="hero-slides-content">
-							<h4 data-animation="fadeInUp" data-delay="100ms">All the
-								courses you need</h4>
-							<h2 data-animation="fadeInUp" data-delay="400ms">
-								Wellcome to our <br>Online University
-							</h2>
-							<a href="#" class="btn academy-btn" data-animation="fadeInUp"
-								data-delay="700ms">Read More</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Single Hero Slide -->
-		<div class="single-hero-slide bg-img"
-			style="background-image: url(<%=request.getContextPath()%>/res/design/img/bg-img/bg-2.jpg);">
-			<div class="container h-100">
-				<div class="row h-100 align-items-center">
-					<div class="col-12">
-						<div class="hero-slides-content">
-							<h4 data-animation="fadeInUp" data-delay="100ms">All the
-								courses you need</h4>
-							<h2 data-animation="fadeInUp" data-delay="400ms">
-								Wellcome to our <br>Online University
-							</h2>
-							<a href="#" class="btn academy-btn" data-animation="fadeInUp"
-								data-delay="700ms">Read More</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+	<!-- ##### Breadcumb Area Start ##### -->
+	<div class="breadcumb-area bg-img"
+		style="background-image: url(res/design/img/imgreport/esta.jpg);">
+		<div class="bradcumbContent">
+			<h2>Informacion</h2>
+		</div>		
 	</div>
-	</section>
-	<!-- ##### Hero Area End ##### -->
+	<!-- ##### Breadcumb Area End ##### -->
+	<br></br>
+	<br></br>
 	<div class="row">
 		<div class="col-2">
 			<div class="nav flex-column nav-pills red-active" id="v-pills-tab"

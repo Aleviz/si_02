@@ -275,13 +275,14 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 						<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
 							id="showFacultad">
 							<div class="section-heading text-left" style="background-color: floralwhite;" id="infCarr">
-								<span>Unit</span>								
-								<h3 id="nombreCampus" ></h3> 							
+							<span id="atras" style="background-color: azure; color: black ">Volver a Campus</span>
+							
+								<span>Unit</span>	
+								<div>			
+								<h3 id="nombreCampus" ></h3>
+								</div> 							
 							<div class="izq" id="idFacu">				
 							</div>
-							</div>
-							<div class="botonMapa">
-									<button class="atrass">VOLVER A CAMPUS</button>
 							</div>
 						</div>
 		
@@ -289,14 +290,13 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 						<div class="contact-information wow fadeInUp" data-wow-delay="400ms"
 							id="showCarreras">
 							<div class="section-heading text-left" style="background-color: floralwhite;" id="infCarr">
-								<span>Unit</span>								
+							<span id="atrass" style="background-color: azure; color: black ">Volver a Facultad</span>
+							
+								<span>Unit</span>			
+													
 								<h3 id="nombreFacultad" ></h3> 							
 							<div class="izq" id="id">				
 							</div>
-							</div>
-							<div class="botonMapa">
-							<button id="editarr">asd</button>
-									<button class="atras">VOLVER A FACULTAD</button>
 							</div>
 						</div>
 

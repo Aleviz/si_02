@@ -35,7 +35,7 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/res/design/style.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/res/design/style2.css">
+	href="<%=request.getContextPath()%>/res/design/css/style2.css">
 <style>
 * {
 	box-sizing: border-box

@@ -855,7 +855,7 @@ $(document).ready(function() {
 				$('#showFacultad').show();
 				$('#showCarreras').hide();
 				
-				$('.atrass').click(function(e){
+				$('#atras').click(function(e){
 					$('#mapa2').hide();
 					$('#showCampus').show();
 					$('#showFacultad').hide();
@@ -904,7 +904,7 @@ $(document).ready(function() {
 							$('#showFacultad').hide();
 							$('#showCarreras').show();
 							
-							$('.atras').click(function() {
+							$('#atrass').click(function() {
 								$('#mapa').show();
 								$('#mapa2').hide();
 								$('#showCampus').hide();
