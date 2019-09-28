@@ -423,6 +423,12 @@ background: linear-gradient(90deg, DARKSLATEBLUE 15%, MEDIUMSLATEBLUE 85%);
 									path="telefono" placeholder="Telefono" />
 							</div>
 
+							<div class="form-group">
+								<label for="ubicacion"><span
+									class="glyphicon glyphicon-eye-open"></span> Ubicacion</label>
+								<sf:input type="text" class="form-control" id="ubicacion"
+									path="ubicacion" placeholder="Ubicacion" />
+							</div>
 
 							<div class="form-group">
 								<label for="ubicacion"><span

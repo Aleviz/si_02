@@ -37,8 +37,9 @@ public class MateriasController {
 	}
 
 	@RequestMapping(value = "/showMaterias/save", method = RequestMethod.POST)
-	public String registrar(@ModelAttribute("mate") Materias materia, Model model, RedirectAttributes ra) {
-		int x = materia.getIdMateria();
+	public String registrar(@ModelAttribute("mate") Materias materia ,
+			Model model, RedirectAttributes ra) {
+		int x = materia.getPrerequisito().getIdMateria();
 		System.out.println(x);
 
 		gd.saveOrUpdate(materia);
@@ -46,7 +47,7 @@ public class MateriasController {
 
 		return "redirect:/showMaterias";
 	}
-
+	
 	@RequestMapping("/showMaterias/{idMateria}/update")
 	public String findMateriaUpdate(Model model, @PathVariable("idMateria") int id) {
 
