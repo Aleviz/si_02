@@ -1,13 +1,11 @@
 package com.cargoacademico.model;
-// Generated 09-24-2019 09:24:18 AM by Hibernate Tools 5.2.12.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,11 +19,7 @@ import javax.persistence.Table;
 @Table(name = "carreras_ciclo", catalog = "cargo_academico")
 public class CarrerasCiclo implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private Integer idCarreraCiclo;
+	private int idCarreraCiclo;
 	private Ciclo ciclo;
 	private Escuela escuela;
 	private Set<MateriaCarreraCiclo> materiaCarreraCiclos = new HashSet<MateriaCarreraCiclo>(0);
@@ -33,26 +27,28 @@ public class CarrerasCiclo implements java.io.Serializable {
 	public CarrerasCiclo() {
 	}
 
-	public CarrerasCiclo(Ciclo ciclo, Escuela escuela) {
+	public CarrerasCiclo(int idCarreraCiclo, Ciclo ciclo, Escuela escuela) {
+		this.idCarreraCiclo = idCarreraCiclo;
 		this.ciclo = ciclo;
 		this.escuela = escuela;
 	}
 
-	public CarrerasCiclo(Ciclo ciclo, Escuela escuela, Set<MateriaCarreraCiclo> materiaCarreraCiclos) {
+	public CarrerasCiclo(int idCarreraCiclo, Ciclo ciclo, Escuela escuela,
+			Set<MateriaCarreraCiclo> materiaCarreraCiclos) {
+		this.idCarreraCiclo = idCarreraCiclo;
 		this.ciclo = ciclo;
 		this.escuela = escuela;
 		this.materiaCarreraCiclos = materiaCarreraCiclos;
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_carrera_ciclo", unique = true, nullable = false)
-	public Integer getIdCarreraCiclo() {
+	public int getIdCarreraCiclo() {
 		return this.idCarreraCiclo;
 	}
 
-	public void setIdCarreraCiclo(Integer idCarreraCiclo) {
+	public void setIdCarreraCiclo(int idCarreraCiclo) {
 		this.idCarreraCiclo = idCarreraCiclo;
 	}
 

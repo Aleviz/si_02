@@ -1,11 +1,9 @@
 package com.cargoacademico.model;
-// Generated 09-24-2019 09:24:18 AM by Hibernate Tools 5.2.12.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,7 +16,7 @@ import javax.persistence.Table;
 @Table(name = "actividades", catalog = "cargo_academico")
 public class Actividades implements java.io.Serializable {
 
-	private Integer idActividad;
+	private int idActividad;
 	private TipoActividad tipoActividad;
 	private Unidad unidad;
 	private String actividad;
@@ -29,8 +27,9 @@ public class Actividades implements java.io.Serializable {
 	public Actividades() {
 	}
 
-	public Actividades(TipoActividad tipoActividad, Unidad unidad, String actividad, String descripcion,
-			int ponderacion) {
+	public Actividades(int idActividad, TipoActividad tipoActividad, Unidad unidad, String actividad,
+			String descripcion, int ponderacion) {
+		this.idActividad = idActividad;
 		this.tipoActividad = tipoActividad;
 		this.unidad = unidad;
 		this.actividad = actividad;
@@ -38,8 +37,9 @@ public class Actividades implements java.io.Serializable {
 		this.ponderacion = ponderacion;
 	}
 
-	public Actividades(TipoActividad tipoActividad, Unidad unidad, String actividad, String descripcion,
-			int ponderacion, String recursos) {
+	public Actividades(int idActividad, TipoActividad tipoActividad, Unidad unidad, String actividad,
+			String descripcion, int ponderacion, String recursos) {
+		this.idActividad = idActividad;
 		this.tipoActividad = tipoActividad;
 		this.unidad = unidad;
 		this.actividad = actividad;
@@ -49,14 +49,13 @@ public class Actividades implements java.io.Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_actividad", unique = true, nullable = false)
-	public Integer getIdActividad() {
+	public int getIdActividad() {
 		return this.idActividad;
 	}
 
-	public void setIdActividad(Integer idActividad) {
+	public void setIdActividad(int idActividad) {
 		this.idActividad = idActividad;
 	}
 

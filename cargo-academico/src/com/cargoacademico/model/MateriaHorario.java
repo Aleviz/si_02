@@ -1,13 +1,11 @@
 package com.cargoacademico.model;
-// Generated 09-24-2019 09:24:18 AM by Hibernate Tools 5.2.12.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -23,7 +21,7 @@ import javax.persistence.UniqueConstraint;
 		"materia", "horario" }))
 public class MateriaHorario implements java.io.Serializable {
 
-	private Integer idMateriaHorario;
+	private int idMateriaHorario;
 	private Materias materias;
 	private String horario;
 	private Set<EmpleadoMateria> empleadoMaterias = new HashSet<EmpleadoMateria>(0);
@@ -31,25 +29,27 @@ public class MateriaHorario implements java.io.Serializable {
 	public MateriaHorario() {
 	}
 
-	public MateriaHorario(Materias materias) {
+	public MateriaHorario(int idMateriaHorario, Materias materias) {
+		this.idMateriaHorario = idMateriaHorario;
 		this.materias = materias;
 	}
 
-	public MateriaHorario(Materias materias, String horario, Set<EmpleadoMateria> empleadoMaterias) {
+	public MateriaHorario(int idMateriaHorario, Materias materias, String horario,
+			Set<EmpleadoMateria> empleadoMaterias) {
+		this.idMateriaHorario = idMateriaHorario;
 		this.materias = materias;
 		this.horario = horario;
 		this.empleadoMaterias = empleadoMaterias;
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_materia_horario", unique = true, nullable = false)
-	public Integer getIdMateriaHorario() {
+	public int getIdMateriaHorario() {
 		return this.idMateriaHorario;
 	}
 
-	public void setIdMateriaHorario(Integer idMateriaHorario) {
+	public void setIdMateriaHorario(int idMateriaHorario) {
 		this.idMateriaHorario = idMateriaHorario;
 	}
 

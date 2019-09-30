@@ -1,13 +1,11 @@
 package com.cargoacademico.model;
-// Generated 09-24-2019 09:24:18 AM by Hibernate Tools 5.2.12.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -26,7 +24,7 @@ public class Campus implements java.io.Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Integer idCampus;
+	private int idCampus;
 	private Coordenadas coordenadas;
 	private Universidad universidad;
 	private String campus;
@@ -37,12 +35,14 @@ public class Campus implements java.io.Serializable {
 	public Campus() {
 	}
 
-	public Campus(Universidad universidad) {
+	public Campus(int idCampus, Universidad universidad) {
+		this.idCampus = idCampus;
 		this.universidad = universidad;
 	}
 
-	public Campus(Coordenadas coordenadas, Universidad universidad, String campus, String telefono, String ubicacion,
-			Set<Facultad> facultads) {
+	public Campus(int idCampus, Coordenadas coordenadas, Universidad universidad, String campus, String telefono,
+			String ubicacion, Set<Facultad> facultads) {
+		this.idCampus = idCampus;
 		this.coordenadas = coordenadas;
 		this.universidad = universidad;
 		this.campus = campus;
@@ -52,14 +52,13 @@ public class Campus implements java.io.Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_campus", unique = true, nullable = false)
-	public Integer getIdCampus() {
+	public int getIdCampus() {
 		return this.idCampus;
 	}
 
-	public void setIdCampus(Integer idCampus) {
+	public void setIdCampus(int idCampus) {
 		this.idCampus = idCampus;
 	}
 

@@ -1,13 +1,11 @@
 package com.cargoacademico.model;
-// Generated 09-24-2019 09:24:18 AM by Hibernate Tools 5.2.12.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -23,7 +21,7 @@ public class Coordenadas implements java.io.Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Integer idCoordenada;
+	private int idCoordenada;
 	private String latitud;
 	private String longitud;
 	private String altitud;
@@ -33,13 +31,16 @@ public class Coordenadas implements java.io.Serializable {
 	public Coordenadas() {
 	}
 
-	public Coordenadas(String latitud, String longitud, String altitud) {
+	public Coordenadas(int idCoordenada, String latitud, String longitud, String altitud) {
+		this.idCoordenada = idCoordenada;
 		this.latitud = latitud;
 		this.longitud = longitud;
 		this.altitud = altitud;
 	}
 
-	public Coordenadas(String latitud, String longitud, String altitud, Set<Facultad> facultads, Set<Campus> campuses) {
+	public Coordenadas(int idCoordenada, String latitud, String longitud, String altitud, Set<Facultad> facultads,
+			Set<Campus> campuses) {
+		this.idCoordenada = idCoordenada;
 		this.latitud = latitud;
 		this.longitud = longitud;
 		this.altitud = altitud;
@@ -48,14 +49,13 @@ public class Coordenadas implements java.io.Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_coordenada", unique = true, nullable = false)
-	public Integer getIdCoordenada() {
+	public int getIdCoordenada() {
 		return this.idCoordenada;
 	}
 
-	public void setIdCoordenada(Integer idCoordenada) {
+	public void setIdCoordenada(int idCoordenada) {
 		this.idCoordenada = idCoordenada;
 	}
 

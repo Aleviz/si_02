@@ -47,20 +47,25 @@ var lon;
 var nameFacultad;
 var nameCarrera;
 var nameCampus;
+
+var iconos = L.icon({
+	iconUrl: 'res/design/svg/facultad.svg',
+	iconSize: [30,75],
+});
+
 var funci = $("#funciones");
 
 var stateChangingButton = new L.easyButton({
     states: [{
             stateName: 'editar',        // name the state
             id: 'nkop',
-            icon:      'fa-tree',               // and define its properties
+            icon:      '<img src="res/design/svg/edit.png" >',               // and define its properties
             title:     'editar',      // like its title
             onClick: function(btn, map) {   // and its callback
           
             	
             	if(afirmar){
             	map.on('click', function(e) {
-
     				console.log(afirmar);
     				if (afirmar == true) {
     					console.log()
@@ -112,7 +117,7 @@ var stateChangingButton = new L.easyButton({
     
         }, {
             stateName: 'finalizar',
-            icon:      'fa-university',
+            icon:      '<img src="res/design/svg/save.jpg">',
             title:     'finalizar',
             onClick: function(btn) {
             	afirmar = false;
@@ -132,10 +137,7 @@ stateChangingButton.addTo(map);
 
 var x = [];
 var jaja = [];
-var iconos = L.icon({
-	iconUrl: 'res/design/svg/facultad.svg',
-	iconSize: [30,75],
-});
+
 //------------------------------------------------------------
 
 
@@ -703,7 +705,10 @@ var polygon = new L.geoJson(geojsonFeaturePolygon, color).addTo(map);
 //-----------------------------------------------------------------------------------------------
 
 // PARA AGREGAR EL MARCADOR
+console.log("lat.length = "+lon.length)
 for (var i = 0; i < lat.length; i++) {
+	console.log("lat "+lat[i]);
+	console.log("lon "+lon[i]);
 	var idd = id[i];
 	var marker = {};
 	marker = new L.marker([ lat[i], -lon[i] ], {icon: iconos}).bindPopup(asd[i]+" "+"<button class='h button button1' value='"+asd[i]+"'></button>")
@@ -712,7 +717,7 @@ for (var i = 0; i < lat.length; i++) {
 	
 	// PARA AGREGARLO AL ARRAY
 	x.push(marker);
-	obtenerFF = document.getElementsByClassName('obtenerF').item(i).innerHTML;
+	obtenerFF = document.getElementsByClassName('obtenerC').item(i).innerHTML;
 
 	jaja.push(obtenerFF);
 
@@ -726,11 +731,11 @@ for (var i = 0; i < lat.length; i++) {
 
 $(document).ready(function() {
 	$.getScript("res/design/js/mapa.js");
-
+	
+	$('#showCampus').show();
+	$('#showFacultad').hide();
 	$('#showCarreras').hide();
-	$('.atras').hide();
 	$('#mapa2').hide();
-	$('#showCampus').hide();
 
 	
 	//--------------------------------------------------------------------------
@@ -779,7 +784,6 @@ $(document).ready(function() {
 					$('#showCampus').hide();
 					$('#showFacultad').hide();
 					$('#showCarreras').show();
-					$('.atras').show();
 					
 				},
 			
@@ -807,90 +811,98 @@ $(document).ready(function() {
 
 	// ----------------------------------------------------
 
-	$('#showFacultad').show(function() {
-		$('#showCarreras').hide();
-		$('.atras').hide();
-	});
-	
-	
-	
-	// PARA LA PARTE DEL PANEL DE DIV
-	$('#showFacultad').show(function() {
-		$('#showCarreras').hide();
-		$('.atras').hide();
-	});
 
-	$('.obtenerFx').click(function(e) {
-
-		var ax = e.delegateTarget;
-		nameFacultad = ax.text;
-		var resultado;
+	
+	
+	// PARA LOS MOSTRAR LAS FACULTADES DEPENDIENDO DEL CAMPUS ELEGIDO
+	$('.obtenerCx').click(function(e) {
+		var campe = e.delegateTarget;
+		nameCampus = campe.text;
+		var resultadoCampus;
 		console.log("************************************");
-		console.log(nameFacultad);
+		console.log(nameCampus);
 		console.log("************************************");
 
+		//AJAX 1
+		
 		$.ajax({
 			type : 'GET',
 			timeout: 5000,
-			url : 'api/ajaxrest/obtenerFacultad/' + nameFacultad,
+			url : 'api/ajaxrest/obtenerCampus/' + nameCampus,
 //			dataType : 'json',
 			contentType : 'application/json',
 			success : function(result) {
-				resultado = result;
+				resultadoCampus = result;
 				
-				console.log("resulttt = "+ resultado);
-				console.log("result = "+ resultado[0].nombreEscuela);
+				console.log("resulttt = "+ resultadoCampus);
+				console.log("result = "+ resultadoCampus[0].facultadxCampus);
 				
-				var h ='';
-				var h2='';
-				var h3 ='';
-				var hh ='';
+				var htmlCampus ='';
 				
 				for (var i = 0; i < result.length; i++) {									
-					hh += "<a class='obtenerCs'> <label class='es nombreFacultadd' style='font-weight: bold;'>"+resultado[i].nombreEscuela+"</label></a>";
-					hh+= "<p class='tel'>"+resultado[i].telefono+"</p>";
-					hh+= "<p class='ubic'>"+resultado[i].direccion+"</p>";
-					hh += '<hr/>';
+					htmlCampus += "<a class='obtenerFx'> <label class='obtenerF nombreFacultadd' style='font-weight: bold;'>"+resultadoCampus[i].facultadxCampus+"</label></a>";
+					htmlCampus += "<p class='tel'>"+resultadoCampus[i].telefonoxFacultad+"</p>";
+					htmlCampus += "<p class='ubic'>"+resultadoCampus[i].ubicacionxFacultad+"</p>";
+					htmlCampus += '<hr/>';
 				}
-				console.log(hh);
+				console.log(htmlCampus);
 				
-				$('#nombreFacultad').text(nameFacultad);
-				$('#id').html(hh);
+				$('#nombreCampus').text(nameCampus);
+				$('#idFacu').html(htmlCampus);
 	
 				$('#mapa2').hide();
 				$('#showCampus').hide();
-				$('#showFacultad').hide();
-				$('#showCarreras').show();
-				$('.atras').show();
+				$('#showFacultad').show();
+				$('#showCarreras').hide();
 				
-				//--------------------------------------------------para mostrar carrera-------------------
-				
-				$('.obtenerCs').click(function(e){
-					var obtenerCrs = e.delegateTarget;
-					nameCarrera = obtenerCrs.text; 
-					console.log(nameCarrera);
+				$('.atrass').click(function(e){
+					$('#mapa2').hide();
+					$('#showCampus').show();
+					$('#showFacultad').hide();
+					$('#showCarreras').hide();
+				});
+
+				//************************************************************
+				// PARA LOS MOSTRAR LAS ESCUELAS DEPENDIENDO DE LA FACULTAD ELEGIDA
+				$('.obtenerFx').click(function(e) {
+
+					var fac = e.delegateTarget;
+					nameFacultad = fac.text;
+					var resultadoF;
+					console.log("************************************");
+					console.log(nameFacultad);
+					console.log("************************************");
+
 					
-					
-					
+					//AJAX2
 					$.ajax({
 						type : 'GET',
 						timeout: 5000,
-						url : 'api/ajaxrest/obtenerCarrera/' + nameCarrera,
+						url : 'api/ajaxrest/obtenerFacultad/' + nameFacultad,
 //						dataType : 'json',
 						contentType : 'application/json',
 						success : function(result) {
-							resultado = result;
-							console.log("resultttCarrera = "+ resultado[0].nombreEscuela);
-							 var hh = "<h1>"+resultado[0].nombreEscuela+"</h1><p>"+resultado[0].descripcion+"</p> mision <p>"+resultado[0].mision+"</p>" +
-							 		"vision <p>"+resultado[0].vision+"</p> objetivos<p>"+resultado[0].objetivo+"</p> campos de accion <p>"
-							 		+resultado[0].campoDeAccion+"</p>";
-							 $('#mapa2').html(hh);
-							$('#mapa2').show();
-							$('#mapa').hide();
+							resultadoF = result;
+							
+							console.log("resulttt = "+ resultadoF);
+							console.log("result = "+ resultadoF[0].nombreEscuela);
+							var hhh ='';
+							
+							for (var i = 0; i < result.length; i++) {									
+								hhh += "<a class='obtenerCs'> <label class='es nombreFacultadd' style='font-weight: bold;'>"+resultadoF[i].nombreEscuela+"</label></a>";
+								hhh += "<p class='tel'>"+resultadoF[i].telefono+"</p>";
+								hhh += "<p class='ubic'>"+resultadoF[i].direccion+"</p>";
+								hhh += '<hr/>';
+							}
+							console.log(hhh);
+							
+							$('#nombreFacultad').text(nameFacultad);
+							$('#id').html(hhh);
+				
+							$('#mapa2').hide();
 							$('#showCampus').hide();
 							$('#showFacultad').hide();
 							$('#showCarreras').show();
-							$('.atras').show();
 							
 							$('.atras').click(function() {
 								$('#mapa').show();
@@ -898,11 +910,62 @@ $(document).ready(function() {
 								$('#showCampus').hide();
 								$('#showFacultad').show();
 								$('#showCarreras').hide();
-								$('.atras').hide();
+
+							});
+							//-----------------------------------------------------------------
+							
+							// PARA LOS MOSTRAR LA INFORMACION DE LA CARRERA DEPENDIENDO DE LA CARRERA ELEGIDA
+							
+							$('.obtenerCs').click(function(e){
+								var obtenerCrs = e.delegateTarget;
+								nameCarrera = obtenerCrs.text; 
+								console.log(nameCarrera);
+								
+								
+								//AJAX3
+								$.ajax({
+									type : 'GET',
+									timeout: 5000,
+									url : 'api/ajaxrest/obtenerCarrera/' + nameCarrera,
+//									dataType : 'json',
+									contentType : 'application/json',
+									success : function(result) {
+										resultado = result;
+										console.log("resultttCarrera = "+ resultado[0].nombreEscuela);
+										 var hh = "<h1>"+resultado[0].nombreEscuela+"</h1><p>"+resultado[0].descripcion+"</p> mision <p>"+resultado[0].mision+"</p>" +
+										 		"vision <p>"+resultado[0].vision+"</p> objetivos<p>"+resultado[0].objetivo+"</p> campos de accion <p>"
+										 		+resultado[0].campoDeAccion+"</p>";
+										 $('#mapa2').html(hh);
+										$('#mapa2').show();
+										$('#mapa').hide();
+										$('#showCampus').hide();
+										$('#showFacultad').hide();
+										$('#showCarreras').show();
+										
+									
+										
+									},
+								//AJAX3
+								error:function (xhr, ajaxOptions, thrownError){
+									console.log("************************************");
+							        alert(xhr.status);
+							        alert(xhr.statusText);
+							        alert(xhr.responseText);
+							        alert(thrownError);	        
+//										console.log("result = "+(xhr.status);
+									console.log("xhr.statusText = "+xhr.statusText);
+									console.log("xhr.responseText = "+xhr.responseText);
+									console.log("************************************");
+								}
+								});
+								
 							});
 							
+							
+							//------------------------------------------------------------
+							
 						},
-					
+					//AJAX2
 					error:function (xhr, ajaxOptions, thrownError){
 						console.log("************************************");
 				        alert(xhr.status);
@@ -915,33 +978,33 @@ $(document).ready(function() {
 						console.log("************************************");
 					}
 					});
+
 					
+				
 				});
+
+
+
 				
-				
-				//------------------------------------------------------------
-				
+				//************************************************************	
+			//AJAX 1	
 			},
-		
-		error:function (xhr, ajaxOptions, thrownError){
-			console.log("************************************");
-	        alert(xhr.status);
-	        alert(xhr.statusText);
-	        alert(xhr.responseText);
-	        alert(thrownError);	        
-//				console.log("result = "+(xhr.status);
-			console.log("xhr.statusText = "+xhr.statusText);
-			console.log("xhr.responseText = "+xhr.responseText);
-			console.log("************************************");
-		}
-		});
-
-		
-	
+			error:function (xhr, ajaxOptions, thrownError){
+				console.log("************************************");
+		        alert(xhr.status);
+		        alert(xhr.statusText);
+		        alert(xhr.responseText);
+		        alert(thrownError);	        
+//					console.log("result = "+(xhr.status);
+				console.log("xhr.statusText = "+xhr.statusText);
+				console.log("xhr.responseText = "+xhr.responseText);
+				console.log("************************************");
+			}
+			});
 	});
+				
+				//------------------------------
 
-
-	
 	
 	
 
@@ -951,22 +1014,8 @@ $(document).ready(function() {
 	// PARA LA EDICION DEL MAPA
 
 	$('#editarr').click(function() {
-		confirmacion = confirm(mensaje[0]);
+	
 
-		if (confirmacion == true) {
-			$('#editar').hide();
-			$('#finalizar').show();
-
-			map.on('click', function(e) {
-				afirmar = confirm(mensaje[1]);
-				if (afirmar == true) {
-					console.log()
-					idm = e.target._leaflet_id;
-					lat = e.latlng.lat;
-					lon = e.latlng.lng;
-					console.log("lat ======== "+lat);
-					console.log("lon ======== "+lon);
-					confirmacion = false;
 					$('#myModal').modal("show");
 					$('#formCampus').hide();
 					$('#formFacultad').hide();
@@ -994,31 +1043,10 @@ $(document).ready(function() {
 						});
 					});
 
-				} else {
-					console.log("denegado");
-				}
+				
+				
 			});
 
-			$('#finalizar').click(function() {
-				var confirmar1 = confirm(mensaje[2]);
-				if (confirmar1 == true) {
-					$(this).hide();
-					$('#editar').show();
-
-				} else {
-					console.log("cambios no guardados");
-				}
-
-			});
-
-		} else if (confirmacion == false) {
-			$('#editar').show();
-			$('#finalizar').hide();
-			console.log("no acepto la edicion");
-		}
-
-	});
-	
 
 
 });

@@ -1,13 +1,11 @@
 package com.cargoacademico.model;
-// Generated 09-24-2019 09:24:18 AM by Hibernate Tools 5.2.12.Final
+// Generated 09-27-2019 01:09:44 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -22,11 +20,15 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "materias", catalog = "cargo_academico", uniqueConstraints = @UniqueConstraint(columnNames = "codigo"))
 public class Materias implements java.io.Serializable {
 
+<<<<<<< HEAD
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 4849170564637770776L;
 	private Integer idMateria;
+=======
+	private int idMateria;
+>>>>>>> Geografico
 	private Departamento departamento;
 	private Materias materiasByCorequisito;
 	private Materias materiasByPrerequisito;
@@ -42,16 +44,18 @@ public class Materias implements java.io.Serializable {
 	public Materias() {
 	}
 
-	public Materias(Departamento departamento, Temario temario, int unidadValorativa) {
+	public Materias(int idMateria, Departamento departamento, Temario temario, int unidadValorativa) {
+		this.idMateria = idMateria;
 		this.departamento = departamento;
 		this.temario = temario;
 		this.unidadValorativa = unidadValorativa;
 	}
 
-	public Materias(Departamento departamento, Materias materiasByCorequisito, Materias materiasByPrerequisito,
-			Temario temario, String materia, String codigo, int unidadValorativa, Set<MateriaHorario> materiaHorarios,
-			Set<Materias> materiasesForCorequisito, Set<Materias> materiasesForPrerequisito,
-			Set<MateriaCarreraCiclo> materiaCarreraCiclos) {
+	public Materias(int idMateria, Departamento departamento, Materias materiasByCorequisito,
+			Materias materiasByPrerequisito, Temario temario, String materia, String codigo, int unidadValorativa,
+			Set<MateriaHorario> materiaHorarios, Set<Materias> materiasesForCorequisito,
+			Set<Materias> materiasesForPrerequisito, Set<MateriaCarreraCiclo> materiaCarreraCiclos) {
+		this.idMateria = idMateria;
 		this.departamento = departamento;
 		this.materiasByCorequisito = materiasByCorequisito;
 		this.materiasByPrerequisito = materiasByPrerequisito;
@@ -66,14 +70,13 @@ public class Materias implements java.io.Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "id_materia", unique = true, nullable = false)
-	public Integer getIdMateria() {
+	public int getIdMateria() {
 		return this.idMateria;
 	}
 
-	public void setIdMateria(Integer idMateria) {
+	public void setIdMateria(int idMateria) {
 		this.idMateria = idMateria;
 	}
 

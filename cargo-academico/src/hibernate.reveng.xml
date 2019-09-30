@@ -68,7 +68,7 @@
 	<table-filter match-name="tipo_actividad"
 		match-catalog="cargo_academico">
 	</table-filter>
-	<table-filter match-name="tipo_docente"
+	<table-filter match-name="tipo_docentes"
 		match-catalog="cargo_academico">
 	</table-filter>
 	<table-filter match-name="unidad"

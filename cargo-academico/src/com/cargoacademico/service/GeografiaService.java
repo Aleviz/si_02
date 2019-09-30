@@ -4,13 +4,16 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cargoacademico.dao.GeografiaDao;
 import com.cargoacademico.model.Campus;
 import com.cargoacademico.model.Coordenadas;
+import com.cargoacademico.model.Empleado;
 import com.cargoacademico.model.Facultad;;
 
 @Service
+@Transactional
 public class GeografiaService {
 
 	@Autowired
@@ -53,10 +56,21 @@ public class GeografiaService {
 	public Facultad findByIdF(int id) {
 		return geografiaDao.findByIdF(id);
 	}
+	
+	
+	public List<Facultad> findByCampus(int idCampus){
+		return geografiaDao.findByCampus(idCampus);
+	}
+	
+	
+	public List<Empleado> buscarDecano(){
+		return geografiaDao.buscarDecano() ;
+	}
+	
 
 	public void saveOrUpdateFacultad(Facultad facultad) {
 		System.out.println("XXXXX   "+ facultad.getIdFacultad());
-		if ( facultad.getIdFacultad() == null) {
+		if ( facultad.getIdFacultad() == 0 ) {
 			geografiaDao.saveFacultad(facultad);
 		} else {
 			geografiaDao.updateFacultad(facultad);

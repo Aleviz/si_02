@@ -162,6 +162,7 @@ public class AjaxRestController {
 
 		List<Escuela> escuelaList = new ArrayList<Escuela>();
 		escuelaList = esService.findByNameE(nameCarrera);
+
 		System.out.println(escuelaList.size());
 		for (int i = 0; i < escuelaList.size(); i++) {
 
