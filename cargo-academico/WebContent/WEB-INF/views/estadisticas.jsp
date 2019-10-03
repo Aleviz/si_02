@@ -17,10 +17,10 @@
 			animationEnabled : true,
 			theme : "light2", // "light1", "light2", "dark1", "dark2"
 			title : {
-				text : "Desidad de carreras"
+				text : "Demanda de carreras"
 			},
 			axisY : {
-				title : "Tasa de desidad (en %)",
+				title : "Tasa de demanda (en %)",
 				suffix : "%",
 				includeZero : false
 			},
@@ -136,9 +136,7 @@
 								<a href="index.html"><img
 									src="res/design/img/core-img/image.png" width="150px"></a>
 							</div>
-							<div class="login-content">
-								<a href="#">Register / Login</a>
-							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -182,8 +180,8 @@
 				<!-- Calling Info -->
 				<div class="calling-info">
 					<div class="call-center">
-						<a href="tel:+654563325568889"><i class="icon-telephone-2"></i>
-							<span>(+503) ${campusdir.telefono}</span></a>
+						<a href="tel:+503 22288888"><i class="icon-telephone-2"></i>
+							<span>(+503) 2228-8888</span></a>
 					</div>
 				</div>
 				</nav>

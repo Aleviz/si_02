@@ -11,6 +11,14 @@
 	href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login</title>
+
+<script>
+$(document).ready(function(){
+	$('#loggin').click(function(){
+		
+	})
+})
+</script>
 </head>
 <body>
 	<div class="cont">
@@ -39,7 +47,7 @@
 							<sf:input type="password" path="pass" class="login__input pass"
 								placeholder="Password" />
 						</div>
-						<input type="submit" class="login__submit" value="Loguear" />
+						<input id ="loggin" type="submit" class="login__submit" value="Loguear" />
 					</sf:form>
 				</div>
 			</div>

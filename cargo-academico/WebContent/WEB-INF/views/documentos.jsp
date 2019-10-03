@@ -121,9 +121,7 @@ body {
 								<a href="index.html"><img
 									src="res/design/img/core-img/image.png" width="150px"></a>
 							</div>
-							<div class="login-content">
-								<a href="#">Register / Login</a>
-							</div>
+						
 						</div>
 					</div>
 				</div>
@@ -167,8 +165,8 @@ body {
 				<!-- Calling Info -->
 				<div class="calling-info">
 					<div class="call-center">
-						<a href="tel:+654563325568889"><i class="icon-telephone-2"></i>
-							<span>(+503) ${campusdir.telefono}</span></a>
+						<a href="tel:+503 22288888"><i class="icon-telephone-2"></i>
+							<span>(+503) 2228-8888</span></a>
 					</div>
 				</div>
 				</nav>
@@ -591,118 +589,128 @@ body {
 	<!-- ##### Blog Area End ##### -->
 
 	<!-- ##### Footer Area Start ##### -->
+
 	<footer class="footer-area">
-		<div class="main-footer-area section-padding-100-0">
-			<div class="container">
-				<div class="row">
-					<!-- Footer Widget Area -->
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="footer-widget mb-100">
-							<div class="widget-title">
-								<a href="#"><img src="res/design/img/core-img/logo_1.png"
-									width="170"></a>
-							</div>
-							<p>Cras vitae turpis lacinia, lacinia lacus non, fermentum
-								nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et
-								arcu pulvinar cursus a eget.</p>
-							<div class="footer-social-info">
-								<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
-									class="fa fa-twitter"></i></a> <a href="#"><i
-									class="fa fa-dribbble"></i></a> <a href="#"><i
-									class="fa fa-behance"></i></a> <a href="#"><i
-									class="fa fa-instagram"></i></a>
-							</div>
+	<div class="main-footer-area section-padding-100-0">
+		<div class="container">
+			<div class="row">
+				<!-- Footer Widget Area -->
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="footer-widget mb-100">
+						<div class="widget-title">
+							<a href="#"><img
+								src="<%=request.getContextPath()%>/res/design/img/core-img/logo_1.png"
+								width="170"></a>
+						</div>
+						<p>La Universidad nacional de Innovacion Tecnologica es la
+							institución de educación superior más grande y antigua de la
+							República de El Salvador.</p>
+						<div class="footer-social-info">
+							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+								class="fa fa-twitter"></i></a> <a href="#"><i
+								class="fa fa-dribbble"></i></a> <a href="#"><i
+								class="fa fa-behance"></i></a> <a href="#"><i
+								class="fa fa-instagram"></i></a>
 						</div>
 					</div>
-					<!-- Footer Widget Area -->
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="footer-widget mb-100">
-							<div class="widget-title">
-								<h6>Usefull Links</h6>
-							</div>
-							<nav>
-								<ul class="useful-links">
-									<li><a href="#">Home</a></li>
-									<li><a href="#">Services &amp; Features</a></li>
-									<li><a href="#">Accordions and tabs</a></li>
-									<li><a href="#">Menu ideas</a></li>
-								</ul>
-							</nav>
+				</div>
+				<!-- Footer Widget Area -->
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="footer-widget mb-100">
+						<div class="widget-title">
+							<h6>Usefull Links</h6>
+						</div>
+						<nav>
+						<ul class="useful-links">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Services &amp; Features</a></li>
+							<li><a href="#">Accordions and tabs</a></li>
+							<li><a href="#">Menu ideas</a></li>
+						</ul>
+						</nav>
+					</div>
+				</div>
+				<!-- Footer Widget Area -->
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="footer-widget mb-100">
+						<div class="widget-title">
+							<h6>Gallery</h6>
+						</div>
+						<div class="gallery-list d-flex justify-content-between flex-wrap">
+							<a
+								href="<%=request.getContextPath()%>/res/design/img/gallery1.jpg"
+								class="gallery-img" title="Gallery Image 1"><img
+								src="<c:url value='/res/design/img/bg-img/gallery1.jpg'></c:url>"
+								alt=""></a> <a
+								href="<%=request.getContextPath()%>/res/design/img/gallery2.jpg"
+								class="gallery-img" title="Gallery Image 2"><img
+								src="<c:url value='/res/design/img/bg-img/gallery2.jpg'></c:url>"
+								alt=""></a> <a
+								href="<%=request.getContextPath()%>/res/design/img/gallery3.jpg"
+								class="gallery-img" title="Gallery Image 3"><img
+								src="<c:url value='/res/design/img/bg-img/gallery3.jpg'></c:url>"
+								alt=""></a> <a
+								href="<%=request.getContextPath()%>/res/design/img/gallery4.jpg"
+								class="gallery-img" title="Gallery Image 4"><img
+								src="<c:url value='/res/design/img/bg-img/gallery4.jpg'></c:url>"
+								alt=""></a> <a
+								href="<%=request.getContextPath()%>/res/design/img/gallery5.jpg"
+								class="gallery-img" title="Gallery Image 5"><img
+								src="<c:url value='/res/design/img/bg-img/gallery5.jpg'></c:url>"
+								alt=""></a> <a
+								href="<%=request.getContextPath()%>/res/design/img/gallery6.jpg"
+								class="gallery-img" title="Gallery Image 6"><img
+								src="<c:url value='/res/design/img/bg-img/gallery6.jpg'></c:url>"
+								alt="Dem"></a>
 						</div>
 					</div>
-					<!-- Footer Widget Area -->
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="footer-widget mb-100">
-							<div class="widget-title">
-								<h6>Gallery</h6>
-							</div>
-							<div
-								class="gallery-list d-flex justify-content-between flex-wrap">
-								<a href="img/bg-img/gallery1.jpg" class="gallery-img"
-									title="Gallery Image 1"><img
-									src="res/design/img/bg-img/gallery1.jpg" alt=""></a> <a
-									href="img/bg-img/gallery2.jpg" class="gallery-img"
-									title="Gallery Image 2"><img
-									src="res/design/img/bg-img/gallery2.jpg" alt=""></a> <a
-									href="img/bg-img/gallery3.jpg" class="gallery-img"
-									title="Gallery Image 3"><img
-									src="res/design/img/bg-img/gallery3.jpg" alt=""></a> <a
-									href="img/bg-img/gallery4.jpg" class="gallery-img"
-									title="Gallery Image 4"><img
-									src="res/design/img/bg-img/gallery4.jpg" alt=""></a> <a
-									href="img/bg-img/gallery5.jpg" class="gallery-img"
-									title="Gallery Image 5"><img
-									src="res/design/img/bg-img/gallery5.jpg" alt=""></a> <a
-									href="img/bg-img/gallery6.jpg" class="gallery-img"
-									title="Gallery Image 6"><img
-									src="res/design/img/bg-img/gallery6.jpg" alt=""></a>
-							</div>
+				</div>
+				<!-- Footer Widget Area -->
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="footer-widget mb-100">
+						<div class="widget-title">
+							<h6>Contact</h6>
 						</div>
-					</div>
-					<!-- Footer Widget Area -->
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="footer-widget mb-100">
-							<div class="widget-title">
-								<h6>Contact</h6>
-							</div>
-							<div class="single-contact d-flex mb-30">
-								<i class="icon-placeholder"></i>
-								<p>4127/ 5B-C Mislane Road, Gibraltar, UK</p>
-							</div>
-							<div class="single-contact d-flex mb-30">
-								<i class="icon-telephone-1"></i>
-								<p>
-									Main: 203-808-8613 <br>Office: 203-808-8648
-								</p>
-							</div>
-							<div class="single-contact d-flex">
-								<i class="icon-contract"></i>
-								<p>office@yourbusiness.com</p>
-							</div>
+						<div class="single-contact d-flex mb-30">
+							<i class="icon-placeholder"></i>
+							<p>${campusdir.ubicacion}</p>
+						</div>
+						<div class="single-contact d-flex mb-30">
+							<i class="icon-telephone-1"></i>
+							<p>
+								Teléfono: ${campusdir.telefono} <br> Oficina: 203-808-8648
+							</p>
+						</div>
+						<div class="single-contact d-flex">
+							<i class="icon-contract"></i>
+							<p>universidadTecnologica@unit.sv</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="bottom-footer-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<p>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							Copyright &copy;
-							<script>
-								document.write(new Date().getFullYear());
-							</script>
-							All rights reserved | This template is made with <i
-								class="fa fa-heart-o" aria-hidden="true"></i> by <a
-								href="https://colorlib.com" target="_blank">Colorlib</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						</p>
-					</div>
+	</div>
+	
+	
+	
+	<div class="bottom-footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<p>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy;
+						<script>
+							document.write(new Date().getFullYear());
+						</script>
+						Derechos reservados | Colaboración con <a
+							href="https://www.usam.edu.sv" target="_blank">USAM</a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
 				</div>
 			</div>
 		</div>
+	</div>
 	</footer>
 	<!-- ##### Footer Area Start ##### -->
 	<!-- Moto -->

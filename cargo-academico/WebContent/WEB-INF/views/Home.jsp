@@ -52,9 +52,7 @@
 								src="<c:url value='/res/design/img/core-img/image.png'></c:url>"
 								width="150px"></a>
 						</div>
-						<div class="login-content">
-							<a href="#">Log Out</a>
-						</div>
+
 					</div>
 				</div>
 			</div>
@@ -98,8 +96,8 @@
 				<!-- Calling Info -->
 				<div class="calling-info">
 					<div class="call-center">
-						<a href="tel:+654563325568889"><i class="icon-telephone-2"></i>
-							<span>(+503) ${campusdir.telefono}</span></a>
+						<a href="tel:+503 22288888"><i class="icon-telephone-2"></i>
+							<span>(+503) 2228-8888</span></a>
 					</div>
 				</div>
 				</nav>

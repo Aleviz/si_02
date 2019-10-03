@@ -77,7 +77,7 @@ public class EstadisticasController {
 			listUsuarios = usuarioService.loguearUsuario(usuarioLogin);
 			System.out.println(listUsuarios.size());
 			if (listUsuarios.size() > 0) {
-				url = "redirect:/contacto";
+				url = "redirect:/Home";
 				ra.addFlashAttribute("mensaje", "Exito");
 			} else {
 				url = "redirect:/";
